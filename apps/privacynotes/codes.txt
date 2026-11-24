@@ -1,0 +1,11 @@
+# Real-Fruit-Snacks — Cyclorama Dawn themes for PrivacyNotes (https://privacynotes.app/)
+# Paste any pn1: line into Settings -> Design -> Paste theme code
+
+# Cyclorama Dawn (LX 263 Dark) — Beacon Orange focus on matte #050507 dark with Steel Blue folder labels.
+pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks
+
+# Cyclorama Steel (LX 263 Dark) — Steel Blue controls on matte #050507 dark with Beacon Orange folder labels.
+pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks
+
+# Cyclorama Day (LX 512 Light) — Alabaster Day #F5F7F9 workspace with white paper, burnt Beacon links, and Steel buttons.
+pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks

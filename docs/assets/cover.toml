@@ -1,0 +1,22 @@
+# Cover + social preview. Regenerate with Real-Fruit-Snacks/rfs-brand:
+#   python3 rfs-brand/tools/make-cover.py rfs-themes/docs/assets/cover.toml
+name        = "rfs-themes"
+description = "Cyclorama Dawn themes and ports for everyday apps"
+
+[panel]
+kind = "flow"
+
+[panel.input]
+label = "rfs.tokens.json"
+note  = "v2.0.0"
+chips = ["Steel", "Beacon", "Mint"]
+tone  = "mute"
+
+[panel.tool]
+label = "rfs-themes build"
+
+[panel.output]
+label = "app theme ports"
+note  = "verified AA"
+chips = ["PrivacyNotes", "+ more"]
+tone  = "text"

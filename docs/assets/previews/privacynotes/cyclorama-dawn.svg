@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="PrivacyNotes Cyclorama Dawn (LX 263 DARK) workspace preview">
+  <defs>
+    <linearGradient id="hbeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#74B8E8"/>
+      <stop offset="100%" stop-color="#F06E2B"/>
+    </linearGradient>
+    <clipPath id="frame-clip"><rect x="1" y="1" width="658" height="388" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame-clip)">
+    <rect width="660" height="390" fill="#050507"/>
+    <rect width="660" height="3" fill="url(#hbeam)"/>
+
+    <!-- Top workspace bar -->
+    <rect x="0" y="3" width="660" height="33" fill="#0C0C10"/>
+    <line x1="0" y1="36" x2="660" y2="36" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="14" y="10" width="96" height="19" rx="4" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="23" y="23" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[privacynotes]</text>
+    <text x="122" y="23" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn</text>
+    <text x="646" y="23" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="600">LX 263 · DARK · 17/17 PASS</text>
+
+    <!-- Pane 1: Sidebar (x=0..154) -->
+    <rect x="0" y="36" width="154" height="310" fill="#0C0C10"/>
+    <line x1="154" y1="36" x2="154" y2="346" stroke="#2A2C35" stroke-width="1"/>
+
+    <!-- Sidebar search well -->
+    <rect x="12" y="48" width="130" height="24" rx="5" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="22" y="63.5" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">Ninja...  Ctrl+K</text>
+
+    <!-- Sidebar folders -->
+    <text x="14" y="92" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="0.8">FOLDERS</text>
+    <rect x="10" y="100" width="134" height="26" rx="5" fill="#3D271E"/>
+    <rect x="10" y="104" width="3" height="18" rx="1.5" fill="#FF9254"/>
+    <rect x="20" y="109" width="8" height="8" rx="1.5" fill="none" stroke="#FF9254" stroke-width="1.5"/>
+    <text x="35" y="116.5" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600">Local Tools</text>
+    <text x="135" y="116.5" text-anchor="end" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">12</text>
+
+    <rect x="20" y="135" width="8" height="8" rx="1.5" fill="none" stroke="#74B8E8" stroke-width="1.5"/>
+    <text x="35" y="142.5" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11">Brand Notes</text>
+    <text x="135" y="142.5" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">04</text>
+
+    <rect x="20" y="160" width="8" height="8" rx="1.5" fill="none" stroke="#74B8E8" stroke-width="1.5"/>
+    <text x="35" y="167.5" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11">Runbooks</text>
+    <text x="135" y="167.5" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">09</text>
+
+    <text x="14" y="198" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="0.8">TAGS</text>
+    <rect x="14" y="206" width="54" height="18" rx="4" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="22" y="218" fill="#74B8E8" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="600">#local</text>
+    <rect x="74" y="206" width="60" height="18" rx="4" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="82" y="218" fill="#74B8E8" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="600">#e2ee</text>
+
+    <!-- Primary New Note fill button -->
+    <rect x="12" y="308" width="130" height="26" rx="5" fill="#BD4811"/>
+    <text x="77" y="324.5" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">+ New Note</text>
+
+    <!-- Pane 2: Note List (x=154..332) -->
+    <rect x="154" y="36" width="178" height="310" fill="#0F1016"/>
+    <line x1="332" y1="36" x2="332" y2="346" stroke="#2A2C35" stroke-width="1"/>
+    <text x="166" y="57" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">LOCAL TOOLS  ·  3 NOTES</text>
+    <line x1="154" y1="67" x2="332" y2="67" stroke="#2A2C35" stroke-width="1"/>
+
+    <!-- Active note card -->
+    <rect x="162" y="75" width="162" height="68" rx="6" fill="#3F2A22" stroke="#FF9254" stroke-width="1"/>
+    <text x="172" y="94" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn v2.0</text>
+    <text x="172" y="110" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Zero-knowledge notes synced</text>
+    <text x="172" y="123" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">with calibrated AA tokens.</text>
+    <text x="172" y="136" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="600">Updated 2m ago</text>
+
+    <!-- Second note card -->
+    <rect x="162" y="152" width="162" height="58" rx="6" fill="#050507" stroke="#2A2C35" stroke-width="1"/>
+    <text x="172" y="170" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600">port-sync Checklist</text>
+    <text x="172" y="185" fill="#B3B5C0" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Forwarded port 51037 check</text>
+    <text x="172" y="199" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5">Yesterday · #local</text>
+
+    <!-- Third note card -->
+    <rect x="162" y="219" width="162" height="58" rx="6" fill="#050507" stroke="#2A2C35" stroke-width="1"/>
+    <text x="172" y="237" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600">mTLS Cert Store Guide</text>
+    <text x="172" y="252" fill="#B3B5C0" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">CurrentUser\My client cert</text>
+    <text x="172" y="266" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5">Nov 21 · #e2ee</text>
+
+    <!-- Pane 3: Writing Paper (x=332..660) -->
+    <rect x="332" y="36" width="328" height="310" fill="#050507"/>
+    <text x="352" y="66" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="800">Cyclorama Dawn v2.0</text>
+    <text x="352" y="84" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9">Encrypted locally  ·  #local  ·  by Real-Fruit-Snacks</text>
+    <line x1="352" y1="95" x2="640" y2="95" stroke="#2A2C35" stroke-width="1"/>
+
+    <text x="352" y="116" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11">Calibrated directly from rfs-brand v2.0.0 tokens.</text>
+    <text x="352" y="133" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11">Every surface, tint, and status role passes all 17</text>
+    <text x="352" y="150" fill="#D6D8E0" font-family="system-ui,-apple-system,sans-serif" font-size="11">built-in PrivacyNotes contrast checks with zero edits.</text>
+
+    <!-- Code well inside editor -->
+    <rect x="352" y="166" width="288" height="58" rx="6" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="352" y="166" width="3" height="58" rx="1.5" fill="#FF9254"/>
+    <text x="364" y="185" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9"># Settings -&gt; Design -&gt; Paste theme code</text>
+    <text x="364" y="202" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">pn1:Cyclorama Dawn</text>
+    <text x="364" y="216" fill="#F4F5F8" font-family="ui-monospace,Consolas,monospace" font-size="8.5">by=Real-Fruit-Snacks</text>
+
+    <!-- Semantic status pills -->
+    <rect x="352" y="242" width="84" height="22" rx="4" fill="#14141A" stroke="#3DDC97" stroke-width="1"/>
+    <text x="394" y="256.5" text-anchor="middle" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[ok] synced</text>
+    <rect x="444" y="242" width="90" height="22" rx="4" fill="#14141A" stroke="#FFC247" stroke-width="1"/>
+    <text x="489" y="256.5" text-anchor="middle" fill="#FFC247" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[warn] draft</text>
+    <rect x="542" y="242" width="98" height="22" rx="4" fill="#14141A" stroke="#F06292" stroke-width="1"/>
+    <text x="591" y="256.5" text-anchor="middle" fill="#F06292" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[err] locked</text>
+
+    <!-- Editor footer action row -->
+    <text x="352" y="308" fill="#FF9254" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" text-decoration="underline">Open theme repository -&gt;</text>
+    <rect x="540" y="292" width="100" height="26" rx="5" fill="#BD4811"/>
+    <text x="590" y="308.5" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">Apply Theme</text>
+
+    <!-- Bottom palette telemetry ribbon -->
+    <rect x="0" y="346" width="660" height="44" fill="#0C0C10"/>
+    <line x1="0" y1="346" x2="660" y2="346" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="18.0" y="357" width="56" height="10" rx="2.5" fill="#050507" stroke="#2A2C35" stroke-width="0.8"/><text x="46.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">BG</text><rect x="80.4" y="357" width="56" height="10" rx="2.5" fill="#0C0C10" stroke="#2A2C35" stroke-width="0.8"/><text x="108.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">SIDE</text><rect x="142.8" y="357" width="56" height="10" rx="2.5" fill="#0F1016" stroke="#2A2C35" stroke-width="0.8"/><text x="170.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">LIST</text><rect x="205.2" y="357" width="56" height="10" rx="2.5" fill="#14141A" stroke="#2A2C35" stroke-width="0.8"/><text x="233.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">WELL</text><rect x="267.6" y="357" width="56" height="10" rx="2.5" fill="#FF9254" stroke="#2A2C35" stroke-width="0.8"/><text x="295.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ACCENT</text><rect x="330.0" y="357" width="56" height="10" rx="2.5" fill="#BD4811" stroke="#2A2C35" stroke-width="0.8"/><text x="358.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">FILL</text><rect x="392.4" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#2A2C35" stroke-width="0.8"/><text x="420.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">LABEL</text><rect x="454.8" y="357" width="56" height="10" rx="2.5" fill="#3DDC97" stroke="#2A2C35" stroke-width="0.8"/><text x="482.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">OK</text><rect x="517.2" y="357" width="56" height="10" rx="2.5" fill="#FFC247" stroke="#2A2C35" stroke-width="0.8"/><text x="545.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">WARN</text><rect x="579.6" y="357" width="56" height="10" rx="2.5" fill="#F06292" stroke="#2A2C35" stroke-width="0.8"/><text x="607.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ERR</text>
+  </g>
+  <rect x="0.5" y="0.5" width="659" height="389" rx="11.5" fill="none" stroke="#2A2C35" stroke-width="1"/>
+</svg>

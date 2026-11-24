@@ -1,0 +1,97 @@
+{
+  "app": "PrivacyNotes",
+  "slug": "privacynotes",
+  "homepage": "https://privacynotes.app/",
+  "spec": "pn1",
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.0.0",
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "tagline": "Beacon Orange focus on matte #050507 dark with Steel Blue folder labels.",
+      "seeds": {
+        "background": "#050507",
+        "sidebar": "#0C0C10",
+        "border": "#2A2C35",
+        "text": "#F4F5F8",
+        "muted": "#B3B5C0",
+        "accent": "#FF9254"
+      },
+      "overrides": {
+        "list": "#0F1016",
+        "paper": "#050507",
+        "well": "#14141A",
+        "soft": "#D6D8E0",
+        "hover": "#FFB07A",
+        "fill": "#BD4811",
+        "fillhover": "#9E3B0C",
+        "danger": "#F06292",
+        "warning": "#FFC247",
+        "success": "#3DDC97",
+        "label": "#74B8E8"
+      },
+      "code": "pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks"
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "tagline": "Steel Blue controls on matte #050507 dark with Beacon Orange folder labels.",
+      "seeds": {
+        "background": "#050507",
+        "sidebar": "#0C0C10",
+        "border": "#27313D",
+        "text": "#F4F5F8",
+        "muted": "#B3B5C0",
+        "accent": "#74B8E8"
+      },
+      "overrides": {
+        "list": "#0E1117",
+        "paper": "#050507",
+        "well": "#131820",
+        "soft": "#D6DCE4",
+        "hover": "#99CDF2",
+        "fill": "#18496B",
+        "fillhover": "#123955",
+        "danger": "#F06292",
+        "warning": "#FFC247",
+        "success": "#3DDC97",
+        "label": "#FF9254"
+      },
+      "code": "pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks"
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "tagline": "Alabaster Day #F5F7F9 workspace with white paper, burnt Beacon links, and Steel buttons.",
+      "seeds": {
+        "background": "#F5F7F9",
+        "sidebar": "#E9EEF3",
+        "border": "#C8D0DA",
+        "text": "#0D1016",
+        "muted": "#474D59",
+        "accent": "#AD3D0A"
+      },
+      "overrides": {
+        "list": "#F0F3F7",
+        "paper": "#FFFFFF",
+        "well": "#E3E8EE",
+        "soft": "#252A34",
+        "hover": "#8B2F06",
+        "fill": "#18496B",
+        "fillhover": "#113752",
+        "danger": "#B51754",
+        "warning": "#8D5400",
+        "success": "#127247",
+        "label": "#164669"
+      },
+      "code": "pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks"
+    }
+  ]
+}

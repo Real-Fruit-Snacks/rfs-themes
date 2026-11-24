@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <script>
+    try {
+      var s = localStorage.getItem("color-scheme");
+      if (s === "light" || s === "dark") {
+        document.querySelector('meta[name="color-scheme"]').content = s;
+      }
+    } catch (e) {}
+  </script>
+  <title>rfs-themes — Cyclorama Dawn App Themes &amp; Ports</title>
+  <meta name="description" content="Cyclorama Dawn (Steel &amp; Beacon Orange) themes and ports for everyday apps, derived from rfs-brand v2.0.0. Starting with verified PrivacyNotes pn1: themes.">
+  <link rel="canonical" href="https://real-fruit-snacks.github.io/rfs-themes/">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#050507">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://real-fruit-snacks.github.io/rfs-themes/">
+  <meta property="og:title" content="rfs-themes — Cyclorama Dawn App Themes &amp; Ports">
+  <meta property="og:description" content="Cyclorama Dawn themes and ports for everyday applications — verified WCAG AA contrast, starting with PrivacyNotes.">
+  <meta property="og:image" content="https://real-fruit-snacks.github.io/rfs-themes/assets/social-dark.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/big-shoulders-stencil-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/azeret-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/rfs.css">
+  <link rel="stylesheet" href="assets/rfs-components.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link visually-hidden" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-id" href="#top" aria-label="rfs-themes home">
+        <img src="icon.svg" alt="" width="28" height="28">
+        <span class="brand-word">RFS-THEMES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#privacynotes">PrivacyNotes</a>
+        <a href="#compare">Compare</a>
+        <a href="#architecture">Add an App</a>
+        <a href="https://real-fruit-snacks.github.io/rfs-brand/">Brand Kit</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="repo-link" href="https://github.com/Real-Fruit-Snacks/rfs-themes">
+          <svg class="rfs-icon" aria-hidden="true"><use href="assets/rfs-icons.svg#rfs-i-git-branch"/></svg>
+          <span>GitHub</span>
+        </a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle between LX 263 Dark and LX 512 Light">
+          <span class="sw" aria-hidden="true"></span>
+          <span class="lbl-dark">LX 263 Dark</span>
+          <span class="lbl-light">LX 512 Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="rfs-badge is-steel">[rfs-brand v2.0.0]</span>
+          <h1>CYCLORAMA DAWN<br>FOR EVERY APP.</h1>
+          <div class="horizon-rule" aria-hidden="true"></div>
+          <p class="hero-lead">One calibrated <strong>Steel &amp; Beacon Orange</strong> theme repository for everyday applications. Every port ships with native copy-paste configs, live workspace previews, and automated WCAG AA contrast checks.</p>
+          <div class="hero-cta-row">
+            <a class="rfs-btn rfs-btn-horizon" href="#privacynotes">
+              <svg class="rfs-icon" aria-hidden="true"><use href="assets/rfs-icons.svg#rfs-i-book"/></svg>
+              <span>Browse PrivacyNotes Themes</span>
+            </a>
+            <a class="rfs-btn rfs-btn-outline" href="https://github.com/Real-Fruit-Snacks/rfs-themes/tree/main/apps">
+              <span>Inspect <code>apps/</code></span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="telemetry-card" aria-label="Theme port telemetry">
+          <div class="telemetry-head">
+            <span class="rfs-badge is-beacon">[registry]</span>
+            <span class="telemetry-lx">LX 263 · LX 512</span>
+          </div>
+          <dl class="telemetry-kv">
+            <div><dt>Active App Ports</dt><dd>01 · PrivacyNotes</dd></div>
+            <div><dt>Verified Variants</dt><dd>03 · Dawn, Steel, Day</dd></div>
+            <div><dt>Contrast Engine</dt><dd class="is-ok">17 / 17 PASS</dd></div>
+            <div><dt>Token Source</dt><dd>rfs.tokens.json v2.0.0</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="privacynotes" aria-labelledby="pn-heading">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">[app 01 · notes &amp; writing]</span>
+          <h2 id="pn-heading">PrivacyNotes</h2>
+          <p class="section-sub">Three Cyclorama Dawn <code>pn1:</code> theme codes for <a href="https://privacynotes.app/">privacynotes.app</a>. Every surface, accent tint, folder label, and status role passes all 17 built-in PrivacyNotes contrast checks with zero edits.</p>
+        </div>
+        <div class="install-chip">
+          <span class="rfs-badge is-steel">[install]</span>
+          <span>Settings &rarr; Design &rarr; Paste theme code</span>
+        </div>
+      </div>
+
+      <div class="pn-console">
+        <div class="pn-console-beam" aria-hidden="true"></div>
+        <div class="pn-tablist" role="tablist" aria-label="PrivacyNotes Cyclorama Dawn variants">
+          <button type="button" class="pn-tab" role="tab" id="tab-dawn" aria-selected="true" data-panel="panel-dawn">
+            <span class="tab-dot" style="background:#FF9254" aria-hidden="true"></span>
+            <span class="tab-name">Cyclorama Dawn</span>
+            <span class="tab-lx">LX 263 · Beacon</span>
+          </button>
+          <button type="button" class="pn-tab" role="tab" id="tab-steel" aria-selected="false" tabindex="-1" data-panel="panel-steel">
+            <span class="tab-dot" style="background:#74B8E8" aria-hidden="true"></span>
+            <span class="tab-name">Cyclorama Steel</span>
+            <span class="tab-lx">LX 263 · Steel</span>
+          </button>
+          <button type="button" class="pn-tab" role="tab" id="tab-day" aria-selected="false" tabindex="-1" data-panel="panel-day">
+            <span class="tab-dot" style="background:#AD3D0A" aria-hidden="true"></span>
+            <span class="tab-name">Cyclorama Day</span>
+            <span class="tab-lx">LX 512 · Light</span>
+          </button>
+        </div>
+
+        <div class="pn-panels">
+          <!-- Panel 1: Cyclorama Dawn -->
+          <div class="pn-panel" role="tabpanel" id="panel-dawn" aria-labelledby="tab-dawn">
+            <div class="pn-panel-inner">
+              <div class="pn-preview-col">
+                <img src="assets/previews/privacynotes/cyclorama-dawn.svg" alt="PrivacyNotes Cyclorama Dawn dark workspace preview with Beacon Orange accent and Steel Blue folder labels" width="660" height="390">
+              </div>
+              <div class="pn-detail-col">
+                <div class="pn-detail-top">
+                  <h3>Cyclorama Dawn</h3>
+                  <span class="rfs-badge is-ok">[17/17 pass]</span>
+                </div>
+                <p class="pn-desc">Matte <code>#050507</code> cyclorama ground paired with luminous Beacon Orange (<code>#FF9254</code>) focus, deep Beacon (<code>#BD4811</code>) action fills, and Steel Blue (<code>#74B8E8</code>) folders &amp; tags.</p>
+
+                <div class="swatch-strip" aria-label="Click any color swatch to copy hex">
+                  <button type="button" class="sw-btn" data-copy="#050507"><span class="sw-chip" style="background:#050507"></span><span>BG</span><code>#050507</code></button>
+                  <button type="button" class="sw-btn" data-copy="#0C0C10"><span class="sw-chip" style="background:#0C0C10"></span><span>Side</span><code>#0C0C10</code></button>
+                  <button type="button" class="sw-btn" data-copy="#FF9254"><span class="sw-chip" style="background:#FF9254"></span><span>Accent</span><code>#FF9254</code></button>
+                  <button type="button" class="sw-btn" data-copy="#BD4811"><span class="sw-chip" style="background:#BD4811"></span><span>Fill</span><code>#BD4811</code></button>
+                  <button type="button" class="sw-btn" data-copy="#74B8E8"><span class="sw-chip" style="background:#74B8E8"></span><span>Label</span><code>#74B8E8</code></button>
+                  <button type="button" class="sw-btn" data-copy="#3DDC97"><span class="sw-chip" style="background:#3DDC97"></span><span>OK</span><code>#3DDC97</code></button>
+                </div>
+
+                <div class="rfs-code-card">
+                  <div class="rfs-code-head">
+                    <span class="rfs-code-lang">[pn1] PrivacyNotes theme code</span>
+                    <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-horizon copy-code-btn" data-theme-name="Cyclorama Dawn" data-copy="pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks">
+                      <svg class="rfs-icon" aria-hidden="true"><use href="assets/rfs-icons.svg#rfs-i-copy"/></svg>
+                      <span>Copy pn1: code</span>
+                    </button>
+                  </div>
+                  <pre class="pn-code-pre"><code><span class="syn-kw">pn1</span>:<span class="syn-fn">Cyclorama Dawn</span>:<span class="syn-str">050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254</span>:<span class="syn-num">list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8</span>,<span class="syn-cm">by=Real-Fruit-Snacks</span></code></pre>
+                </div>
+
+                <div class="pn-meta-row">
+                  <span>Min text contrast: <strong>5.12:1</strong></span>
+                  <span>Primary ink: <strong>16.83:1</strong></span>
+                  <a href="https://github.com/Real-Fruit-Snacks/rfs-themes/blob/main/apps/privacynotes/codes.txt">Raw <code>codes.txt</code></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Cyclorama Steel -->
+          <div class="pn-panel" role="tabpanel" id="panel-steel" aria-labelledby="tab-steel" hidden="until-found">
+            <div class="pn-panel-inner">
+              <div class="pn-preview-col">
+                <img src="assets/previews/privacynotes/cyclorama-steel.svg" alt="PrivacyNotes Cyclorama Steel dark workspace preview with Steel Blue accent and Beacon Orange folder labels" width="660" height="390" loading="lazy">
+              </div>
+              <div class="pn-detail-col">
+                <div class="pn-detail-top">
+                  <h3>Cyclorama Steel</h3>
+                  <span class="rfs-badge is-ok">[17/17 pass]</span>
+                </div>
+                <p class="pn-desc">Cooler steel-charcoal surfaces on matte <code>#050507</code> with Cyclorama Steel (<code>#74B8E8</code>) active controls, deep Steel (<code>#18496B</code>) fills, and Beacon Orange (<code>#FF9254</code>) folders &amp; tags.</p>
+
+                <div class="swatch-strip" aria-label="Click any color swatch to copy hex">
+                  <button type="button" class="sw-btn" data-copy="#050507"><span class="sw-chip" style="background:#050507"></span><span>BG</span><code>#050507</code></button>
+                  <button type="button" class="sw-btn" data-copy="#0C0C10"><span class="sw-chip" style="background:#0C0C10"></span><span>Side</span><code>#0C0C10</code></button>
+                  <button type="button" class="sw-btn" data-copy="#74B8E8"><span class="sw-chip" style="background:#74B8E8"></span><span>Accent</span><code>#74B8E8</code></button>
+                  <button type="button" class="sw-btn" data-copy="#18496B"><span class="sw-chip" style="background:#18496B"></span><span>Fill</span><code>#18496B</code></button>
+                  <button type="button" class="sw-btn" data-copy="#FF9254"><span class="sw-chip" style="background:#FF9254"></span><span>Label</span><code>#FF9254</code></button>
+                  <button type="button" class="sw-btn" data-copy="#3DDC97"><span class="sw-chip" style="background:#3DDC97"></span><span>OK</span><code>#3DDC97</code></button>
+                </div>
+
+                <div class="rfs-code-card">
+                  <div class="rfs-code-head">
+                    <span class="rfs-code-lang">[pn1] PrivacyNotes theme code</span>
+                    <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-horizon copy-code-btn" data-theme-name="Cyclorama Steel" data-copy="pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks">
+                      <svg class="rfs-icon" aria-hidden="true"><use href="assets/rfs-icons.svg#rfs-i-copy"/></svg>
+                      <span>Copy pn1: code</span>
+                    </button>
+                  </div>
+                  <pre class="pn-code-pre"><code><span class="syn-kw">pn1</span>:<span class="syn-fn">Cyclorama Steel</span>:<span class="syn-str">050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8</span>:<span class="syn-num">list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254</span>,<span class="syn-cm">by=Real-Fruit-Snacks</span></code></pre>
+                </div>
+
+                <div class="pn-meta-row">
+                  <span>Min text contrast: <strong>5.82:1</strong></span>
+                  <span>Primary ink: <strong>16.34:1</strong></span>
+                  <a href="https://github.com/Real-Fruit-Snacks/rfs-themes/blob/main/apps/privacynotes/codes.txt">Raw <code>codes.txt</code></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Cyclorama Day -->
+          <div class="pn-panel" role="tabpanel" id="panel-day" aria-labelledby="tab-day" hidden="until-found">
+            <div class="pn-panel-inner">
+              <div class="pn-preview-col">
+                <img src="assets/previews/privacynotes/cyclorama-day.svg" alt="PrivacyNotes Cyclorama Day light workspace preview with Alabaster Day surfaces, white paper, burnt Beacon accent, and Steel buttons" width="660" height="390" loading="lazy">
+              </div>
+              <div class="pn-detail-col">
+                <div class="pn-detail-top">
+                  <h3>Cyclorama Day</h3>
+                  <span class="rfs-badge is-ok">[17/17 pass]</span>
+                </div>
+                <p class="pn-desc">Alabaster Day (<code>#F5F7F9</code>) daylight studio with pure white (<code>#FFFFFF</code>) writing paper, burnt Beacon (<code>#AD3D0A</code>) links, and authoritative Steel (<code>#18496B</code> / <code>#164669</code>) buttons &amp; labels.</p>
+
+                <div class="swatch-strip" aria-label="Click any color swatch to copy hex">
+                  <button type="button" class="sw-btn" data-copy="#F5F7F9"><span class="sw-chip" style="background:#F5F7F9"></span><span>BG</span><code>#F5F7F9</code></button>
+                  <button type="button" class="sw-btn" data-copy="#FFFFFF"><span class="sw-chip" style="background:#FFFFFF"></span><span>Paper</span><code>#FFFFFF</code></button>
+                  <button type="button" class="sw-btn" data-copy="#AD3D0A"><span class="sw-chip" style="background:#AD3D0A"></span><span>Accent</span><code>#AD3D0A</code></button>
+                  <button type="button" class="sw-btn" data-copy="#18496B"><span class="sw-chip" style="background:#18496B"></span><span>Fill</span><code>#18496B</code></button>
+                  <button type="button" class="sw-btn" data-copy="#164669"><span class="sw-chip" style="background:#164669"></span><span>Label</span><code>#164669</code></button>
+                  <button type="button" class="sw-btn" data-copy="#127247"><span class="sw-chip" style="background:#127247"></span><span>OK</span><code>#127247</code></button>
+                </div>
+
+                <div class="rfs-code-card">
+                  <div class="rfs-code-head">
+                    <span class="rfs-code-lang">[pn1] PrivacyNotes theme code</span>
+                    <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-horizon copy-code-btn" data-theme-name="Cyclorama Day" data-copy="pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks">
+                      <svg class="rfs-icon" aria-hidden="true"><use href="assets/rfs-icons.svg#rfs-i-copy"/></svg>
+                      <span>Copy pn1: code</span>
+                    </button>
+                  </div>
+                  <pre class="pn-code-pre"><code><span class="syn-kw">pn1</span>:<span class="syn-fn">Cyclorama Day</span>:<span class="syn-str">F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A</span>:<span class="syn-num">list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669</span>,<span class="syn-cm">by=Real-Fruit-Snacks</span></code></pre>
+                </div>
+
+                <div class="pn-meta-row">
+                  <span>Min text contrast: <strong>4.84:1</strong></span>
+                  <span>Primary ink: <strong>15.45:1</strong></span>
+                  <a href="https://github.com/Real-Fruit-Snacks/rfs-themes/blob/main/apps/privacynotes/codes.txt">Raw <code>codes.txt</code></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="compare" aria-labelledby="compare-heading">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">[side-by-side gallery]</span>
+          <h2 id="compare-heading">All PrivacyNotes Variants</h2>
+          <p class="section-sub">Compare all three lighting cues at once or copy any <code>pn1:</code> string directly to your clipboard.</p>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <article class="variant-card">
+          <img src="assets/previews/privacynotes/cyclorama-dawn.svg" alt="Cyclorama Dawn preview" width="660" height="390" loading="lazy">
+          <div class="variant-foot">
+            <div>
+              <h3>Cyclorama Dawn</h3>
+              <span class="variant-tag">LX 263 Dark · Beacon Accent</span>
+            </div>
+            <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-outline copy-code-btn" data-theme-name="Cyclorama Dawn" data-copy="pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks">Copy</button>
+          </div>
+        </article>
+
+        <article class="variant-card">
+          <img src="assets/previews/privacynotes/cyclorama-steel.svg" alt="Cyclorama Steel preview" width="660" height="390" loading="lazy">
+          <div class="variant-foot">
+            <div>
+              <h3>Cyclorama Steel</h3>
+              <span class="variant-tag">LX 263 Dark · Steel Accent</span>
+            </div>
+            <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-outline copy-code-btn" data-theme-name="Cyclorama Steel" data-copy="pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks">Copy</button>
+          </div>
+        </article>
+
+        <article class="variant-card">
+          <img src="assets/previews/privacynotes/cyclorama-day.svg" alt="Cyclorama Day preview" width="660" height="390" loading="lazy">
+          <div class="variant-foot">
+            <div>
+              <h3>Cyclorama Day</h3>
+              <span class="variant-tag">LX 512 Light · Alabaster Day</span>
+            </div>
+            <button type="button" class="rfs-btn rfs-btn-sm rfs-btn-outline copy-code-btn" data-theme-name="Cyclorama Day" data-copy="pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks">Copy</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="architecture" aria-labelledby="arch-heading">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">[extensible multi-app layout]</span>
+          <h2 id="arch-heading">Built to Hold Every Application Port</h2>
+          <p class="section-sub">Every app lives in its own folder under <code>apps/&lt;app&gt;/</code> alongside native artifacts, SVG previews, and CI contrast checks from <code>brand/rfs.tokens.json</code>.</p>
+        </div>
+      </div>
+
+      <div class="arch-grid">
+        <div class="rfs-code-card">
+          <div class="rfs-code-head">
+            <span class="rfs-code-lang">[tree] Repository layout</span>
+            <span class="rfs-badge is-steel">v2.0.0</span>
+          </div>
+          <pre><code><span class="syn-fn">rfs-themes/</span>
+├── <span class="syn-kw">apps/</span>
+│   ├── <span class="syn-str">manifest.json</span>         <span class="syn-cm"># Central registry of all app ports</span>
+│   └── <span class="syn-fn">privacynotes/</span>         <span class="syn-cm"># First port: 3 verified pn1: themes</span>
+│       ├── <span class="syn-str">themes.json</span>       <span class="syn-cm"># Canonical seeds &amp; overrides</span>
+│       ├── <span class="syn-str">codes.txt</span>         <span class="syn-cm"># Ready-to-paste pn1: strings</span>
+│       └── <span class="syn-fn">previews/</span>         <span class="syn-cm"># 3-pane workspace SVG renders</span>
+├── <span class="syn-kw">brand/</span>rfs.tokens.json     <span class="syn-cm"># Synced from rfs-brand v2.0.0</span>
+├── <span class="syn-kw">tools/</span>verify-themes.py    <span class="syn-cm"># Automated 17-check contrast CI</span>
+└── <span class="syn-kw">docs/</span>                     <span class="syn-cm"># This live GitHub Pages gallery</span></code></pre>
+        </div>
+
+        <div class="next-apps-card">
+          <div class="next-apps-head">
+            <span class="rfs-badge is-beacon">[roadmap slots]</span>
+            <h3>Ready for Future Ports</h3>
+          </div>
+          <p>Drop a new folder under <code>apps/&lt;slug&gt;/</code>, register it in <code>apps/manifest.json</code>, and run <code>python tools/verify-themes.py</code>. Ready slots include:</p>
+          <ul class="slot-list">
+            <li><span class="rfs-badge is-ok">[live]</span> <strong>PrivacyNotes</strong> — <code>pn1:</code> theme codes (3 variants)</li>
+            <li><span class="rfs-badge">[slot]</span> <strong>Windows Terminal</strong> — JSON color schemes</li>
+            <li><span class="rfs-badge">[slot]</span> <strong>VS Code / Cursor</strong> — Workbench &amp; syntax JSON</li>
+            <li><span class="rfs-badge">[slot]</span> <strong>Ghostty / WezTerm / Alacritty</strong> — Terminal configs</li>
+            <li><span class="rfs-badge">[slot]</span> <strong>Obsidian / Neovim</strong> — CSS snippet &amp; Lua colorscheme</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="icon.svg" alt="" width="22" height="22">
+        <span>REAL-FRUIT-SNACKS · RFS-THEMES</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://real-fruit-snacks.github.io/">Catalog</a>
+        <a href="https://real-fruit-snacks.github.io/rfs-brand/">Brand Manual</a>
+        <a href="https://rfs.tools/">rfs.tools</a>
+        <a href="https://github.com/Real-Fruit-Snacks/rfs-themes">Source</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent accessible toast region + live announcement fallback -->
+  <p class="visually-hidden">Notifications</p>
+  <div class="visually-hidden" id="live-status" aria-live="polite" aria-atomic="true"></div>
+  <div class="rfs-toast-region" id="toast-region" popover="manual" role="region" aria-label="Notifications"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

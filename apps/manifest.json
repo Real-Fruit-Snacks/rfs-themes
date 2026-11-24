@@ -1,0 +1,46 @@
+{
+  "brand": "Cyclorama Dawn",
+  "version": "2.0.0",
+  "source": "https://github.com/Real-Fruit-Snacks/rfs-brand",
+  "apps": [
+    {
+      "slug": "privacynotes",
+      "name": "PrivacyNotes",
+      "category": "Notes & Writing",
+      "homepage": "https://privacynotes.app/",
+      "format": "pn1: theme code",
+      "install": "Settings -> Design -> Paste theme code",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue folder labels.",
+          "preview": "apps/privacynotes/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Matte #050507 dark stage with Steel Blue controls and Beacon Orange folder labels.",
+          "preview": "apps/privacynotes/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white writing paper, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/privacynotes/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/privacynotes",
+      "data": "apps/privacynotes/themes.json"
+    }
+  ]
+}
