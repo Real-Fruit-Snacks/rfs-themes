@@ -436,7 +436,9 @@ main {
   background: var(--rfs-code-bg);
   scrollbar-width: none;
 }
-.pn-tablist::-webkit-scrollbar { display: none; }
+@supports not (scrollbar-width: none) {
+  .pn-tablist::-webkit-scrollbar { display: none; }
+}
 
 .pn-tab {
   position: relative;
@@ -526,7 +528,7 @@ main {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 22px 46px -28px rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--rfs-line);
 }
 
 .pn-detail-col {
