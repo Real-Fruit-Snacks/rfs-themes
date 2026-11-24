@@ -84,7 +84,11 @@ def main() -> int:
             fail(f"{t['id']}: preview SVG missing or out of sync with docs/assets/")
     ok(f"PrivacyNotes themes verified ({len(pn_data['themes'])} variants, all 17/17 checks passing)")
 
-    # 4. Brand code invariants (zero oklch gradients, zero native modals, zero private leaks)
+    # 4. Brand code invariants (zero oklch gradients, zero native modals, zero private leaks, below-header scroll shell)
+    docs_html = open(os.path.join(ROOT, "docs", "index.html"), encoding="utf-8").read()
+    if "rfs-shell" not in docs_html or "rfs-scroll-region" not in docs_html:
+        fail("docs/index.html missing below-header .rfs-shell / .rfs-scroll-region layout")
+
     rx_oklch = re.compile(r"gradient\([^)]*in oklch")
     rx_modal = re.compile(r"\b(?:window\.)?(?:alert|confirm|prompt)\s*\(")
     rx_private = re.compile(r"\b(?:pn-selfhost|Eddy)\b")

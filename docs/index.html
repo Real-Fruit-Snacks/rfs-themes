@@ -35,10 +35,10 @@
   <link rel="stylesheet" href="assets/rfs-components.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="rfs-shell">
   <a class="skip-link visually-hidden" href="#main-content">Skip to main content</a>
 
-  <header class="site-header">
+  <header class="site-header rfs-shell-header">
     <div class="header-inner">
       <a class="brand-id" href="#top" aria-label="rfs-themes home">
         <img src="icon.svg" alt="" width="28" height="28">
@@ -66,6 +66,7 @@
     </div>
   </header>
 
+  <div class="rfs-scroll-region page-scroll" id="page-scroll">
   <main id="main-content" tabindex="-1">
     <section class="hero" id="top">
       <div class="hero-grid">
@@ -367,6 +368,7 @@
       </div>
     </div>
   </footer>
+  </div>
 
   <!-- Persistent accessible toast region + live announcement fallback -->
   <p class="visually-hidden">Notifications</p>
