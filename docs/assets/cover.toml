@@ -8,7 +8,7 @@ kind = "flow"
 
 [panel.input]
 label = "rfs.tokens.json"
-note  = "v2.0.0"
+note  = "v2.1.0"
 chips = ["Steel", "Beacon", "Mint"]
 tone  = "mute"
 

@@ -17,7 +17,7 @@ Matte `#050507` dark stage with Beacon Orange (`#FF9254`) focus, deep Beacon (`#
 ![Cyclorama Dawn PrivacyNotes preview](previews/cyclorama-dawn.svg)
 
 ```text
-pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=F06292,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks
+pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=FF5C6C,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks
 ```
 
 ## 2. Cyclorama Steel (`LX 263 Dark · Steel Accent`)
@@ -27,7 +27,7 @@ Matte `#050507` dark stage with Steel Blue (`#74B8E8`) controls, deep Steel (`#1
 ![Cyclorama Steel PrivacyNotes preview](previews/cyclorama-steel.svg)
 
 ```text
-pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=F06292,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks
+pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=FF5C6C,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks
 ```
 
 ## 3. Cyclorama Day (`LX 512 Light · Alabaster Day`)
@@ -37,7 +37,7 @@ Crisp `#F5F7F9` Alabaster Day light workspace with white (`#FFFFFF`) writing pap
 ![Cyclorama Day PrivacyNotes preview](previews/cyclorama-day.svg)
 
 ```text
-pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B51754,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks
+pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B91C2E,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks
 ```
 
 ---
@@ -53,7 +53,7 @@ pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FF
 | `accent` / `hover` | `#FF9254` / `#FFB07A` | `#74B8E8` / `#99CDF2` | `#AD3D0A` / `#8B2F06` |
 | `fill` / `fillhover` | `#BD4811` / `#9E3B0C` | `#18496B` / `#123955` | `#18496B` / `#113752` |
 | `label` (folders & tags) | `#74B8E8` | `#FF9254` | `#164669` |
-| `success` / `warning` / `danger` | `#3DDC97` / `#FFC247` / `#F06292` | `#3DDC97` / `#FFC247` / `#F06292` | `#127247` / `#8D5400` / `#B51754` |
+| `success` / `warning` / `danger` | `#3DDC97` / `#FFC247` / `#FF5C6C` | `#3DDC97` / `#FFC247` / `#FF5C6C` | `#127247` / `#8D5400` / `#B91C2E` |
 
 ## Regenerating & Validating
 
