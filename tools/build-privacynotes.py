@@ -319,7 +319,7 @@ def render_preview_svg(theme: dict, resolved: dict) -> str:
 
     <!-- Active note card -->
     <rect x="162" y="75" width="162" height="68" rx="6" fill="{sel_list}" stroke="{accent}" stroke-width="1"/>
-    <text x="172" y="94" fill="{ink}" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn v2.0</text>
+    <text x="172" y="94" fill="{ink}" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn v2.1</text>
     <text x="172" y="110" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Zero-knowledge notes synced</text>
     <text x="172" y="123" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">with calibrated AA tokens.</text>
     <text x="172" y="136" fill="{accent}" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="600">Updated 2m ago</text>
@@ -338,11 +338,11 @@ def render_preview_svg(theme: dict, resolved: dict) -> str:
 
     <!-- Pane 3: Writing Paper (x=332..660) -->
     <rect x="332" y="36" width="328" height="310" fill="{paper}"/>
-    <text x="352" y="66" fill="{ink}" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="800">Cyclorama Dawn v2.0</text>
+    <text x="352" y="66" fill="{ink}" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="800">Cyclorama Dawn v2.1</text>
     <text x="352" y="84" fill="{mute}" font-family="ui-monospace,Consolas,monospace" font-size="9">Encrypted locally  ·  #local  ·  by Real-Fruit-Snacks</text>
     <line x1="352" y1="95" x2="640" y2="95" stroke="{border}" stroke-width="1"/>
 
-    <text x="352" y="116" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="11">Calibrated directly from rfs-brand v2.0.0 tokens.</text>
+    <text x="352" y="116" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="11">Calibrated directly from rfs-brand v2.1.0 tokens.</text>
     <text x="352" y="133" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="11">Every surface, tint, and status role passes all 17</text>
     <text x="352" y="150" fill="{soft}" font-family="system-ui,-apple-system,sans-serif" font-size="11">built-in PrivacyNotes contrast checks with zero edits.</text>
 

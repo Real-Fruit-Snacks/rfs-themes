@@ -60,7 +60,7 @@
 
     <!-- Active note card -->
     <rect x="162" y="75" width="162" height="68" rx="6" fill="#E6D8D3" stroke="#AD3D0A" stroke-width="1"/>
-    <text x="172" y="94" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn v2.0</text>
+    <text x="172" y="94" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn v2.1</text>
     <text x="172" y="110" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Zero-knowledge notes synced</text>
     <text x="172" y="123" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">with calibrated AA tokens.</text>
     <text x="172" y="136" fill="#AD3D0A" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="600">Updated 2m ago</text>
@@ -79,11 +79,11 @@
 
     <!-- Pane 3: Writing Paper (x=332..660) -->
     <rect x="332" y="36" width="328" height="310" fill="#FFFFFF"/>
-    <text x="352" y="66" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="800">Cyclorama Dawn v2.0</text>
+    <text x="352" y="66" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="17" font-weight="800">Cyclorama Dawn v2.1</text>
     <text x="352" y="84" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="9">Encrypted locally  ·  #local  ·  by Real-Fruit-Snacks</text>
     <line x1="352" y1="95" x2="640" y2="95" stroke="#C8D0DA" stroke-width="1"/>
 
-    <text x="352" y="116" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11">Calibrated directly from rfs-brand v2.0.0 tokens.</text>
+    <text x="352" y="116" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11">Calibrated directly from rfs-brand v2.1.0 tokens.</text>
     <text x="352" y="133" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11">Every surface, tint, and status role passes all 17</text>
     <text x="352" y="150" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11">built-in PrivacyNotes contrast checks with zero edits.</text>
 
