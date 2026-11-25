@@ -1,0 +1,32 @@
+; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme
+; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+; Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+[Theme]
+DisplayName=Cyclorama Dawn
+ThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}
+
+[Control Panel\Desktop]
+Wallpaper=%LOCALAPPDATA%\rfs-themes\windows\wallpapers\cyclorama-dawn-1080p.png
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[Control Panel\Colors]
+Background=5 5 7
+
+[VisualStyles]
+Path=%SystemRoot%\resources\themes\Aero\Aero.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+AutoColorization=0
+ColorizationColor=0xC4F06E2B
+VisualStyleVersion=10
+SystemMode=Dark
+AppMode=Dark
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[boot]
+SCRNSAVE.EXE=

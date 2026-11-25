@@ -11,6 +11,7 @@ telemetry ribbon) while depicting the authentic UI of each app archetype:
   - render_browser_preview()  : Chromium / Brave browser chrome
   - render_chat_preview()     : Discord / Vencord / BetterDiscord chat client
   - render_utility_preview()  : Desktop utilities (qBittorrent transfers, Flow Launcher spotlight)
+  - render_windows_preview()  : Windows 11 desktop wallpaper stage, Settings Colors, and taskbar
 """
 from __future__ import annotations
 
@@ -592,3 +593,174 @@ def render_utility_preview(app_name: str, slug: str, variant: dict, kind: str) -
         <text x="646" y="337" text-anchor="end" fill="{ui["text_soft"]}" font-family="ui-monospace,Consolas,monospace" font-size="9">DL 18.4 MiB/s  ·  UL 6.2 MiB/s</text>
         '''
     return _frame_shell(variant, f"[{slug}]", app_name, "AA PASS", body, _standard_swatches(variant))
+
+
+def render_windows_preview(
+    app_name: str,
+    slug: str,
+    variant: dict,
+    accent_palette: list[str] | None = None,
+    colorization_hex: str | None = None,
+) -> str:
+    ui = variant["ui"]
+    vid = variant["id"]
+    is_dark = variant["mode"] == "dark"
+    mode_text = "Dark" if is_dark else "Light"
+    sel = mix(ui["surface"], ui["accent"], 0.16 if is_dark else 0.12)
+
+    if accent_palette is None:
+        accent_palette = [
+            ui["accent_hover"], ui["accent"], ui["accent_vivid"], ui["accent_fill"],
+            ui["accent_fill_hover"], ui["secondary"], ui["secondary_vivid"], ui["secondary_fill"],
+        ]
+    active_hex = (colorization_hex or ui["accent_vivid"]).upper()
+
+    if vid == "cyclorama-dawn":
+        floor_stops = (
+            f'<stop offset="0%" stop-color="{ui["secondary_vivid"]}"/>'
+            f'<stop offset="24%" stop-color="{ui["steel_wash"]}"/>'
+            f'<stop offset="50%" stop-color="{ui["bg"]}"/>'
+            f'<stop offset="76%" stop-color="{ui["beacon_wash"]}"/>'
+            f'<stop offset="100%" stop-color="{ui["accent_vivid"]}"/>'
+        )
+        floor_opacity = "0.52"
+    elif vid == "cyclorama-steel":
+        floor_stops = (
+            f'<stop offset="0%" stop-color="{ui["steel_wash"]}"/>'
+            f'<stop offset="50%" stop-color="{ui["accent_vivid"]}"/>'
+            f'<stop offset="100%" stop-color="{ui["accent_fill"]}"/>'
+        )
+        floor_opacity = "0.52"
+    else:
+        floor_stops = (
+            f'<stop offset="0%" stop-color="{ui["steel_wash"]}"/>'
+            f'<stop offset="50%" stop-color="{ui["bg"]}"/>'
+            f'<stop offset="100%" stop-color="{ui["beacon_wash"]}"/>'
+        )
+        floor_opacity = "0.92"
+
+    slot_labels = ("L3", "L2", "L1", "ACC", "D1", "D2", "D3", "CMP")
+    pal_cells = []
+    for idx, hx in enumerate(accent_palette[:8]):
+        px = 216 + idx * 42
+        pal_cells.append(
+            f'<rect x="{px}" y="226" width="36" height="18" rx="3" fill="{hx}" stroke="{ui["border"]}" stroke-width="0.8"/>'
+            f'<text x="{px + 18}" y="256" text-anchor="middle" fill="{ui["mute"]}" '
+            f'font-family="ui-monospace,Consolas,monospace" font-size="7.5" font-weight="700">{slot_labels[idx]}</text>'
+        )
+
+    toggle_x = 516 if is_dark else 532
+    taskbar_bg = ui["rail"]
+    taskbar_icon_bg = ui["surface"] if is_dark else ui["raised"]
+
+    body = f'''
+    <defs>
+      <linearGradient id="win-floor-h" x1="0%" y1="0%" x2="100%" y2="0%">
+        {floor_stops}
+      </linearGradient>
+      <linearGradient id="win-floor-v" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+        <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1"/>
+      </linearGradient>
+      <mask id="win-floor-mask">
+        <rect x="0" y="178" width="660" height="134" fill="url(#win-floor-v)"/>
+      </mask>
+      <clipPath id="win-settings-clip">
+        <rect x="84" y="52" width="492" height="244" rx="8"/>
+      </clipPath>
+    </defs>
+
+    <!-- Desktop Cyclorama wallpaper stage (y=36..312) -->
+    <rect x="0" y="36" width="660" height="276" fill="{ui["bg"]}"/>
+    <rect x="0" y="178" width="660" height="134" fill="url(#win-floor-h)" fill-opacity="{floor_opacity}" mask="url(#win-floor-mask)"/>
+    <rect x="0" y="310" width="660" height="2" fill="url(#hbeam)" fill-opacity="0.45"/>
+
+    <!-- Windows 11 Settings: Personalization > Colors window (clipped to rx=8) -->
+    <g clip-path="url(#win-settings-clip)">
+      <rect x="84" y="52" width="492" height="244" fill="{ui["surface"]}"/>
+      <!-- Settings title bar -->
+      <rect x="84" y="52" width="492" height="26" fill="{ui["rail"]}"/>
+      <line x1="84" y1="78" x2="576" y2="78" stroke="{ui["border"]}" stroke-width="1"/>
+      <text x="98" y="69" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" font-weight="600">Settings  &gt;  Personalization  &gt;  Colors</text>
+      <!-- Win11 window controls (minimize, maximize, close) -->
+      <line x1="518" y1="65" x2="526" y2="65" stroke="{ui["mute"]}" stroke-width="1.2"/>
+      <rect x="537" y="61" width="7" height="7" fill="none" stroke="{ui["mute"]}" stroke-width="1.1"/>
+      <path d="M 556 61 L 563 68 M 563 61 L 556 68" stroke="{ui["mute"]}" stroke-width="1.2"/>
+
+      <!-- Settings left navigation rail -->
+      <rect x="84" y="78" width="117" height="218" fill="{ui["rail"]}"/>
+      <line x1="201" y1="78" x2="201" y2="296" stroke="{ui["border"]}" stroke-width="1"/>
+      <text x="98" y="100" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Background</text>
+      <rect x="92" y="109" width="102" height="24" rx="4" fill="{sel}"/>
+      <rect x="92" y="114" width="3" height="14" rx="1.5" fill="{ui["accent"]}"/>
+      <text x="103" y="124.5" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" font-weight="700">Colors</text>
+      <text x="98" y="149" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Themes</text>
+      <text x="98" y="171" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Taskbar</text>
+      <rect x="94" y="256" width="96" height="24" rx="4" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
+      <text x="142" y="271.5" text-anchor="middle" fill="{ui["signal"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">backup.reg OK</text>
+
+      <!-- Settings right pane: Mode & Active Accent -->
+      <rect x="216" y="90" width="346" height="44" rx="6" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
+      <text x="228" y="108" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Choose your mode</text>
+      <text x="228" y="123" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5">{escape(variant["name"])} · {mode_text} · Transparency ON</text>
+      <rect x="512" y="103" width="36" height="18" rx="9" fill="{ui["accent_fill"]}"/>
+      <circle cx="{toggle_x + 5}" cy="112" r="6" fill="#FFFFFF"/>
+
+      <!-- Active Accent Color pill card -->
+      <rect x="216" y="142" width="346" height="54" rx="6" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
+      <rect x="228" y="153" width="32" height="32" rx="6" fill="{active_hex}" stroke="{ui["border_strong"]}" stroke-width="0.9"/>
+      <text x="270" y="166" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Accent color  ·  {escape(variant["accentRole"])}</text>
+      <text x="270" y="182" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5">Colorization {active_hex} · Oklab 1080p + 4K</text>
+      <rect x="488" y="158" width="62" height="22" rx="4" fill="{ui["accent_fill"]}"/>
+      <text x="519" y="172.5" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">ACTIVE</text>
+
+      <!-- 8-slot Windows 11 AccentPalette strip -->
+      <text x="216" y="216" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700" letter-spacing="0.6">EXPLORER ACCENTPALETTE (8 SLOTS · 32 BYTES)</text>
+      {''.join(pal_cells)}
+      <text x="216" y="278" fill="{ui["text_soft"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5">Theme: {escape(variant["name"])}.theme  ·  Taskbar: Matte {mode_text}</text>
+    </g>
+    <rect x="84" y="52" width="492" height="244" rx="8" fill="none" stroke="{ui["border_strong"]}" stroke-width="1"/>
+
+    <!-- Matte Windows 11 Centered Taskbar (y=312..346) -->
+    <rect x="0" y="312" width="660" height="34" fill="{taskbar_bg}"/>
+    <line x1="0" y1="312" x2="660" y2="312" stroke="{ui["border"]}" stroke-width="1"/>
+
+    <!-- Centered Taskbar App Icons -->
+    <!-- Start 4-pane logo -->
+    <rect x="242" y="318" width="22" height="22" rx="4" fill="{taskbar_icon_bg}" stroke="{ui["border"]}" stroke-width="0.8"/>
+    <rect x="248" y="324" width="4.5" height="4.5" rx="0.6" fill="{ui["secondary"]}"/>
+    <rect x="253.5" y="324" width="4.5" height="4.5" rx="0.6" fill="{ui["secondary"]}"/>
+    <rect x="248" y="329.5" width="4.5" height="4.5" rx="0.6" fill="{ui["secondary"]}"/>
+    <rect x="253.5" y="329.5" width="4.5" height="4.5" rx="0.6" fill="{ui["secondary"]}"/>
+
+    <!-- Terminal icon (running dot) -->
+    <rect x="272" y="318" width="22" height="22" rx="4" fill="{taskbar_icon_bg}" stroke="{ui["border"]}" stroke-width="0.8"/>
+    <text x="283" y="332" text-anchor="middle" fill="{ui["text_soft"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">&gt;_</text>
+    <rect x="280" y="341.5" width="6" height="2" rx="1" fill="{ui["secondary"]}"/>
+
+    <!-- Code editor icon (running dot) -->
+    <rect x="302" y="318" width="22" height="22" rx="4" fill="{taskbar_icon_bg}" stroke="{ui["border"]}" stroke-width="0.8"/>
+    <text x="313" y="332" text-anchor="middle" fill="{ui["secondary"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">&#123;&#125;</text>
+    <rect x="310" y="341.5" width="6" height="2" rx="1" fill="{ui["secondary"]}"/>
+
+    <!-- Settings icon (ACTIVE with wide Accent underline pill!) -->
+    <rect x="332" y="317" width="24" height="24" rx="4" fill="{ui["raised"]}" stroke="{ui["border_strong"]}" stroke-width="0.9"/>
+    <circle cx="344" cy="329" r="5" fill="none" stroke="{ui["accent"]}" stroke-width="1.8"/>
+    <circle cx="344" cy="329" r="1.8" fill="{ui["accent"]}"/>
+    <rect x="337" y="341.5" width="14" height="2.4" rx="1.2" fill="{ui["accent"]}"/>
+
+    <!-- Browser icon -->
+    <rect x="364" y="318" width="22" height="22" rx="4" fill="{taskbar_icon_bg}" stroke="{ui["border"]}" stroke-width="0.8"/>
+    <circle cx="375" cy="329" r="5" fill="none" stroke="{ui["mute"]}" stroke-width="1.3"/>
+    <rect x="372" y="341.5" width="6" height="2" rx="1" fill="{ui["mute"]}"/>
+
+    <!-- Explorer icon -->
+    <rect x="394" y="318" width="22" height="22" rx="4" fill="{taskbar_icon_bg}" stroke="{ui["border"]}" stroke-width="0.8"/>
+    <rect x="399" y="325" width="12" height="8" rx="1.5" fill="none" stroke="{ui["warning"]}" stroke-width="1.3"/>
+
+    <!-- System tray right -->
+    <text x="646" y="328" text-anchor="end" fill="{ui["text_soft"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">21:00</text>
+    <text x="646" y="339" text-anchor="end" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="7.5">{escape(variant["lx"])} · WIN11</text>
+    '''
+    return _frame_shell(variant, f"[{slug}]", app_name, "WIN11 26H2", body, _standard_swatches(variant))

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Master orchestrator for Real-Fruit-Snacks/rfs-themes.
 
-Runs all 5 zero-dependency theme port builders in deterministic order, then
+Runs all 6 zero-dependency theme port builders in deterministic order, then
 compiles:
-  - apps/manifest.json        (repo-root machine-readable registry of all 20 apps)
+  - apps/manifest.json        (repo-root machine-readable registry of all 21 apps)
   - docs/assets/catalog.json  (normalized gallery catalog for docs/index.html)
 
 Zero external dependencies (Python 3.11+ standard library only).
@@ -29,13 +29,13 @@ MANIFEST_PATH = os.path.join(ROOT, "apps", "manifest.json")
 CATALOG_PATH = os.path.join(ROOT, "docs", "assets", "catalog.json")
 BRAND_SOURCE = "https://github.com/Real-Fruit-Snacks/rfs-brand"
 
-# Ordered categories and app slugs (20 apps across 5 categories)
+# Ordered categories and app slugs (21 apps across 5 categories)
 CATEGORY_SPEC: list[tuple[str, str, list[str]]] = [
     ("Editors & IDEs", "editors-ides", ["vscode", "neovim", "zed", "jetbrains"]),
     ("Terminals", "terminals", ["windows-terminal", "wezterm", "alacritty", "ghostty", "kitty"]),
     ("CLI & TUI", "cli-tui", ["starship", "oh-my-posh", "bat", "delta", "fzf"]),
     ("Notes & Writing", "notes-writing", ["privacynotes", "obsidian"]),
-    ("Browsers & Desktop", "browsers-desktop", ["chromium", "discord", "qbittorrent", "flow-launcher"]),
+    ("Browsers & Desktop", "browsers-desktop", ["chromium", "discord", "qbittorrent", "flow-launcher", "windows"]),
 ]
 
 PRIVACYNOTES_META = {
@@ -207,7 +207,7 @@ def _normalize_standard_app(raw: dict, expected_category: str) -> tuple[dict, di
 
 
 def run_builders() -> int:
-    """Execute all 5 theme builders in deterministic order."""
+    """Execute all 6 theme builders in deterministic order."""
     print("==> Running build-privacynotes.py")
     build_pn = _load_module("build_privacynotes", "build-privacynotes.py")
     rc = build_pn.main()
@@ -220,6 +220,7 @@ def run_builders() -> int:
         ("build_terminals", "build_terminals.py"),
         ("build_cli", "build_cli.py"),
         ("build_desktop", "build_desktop.py"),
+        ("build_windows", "build_windows.py"),
     ):
         print(f"==> Running {filename}")
         mod = _load_module(mod_name, filename)
@@ -229,7 +230,7 @@ def run_builders() -> int:
 
 
 def compile_registries() -> tuple[dict, dict]:
-    """Read all 20 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
+    """Read all 21 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
     brand_tokens = pal.load_brand_tokens()
     brand_version = brand_tokens["meta"]["version"]
 

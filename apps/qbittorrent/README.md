@@ -4,9 +4,9 @@ Three Qt QSS stylesheets paired with qBittorrent `config.json` transfer-list and
 
 ## Install
 
-1. Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `stylesheet.qss` and `config.json`.
-2. Bundle into a `.qbtheme` resource bundle with Qt `rcc` (or load `stylesheet.qss` via your qBittorrent theme pack).
-3. Open qBittorrent -> Tools -> Options -> **Behavior** -> enable **Use custom UI Theme**, pick the bundle, and restart.
+1. Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `config.json` and `stylesheet.qss`.
+2. **qBittorrent 5.x (recommended, no `rcc` needed):** Open Tools -> Options -> **Behavior** -> enable **Use custom UI theme** -> select `config.json` directly (`FolderThemeSource` automatically loads sibling `stylesheet.qss` alongside `colors.dark` / `colors.light`).
+3. **qBittorrent 4.x legacy:** Bundle `stylesheet.qss` and `config.json` into a `.qbtheme` resource file with Qt `rcc`, select it under Behavior -> Use custom UI theme, and restart qBittorrent.
 
 ## Included Files
 

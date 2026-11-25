@@ -1,0 +1,185 @@
+{
+  "app": "Windows 11",
+  "slug": "windows",
+  "category": "Browsers & Desktop",
+  "homepage": "https://www.microsoft.com/windows/",
+  "format": "Windows 11 .theme + Wallpapers + .ps1",
+  "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
+  "installSteps": [
+    "Run `.\\install-cyclorama-dawn.ps1` (or `steel` / `day`) from `apps/windows/` — it auto-detects `1080p` vs `4k` (`-Resolution auto|1080p|4k`), saves a one-time registry backup to `%LOCALAPPDATA%\\rfs-themes\\windows\\backup-pre-rfs.reg`, installs wallpapers & `.theme` files, sets the 32-byte `AccentPalette`, and refreshes Windows live.",
+    "Pass `-TintTaskbar` if you want Start/Taskbar tinted with the accent color (off by default so the taskbar stays matte `#050507` or Alabaster `#F5F7F9`).",
+    "Switch between **Cyclorama Dawn**, **Cyclorama Steel**, and **Cyclorama Day** anytime from **Settings -> Personalization -> Themes**, or double-click `backup-pre-rfs.reg` to revert."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/windows/Cyclorama Dawn.theme",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Theme (Cyclorama Dawn.theme)",
+      "path": "apps/windows/Cyclorama Dawn.theme"
+    },
+    {
+      "label": "Cyclorama Steel Theme (Cyclorama Steel.theme)",
+      "path": "apps/windows/Cyclorama Steel.theme"
+    },
+    {
+      "label": "Cyclorama Day Theme (Cyclorama Day.theme)",
+      "path": "apps/windows/Cyclorama Day.theme"
+    },
+    {
+      "label": "Cyclorama Dawn Installer (install-cyclorama-dawn.ps1)",
+      "path": "apps/windows/install-cyclorama-dawn.ps1"
+    },
+    {
+      "label": "Cyclorama Steel Installer (install-cyclorama-steel.ps1)",
+      "path": "apps/windows/install-cyclorama-steel.ps1"
+    },
+    {
+      "label": "Cyclorama Day Installer (install-cyclorama-day.ps1)",
+      "path": "apps/windows/install-cyclorama-day.ps1"
+    },
+    {
+      "label": "Cyclorama Dawn Wallpaper 1080p",
+      "path": "apps/windows/wallpapers/cyclorama-dawn-1080p.png"
+    },
+    {
+      "label": "Cyclorama Dawn Wallpaper 4K",
+      "path": "apps/windows/wallpapers/cyclorama-dawn-4k.png"
+    },
+    {
+      "label": "Cyclorama Steel Wallpaper 1080p",
+      "path": "apps/windows/wallpapers/cyclorama-steel-1080p.png"
+    },
+    {
+      "label": "Cyclorama Steel Wallpaper 4K",
+      "path": "apps/windows/wallpapers/cyclorama-steel-4k.png"
+    },
+    {
+      "label": "Cyclorama Day Wallpaper 1080p",
+      "path": "apps/windows/wallpapers/cyclorama-day-1080p.png"
+    },
+    {
+      "label": "Cyclorama Day Wallpaper 4K",
+      "path": "apps/windows/wallpapers/cyclorama-day-4k.png"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
+      "preview": "apps/windows/previews/cyclorama-dawn.svg",
+      "file": "apps/windows/Cyclorama Dawn.theme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Dawn Windows 11 .theme",
+      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Dawn\nThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-dawn-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4F06E2B\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Colorize",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "Dark1",
+          "hex": "#CC5016"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
+      "preview": "apps/windows/previews/cyclorama-steel.svg",
+      "file": "apps/windows/Cyclorama Steel.theme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Steel Windows 11 .theme",
+      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Steel\nThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-steel-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC41F547A\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Colorize",
+          "hex": "#1F547A"
+        },
+        {
+          "label": "Dark1",
+          "hex": "#18496B"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
+      "preview": "apps/windows/previews/cyclorama-day.svg",
+      "file": "apps/windows/Cyclorama Day.theme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Day Windows 11 .theme",
+      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Day\nThemeId={3D9B7F12-161C-5234-9FC0-7951A0F89626}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-day-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=245 247 249\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4AD3D0A\nVisualStyleVersion=10\nSystemMode=Light\nAppMode=Light\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Colorize",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Dark1",
+          "hex": "#8B2F06"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

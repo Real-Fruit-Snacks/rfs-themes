@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Verify rfs-themes integrity across all 20 apps (60 variants), WCAG AA contrast,
-native format schemas, relative links, SVG previews, and Cyclorama Dawn invariants.
+"""Verify rfs-themes integrity across all 21 apps (63 variants), WCAG AA contrast,
+native format schemas, relative links, SVG previews, Oklab PNG wallpapers, and
+Cyclorama Dawn invariants.
 
 Zero external dependencies (Python 3.11+ standard library only).
 
@@ -10,6 +11,7 @@ Exit codes (RFS CLI standard):
 """
 from __future__ import annotations
 
+import configparser
 import hashlib
 import importlib.util
 import json
@@ -17,11 +19,13 @@ import os
 import plistlib
 import re
 import shutil
+import struct
 import subprocess
 import sys
 import tomllib
 import urllib.parse
 import xml.etree.ElementTree as ET
+import zlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -40,6 +44,7 @@ HEX6_RE = re.compile(r"^#[0-9A-Fa-f]{6}$")
 HEX6_8_RE = re.compile(r"^#[0-9A-Fa-f]{6}(?:[0-9A-Fa-f]{2})?$")
 XAML_HEX_RE = re.compile(r"^#(?:[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
 ICLS_HEX_RE = re.compile(r"^[0-9A-F]{6}$")
+GUID_RE = re.compile(r"^\{[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\}$")
 
 LUA_RESERVED = {
     "and", "break", "do", "else", "elseif", "end", "false", "for",
@@ -53,7 +58,49 @@ EXPECTED_APPS = {
     "windows-terminal", "wezterm", "alacritty", "ghostty", "kitty",
     "starship", "oh-my-posh", "bat", "delta", "fzf",
     "privacynotes", "obsidian",
-    "chromium", "discord", "qbittorrent", "flow-launcher",
+    "chromium", "discord", "qbittorrent", "flow-launcher", "windows",
+}
+
+WINDOWS_EXPECTED_SPECS: dict[str, dict] = {
+    "cyclorama-dawn": {
+        "mode_win": "Dark",
+        "light_val": 0,
+        "bg_rgb_str": "5 5 7",
+        "bg_rgb": (5, 5, 7),
+        "colorization_argb": "0xC4F06E2B",
+        "accent_abgr": "0xFF2B6EF0",
+        "start_abgr": "0xFF1650CC",
+        "palette": [
+            "#FFD2B3", "#FFB07A", "#FF9254", "#F06E2B",
+            "#CC5016", "#9E3B0C", "#5C2006", "#74B8E8",
+        ],
+    },
+    "cyclorama-steel": {
+        "mode_win": "Dark",
+        "light_val": 0,
+        "bg_rgb_str": "5 5 7",
+        "bg_rgb": (5, 5, 7),
+        "colorization_argb": "0xC41F547A",
+        "accent_abgr": "0xFF7A541F",
+        "start_abgr": "0xFF6B4918",
+        "palette": [
+            "#CDE7FA", "#99CDF2", "#74B8E8", "#1F547A",
+            "#18496B", "#123955", "#0B2436", "#FF9254",
+        ],
+    },
+    "cyclorama-day": {
+        "mode_win": "Light",
+        "light_val": 1,
+        "bg_rgb_str": "245 247 249",
+        "bg_rgb": (245, 247, 249),
+        "colorization_argb": "0xC4AD3D0A",
+        "accent_abgr": "0xFF0A3DAD",
+        "start_abgr": "0xFF062F8B",
+        "palette": [
+            "#F8C9B0", "#F09B6E", "#D45B24", "#AD3D0A",
+            "#8B2F06", "#6A2304", "#471602", "#18496B",
+        ],
+    },
 }
 
 
@@ -94,6 +141,90 @@ def check_balanced_delimiters(text: str) -> bool:
     return not stack
 
 
+def strip_ps1_strings_and_comments(ps1_txt: str) -> str:
+    no_here = re.sub(r"@'[\s\S]*?'@|@\"[\s\S]*?\"@", '""', ps1_txt)
+    no_blk_cmt = re.sub(r"<#[\s\S]*?#>", "", no_here)
+    no_str = re.sub(r'"(?:[^"`]|`.)*"|\'(?:[^\']|\'\')*\'', '""', no_blk_cmt)
+    return re.sub(r"#[^\n]*", "", no_str)
+
+
+def parse_ini_strict(text: str) -> configparser.RawConfigParser:
+    cp = configparser.RawConfigParser(interpolation=None, strict=True)
+    cp.optionxform = lambda optionstr: optionstr
+    cp.read_string(text)
+    return cp
+
+
+def verify_png_file(path: str, expected_size: tuple[int, int], expected_top_rgb: tuple[int, int, int]) -> list[str]:
+    errs: list[str] = []
+    rel = os.path.relpath(path, ROOT)
+    if not os.path.isfile(path):
+        return [f"missing PNG wallpaper: {rel}"]
+    data = open(path, "rb").read()
+    if len(data) < 33 or data[:8] != b"\x89PNG\r\n\x1a\n":
+        return [f"{rel}: invalid PNG signature"]
+
+    pos = 8
+    chunks: list[str] = []
+    idat_parts: list[bytes] = []
+    dims: tuple[int, int] | None = None
+
+    while pos + 12 <= len(data):
+        length = struct.unpack(">I", data[pos : pos + 4])[0]
+        ctype_b = data[pos + 4 : pos + 8]
+        if pos + 12 + length > len(data):
+            errs.append(f"{rel}: truncated PNG chunk {ctype_b!r}")
+            break
+        cdata = data[pos + 8 : pos + 8 + length]
+        crc_read = struct.unpack(">I", data[pos + 8 + length : pos + 12 + length])[0]
+        crc_calc = zlib.crc32(cdata, zlib.crc32(ctype_b)) & 0xFFFFFFFF
+        if crc_read != crc_calc:
+            errs.append(f"{rel}: CRC32 mismatch in chunk {ctype_b.decode('latin1')}")
+        ctype = ctype_b.decode("latin1")
+        chunks.append(ctype)
+        if ctype == "IHDR":
+            if length != 13:
+                errs.append(f"{rel}: invalid IHDR length {length}")
+            else:
+                w, h, bit_depth, color_type, comp, filt, interlace = struct.unpack(">IIBBBBB", cdata)
+                dims = (w, h)
+                if (bit_depth, color_type, comp, filt, interlace) != (8, 2, 0, 0, 0):
+                    errs.append(
+                        f"{rel}: unexpected IHDR format {(bit_depth, color_type, comp, filt, interlace)} (expected 8-bit RGB)"
+                    )
+        elif ctype == "IDAT":
+            idat_parts.append(cdata)
+        pos += 12 + length
+        if ctype == "IEND":
+            break
+
+    if pos != len(data):
+        errs.append(f"{rel}: trailing/unparsed bytes ({len(data) - pos})")
+    if dims != expected_size:
+        errs.append(f"{rel}: IHDR dimensions {dims} != expected {expected_size}")
+    if "tIME" in chunks:
+        errs.append(f"{rel}: non-deterministic tIME chunk forbidden")
+    for req_chunk in ("IHDR", "sRGB", "IDAT", "IEND"):
+        if req_chunk not in chunks:
+            errs.append(f"{rel}: missing required PNG chunk {req_chunk}")
+    if chunks and (chunks[0] != "IHDR" or chunks[-1] != "IEND"):
+        errs.append(f"{rel}: invalid PNG chunk ordering {chunks}")
+
+    if idat_parts and dims == expected_size:
+        try:
+            raw = zlib.decompress(b"".join(idat_parts))
+            w, h = dims
+            expected_raw_len = h * (1 + w * 3)
+            if len(raw) != expected_raw_len:
+                errs.append(f"{rel}: decompressed scanline byte count {len(raw)} != {expected_raw_len}")
+            elif raw[0] == 0 and tuple(raw[1:4]) != expected_top_rgb:
+                errs.append(f"{rel}: top scanline RGB {tuple(raw[1:4])} != expected matte stage {expected_top_rgb}")
+        except zlib.error as exc:
+            errs.append(f"{rel}: invalid zlib IDAT stream ({exc})")
+
+    return errs
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -131,15 +262,15 @@ def main() -> int:
         ok(f"rfs_palette WCAG AA contrast verified ({len(pal_checks)}/{len(pal_checks)} checks >= 4.5:1)")
 
     # ------------------------------------------------------------------
-    # 3. apps/manifest.json validation (20 apps x 3 variants)
+    # 3. apps/manifest.json validation (21 apps x 3 variants = 63)
     # ------------------------------------------------------------------
     e0 = len(errors)
     manifest_path = os.path.join(ROOT, "apps", "manifest.json")
     manifest = json.loads(read_utf8(manifest_path))
     m_apps = manifest.get("apps", [])
     m_slugs = [a.get("slug") for a in m_apps]
-    if len(m_apps) != 20 or set(m_slugs) != EXPECTED_APPS:
-        fail(f"apps/manifest.json expected 20 canonical apps, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
+    if len(m_apps) != 21 or set(m_slugs) != EXPECTED_APPS:
+        fail(f"apps/manifest.json expected 21 canonical apps, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
     for app in m_apps:
         slug = app["slug"]
         for rel in (app["path"], app["data"]):
@@ -155,7 +286,7 @@ def main() -> int:
         ok(f"apps/manifest.json valid ({len(m_apps)} apps, {sum(len(a['variants']) for a in m_apps)} variants)")
 
     # ------------------------------------------------------------------
-    # 4. docs/assets/catalog.json validation
+    # 4. docs/assets/catalog.json validation (21 apps x 3 variants = 63)
     # ------------------------------------------------------------------
     e0 = len(errors)
     catalog_path = os.path.join(ROOT, "docs", "assets", "catalog.json")
@@ -167,8 +298,8 @@ def main() -> int:
         c_apps = catalog.get("apps", [])
         if [a.get("slug") for a in c_apps] != m_slugs:
             fail("docs/assets/catalog.json app order/slugs do not match apps/manifest.json")
-        if catalog.get("stats", {}).get("apps") != 20 or catalog.get("stats", {}).get("variants") != 60:
-            fail(f"catalog.json stats invalid: {catalog.get('stats')}")
+        if catalog.get("stats", {}).get("apps") != 21 or catalog.get("stats", {}).get("variants") != 63:
+            fail(f"catalog.json stats invalid (expected 21 apps, 63 variants): {catalog.get('stats')}")
         for app in c_apps:
             slug = app["slug"]
             steps = app.get("installSteps", [])
@@ -206,6 +337,11 @@ def main() -> int:
                         tomllib.loads(snip)
                     except Exception as exc:
                         fail(f"catalog {slug}/{vid}: invalid TOML copySnippet ({exc})")
+                elif lang == "ini":
+                    try:
+                        parse_ini_strict(snip)
+                    except Exception as exc:
+                        fail(f"catalog {slug}/{vid}: invalid INI copySnippet ({exc})")
                 elif lang == "css" and not check_balanced_braces_css(snip):
                     fail(f"catalog {slug}/{vid}: unbalanced CSS copySnippet")
                 elif lang == "xml":
@@ -220,10 +356,10 @@ def main() -> int:
                     if not sw.get("label") or not HEX6_RE.match(sw.get("hex", "")):
                         fail(f"catalog {slug}/{vid}: invalid swatch {sw}")
         if len(errors) == e0:
-            ok("docs/assets/catalog.json valid (20 apps, 60 variants, snippets & swatches verified)")
+            ok("docs/assets/catalog.json valid (21 apps, 63 variants, snippets & swatches verified)")
 
     # ------------------------------------------------------------------
-    # 5. All 60 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
+    # 5. All 63 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
     # ------------------------------------------------------------------
     e0 = len(errors)
     svg_count = 0
@@ -250,12 +386,22 @@ def main() -> int:
                     expected_steel = pal.VARIANTS[vid]["ui"]["accent"] if vid == "cyclorama-steel" else pal.VARIANTS[vid]["ui"]["secondary"]
                     if ribbon["STEEL"] != expected_steel:
                         fail(f"{slug}/{vid}.svg bottom ribbon STEEL swatch is {ribbon['STEEL']} (expected {expected_steel})")
+            if slug == "windows":
+                # Ensure Settings window (x=84, y=52) has its own clipPath so the left rail does not bleed over rx=8 bottom-left corner
+                clips = list(svg_root.iter("{http://www.w3.org/2000/svg}clipPath"))
+                has_win_clip = any(
+                    r.attrib.get("x") in ("84", "84.5")
+                    for cp_el in clips
+                    for r in cp_el.iter("{http://www.w3.org/2000/svg}rect")
+                )
+                if not has_win_clip:
+                    fail(f"windows/{vid}.svg Settings window missing inner <clipPath> (left rail bleeds over rounded bottom-left border)")
             svg_count += 1
-    if len(errors) == e0 and svg_count == 60:
-        ok("all 60 SVG preview pairs synced, XML-valid, and swatch-accurate")
+    if len(errors) == e0 and svg_count == 63:
+        ok("all 63 SVG preview pairs synced, XML-valid, and swatch-accurate")
 
     # ------------------------------------------------------------------
-    # 6. Native format schema & syntax verification for ALL 20 apps
+    # 6. Native format schema & syntax verification for ALL 21 apps
     # ------------------------------------------------------------------
 
     # 6.1 PrivacyNotes
@@ -426,7 +572,7 @@ def main() -> int:
     if len(errors) == e0:
         ok("jetbrains: plugin.xml, 3 .theme.json UI themes, and 3 .icls schemes verified")
 
-    # 6.6 Windows Terminal + PSReadLine
+    # 6.6 Windows Terminal + PSReadLine (including PSReadLine 2.0 / <2.1.0 guard)
     e0 = len(errors)
     wt_dir = os.path.join(ROOT, "apps", "windows-terminal")
     wt_req_keys = {
@@ -438,6 +584,7 @@ def main() -> int:
     wt_schemes = json.loads(read_utf8(os.path.join(wt_dir, "schemes.json")))
     if not isinstance(wt_schemes, list) or len(wt_schemes) != 3:
         fail("windows-terminal/schemes.json must be a 3-item array")
+    ps1_files_to_parse: list[str] = []
     for idx, vid in enumerate(EXPECTED_VARIANTS):
         single = json.loads(read_utf8(os.path.join(wt_dir, f"{vid}.json")))
         if idx < len(wt_schemes) and single != wt_schemes[idx]:
@@ -447,13 +594,24 @@ def main() -> int:
         for k, v in single.items():
             if k != "name" and not HEX6_RE.match(v):
                 fail(f"windows-terminal/{vid}.json invalid hex {k}={v!r}")
-        ps1_txt = read_utf8(os.path.join(wt_dir, "psreadline", f"{vid}.ps1"))
-        if "Set-PSReadLineOption" not in ps1_txt or not check_balanced_delimiters(
-            re.sub(r"#[^\n]*", "", re.sub(r'"(?:[^"`]|`.)*"|\'[^\']*\'', '""', ps1_txt))
-        ):
+        psrl_path = os.path.join(wt_dir, "psreadline", f"{vid}.ps1")
+        ps1_files_to_parse.append(psrl_path)
+        ps1_txt = read_utf8(psrl_path)
+        if "Set-PSReadLineOption" not in ps1_txt or not check_balanced_delimiters(strip_ps1_strings_and_comments(ps1_txt)):
             fail(f"windows-terminal/psreadline/{vid}.ps1 failed syntax/brace check")
+        # Backport check: InlinePrediction must NOT be in the base hashtable; must be guarded by 2.1.0 version check
+        guard_m = re.search(
+            r"if\s*\(\s*\(Get-Module\s+PSReadLine\)\.Version\s*-ge\s*\[version\]['\"]2\.1\.0['\"]\s*\)\s*\{([^}]*)\}",
+            ps1_txt,
+            flags=re.S,
+        )
+        if not guard_m or "InlinePrediction" not in guard_m.group(1):
+            fail(f"windows-terminal/psreadline/{vid}.ps1 missing PSReadLine 2.1.0 version guard for InlinePrediction")
+        outside_guard = ps1_txt[: guard_m.start()] if guard_m else ps1_txt
+        if "InlinePrediction" in outside_guard:
+            fail(f"windows-terminal/psreadline/{vid}.ps1 sets InlinePrediction outside 2.1.0 version guard")
     if len(errors) == e0:
-        ok("windows-terminal: schemes.json, 3 scheme JSONs, and 3 PSReadLine .ps1 scripts verified")
+        ok("windows-terminal: schemes.json, 3 scheme JSONs, and 3 PSReadLine 2.0-safe .ps1 scripts verified")
 
     # 6.7 WezTerm, Alacritty, Starship (.toml via tomllib)
     e0 = len(errors)
@@ -583,7 +741,9 @@ def main() -> int:
     }
     for vid in EXPECTED_VARIANTS:
         sh_txt = read_utf8(os.path.join(ROOT, "apps", "fzf", f"{vid}.sh"))
-        ps_txt = read_utf8(os.path.join(ROOT, "apps", "fzf", f"{vid}.ps1"))
+        fzf_ps_path = os.path.join(ROOT, "apps", "fzf", f"{vid}.ps1")
+        ps1_files_to_parse.append(fzf_ps_path)
+        ps_txt = read_utf8(fzf_ps_path)
         if "FZF_DEFAULT_OPTS" not in sh_txt or "FZF_DEFAULT_OPTS" not in ps_txt:
             fail(f"fzf/{vid}: missing FZF_DEFAULT_OPTS in .sh or .ps1")
         sh_map = dict(re.findall(r"([a-z+]+):(#[0-9A-Fa-f]{6})", sh_txt))
@@ -643,21 +803,35 @@ def main() -> int:
     if len(errors) == e0:
         ok("discord: 3 Vencord/BetterDiscord .theme.css files verified")
 
-    # 6.16 qBittorrent
+    # 6.16 qBittorrent (including 5.x colors.dark / colors.light FolderThemeSource backport)
     e0 = len(errors)
+    qb_root = os.path.join(ROOT, "apps", "qbittorrent")
+    qb_readme = read_utf8(os.path.join(qb_root, "README.md"))
+    qb_themes = json.loads(read_utf8(os.path.join(qb_root, "themes.json")))
+    if "config.json" not in qb_readme or "FolderThemeSource" not in qb_readme:
+        fail("qbittorrent/README.md missing qBittorrent 5.x config.json (FolderThemeSource) guidance")
+    if "config.json" not in qb_themes.get("install", ""):
+        fail("qbittorrent/themes.json install summary must reference config.json")
     for vid in EXPECTED_VARIANTS:
-        qb_dir = os.path.join(ROOT, "apps", "qbittorrent", vid)
+        qb_dir = os.path.join(qb_root, vid)
         qb_cfg = json.loads(read_utf8(os.path.join(qb_dir, "config.json")))
+        mode_key = "colors.light" if vid == "cyclorama-day" else "colors.dark"
+        forbidden_key = "colors.dark" if vid == "cyclorama-day" else "colors.light"
         if not isinstance(qb_cfg.get("colors"), dict) or len(qb_cfg["colors"]) < 8:
             fail(f"qbittorrent/{vid}/config.json missing colors dict")
-        for qk, qhx in qb_cfg.get("colors", {}).items():
-            if not HEX6_RE.match(qhx):
-                fail(f"qbittorrent/{vid}/config.json invalid hex {qk}={qhx!r}")
+        if not isinstance(qb_cfg.get(mode_key), dict) or qb_cfg.get(mode_key) != qb_cfg.get("colors"):
+            fail(f"qbittorrent/{vid}/config.json missing or mismatched {mode_key} dict")
+        if forbidden_key in qb_cfg:
+            fail(f"qbittorrent/{vid}/config.json must not contain {forbidden_key}")
+        for sec_k in ("colors", mode_key):
+            for qk, qhx in qb_cfg.get(sec_k, {}).items():
+                if not HEX6_RE.match(qhx):
+                    fail(f"qbittorrent/{vid}/config.json invalid hex {sec_k}[{qk}]={qhx!r}")
         qss = read_utf8(os.path.join(qb_dir, "stylesheet.qss"))
         if not check_balanced_braces_css(qss):
             fail(f"qbittorrent/{vid}/stylesheet.qss unbalanced braces")
     if len(errors) == e0:
-        ok("qbittorrent: 3 config.json palettes + 3 Qt QSS stylesheets verified")
+        ok("qbittorrent: 3 config.json palettes (colors + colors.dark/light) + 3 Qt QSS stylesheets verified")
 
     # 6.17 Flow Launcher (WPF XAML)
     e0 = len(errors)
@@ -685,8 +859,150 @@ def main() -> int:
     if len(errors) == e0:
         ok("flow-launcher: 3 WPF ResourceDictionary .xaml themes verified")
 
+    # 6.18 Windows 11 (.theme INI + 6 Oklab PNG wallpapers + 3 backup-first .ps1 installers)
+    e0 = len(errors)
+    win_dir = os.path.join(ROOT, "apps", "windows")
+    seen_theme_guids: set[str] = set()
+
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        wspec = WINDOWS_EXPECTED_SPECS[vid]
+
+        # A. Verify .theme INI schema & exact values
+        theme_file = os.path.join(win_dir, f"{v['name']}.theme")
+        if not os.path.isfile(theme_file):
+            fail(f"windows missing {v['name']}.theme")
+        else:
+            raw_theme_b = open(theme_file, "rb").read()
+            if raw_theme_b.startswith(b"\xef\xbb\xbf"):
+                fail(f"windows/{v['name']}.theme must not start with UTF-8 BOM (breaks Win32 GetPrivateProfileStringW)")
+            theme_txt = raw_theme_b.decode("utf-8")
+            try:
+                cp = parse_ini_strict(theme_txt)
+            except Exception as exc:
+                fail(f"windows/{v['name']}.theme INI parse error: {exc}")
+                cp = None
+            if cp is not None:
+                for req_sec in ("Theme", r"Control Panel\Desktop", r"Control Panel\Colors", "VisualStyles", "MasterThemeSelector", "boot"):
+                    if not cp.has_section(req_sec):
+                        fail(f"windows/{v['name']}.theme missing [{req_sec}]")
+                if cp.get("Theme", "DisplayName", fallback="") != v["name"]:
+                    fail(f"windows/{v['name']}.theme DisplayName mismatch")
+                t_guid = cp.get("Theme", "ThemeId", fallback="")
+                if not GUID_RE.match(t_guid) or t_guid in seen_theme_guids:
+                    fail(f"windows/{v['name']}.theme invalid or duplicate ThemeId={t_guid!r}")
+                seen_theme_guids.add(t_guid)
+                expected_wp = f"%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\{vid}-1080p.png"
+                if cp.get(r"Control Panel\Desktop", "Wallpaper", fallback="") != expected_wp:
+                    fail(f"windows/{v['name']}.theme Wallpaper != {expected_wp!r}")
+                if cp.get(r"Control Panel\Colors", "Background", fallback="") != wspec["bg_rgb_str"]:
+                    fail(f"windows/{v['name']}.theme Background != {wspec['bg_rgb_str']!r}")
+                if cp.get("VisualStyles", "ColorizationColor", fallback="") != wspec["colorization_argb"]:
+                    fail(f"windows/{v['name']}.theme ColorizationColor != {wspec['colorization_argb']!r}")
+                if cp.get("VisualStyles", "SystemMode", fallback="") != wspec["mode_win"]:
+                    fail(f"windows/{v['name']}.theme SystemMode != {wspec['mode_win']!r}")
+                if cp.get("VisualStyles", "AppMode", fallback="") != wspec["mode_win"]:
+                    fail(f"windows/{v['name']}.theme AppMode != {wspec['mode_win']!r}")
+
+        # B. Verify 1080p (1920x1080) and 4K (3840x2160) PNG wallpapers
+        wp_dir = os.path.join(win_dir, "wallpapers")
+        for res_tag, exp_dims in (("1080p", (1920, 1080)), ("4k", (3840, 2160))):
+            for png_err in verify_png_file(os.path.join(wp_dir, f"{vid}-{res_tag}.png"), exp_dims, wspec["bg_rgb"]):
+                fail(png_err)
+
+        # C. Verify backup-first PowerShell installer (install-cyclorama-*.ps1)
+        inst_path = os.path.join(win_dir, f"install-{vid}.ps1")
+        ps1_files_to_parse.append(inst_path)
+        if not os.path.isfile(inst_path):
+            fail(f"windows missing install-{vid}.ps1")
+            continue
+        inst_txt = read_utf8(inst_path)
+        if not check_balanced_delimiters(strip_ps1_strings_and_comments(inst_txt)):
+            fail(f"windows/install-{vid}.ps1 unbalanced delimiters")
+
+        # C1. Registry backup safety: must NOT overwrite BackupRegPath directly in reg.exe export,
+        # and must guard against PS 5.1 $ErrorActionPreference='Stop' RemoteException on reg.exe 2>$null!
+        if re.search(r"reg\.exe\s+export\s+\S+\s+\$BackupRegPath", inst_txt, re.I):
+            fail(f"windows/install-{vid}.ps1 overwrites $BackupRegPath across multiple reg.exe export calls")
+        if "backup-pre-rfs.reg" not in inst_txt or "Select-Object -Skip 1" not in inst_txt:
+            fail(f"windows/install-{vid}.ps1 missing multi-key .reg header merge into backup-pre-rfs.reg")
+        if re.search(r"reg\.exe\s+export[^\n]*2>\$null", inst_txt) and not re.search(
+            r"\$ErrorActionPreference\s*=\s*['\"]Continue['\"]", inst_txt
+        ):
+            fail(
+                f"windows/install-{vid}.ps1 calls `reg.exe export ... 2>$null` under `$ErrorActionPreference = 'Stop'` "
+                "(throws terminating RemoteException in Windows PowerShell 5.1 if a registry key is absent)"
+            )
+
+        # C2. DPI-aware 4K auto-detection: Win32_VideoController / GetDeviceCaps must NOT be unreachable inside
+        # a catch block behind DPI-virtualized System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width!
+        auto_m = re.search(r"if\s*\(\$Resolution\s*-eq\s*'auto'\)\s*\{([\s\S]*?)\n\}", inst_txt)
+        if not auto_m:
+            fail(f"windows/install-{vid}.ps1 missing `-Resolution -eq 'auto'` block")
+        else:
+            auto_blk = auto_m.group(1)
+            if re.search(
+                r"Screen\]::PrimaryScreen\.Bounds\.Width[\s\S]*?\}\s*catch\s*\{[\s\S]*?Win32_VideoController",
+                auto_blk,
+            ):
+                fail(
+                    f"windows/install-{vid}.ps1 queries Win32_VideoController only when Screen.PrimaryScreen.Bounds.Width "
+                    "throws (on 150%/200%-scaled 4K displays in PS 5.1, WinForms returns 2560/1920 without throwing)"
+                )
+
+        # C3. Exact DWord byte order (ABGR vs AARRGGBB) & bare 0xXXXXXXXX Int32 literal check
+        expected_dwords = {
+            "AppsUseLightTheme": str(wspec["light_val"]),
+            "SystemUsesLightTheme": str(wspec["light_val"]),
+            "AccentColor": wspec["accent_abgr"],
+            "ColorizationColor": wspec["colorization_argb"],
+            "ColorizationAfterglow": wspec["colorization_argb"],
+            "AccentColorMenu": wspec["accent_abgr"],
+            "StartColorMenu": wspec["start_abgr"],
+        }
+        for reg_name, exp_lit in expected_dwords.items():
+            pat = rf"-Name\s+'{re.escape(reg_name)}'\s+-Value\s+({re.escape(exp_lit)})\s+-Type\s+DWord\b"
+            if not re.search(pat, inst_txt):
+                fail(f"windows/install-{vid}.ps1 missing exact DWord `{reg_name} = {exp_lit}`")
+
+        # C4. Exact 32-byte Explorer AccentPalette (8 x [R, G, B, 0x00])
+        pal_m = re.search(r"\[byte\[\]\]\$AccentPalette\s*=\s*@\(([\s\S]*?)\)", inst_txt)
+        if not pal_m:
+            fail(f"windows/install-{vid}.ps1 missing [byte[]]$AccentPalette array")
+        else:
+            byte_vals = [int(tok, 16) for tok in re.findall(r"0x[0-9A-Fa-f]{2}", pal_m.group(1))]
+            expected_bytes: list[int] = []
+            for slot_hx in wspec["palette"]:
+                sr, sg, sb = pal.hex_to_rgb(slot_hx)
+                expected_bytes.extend((sr, sg, sb, 0x00))
+            if len(byte_vals) != 32 or byte_vals != expected_bytes:
+                fail(f"windows/install-{vid}.ps1 AccentPalette bytes mismatch (got {len(byte_vals)} bytes)")
+
+        # C5. P/Invoke live apply & broadcast
+        for req_tok in ("SystemParametersInfoW", "0x0014", "SendMessageTimeoutW", "ImmersiveColorSet"):
+            if req_tok not in inst_txt:
+                fail(f"windows/install-{vid}.ps1 missing {req_tok}")
+
+    # Optional native PowerShell AST Parser check when running on Windows
+    ps_exe = shutil.which("powershell.exe") or shutil.which("pwsh")
+    if ps_exe and ps1_files_to_parse:
+        ps_list_lit = ", ".join("'" + p.replace("'", "''") + "'" for p in ps1_files_to_parse)
+        ps_cmd = (
+            f"$files = @({ps_list_lit}); $bad = 0; "
+            "foreach ($f in $files) { $t = $null; $e = $null; "
+            "[void][System.Management.Automation.Language.Parser]::ParseFile($f, [ref]$t, [ref]$e); "
+            "if ($e.Count -gt 0) { Write-Error ($f + ': ' + $e[0].Message); $bad++ } }; "
+            "if ($bad -gt 0) { exit 2 }"
+        )
+        ps_res = subprocess.run([ps_exe, "-NoProfile", "-Command", ps_cmd], capture_output=True, text=True)
+        if ps_res.returncode != 0:
+            fail(f"PowerShell AST parser reported syntax error(s): {ps_res.stderr.strip()}")
+
+    if len(errors) == e0:
+        ok("windows: 3 .theme packs, 6 Oklab PNG wallpapers (1080p + 4K), and 3 .ps1 installers verified")
+
     # ------------------------------------------------------------------
-    # 7. Relative Markdown & HTML link integrity
+    # 7. Relative Markdown & HTML link integrity + 21-app/63-variant telemetry
     # ------------------------------------------------------------------
     e0 = len(errors)
     md_files = [
@@ -728,6 +1044,12 @@ def main() -> int:
 
     docs_html_path = os.path.join(ROOT, "docs", "index.html")
     docs_html = read_utf8(docs_html_path)
+    for req_html_copy in ("21 · Across 5 categories", "63 · Dawn, Steel, Day", "Showing 21 of 21 apps"):
+        if req_html_copy not in docs_html:
+            fail(f"docs/index.html missing updated 21-app/63-variant copy: {req_html_copy!r}")
+    if re.search(r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20)\b", docs_html, re.I):
+        fail("docs/index.html contains stale 20-app / 60-variant telemetry copy")
+
     doc_ids = set(re.findall(r'\bid="([^"]+)"', docs_html))
     for m in html_attr_rx.finditer(docs_html):
         u = m.group(1).strip()
@@ -747,7 +1069,7 @@ def main() -> int:
                     fail(f"missing SVG symbol #{parts[1]} referenced in docs/index.html")
 
     if len(errors) == e0:
-        ok(f"all relative links & assets verified across {len(md_files)} Markdown files and docs/index.html")
+        ok(f"all relative links & 21-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
 
     # ------------------------------------------------------------------
     # 8. Brand & hygiene invariants (oklch, modals, innerHTML, URLs, CRLF)
@@ -770,7 +1092,7 @@ def main() -> int:
             js_probe = (
                 f"{m_fn.group(0)}\n"
                 f"const cat = JSON.parse(require('fs').readFileSync({json.dumps(catalog_path)}, 'utf8'));\n"
-                "const allowed = {json:['.json'],toml:['.toml'],lua:['.lua'],css:['.css'],sh:['.sh'],ps1:['.ps1'],ini:['.gitconfig','.ini'],conf:['.conf',''],xml:['.xaml','.xml'],pn1:['.txt']};\n"
+                "const allowed = {json:['.json'],toml:['.toml'],lua:['.lua'],css:['.css'],sh:['.sh'],ps1:['.ps1'],ini:['.gitconfig','.ini','.theme'],conf:['.conf',''],xml:['.xaml','.xml'],pn1:['.txt']};\n"
                 "for (const a of cat.apps) { for (const v of a.variants) {\n"
                 "  const fn = deriveDownloadFilename(a, v);\n"
                 "  if (/\\s/.test(fn)) { console.error(`${a.slug}/${v.id}: whitespace in download filename ${fn}`); process.exit(2); }\n"
@@ -811,8 +1133,8 @@ def main() -> int:
                 if fn.endswith(".js") and rx_modal.search(txt):
                     fail(f"native modal call in {rel_norm}")
             if fn.endswith((
-                ".html", ".js", ".json", ".toml", ".md", ".py", ".txt", ".css",
-                ".lua", ".ps1", ".sh", ".gitconfig", ".conf", ".xaml", ".icls", ".tmTheme",
+                ".html", ".js", ".json", ".toml", ".md", ".py", ".txt", ".css", ".qss",
+                ".lua", ".ps1", ".sh", ".gitconfig", ".conf", ".xaml", ".icls", ".tmTheme", ".theme", ".svg",
             )):
                 txt = open(fp, encoding="utf-8", errors="ignore").read()
                 if rx_private.search(txt):
@@ -820,7 +1142,7 @@ def main() -> int:
 
     if not errors:
         ok("zero `in oklch`, native modals, `innerHTML`, private-repo leaks, or CRLF drift")
-        ok("all rfs-themes checks passed (20 apps · 60 variants)")
+        ok("all rfs-themes checks passed (21 apps · 63 variants)")
         return 0
 
     print(f"[x]  verification failed with {len(errors)} error(s)")

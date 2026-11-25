@@ -244,6 +244,7 @@
     const trimmed = line.trimStart();
     if (
       trimmed.startsWith("#") ||
+      trimmed.startsWith(";") ||
       trimmed.startsWith("//") ||
       trimmed.startsWith("--") ||
       trimmed.startsWith("/*") ||
@@ -367,7 +368,7 @@
       css: [".css"],
       sh: [".sh"],
       ps1: [".ps1"],
-      ini: [".gitconfig", ".ini"],
+      ini: [".gitconfig", ".ini", ".theme"],
       conf: [".conf"],
       xml: [".xaml", ".xml"],
       pn1: [".txt"],
@@ -506,7 +507,7 @@
   };
 
   // =========================================================================
-  // 5. 20-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
+  // 5. 21-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
   // =========================================================================
   const state = {
     catalog: null,
@@ -1121,10 +1122,10 @@
       const statVariants = document.getElementById("stat-variants");
       const statTokens = document.getElementById("stat-tokens");
       if (statApps) {
-        statApps.textContent = `${catalog.stats.apps} \u00B7 ${catalog.stats.categories} Categories`;
+        statApps.textContent = `${catalog.stats.apps} \u00B7 Across ${catalog.stats.categories} categories`;
       }
       if (statVariants) {
-        statVariants.textContent = `${catalog.stats.variants} \u00B7 Dawn \u00B7 Steel \u00B7 Day`;
+        statVariants.textContent = `${catalog.stats.variants} \u00B7 Dawn, Steel, Day`;
       }
       if (statTokens) {
         statTokens.textContent = `rfs.tokens.json v${catalog.version}`;

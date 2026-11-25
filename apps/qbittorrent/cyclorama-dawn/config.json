@@ -22,5 +22,29 @@
     "TransferList.Moving": "#C996F5",
     "TransferList.MissingFiles": "#FF5C6C",
     "TransferList.Error": "#FF5C6C"
+  },
+  "colors.dark": {
+    "Log.Normal": "#F4F5F8",
+    "Log.Info": "#74B8E8",
+    "Log.Warning": "#FFC247",
+    "Log.Critical": "#FF5C6C",
+    "TransferList.Downloading": "#74B8E8",
+    "TransferList.ForcedDownloading": "#56D4E0",
+    "TransferList.DownloadingMetadata": "#56D4E0",
+    "TransferList.Allocating": "#FFC247",
+    "TransferList.StalledDownloading": "#B3B5C0",
+    "TransferList.StalledUploading": "#8C8F9D",
+    "TransferList.Uploading": "#3DDC97",
+    "TransferList.ForcedUploading": "#3DDC97",
+    "TransferList.Seeding": "#3DDC97",
+    "TransferList.Paused": "#FFC247",
+    "TransferList.PausedDownloading": "#FFC247",
+    "TransferList.PausedUploading": "#B3B5C0",
+    "TransferList.Queued": "#B3B5C0",
+    "TransferList.Checking": "#FF9254",
+    "TransferList.CheckingResumeData": "#FF9254",
+    "TransferList.Moving": "#C996F5",
+    "TransferList.MissingFiles": "#FF5C6C",
+    "TransferList.Error": "#FF5C6C"
   }
 }

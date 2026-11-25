@@ -201,7 +201,7 @@ def _psreadline_script(v: dict) -> str:
         f"# {v['name']} ({v['lx']} {mode_lbl} · {v['accentRole']}) — PowerShell PSReadLine Theme\n"
         f"# Author: {AUTHOR} | Brand: {BRAND_NAME} v{v['version']}\n"
         f"# Source: {REPO_URL}\n"
-        f"# Requires PSReadLine 2.2+ (PowerShell 7+ or `Update-Module PSReadLine`).\n\n"
+        f"# Compatible with Windows PowerShell 5.1 (PSReadLine 2.0+) and PowerShell 7+ (PSReadLine 2.2+).\n\n"
         f"Set-PSReadLineOption -Colors @{{\n"
         f"    Command          = '{syn['function']}'\n"
         f"    Parameter        = '{syn['parameter']}'\n"
@@ -214,10 +214,12 @@ def _psreadline_script(v: dict) -> str:
         f"    Keyword          = '{syn['keyword']}'\n"
         f"    Error            = '{ui['fault']}'\n"
         f"    Selection        = \"{sel_vt}\" # {ui['text']} on {ui['selection_active']}\n"
-        f"    InlinePrediction = '{ui['subtle']}'\n"
         f"    Member           = '{syn['property']}'\n"
         f"    Emphasis         = '{ui['accent']}'\n"
         f"    Default          = '{ui['text']}'\n"
+        f"}}\n\n"
+        f"if ((Get-Module PSReadLine).Version -ge [version]'2.1.0') {{\n"
+        f"    Set-PSReadLineOption -Colors @{{ InlinePrediction = '{ui['subtle']}' }}\n"
         f"}}\n"
     )
 

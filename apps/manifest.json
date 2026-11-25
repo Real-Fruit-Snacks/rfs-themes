@@ -711,7 +711,7 @@
       "category": "Browsers & Desktop",
       "homepage": "https://www.qbittorrent.org/",
       "format": "Qt QSS Stylesheet + config.json",
-      "install": "Package stylesheet.qss + config.json into .qbtheme and select in Behavior -> Use custom UI Theme",
+      "install": "qBittorrent 5.x: Tools -> Options -> Behavior -> Use custom UI theme -> pick config.json (FolderThemeSource)",
       "variants": [
         {
           "id": "cyclorama-dawn",
@@ -782,6 +782,45 @@
       ],
       "path": "apps/flow-launcher",
       "data": "apps/flow-launcher/themes.json"
+    },
+    {
+      "slug": "windows",
+      "name": "Windows 11",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.microsoft.com/windows/",
+      "format": "Windows 11 .theme + Wallpapers + .ps1",
+      "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
+          "preview": "apps/windows/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
+          "preview": "apps/windows/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
+          "preview": "apps/windows/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/windows",
+      "data": "apps/windows/themes.json"
     }
   ]
 }

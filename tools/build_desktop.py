@@ -1362,31 +1362,34 @@ QToolTip {{
 
 def _build_qbittorrent_config(v: dict) -> dict:
     ui = v["ui"]
+    palette = {
+        "Log.Normal": ui["text"],
+        "Log.Info": ui["secondary"],
+        "Log.Warning": ui["warning"],
+        "Log.Critical": ui["fault"],
+        "TransferList.Downloading": ui["secondary"],
+        "TransferList.ForcedDownloading": ui["cyan"],
+        "TransferList.DownloadingMetadata": ui["cyan"],
+        "TransferList.Allocating": ui["warning"],
+        "TransferList.StalledDownloading": ui["mute"],
+        "TransferList.StalledUploading": ui["subtle"],
+        "TransferList.Uploading": ui["signal"],
+        "TransferList.ForcedUploading": ui["signal"],
+        "TransferList.Seeding": ui["signal"],
+        "TransferList.Paused": ui["warning"],
+        "TransferList.PausedDownloading": ui["warning"],
+        "TransferList.PausedUploading": ui["mute"],
+        "TransferList.Queued": ui["mute"],
+        "TransferList.Checking": ui["accent"],
+        "TransferList.CheckingResumeData": ui["accent"],
+        "TransferList.Moving": ui["magenta"],
+        "TransferList.MissingFiles": ui["fault"],
+        "TransferList.Error": ui["fault"],
+    }
+    mode_key = "colors.dark" if v["mode"] == "dark" else "colors.light"
     return {
-        "colors": {
-            "Log.Normal": ui["text"],
-            "Log.Info": ui["secondary"],
-            "Log.Warning": ui["warning"],
-            "Log.Critical": ui["fault"],
-            "TransferList.Downloading": ui["secondary"],
-            "TransferList.ForcedDownloading": ui["cyan"],
-            "TransferList.DownloadingMetadata": ui["cyan"],
-            "TransferList.Allocating": ui["warning"],
-            "TransferList.StalledDownloading": ui["mute"],
-            "TransferList.StalledUploading": ui["subtle"],
-            "TransferList.Uploading": ui["signal"],
-            "TransferList.ForcedUploading": ui["signal"],
-            "TransferList.Seeding": ui["signal"],
-            "TransferList.Paused": ui["warning"],
-            "TransferList.PausedDownloading": ui["warning"],
-            "TransferList.PausedUploading": ui["mute"],
-            "TransferList.Queued": ui["mute"],
-            "TransferList.Checking": ui["accent"],
-            "TransferList.CheckingResumeData": ui["accent"],
-            "TransferList.Moving": ui["magenta"],
-            "TransferList.MissingFiles": ui["fault"],
-            "TransferList.Error": ui["fault"],
-        }
+        "colors": dict(palette),
+        mode_key: dict(palette),
     }
 
 
@@ -1396,11 +1399,11 @@ def build_qbittorrent() -> dict:
     category = "Browsers & Desktop"
     homepage = "https://www.qbittorrent.org/"
     fmt = "Qt QSS Stylesheet + config.json"
-    install = "Package stylesheet.qss + config.json into .qbtheme and select in Behavior -> Use custom UI Theme"
+    install = "qBittorrent 5.x: Tools -> Options -> Behavior -> Use custom UI theme -> pick config.json (FolderThemeSource)"
     install_steps = [
-        "Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `stylesheet.qss` and `config.json`.",
-        "Bundle into a `.qbtheme` resource bundle with Qt `rcc` (or load `stylesheet.qss` via your qBittorrent theme pack).",
-        "Open qBittorrent -> Tools -> Options -> **Behavior** -> enable **Use custom UI Theme**, pick the bundle, and restart.",
+        "Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `config.json` and `stylesheet.qss`.",
+        "**qBittorrent 5.x (recommended, no `rcc` needed):** Open Tools -> Options -> **Behavior** -> enable **Use custom UI theme** -> select `config.json` directly (`FolderThemeSource` automatically loads sibling `stylesheet.qss` alongside `colors.dark` / `colors.light`).",
+        "**qBittorrent 4.x legacy:** Bundle `stylesheet.qss` and `config.json` into a `.qbtheme` resource file with Qt `rcc`, select it under Behavior -> Use custom UI theme, and restart qBittorrent.",
     ]
 
     app_dir = os.path.join(ROOT, "apps", slug)

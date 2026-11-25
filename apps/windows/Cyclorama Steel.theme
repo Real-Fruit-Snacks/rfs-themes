@@ -1,0 +1,32 @@
+; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme
+; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+; Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+[Theme]
+DisplayName=Cyclorama Steel
+ThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}
+
+[Control Panel\Desktop]
+Wallpaper=%LOCALAPPDATA%\rfs-themes\windows\wallpapers\cyclorama-steel-1080p.png
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[Control Panel\Colors]
+Background=5 5 7
+
+[VisualStyles]
+Path=%SystemRoot%\resources\themes\Aero\Aero.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+AutoColorization=0
+ColorizationColor=0xC41F547A
+VisualStyleVersion=10
+SystemMode=Dark
+AppMode=Dark
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[boot]
+SCRNSAVE.EXE=
