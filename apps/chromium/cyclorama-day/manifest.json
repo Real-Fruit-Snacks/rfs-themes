@@ -1,0 +1,117 @@
+{
+  "manifest_version": 3,
+  "name": "Cyclorama Day (LX 512)",
+  "version": "2.1.0",
+  "description": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)",
+  "theme": {
+    "colors": {
+      "frame": [
+        234,
+        238,
+        242
+      ],
+      "frame_inactive": [
+        225,
+        229,
+        234
+      ],
+      "frame_incognito": [
+        225,
+        231,
+        237
+      ],
+      "toolbar": [
+        255,
+        255,
+        255
+      ],
+      "tab_text": [
+        13,
+        16,
+        22
+      ],
+      "tab_background_text": [
+        71,
+        77,
+        89
+      ],
+      "tab_background_text_inactive": [
+        88,
+        96,
+        110
+      ],
+      "bookmark_text": [
+        37,
+        42,
+        52
+      ],
+      "ntp_background": [
+        245,
+        247,
+        249
+      ],
+      "ntp_text": [
+        13,
+        16,
+        22
+      ],
+      "ntp_link": [
+        173,
+        61,
+        10
+      ],
+      "ntp_header": [
+        255,
+        255,
+        255
+      ],
+      "omnibox_background": [
+        227,
+        232,
+        238
+      ],
+      "omnibox_text": [
+        13,
+        16,
+        22
+      ],
+      "toolbar_button_icon": [
+        37,
+        42,
+        52
+      ],
+      "button_background": [
+        227,
+        232,
+        238
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.052,
+        0.891,
+        0.359
+      ],
+      "frame": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_inactive": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_incognito": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "background_tab": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    }
+  }
+}

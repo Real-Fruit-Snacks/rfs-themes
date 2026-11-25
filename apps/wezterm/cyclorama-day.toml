@@ -1,0 +1,50 @@
+# Cyclorama Day (LX 512 Light · Alabaster Day) — WezTerm Color Scheme
+# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+
+[metadata]
+name = "Cyclorama Day"
+author = "Real-Fruit-Snacks"
+origin_url = "https://github.com/Real-Fruit-Snacks/rfs-themes"
+
+[colors]
+foreground = "#0D1016"
+background = "#F5F7F9"
+cursor_bg = "#AD3D0A"
+cursor_fg = "#FFFFFF"
+cursor_border = "#AD3D0A"
+selection_fg = "#0D1016"
+selection_bg = "#C6DAEB"
+scrollbar_thumb = "#6E7682"
+split = "#C8D0DA"
+ansi = ["#0D1016", "#B91C2E", "#127247", "#885800", "#164669", "#6B38B8", "#0E6674", "#E3E8EE"]
+brights = ["#58606E", "#AD3D0A", "#0D5A37", "#704700", "#1F547A", "#572A9E", "#0A525E", "#FFFFFF"]
+
+[colors.tab_bar]
+background = "#EAEEF2"
+inactive_tab_edge = "#C8D0DA"
+
+[colors.tab_bar.active_tab]
+bg_color = "#18496B"
+fg_color = "#FFFFFF"
+intensity = "Bold"
+underline = "None"
+italic = false
+strikethrough = false
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#FFFFFF"
+fg_color = "#474D59"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#E3E8EE"
+fg_color = "#0D1016"
+italic = false
+
+[colors.tab_bar.new_tab]
+bg_color = "#EAEEF2"
+fg_color = "#474D59"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#E3E8EE"
+fg_color = "#AD3D0A"
+italic = false

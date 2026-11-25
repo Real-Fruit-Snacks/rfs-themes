@@ -1,0 +1,112 @@
+/**
+ * @name Cyclorama Steel
+ * @author Real-Fruit-Snacks
+ * @version 2.1.0
+ * @description Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (LX 263 · Steel Blue)
+ * @source https://github.com/Real-Fruit-Snacks/rfs-themes
+ * @website https://real-fruit-snacks.github.io/rfs-themes/
+ */
+
+.theme-dark {
+  /* Background Overlays */
+  --bg-overlay-app-frame: #07080B;
+  --bg-overlay-floating: #0C0C10;
+  --bg-overlay-chat: #050507;
+  --bg-overlay-home: #050507;
+  --bg-overlay-selected: #1D2833;
+  --bg-overlay-hover: rgba(26, 34, 46, 0.55);
+  --bg-overlay-active: rgba(116, 184, 232, 0.16);
+  --bg-overlay-1: #0C0C10;
+  --bg-overlay-2: #131820;
+  --bg-overlay-3: #1A222E;
+  --bg-overlay-4: #07080B;
+
+  /* Core Backgrounds */
+  --background-primary: #050507;
+  --background-secondary: #0C0C10;
+  --background-secondary-alt: #07080B;
+  --background-tertiary: #07080B;
+  --background-accent: #131820;
+  --background-floating: #0C0C10;
+  --background-nested-floating: #131820;
+  --background-mobile-primary: #050507;
+  --background-mobile-secondary: #0C0C10;
+  --background-modifier-hover: rgba(26, 34, 46, 0.55);
+  --background-modifier-active: rgba(116, 184, 232, 0.16);
+  --background-modifier-selected: #1D2833;
+  --background-modifier-accent: #27313D;
+  --background-mentioned: rgba(116, 184, 232, 0.14);
+  --background-mentioned-hover: rgba(116, 184, 232, 0.22);
+  --home-background: #050507;
+
+  /* Composer & Inputs */
+  --channeltextarea-background: #131820;
+  --input-background: #131820;
+  --input-placeholder-text: #8C96A6;
+  --textbox-markdown-syntax: #B3B5C0;
+
+  /* Typography & Links */
+  --text-normal: #F4F5F8;
+  --text-muted: #B3B5C0;
+  --text-link: #74B8E8;
+  --text-positive: #3DDC97;
+  --text-warning: #FFC247;
+  --text-danger: #FF5C6C;
+  --text-brand: #74B8E8;
+  --header-primary: #F4F5F8;
+  --header-secondary: #D6DCE4;
+  --channels-default: #B3B5C0;
+  --channel-icon: #8C96A6;
+  --interactive-normal: #D6DCE4;
+  --interactive-hover: #F4F5F8;
+  --interactive-active: #F4F5F8;
+  --interactive-muted: #8C96A6;
+
+  /* Brand & Accent Controls */
+  --brand-experiment: #18496B;
+  --brand-experiment-500: #18496B;
+  --brand-experiment-560: #123955;
+  --brand-experiment-600: #123955;
+  --brand-500: #18496B;
+  --brand-560: #123955;
+  --brand-600: #123955;
+  --control-brand-foreground: #74B8E8;
+  --focus-primary: #74B8E8;
+
+  /* Semantic Status */
+  --status-positive: #3DDC97;
+  --status-positive-background: #3DDC97;
+  --status-warning: #FFC247;
+  --status-warning-background: #FFC247;
+  --status-danger: #FF5C6C;
+  --status-danger-background: #C92438;
+  --info-warning-foreground: #FFC247;
+  --info-danger-foreground: #FF5C6C;
+  --info-positive-foreground: #3DDC97;
+  --info-help-foreground: #FF9254;
+
+  /* Scrollbars */
+  --scrollbar-thin-thumb: #27313D;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #637284;
+  --scrollbar-auto-track: #07080B;
+  --scrollbar-auto-scrollbar-color-thumb: #637284;
+  --scrollbar-auto-scrollbar-color-track: #07080B;
+}
+
+/* Crisp code blocks, embeds & selection */
+.theme-dark pre,
+.theme-dark code {
+  background-color: #080A0E !important;
+  border-color: #27313D !important;
+}
+
+.theme-dark ::selection {
+  background-color: #1D3B57;
+  color: #F4F5F8;
+}
+
+.theme-dark [class*="embedFull"] {
+  background-color: #0C0C10;
+  border-color: #27313D;
+}

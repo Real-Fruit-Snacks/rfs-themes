@@ -1,0 +1,48 @@
+# Cyclorama Dawn v2.1.0 — git-delta (Cyclorama Steel)
+# Variant: Cyclorama Steel (LX 263 · Dark · Steel Blue)
+# Author:  Real-Fruit-Snacks
+# Source:  https://github.com/Real-Fruit-Snacks/rfs-themes
+# Usage in ~/.gitconfig:
+#   [include]
+#       path = /path/to/rfs-themes/apps/delta/cyclorama-steel.gitconfig
+#   [delta]
+#       features = cyclorama-steel
+
+[delta "cyclorama-steel"]
+    dark = true
+    light = false
+    syntax-theme = Cyclorama Steel
+    plus-style = syntax "#0D291E"
+    plus-non-emph-style = syntax "#0D291E"
+    plus-emph-style = syntax "#1A5B40"
+    plus-empty-line-marker-style = normal "#0D291E"
+    minus-style = syntax "#301218"
+    minus-non-emph-style = syntax "#301218"
+    minus-emph-style = syntax "#6E2831"
+    minus-empty-line-marker-style = normal "#301218"
+    zero-style = syntax
+    line-numbers = true
+    line-numbers-left-style = "#8C96A6"
+    line-numbers-right-style = "#8C96A6"
+    line-numbers-minus-style = "#FF5C6C"
+    line-numbers-plus-style = "#3DDC97"
+    line-numbers-zero-style = "#8C96A6"
+    file-style = bold "#74B8E8"
+    file-decoration-style = "#637284" ul
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#27313D" box
+    hunk-header-file-style = bold "#FF9254"
+    hunk-header-line-number-style = bold "#74B8E8"
+    whitespace-error-style = reverse "#FF5C6C"
+    blame-palette = "#050507 #0C0C10 #131820 #1A222E #13293D"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = bold "#FF9254"
+    merge-conflict-ours-diff-header-decoration-style = "#27313D" box
+    merge-conflict-theirs-diff-header-style = bold "#74B8E8"
+    merge-conflict-theirs-diff-header-decoration-style = "#27313D" box

@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "palette": {
+    "bg": "#050507",
+    "surface": "#0C0C10",
+    "raised": "#131820",
+    "border": "#27313D",
+    "text": "#F4F5F8",
+    "text_soft": "#D6DCE4",
+    "mute": "#B3B5C0",
+    "subtle": "#8C96A6",
+    "accent": "#74B8E8",
+    "accent_vivid": "#1F547A",
+    "accent_fill": "#18496B",
+    "on_accent": "#FFFFFF",
+    "secondary": "#FF9254",
+    "secondary_fill": "#BD4811",
+    "signal": "#3DDC97",
+    "warning": "#FFC247",
+    "fault": "#FF5C6C",
+    "fault_fill": "#C92438",
+    "cyan": "#56D4E0",
+    "magenta": "#C996F5"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:on_accent",
+          "background": "p:secondary_fill",
+          "template": " {{ .Path }} ",
+          "properties": {
+            "style": "folder",
+            "max_depth": 3
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:on_accent",
+          "background": "p:accent_fill",
+          "template": " git:{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} ~{{ .Working.String }}{{ end }}{{ if .Staging.Changed }} +{{ .Staging.String }}{{ end }} ",
+          "properties": {
+            "fetch_status": true,
+            "fetch_upstream_icon": false
+          }
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:signal",
+          "background": "p:raised",
+          "template": " py {{ if .Venv }}({{ .Venv }}) {{ end }}{{ .Full }} ",
+          "properties": {
+            "display_mode": "files",
+            "fetch_virtual_env": true
+          }
+        },
+        {
+          "type": "rust",
+          "style": "plain",
+          "foreground": "p:warning",
+          "background": "p:raised",
+          "template": " rs {{ .Full }} ",
+          "properties": {
+            "display_mode": "files"
+          }
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "p:cyan",
+          "background": "p:raised",
+          "template": " node {{ .Full }} ",
+          "properties": {
+            "display_mode": "files"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:mute",
+          "background": "p:raised",
+          "template": " {{ .FormattedMs }} ",
+          "properties": {
+            "threshold": 500,
+            "style": "roundrock"
+          }
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:signal",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:fault{{ end }}"
+          ],
+          "background": "p:raised",
+          "template": " {{ if gt .Code 0 }}exit {{ .Code }}{{ else }}ok{{ end }} ",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:accent",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:fault{{ end }}"
+          ],
+          "template": ">"
+        }
+      ]
+    }
+  ]
+}

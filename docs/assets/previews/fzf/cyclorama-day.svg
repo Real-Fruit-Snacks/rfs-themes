@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="fzf Cyclorama Day (LX 512 LIGHT) theme preview">
+  <defs>
+    <linearGradient id="hbeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#18496B"/>
+      <stop offset="100%" stop-color="#AD3D0A"/>
+    </linearGradient>
+    <clipPath id="frame-clip"><rect x="1" y="1" width="658" height="388" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame-clip)">
+    <rect width="660" height="390" fill="#F5F7F9"/>
+    <rect width="660" height="3" fill="url(#hbeam)"/>
+
+    <!-- Top chrome bar -->
+    <rect x="0" y="3" width="660" height="33" fill="#FFFFFF"/>
+    <line x1="0" y1="36" x2="660" y2="36" stroke="#C8D0DA" stroke-width="1"/>
+    <rect x="14" y="10" width="84" height="19" rx="4" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="23" y="23" fill="#AD3D0A" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[fzf]</text>
+    <text x="110" y="23" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Day</text>
+    <text x="646" y="23" text-anchor="end" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="600">LX 512 · LIGHT · AA PASS</text>
+
+    
+        <rect x="0" y="36" width="660" height="310" fill="#F5F7F9"/>
+        <!-- Search bar -->
+        <rect x="20" y="52" width="620" height="32" rx="6" fill="#E3E8EE" stroke="#AD3D0A" stroke-width="1.2"/>
+        <text x="34" y="72" font-family="ui-monospace,Consolas,monospace" font-size="11"><tspan fill="#AD3D0A" font-weight="700">&gt; </tspan><tspan fill="#0D1016">cyclorama </tspan><tspan fill="#474D59">20/60</tspan></text>
+
+        <!-- Left match list -->
+        <rect x="20" y="94" width="286" height="236" rx="6" fill="#FFFFFF" stroke="#C8D0DA" stroke-width="1"/>
+        <rect x="26" y="102" width="274" height="26" rx="4" fill="#C6DAEB"/>
+        <rect x="26" y="104" width="3" height="22" rx="1" fill="#AD3D0A"/>
+        <text x="38" y="119" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="700"><tspan fill="#AD3D0A">&gt; </tspan><tspan fill="#0D1016">apps/vscode/</tspan><tspan fill="#164669">cyclorama</tspan></text>
+        <text x="38" y="148" fill="#252A34" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/neovim/<tspan fill="#AD3D0A">cyclorama</tspan>.lua</text>
+        <text x="38" y="174" fill="#252A34" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/ghostty/<tspan fill="#AD3D0A">cyclorama</tspan></text>
+        <text x="38" y="200" fill="#252A34" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/wezterm/<tspan fill="#AD3D0A">cyclorama</tspan>.toml</text>
+        <text x="38" y="226" fill="#252A34" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/obsidian/theme.css</text>
+        <text x="38" y="252" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/starship/<tspan fill="#AD3D0A">cyclorama</tspan>.toml</text>
+        <text x="38" y="278" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/delta/<tspan fill="#AD3D0A">cyclorama</tspan>.gitconfig</text>
+        <text x="38" y="308" fill="#127247" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">20 matches · 0.4ms</text>
+
+        <!-- Right preview pane -->
+        <rect x="316" y="94" width="324" height="236" rx="6" fill="#EEF2F5" stroke="#C8D0DA" stroke-width="1"/>
+        <text x="330" y="116" fill="#164669" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">PREVIEW · fzf</text>
+        <line x1="316" y1="126" x2="640" y2="126" stroke="#C8D0DA" stroke-width="1"/>
+        <g font-family="ui-monospace,Consolas,monospace" font-size="9.5">
+          <text x="330" y="148"><tspan fill="#58606E"># Cyclorama Dawn v2.1.0</tspan></text>
+          <text x="330" y="170"><tspan fill="#164669">variant </tspan><tspan fill="#252A34">= </tspan><tspan fill="#885800">"cyclorama-day"</tspan></text>
+          <text x="330" y="192"><tspan fill="#164669">accent  </tspan><tspan fill="#252A34">= </tspan><tspan fill="#AD3D0A">"#AD3D0A"</tspan></text>
+          <text x="330" y="214"><tspan fill="#164669">steel   </tspan><tspan fill="#252A34">= </tspan><tspan fill="#0E6674">"#164669"</tspan></text>
+          <text x="330" y="236"><tspan fill="#164669">signal  </tspan><tspan fill="#252A34">= </tspan><tspan fill="#127247">"#127247"</tspan></text>
+          <text x="330" y="258"><tspan fill="#164669">fault   </tspan><tspan fill="#252A34">= </tspan><tspan fill="#B91C2E">"#B91C2E"</tspan></text>
+          <text x="330" y="294"><tspan fill="#127247" font-weight="700">[ok]</tspan><tspan fill="#474D59"> WCAG AA calibrated</tspan></text>
+        </g>
+        
+
+    <!-- Bottom palette telemetry ribbon -->
+    <rect x="0" y="346" width="660" height="44" fill="#FFFFFF"/>
+    <line x1="0" y1="346" x2="660" y2="346" stroke="#C8D0DA" stroke-width="1"/>
+    <rect x="18.0" y="357" width="56" height="10" rx="2.5" fill="#F5F7F9" stroke="#C8D0DA" stroke-width="0.8"/><text x="46.0" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">BG</text><rect x="80.4" y="357" width="56" height="10" rx="2.5" fill="#FFFFFF" stroke="#C8D0DA" stroke-width="0.8"/><text x="108.4" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">SURF</text><rect x="142.8" y="357" width="56" height="10" rx="2.5" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="0.8"/><text x="170.8" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">RAISED</text><rect x="205.2" y="357" width="56" height="10" rx="2.5" fill="#AD3D0A" stroke="#C8D0DA" stroke-width="0.8"/><text x="233.2" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ACCENT</text><rect x="267.6" y="357" width="56" height="10" rx="2.5" fill="#164669" stroke="#C8D0DA" stroke-width="0.8"/><text x="295.6" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STEEL</text><rect x="330.0" y="357" width="56" height="10" rx="2.5" fill="#164669" stroke="#C8D0DA" stroke-width="0.8"/><text x="358.0" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">KW</text><rect x="392.4" y="357" width="56" height="10" rx="2.5" fill="#AD3D0A" stroke="#C8D0DA" stroke-width="0.8"/><text x="420.4" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">FN</text><rect x="454.8" y="357" width="56" height="10" rx="2.5" fill="#885800" stroke="#C8D0DA" stroke-width="0.8"/><text x="482.8" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STR</text><rect x="517.2" y="357" width="56" height="10" rx="2.5" fill="#127247" stroke="#C8D0DA" stroke-width="0.8"/><text x="545.2" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">OK</text><rect x="579.6" y="357" width="56" height="10" rx="2.5" fill="#B91C2E" stroke="#C8D0DA" stroke-width="0.8"/><text x="607.6" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ERR</text>
+  </g>
+  <rect x="0.5" y="0.5" width="659" height="389" rx="11.5" fill="none" stroke="#C8D0DA" stroke-width="1"/>
+</svg>

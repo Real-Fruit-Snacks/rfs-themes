@@ -1,0 +1,165 @@
+{
+  "app": "Windows Terminal",
+  "slug": "windows-terminal",
+  "category": "Terminals",
+  "homepage": "https://learn.microsoft.com/en-us/windows/terminal/",
+  "format": "JSON Schemes + PSReadLine .ps1",
+  "install": "Paste scheme into settings.json \"schemes\" array + dot-source PSReadLine .ps1",
+  "installSteps": [
+    "Open Windows Terminal Settings (Ctrl+,) and select Open JSON file to open settings.json.",
+    "Paste one variant from cyclorama-dawn.json (or all three from schemes.json) into the \"schemes\" array, then set \"colorScheme\": \"Cyclorama Dawn\" in profiles.defaults.",
+    "Optional: dot-source psreadline/cyclorama-dawn.ps1 in your PowerShell $PROFILE (PSReadLine 2.2+) for matching command-line syntax highlighting."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/windows-terminal/schemes.json",
+  "files": [
+    {
+      "label": "All schemes (schemes.json)",
+      "path": "apps/windows-terminal/schemes.json"
+    },
+    {
+      "label": "Cyclorama Dawn scheme (cyclorama-dawn.json)",
+      "path": "apps/windows-terminal/cyclorama-dawn.json"
+    },
+    {
+      "label": "Cyclorama Dawn PSReadLine (psreadline/cyclorama-dawn.ps1)",
+      "path": "apps/windows-terminal/psreadline/cyclorama-dawn.ps1"
+    },
+    {
+      "label": "Cyclorama Steel scheme (cyclorama-steel.json)",
+      "path": "apps/windows-terminal/cyclorama-steel.json"
+    },
+    {
+      "label": "Cyclorama Steel PSReadLine (psreadline/cyclorama-steel.ps1)",
+      "path": "apps/windows-terminal/psreadline/cyclorama-steel.ps1"
+    },
+    {
+      "label": "Cyclorama Day scheme (cyclorama-day.json)",
+      "path": "apps/windows-terminal/cyclorama-day.json"
+    },
+    {
+      "label": "Cyclorama Day PSReadLine (psreadline/cyclorama-day.ps1)",
+      "path": "apps/windows-terminal/psreadline/cyclorama-day.ps1"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/windows-terminal/previews/cyclorama-dawn.svg",
+      "file": "apps/windows-terminal/cyclorama-dawn.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Dawn Windows Terminal JSON",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Dawn\",\n  \"background\": \"#050507\",\n  \"foreground\": \"#F4F5F8\",\n  \"cursorColor\": \"#F06E2B\",\n  \"selectionBackground\": \"#3D2B24\",\n  \"black\": \"#0C0C10\",\n  \"red\": \"#FF5C6C\",\n  \"green\": \"#3DDC97\",\n  \"yellow\": \"#FFC247\",\n  \"blue\": \"#74B8E8\",\n  \"purple\": \"#C996F5\",\n  \"cyan\": \"#56D4E0\",\n  \"white\": \"#D6D8E0\",\n  \"brightBlack\": \"#8C8F9D\",\n  \"brightRed\": \"#FF9254\",\n  \"brightGreen\": \"#6CE8B2\",\n  \"brightYellow\": \"#FFD475\",\n  \"brightBlue\": \"#99CDF2\",\n  \"brightPurple\": \"#DCB8FA\",\n  \"brightCyan\": \"#85E3EC\",\n  \"brightWhite\": \"#F4F5F8\"\n}",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/windows-terminal/previews/cyclorama-steel.svg",
+      "file": "apps/windows-terminal/cyclorama-steel.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Steel Windows Terminal JSON",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Steel\",\n  \"background\": \"#050507\",\n  \"foreground\": \"#F4F5F8\",\n  \"cursorColor\": \"#74B8E8\",\n  \"selectionBackground\": \"#1D3B57\",\n  \"black\": \"#0C0C10\",\n  \"red\": \"#FF5C6C\",\n  \"green\": \"#3DDC97\",\n  \"yellow\": \"#FFC247\",\n  \"blue\": \"#74B8E8\",\n  \"purple\": \"#C996F5\",\n  \"cyan\": \"#56D4E0\",\n  \"white\": \"#D6D8E0\",\n  \"brightBlack\": \"#8C96A6\",\n  \"brightRed\": \"#FF9254\",\n  \"brightGreen\": \"#6CE8B2\",\n  \"brightYellow\": \"#FFD475\",\n  \"brightBlue\": \"#99CDF2\",\n  \"brightPurple\": \"#DCB8FA\",\n  \"brightCyan\": \"#85E3EC\",\n  \"brightWhite\": \"#F4F5F8\"\n}",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/windows-terminal/previews/cyclorama-day.svg",
+      "file": "apps/windows-terminal/cyclorama-day.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Day Windows Terminal JSON",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Day\",\n  \"background\": \"#F5F7F9\",\n  \"foreground\": \"#0D1016\",\n  \"cursorColor\": \"#AD3D0A\",\n  \"selectionBackground\": \"#C6DAEB\",\n  \"black\": \"#0D1016\",\n  \"red\": \"#B91C2E\",\n  \"green\": \"#127247\",\n  \"yellow\": \"#885800\",\n  \"blue\": \"#164669\",\n  \"purple\": \"#6B38B8\",\n  \"cyan\": \"#0E6674\",\n  \"white\": \"#E3E8EE\",\n  \"brightBlack\": \"#58606E\",\n  \"brightRed\": \"#AD3D0A\",\n  \"brightGreen\": \"#0D5A37\",\n  \"brightYellow\": \"#704700\",\n  \"brightBlue\": \"#1F547A\",\n  \"brightPurple\": \"#572A9E\",\n  \"brightCyan\": \"#0A525E\",\n  \"brightWhite\": \"#FFFFFF\"\n}",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

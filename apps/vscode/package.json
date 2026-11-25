@@ -1,0 +1,47 @@
+{
+  "name": "cyclorama-dawn-theme",
+  "displayName": "Cyclorama Dawn — Real-Fruit-Snacks",
+  "description": "Cyclorama Dawn (Steel & Beacon Orange) WCAG AA color themes for VS Code, Cursor, and Antigravity.",
+  "version": "2.1.0",
+  "publisher": "Real-Fruit-Snacks",
+  "license": "MIT",
+  "homepage": "https://real-fruit-snacks.github.io/rfs-themes/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Real-Fruit-Snacks/rfs-themes"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark",
+    "light",
+    "cyclorama-dawn",
+    "real-fruit-snacks",
+    "wcag-aa"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cyclorama Dawn",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cyclorama-dawn.json"
+      },
+      {
+        "label": "Cyclorama Steel",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cyclorama-steel.json"
+      },
+      {
+        "label": "Cyclorama Day",
+        "uiTheme": "vs",
+        "path": "./themes/cyclorama-day.json"
+      }
+    ]
+  }
+}

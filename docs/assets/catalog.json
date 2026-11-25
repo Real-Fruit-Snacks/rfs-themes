@@ -1,0 +1,3091 @@
+{
+  "brand": "Cyclorama Dawn",
+  "version": "2.1.0",
+  "source": "https://github.com/Real-Fruit-Snacks/rfs-brand",
+  "stats": {
+    "apps": 20,
+    "variants": 60,
+    "categories": 5
+  },
+  "categories": [
+    {
+      "name": "Editors & IDEs",
+      "slug": "editors-ides",
+      "count": 4
+    },
+    {
+      "name": "Terminals",
+      "slug": "terminals",
+      "count": 5
+    },
+    {
+      "name": "CLI & TUI",
+      "slug": "cli-tui",
+      "count": 5
+    },
+    {
+      "name": "Notes & Writing",
+      "slug": "notes-writing",
+      "count": 2
+    },
+    {
+      "name": "Browsers & Desktop",
+      "slug": "browsers-desktop",
+      "count": 4
+    }
+  ],
+  "apps": [
+    {
+      "slug": "vscode",
+      "name": "VS Code",
+      "category": "Editors & IDEs",
+      "homepage": "https://code.visualstudio.com/",
+      "format": "VS Code JSON Theme Extension",
+      "install": "Copy apps/vscode/ into ~/.vscode/extensions/rfs-cyclorama-dawn and pick Color Theme",
+      "installSteps": [
+        "Copy `apps/vscode/` to `~/.vscode/extensions/rfs-cyclorama-dawn` (or `~/.cursor/extensions/rfs-cyclorama-dawn`).",
+        "Reload the window (`Ctrl+Shift+P` -> **Developer: Reload Window**).",
+        "Open **Preferences: Color Theme** (`Ctrl+K Ctrl+T`) and select **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**."
+      ],
+      "path": "apps/vscode",
+      "primaryFile": "apps/vscode/themes/cyclorama-dawn.json",
+      "files": [
+        {
+          "label": "Extension manifest (package.json)",
+          "path": "apps/vscode/package.json"
+        },
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.json)",
+          "path": "apps/vscode/themes/cyclorama-dawn.json"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.json)",
+          "path": "apps/vscode/themes/cyclorama-steel.json"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.json)",
+          "path": "apps/vscode/themes/cyclorama-day.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/vscode/cyclorama-dawn.svg",
+          "file": "apps/vscode/themes/cyclorama-dawn.json",
+          "copyLang": "json",
+          "copyLabel": "settings.json snippet",
+          "copySnippet": "{\n  \"workbench.colorTheme\": \"Cyclorama Dawn\",\n  \"editor.semanticHighlighting.enabled\": true,\n  \"workbench.colorCustomizations\": {\n    \"[Cyclorama Dawn]\": {\n      \"editor.background\": \"#050507\",\n      \"sideBar.background\": \"#0C0C10\",\n      \"statusBar.background\": \"#BD4811\",\n      \"statusBar.foreground\": \"#FFFFFF\",\n      \"focusBorder\": \"#FF9254\"\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/vscode/cyclorama-steel.svg",
+          "file": "apps/vscode/themes/cyclorama-steel.json",
+          "copyLang": "json",
+          "copyLabel": "settings.json snippet",
+          "copySnippet": "{\n  \"workbench.colorTheme\": \"Cyclorama Steel\",\n  \"editor.semanticHighlighting.enabled\": true,\n  \"workbench.colorCustomizations\": {\n    \"[Cyclorama Steel]\": {\n      \"editor.background\": \"#050507\",\n      \"sideBar.background\": \"#0C0C10\",\n      \"statusBar.background\": \"#18496B\",\n      \"statusBar.foreground\": \"#FFFFFF\",\n      \"focusBorder\": \"#74B8E8\"\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/vscode/cyclorama-day.svg",
+          "file": "apps/vscode/themes/cyclorama-day.json",
+          "copyLang": "json",
+          "copyLabel": "settings.json snippet",
+          "copySnippet": "{\n  \"workbench.colorTheme\": \"Cyclorama Day\",\n  \"editor.semanticHighlighting.enabled\": true,\n  \"workbench.colorCustomizations\": {\n    \"[Cyclorama Day]\": {\n      \"editor.background\": \"#F5F7F9\",\n      \"sideBar.background\": \"#FFFFFF\",\n      \"statusBar.background\": \"#18496B\",\n      \"statusBar.foreground\": \"#FFFFFF\",\n      \"focusBorder\": \"#AD3D0A\"\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "neovim",
+      "name": "Neovim",
+      "category": "Editors & IDEs",
+      "homepage": "https://neovim.io/",
+      "format": "Lua Colorscheme Plugin",
+      "install": "Add apps/neovim to runtimepath (lazy.nvim/packer) and run :colorscheme cyclorama-dawn",
+      "installSteps": [
+        "Clone `rfs-themes` or copy `apps/neovim/` into your Neovim plugin directory (or add via `lazy.nvim` using `rtp:append`).",
+        "Run `:colorscheme cyclorama-dawn`, `:colorscheme cyclorama-steel`, or `:colorscheme cyclorama-day`.",
+        "Optional: pass `theme = require(\"cyclorama.lualine\")` to `lualine.nvim` for a matched statusline."
+      ],
+      "path": "apps/neovim",
+      "primaryFile": "apps/neovim/lua/cyclorama/init.lua",
+      "files": [
+        {
+          "label": "Core colorscheme (lua/cyclorama/init.lua)",
+          "path": "apps/neovim/lua/cyclorama/init.lua"
+        },
+        {
+          "label": "Palette tables (lua/cyclorama/palette.lua)",
+          "path": "apps/neovim/lua/cyclorama/palette.lua"
+        },
+        {
+          "label": "Lualine helper (lua/cyclorama/lualine.lua)",
+          "path": "apps/neovim/lua/cyclorama/lualine.lua"
+        },
+        {
+          "label": "Cyclorama Dawn (colors/cyclorama-dawn.lua)",
+          "path": "apps/neovim/colors/cyclorama-dawn.lua"
+        },
+        {
+          "label": "Cyclorama Steel (colors/cyclorama-steel.lua)",
+          "path": "apps/neovim/colors/cyclorama-steel.lua"
+        },
+        {
+          "label": "Cyclorama Day (colors/cyclorama-day.lua)",
+          "path": "apps/neovim/colors/cyclorama-day.lua"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/neovim/cyclorama-dawn.svg",
+          "file": "apps/neovim/colors/cyclorama-dawn.lua",
+          "copyLang": "lua",
+          "copyLabel": "lazy.nvim spec",
+          "copySnippet": "-- lazy.nvim specification (point `dir` to your local clone of apps/neovim)\n{\n  \"Real-Fruit-Snacks/rfs-themes\",\n  name = \"cyclorama-dawn\",\n  priority = 1000,\n  config = function(plugin)\n    vim.opt.rtp:append(plugin.dir .. \"/apps/neovim\")\n    require(\"cyclorama\").setup({\n      variant = \"cyclorama-dawn\",\n      transparent = false,\n      italic_comments = true,\n      terminal_colors = true,\n    })\n    vim.cmd.colorscheme(\"cyclorama-dawn\")\n  end,\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/neovim/cyclorama-steel.svg",
+          "file": "apps/neovim/colors/cyclorama-steel.lua",
+          "copyLang": "lua",
+          "copyLabel": "lazy.nvim spec",
+          "copySnippet": "-- lazy.nvim specification (point `dir` to your local clone of apps/neovim)\n{\n  \"Real-Fruit-Snacks/rfs-themes\",\n  name = \"cyclorama-steel\",\n  priority = 1000,\n  config = function(plugin)\n    vim.opt.rtp:append(plugin.dir .. \"/apps/neovim\")\n    require(\"cyclorama\").setup({\n      variant = \"cyclorama-steel\",\n      transparent = false,\n      italic_comments = true,\n      terminal_colors = true,\n    })\n    vim.cmd.colorscheme(\"cyclorama-steel\")\n  end,\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/neovim/cyclorama-day.svg",
+          "file": "apps/neovim/colors/cyclorama-day.lua",
+          "copyLang": "lua",
+          "copyLabel": "lazy.nvim spec",
+          "copySnippet": "-- lazy.nvim specification (point `dir` to your local clone of apps/neovim)\n{\n  \"Real-Fruit-Snacks/rfs-themes\",\n  name = \"cyclorama-day\",\n  priority = 1000,\n  config = function(plugin)\n    vim.opt.rtp:append(plugin.dir .. \"/apps/neovim\")\n    require(\"cyclorama\").setup({\n      variant = \"cyclorama-day\",\n      transparent = false,\n      italic_comments = true,\n      terminal_colors = true,\n    })\n    vim.cmd.colorscheme(\"cyclorama-day\")\n  end,\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zed",
+      "name": "Zed",
+      "category": "Editors & IDEs",
+      "homepage": "https://zed.dev/",
+      "format": "Zed JSON Theme (v0.2.0)",
+      "install": "Copy apps/zed/themes/cyclorama.json into ~/.config/zed/themes/ and select theme",
+      "installSteps": [
+        "Copy `apps/zed/themes/cyclorama.json` into `~/.config/zed/themes/` (or `%APPDATA%\\Zed\\themes\\` on Windows) for all three variants in one pack, or copy an individual `cyclorama-*.json` file.",
+        "Open Zed's theme selector (`Ctrl+K Ctrl+T` / `Cmd+K Cmd+T`) and pick **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**.",
+        "Optional: set `theme.dark` and `theme.light` in `~/.config/zed/settings.json` to follow your OS dark/light mode."
+      ],
+      "path": "apps/zed",
+      "primaryFile": "apps/zed/themes/cyclorama.json",
+      "files": [
+        {
+          "label": "Unified 3-theme pack (cyclorama.json)",
+          "path": "apps/zed/themes/cyclorama.json"
+        },
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.json)",
+          "path": "apps/zed/themes/cyclorama-dawn.json"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.json)",
+          "path": "apps/zed/themes/cyclorama-steel.json"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.json)",
+          "path": "apps/zed/themes/cyclorama-day.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/zed/cyclorama-dawn.svg",
+          "file": "apps/zed/themes/cyclorama-dawn.json",
+          "copyLang": "json",
+          "copyLabel": "Zed settings.json",
+          "copySnippet": "{\n  \"theme\": {\n    \"mode\": \"dark\",\n    \"dark\": \"Cyclorama Dawn\",\n    \"light\": \"Cyclorama Day\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/zed/cyclorama-steel.svg",
+          "file": "apps/zed/themes/cyclorama-steel.json",
+          "copyLang": "json",
+          "copyLabel": "Zed settings.json",
+          "copySnippet": "{\n  \"theme\": {\n    \"mode\": \"dark\",\n    \"dark\": \"Cyclorama Steel\",\n    \"light\": \"Cyclorama Day\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/zed/cyclorama-day.svg",
+          "file": "apps/zed/themes/cyclorama-day.json",
+          "copyLang": "json",
+          "copyLabel": "Zed settings.json",
+          "copySnippet": "{\n  \"theme\": {\n    \"mode\": \"light\",\n    \"dark\": \"Cyclorama Dawn\",\n    \"light\": \"Cyclorama Day\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "jetbrains",
+      "name": "JetBrains IDEs",
+      "category": "Editors & IDEs",
+      "homepage": "https://www.jetbrains.com/",
+      "format": "IntelliJ .icls + .theme.json",
+      "install": "Import .icls in Settings -> Editor -> Color Scheme, or zip apps/jetbrains/ as a theme plugin",
+      "installSteps": [
+        "**Editor colors only:** open **Settings -> Editor -> Color Scheme**, click the gear icon -> **Import Scheme -> IntelliJ IDEA color scheme (.icls)**, and select `schemes/Cyclorama Dawn.icls` (or Steel / Day).",
+        "**Full UI + Editor plugin:** zip `apps/jetbrains/` (`META-INF/`, `themes/`, `schemes/`) into `cyclorama-dawn-jetbrains.jar` and install via **Settings -> Plugins -> Install Plugin from Disk...**.",
+        "Switch themes anytime from **Settings -> Appearance & Behavior -> Appearance -> Theme**."
+      ],
+      "path": "apps/jetbrains",
+      "primaryFile": "apps/jetbrains/schemes/Cyclorama Dawn.icls",
+      "files": [
+        {
+          "label": "Plugin descriptor (META-INF/plugin.xml)",
+          "path": "apps/jetbrains/META-INF/plugin.xml"
+        },
+        {
+          "label": "Cyclorama Dawn Editor Scheme (.icls)",
+          "path": "apps/jetbrains/schemes/Cyclorama Dawn.icls"
+        },
+        {
+          "label": "Cyclorama Dawn UI Theme (.theme.json)",
+          "path": "apps/jetbrains/themes/cyclorama-dawn.theme.json"
+        },
+        {
+          "label": "Cyclorama Steel Editor Scheme (.icls)",
+          "path": "apps/jetbrains/schemes/Cyclorama Steel.icls"
+        },
+        {
+          "label": "Cyclorama Steel UI Theme (.theme.json)",
+          "path": "apps/jetbrains/themes/cyclorama-steel.theme.json"
+        },
+        {
+          "label": "Cyclorama Day Editor Scheme (.icls)",
+          "path": "apps/jetbrains/schemes/Cyclorama Day.icls"
+        },
+        {
+          "label": "Cyclorama Day UI Theme (.theme.json)",
+          "path": "apps/jetbrains/themes/cyclorama-day.theme.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/jetbrains/cyclorama-dawn.svg",
+          "file": "apps/jetbrains/schemes/Cyclorama Dawn.icls",
+          "copyLang": "json",
+          "copyLabel": "JetBrains .theme.json snippet",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Dawn\",\n  \"dark\": true,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Dawn.icls\",\n  \"colors\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"border\": \"#2A2C35\",\n    \"text\": \"#F4F5F8\",\n    \"accent\": \"#FF9254\",\n    \"accentFill\": \"#BD4811\",\n    \"secondary\": \"#74B8E8\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/jetbrains/cyclorama-steel.svg",
+          "file": "apps/jetbrains/schemes/Cyclorama Steel.icls",
+          "copyLang": "json",
+          "copyLabel": "JetBrains .theme.json snippet",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Steel\",\n  \"dark\": true,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Steel.icls\",\n  \"colors\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"border\": \"#27313D\",\n    \"text\": \"#F4F5F8\",\n    \"accent\": \"#74B8E8\",\n    \"accentFill\": \"#18496B\",\n    \"secondary\": \"#FF9254\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/jetbrains/cyclorama-day.svg",
+          "file": "apps/jetbrains/schemes/Cyclorama Day.icls",
+          "copyLang": "json",
+          "copyLabel": "JetBrains .theme.json snippet",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Day\",\n  \"dark\": false,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Day.icls\",\n  \"colors\": {\n    \"bg\": \"#F5F7F9\",\n    \"surface\": \"#FFFFFF\",\n    \"border\": \"#C8D0DA\",\n    \"text\": \"#0D1016\",\n    \"accent\": \"#AD3D0A\",\n    \"accentFill\": \"#18496B\",\n    \"secondary\": \"#164669\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "windows-terminal",
+      "name": "Windows Terminal",
+      "category": "Terminals",
+      "homepage": "https://learn.microsoft.com/en-us/windows/terminal/",
+      "format": "JSON Schemes + PSReadLine .ps1",
+      "install": "Paste scheme into settings.json \"schemes\" array + dot-source PSReadLine .ps1",
+      "installSteps": [
+        "Open Windows Terminal Settings (Ctrl+,) and select Open JSON file to open settings.json.",
+        "Paste one variant from cyclorama-dawn.json (or all three from schemes.json) into the \"schemes\" array, then set \"colorScheme\": \"Cyclorama Dawn\" in profiles.defaults.",
+        "Optional: dot-source psreadline/cyclorama-dawn.ps1 in your PowerShell $PROFILE (PSReadLine 2.2+) for matching command-line syntax highlighting."
+      ],
+      "path": "apps/windows-terminal",
+      "primaryFile": "apps/windows-terminal/schemes.json",
+      "files": [
+        {
+          "label": "All schemes (schemes.json)",
+          "path": "apps/windows-terminal/schemes.json"
+        },
+        {
+          "label": "Cyclorama Dawn scheme (cyclorama-dawn.json)",
+          "path": "apps/windows-terminal/cyclorama-dawn.json"
+        },
+        {
+          "label": "Cyclorama Dawn PSReadLine (psreadline/cyclorama-dawn.ps1)",
+          "path": "apps/windows-terminal/psreadline/cyclorama-dawn.ps1"
+        },
+        {
+          "label": "Cyclorama Steel scheme (cyclorama-steel.json)",
+          "path": "apps/windows-terminal/cyclorama-steel.json"
+        },
+        {
+          "label": "Cyclorama Steel PSReadLine (psreadline/cyclorama-steel.ps1)",
+          "path": "apps/windows-terminal/psreadline/cyclorama-steel.ps1"
+        },
+        {
+          "label": "Cyclorama Day scheme (cyclorama-day.json)",
+          "path": "apps/windows-terminal/cyclorama-day.json"
+        },
+        {
+          "label": "Cyclorama Day PSReadLine (psreadline/cyclorama-day.ps1)",
+          "path": "apps/windows-terminal/psreadline/cyclorama-day.ps1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/windows-terminal/cyclorama-dawn.svg",
+          "file": "apps/windows-terminal/cyclorama-dawn.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Dawn Windows Terminal JSON",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Dawn\",\n  \"background\": \"#050507\",\n  \"foreground\": \"#F4F5F8\",\n  \"cursorColor\": \"#F06E2B\",\n  \"selectionBackground\": \"#3D2B24\",\n  \"black\": \"#0C0C10\",\n  \"red\": \"#FF5C6C\",\n  \"green\": \"#3DDC97\",\n  \"yellow\": \"#FFC247\",\n  \"blue\": \"#74B8E8\",\n  \"purple\": \"#C996F5\",\n  \"cyan\": \"#56D4E0\",\n  \"white\": \"#D6D8E0\",\n  \"brightBlack\": \"#8C8F9D\",\n  \"brightRed\": \"#FF9254\",\n  \"brightGreen\": \"#6CE8B2\",\n  \"brightYellow\": \"#FFD475\",\n  \"brightBlue\": \"#99CDF2\",\n  \"brightPurple\": \"#DCB8FA\",\n  \"brightCyan\": \"#85E3EC\",\n  \"brightWhite\": \"#F4F5F8\"\n}",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/windows-terminal/cyclorama-steel.svg",
+          "file": "apps/windows-terminal/cyclorama-steel.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Steel Windows Terminal JSON",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Steel\",\n  \"background\": \"#050507\",\n  \"foreground\": \"#F4F5F8\",\n  \"cursorColor\": \"#74B8E8\",\n  \"selectionBackground\": \"#1D3B57\",\n  \"black\": \"#0C0C10\",\n  \"red\": \"#FF5C6C\",\n  \"green\": \"#3DDC97\",\n  \"yellow\": \"#FFC247\",\n  \"blue\": \"#74B8E8\",\n  \"purple\": \"#C996F5\",\n  \"cyan\": \"#56D4E0\",\n  \"white\": \"#D6D8E0\",\n  \"brightBlack\": \"#8C96A6\",\n  \"brightRed\": \"#FF9254\",\n  \"brightGreen\": \"#6CE8B2\",\n  \"brightYellow\": \"#FFD475\",\n  \"brightBlue\": \"#99CDF2\",\n  \"brightPurple\": \"#DCB8FA\",\n  \"brightCyan\": \"#85E3EC\",\n  \"brightWhite\": \"#F4F5F8\"\n}",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/windows-terminal/cyclorama-day.svg",
+          "file": "apps/windows-terminal/cyclorama-day.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Day Windows Terminal JSON",
+          "copySnippet": "{\n  \"name\": \"Cyclorama Day\",\n  \"background\": \"#F5F7F9\",\n  \"foreground\": \"#0D1016\",\n  \"cursorColor\": \"#AD3D0A\",\n  \"selectionBackground\": \"#C6DAEB\",\n  \"black\": \"#0D1016\",\n  \"red\": \"#B91C2E\",\n  \"green\": \"#127247\",\n  \"yellow\": \"#885800\",\n  \"blue\": \"#164669\",\n  \"purple\": \"#6B38B8\",\n  \"cyan\": \"#0E6674\",\n  \"white\": \"#E3E8EE\",\n  \"brightBlack\": \"#58606E\",\n  \"brightRed\": \"#AD3D0A\",\n  \"brightGreen\": \"#0D5A37\",\n  \"brightYellow\": \"#704700\",\n  \"brightBlue\": \"#1F547A\",\n  \"brightPurple\": \"#572A9E\",\n  \"brightCyan\": \"#0A525E\",\n  \"brightWhite\": \"#FFFFFF\"\n}",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "wezterm",
+      "name": "WezTerm",
+      "category": "Terminals",
+      "homepage": "https://wezterm.org/",
+      "format": "WezTerm .toml Color Scheme",
+      "install": "Copy .toml into ~/.config/wezterm/colors/ and set config.color_scheme",
+      "installSteps": [
+        "Copy cyclorama-dawn.toml, cyclorama-steel.toml, and cyclorama-day.toml into ~/.config/wezterm/colors/ (Windows: %USERPROFILE%\\.config\\wezterm\\colors\\).",
+        "Set config.color_scheme = \"Cyclorama Dawn\" (or \"Cyclorama Steel\" / \"Cyclorama Day\") in your wezterm.lua.",
+        "Reload WezTerm (config auto-reloads on save)."
+      ],
+      "path": "apps/wezterm",
+      "primaryFile": "apps/wezterm/cyclorama-dawn.toml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.toml)",
+          "path": "apps/wezterm/cyclorama-dawn.toml"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.toml)",
+          "path": "apps/wezterm/cyclorama-steel.toml"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.toml)",
+          "path": "apps/wezterm/cyclorama-day.toml"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/wezterm/cyclorama-dawn.svg",
+          "file": "apps/wezterm/cyclorama-dawn.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Dawn WezTerm TOML",
+          "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Dawn\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#F4F5F8\"\nbackground = \"#050507\"\ncursor_bg = \"#F06E2B\"\ncursor_fg = \"#050507\"\ncursor_border = \"#F06E2B\"\nselection_fg = \"#F4F5F8\"\nselection_bg = \"#3D2B24\"\nscrollbar_thumb = \"#62646D\"\nsplit = \"#2A2C35\"\nansi = [\"#0C0C10\", \"#FF5C6C\", \"#3DDC97\", \"#FFC247\", \"#74B8E8\", \"#C996F5\", \"#56D4E0\", \"#D6D8E0\"]\nbrights = [\"#8C8F9D\", \"#FF9254\", \"#6CE8B2\", \"#FFD475\", \"#99CDF2\", \"#DCB8FA\", \"#85E3EC\", \"#F4F5F8\"]\n\n[colors.tab_bar]\nbackground = \"#070709\"\ninactive_tab_edge = \"#2A2C35\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#BD4811\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#0C0C10\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#14141A\"\nfg_color = \"#F4F5F8\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#070709\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#14141A\"\nfg_color = \"#FF9254\"\nitalic = false",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/wezterm/cyclorama-steel.svg",
+          "file": "apps/wezterm/cyclorama-steel.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Steel WezTerm TOML",
+          "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Steel\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#F4F5F8\"\nbackground = \"#050507\"\ncursor_bg = \"#74B8E8\"\ncursor_fg = \"#050507\"\ncursor_border = \"#74B8E8\"\nselection_fg = \"#F4F5F8\"\nselection_bg = \"#1D3B57\"\nscrollbar_thumb = \"#637284\"\nsplit = \"#27313D\"\nansi = [\"#0C0C10\", \"#FF5C6C\", \"#3DDC97\", \"#FFC247\", \"#74B8E8\", \"#C996F5\", \"#56D4E0\", \"#D6D8E0\"]\nbrights = [\"#8C96A6\", \"#FF9254\", \"#6CE8B2\", \"#FFD475\", \"#99CDF2\", \"#DCB8FA\", \"#85E3EC\", \"#F4F5F8\"]\n\n[colors.tab_bar]\nbackground = \"#07080B\"\ninactive_tab_edge = \"#27313D\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#18496B\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#0C0C10\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#131820\"\nfg_color = \"#F4F5F8\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#07080B\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#131820\"\nfg_color = \"#74B8E8\"\nitalic = false",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/wezterm/cyclorama-day.svg",
+          "file": "apps/wezterm/cyclorama-day.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Day WezTerm TOML",
+          "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Day\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#0D1016\"\nbackground = \"#F5F7F9\"\ncursor_bg = \"#AD3D0A\"\ncursor_fg = \"#FFFFFF\"\ncursor_border = \"#AD3D0A\"\nselection_fg = \"#0D1016\"\nselection_bg = \"#C6DAEB\"\nscrollbar_thumb = \"#6E7682\"\nsplit = \"#C8D0DA\"\nansi = [\"#0D1016\", \"#B91C2E\", \"#127247\", \"#885800\", \"#164669\", \"#6B38B8\", \"#0E6674\", \"#E3E8EE\"]\nbrights = [\"#58606E\", \"#AD3D0A\", \"#0D5A37\", \"#704700\", \"#1F547A\", \"#572A9E\", \"#0A525E\", \"#FFFFFF\"]\n\n[colors.tab_bar]\nbackground = \"#EAEEF2\"\ninactive_tab_edge = \"#C8D0DA\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#18496B\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#FFFFFF\"\nfg_color = \"#474D59\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#E3E8EE\"\nfg_color = \"#0D1016\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#EAEEF2\"\nfg_color = \"#474D59\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#E3E8EE\"\nfg_color = \"#AD3D0A\"\nitalic = false",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "alacritty",
+      "name": "Alacritty",
+      "category": "Terminals",
+      "homepage": "https://alacritty.org/",
+      "format": "Alacritty v0.13+ .toml",
+      "install": "Import .toml under [general].import in alacritty.toml",
+      "installSteps": [
+        "Copy cyclorama-dawn.toml (or steel/day) into ~/.config/alacritty/themes/ (Windows: %APPDATA%\\alacritty\\themes\\).",
+        "Import the theme in alacritty.toml under [general] with import = [\"~/.config/alacritty/themes/cyclorama-dawn.toml\"].",
+        "Save alacritty.toml — Alacritty reloads colors live."
+      ],
+      "path": "apps/alacritty",
+      "primaryFile": "apps/alacritty/cyclorama-dawn.toml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.toml)",
+          "path": "apps/alacritty/cyclorama-dawn.toml"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.toml)",
+          "path": "apps/alacritty/cyclorama-steel.toml"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.toml)",
+          "path": "apps/alacritty/cyclorama-day.toml"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/alacritty/cyclorama-dawn.svg",
+          "file": "apps/alacritty/cyclorama-dawn.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Dawn Alacritty TOML",
+          "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#050507\"\nforeground = \"#F4F5F8\"\ndim_foreground = \"#B3B5C0\"\nbright_foreground = \"#F4F5F8\"\n\n[colors.cursor]\ntext = \"#050507\"\ncursor = \"#F06E2B\"\n\n[colors.vi_mode_cursor]\ntext = \"#050507\"\ncursor = \"#74B8E8\"\n\n[colors.selection]\ntext = \"#F4F5F8\"\nbackground = \"#3D2B24\"\n\n[colors.search.matches]\nforeground = \"#F4F5F8\"\nbackground = \"#4A3619\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.normal]\nblack = \"#0C0C10\"\nred = \"#FF5C6C\"\ngreen = \"#3DDC97\"\nyellow = \"#FFC247\"\nblue = \"#74B8E8\"\nmagenta = \"#C996F5\"\ncyan = \"#56D4E0\"\nwhite = \"#D6D8E0\"\n\n[colors.bright]\nblack = \"#8C8F9D\"\nred = \"#FF9254\"\ngreen = \"#6CE8B2\"\nyellow = \"#FFD475\"\nblue = \"#99CDF2\"\nmagenta = \"#DCB8FA\"\ncyan = \"#85E3EC\"\nwhite = \"#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/alacritty/cyclorama-steel.svg",
+          "file": "apps/alacritty/cyclorama-steel.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Steel Alacritty TOML",
+          "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#050507\"\nforeground = \"#F4F5F8\"\ndim_foreground = \"#B3B5C0\"\nbright_foreground = \"#F4F5F8\"\n\n[colors.cursor]\ntext = \"#050507\"\ncursor = \"#74B8E8\"\n\n[colors.vi_mode_cursor]\ntext = \"#050507\"\ncursor = \"#FF9254\"\n\n[colors.selection]\ntext = \"#F4F5F8\"\nbackground = \"#1D3B57\"\n\n[colors.search.matches]\nforeground = \"#F4F5F8\"\nbackground = \"#3B3117\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.normal]\nblack = \"#0C0C10\"\nred = \"#FF5C6C\"\ngreen = \"#3DDC97\"\nyellow = \"#FFC247\"\nblue = \"#74B8E8\"\nmagenta = \"#C996F5\"\ncyan = \"#56D4E0\"\nwhite = \"#D6D8E0\"\n\n[colors.bright]\nblack = \"#8C96A6\"\nred = \"#FF9254\"\ngreen = \"#6CE8B2\"\nyellow = \"#FFD475\"\nblue = \"#99CDF2\"\nmagenta = \"#DCB8FA\"\ncyan = \"#85E3EC\"\nwhite = \"#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/alacritty/cyclorama-day.svg",
+          "file": "apps/alacritty/cyclorama-day.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Day Alacritty TOML",
+          "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#F5F7F9\"\nforeground = \"#0D1016\"\ndim_foreground = \"#474D59\"\nbright_foreground = \"#0D1016\"\n\n[colors.cursor]\ntext = \"#FFFFFF\"\ncursor = \"#AD3D0A\"\n\n[colors.vi_mode_cursor]\ntext = \"#FFFFFF\"\ncursor = \"#164669\"\n\n[colors.selection]\ntext = \"#0D1016\"\nbackground = \"#C6DAEB\"\n\n[colors.search.matches]\nforeground = \"#0D1016\"\nbackground = \"#F5DFB0\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#AD3D0A\"\n\n[colors.normal]\nblack = \"#0D1016\"\nred = \"#B91C2E\"\ngreen = \"#127247\"\nyellow = \"#885800\"\nblue = \"#164669\"\nmagenta = \"#6B38B8\"\ncyan = \"#0E6674\"\nwhite = \"#E3E8EE\"\n\n[colors.bright]\nblack = \"#58606E\"\nred = \"#AD3D0A\"\ngreen = \"#0D5A37\"\nyellow = \"#704700\"\nblue = \"#1F547A\"\nmagenta = \"#572A9E\"\ncyan = \"#0A525E\"\nwhite = \"#FFFFFF\"",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ghostty",
+      "name": "Ghostty",
+      "category": "Terminals",
+      "homepage": "https://ghostty.org/",
+      "format": "Ghostty Theme File",
+      "install": "Copy theme into ~/.config/ghostty/themes/ and set theme = cyclorama-dawn",
+      "installSteps": [
+        "Copy cyclorama-dawn, cyclorama-steel, and cyclorama-day into ~/.config/ghostty/themes/.",
+        "Set theme = cyclorama-dawn (or theme = dark:cyclorama-dawn,light:cyclorama-day) in ~/.config/ghostty/config.",
+        "Reload Ghostty configuration (Cmd+Shift+, on macOS or Ctrl+Shift+, on Linux)."
+      ],
+      "path": "apps/ghostty",
+      "primaryFile": "apps/ghostty/cyclorama-dawn",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn)",
+          "path": "apps/ghostty/cyclorama-dawn"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel)",
+          "path": "apps/ghostty/cyclorama-steel"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day)",
+          "path": "apps/ghostty/cyclorama-day"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/ghostty/cyclorama-dawn.svg",
+          "file": "apps/ghostty/cyclorama-dawn",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Dawn Ghostty theme",
+          "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0C0C10\npalette = 1=#FF5C6C\npalette = 2=#3DDC97\npalette = 3=#FFC247\npalette = 4=#74B8E8\npalette = 5=#C996F5\npalette = 6=#56D4E0\npalette = 7=#D6D8E0\npalette = 8=#8C8F9D\npalette = 9=#FF9254\npalette = 10=#6CE8B2\npalette = 11=#FFD475\npalette = 12=#99CDF2\npalette = 13=#DCB8FA\npalette = 14=#85E3EC\npalette = 15=#F4F5F8\nbackground = #050507\nforeground = #F4F5F8\ncursor-color = #F06E2B\ncursor-text = #050507\nselection-background = #3D2B24\nselection-foreground = #F4F5F8",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/ghostty/cyclorama-steel.svg",
+          "file": "apps/ghostty/cyclorama-steel",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Steel Ghostty theme",
+          "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0C0C10\npalette = 1=#FF5C6C\npalette = 2=#3DDC97\npalette = 3=#FFC247\npalette = 4=#74B8E8\npalette = 5=#C996F5\npalette = 6=#56D4E0\npalette = 7=#D6D8E0\npalette = 8=#8C96A6\npalette = 9=#FF9254\npalette = 10=#6CE8B2\npalette = 11=#FFD475\npalette = 12=#99CDF2\npalette = 13=#DCB8FA\npalette = 14=#85E3EC\npalette = 15=#F4F5F8\nbackground = #050507\nforeground = #F4F5F8\ncursor-color = #74B8E8\ncursor-text = #050507\nselection-background = #1D3B57\nselection-foreground = #F4F5F8",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/ghostty/cyclorama-day.svg",
+          "file": "apps/ghostty/cyclorama-day",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Day Ghostty theme",
+          "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0D1016\npalette = 1=#B91C2E\npalette = 2=#127247\npalette = 3=#885800\npalette = 4=#164669\npalette = 5=#6B38B8\npalette = 6=#0E6674\npalette = 7=#E3E8EE\npalette = 8=#58606E\npalette = 9=#AD3D0A\npalette = 10=#0D5A37\npalette = 11=#704700\npalette = 12=#1F547A\npalette = 13=#572A9E\npalette = 14=#0A525E\npalette = 15=#FFFFFF\nbackground = #F5F7F9\nforeground = #0D1016\ncursor-color = #AD3D0A\ncursor-text = #FFFFFF\nselection-background = #C6DAEB\nselection-foreground = #0D1016",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kitty",
+      "name": "Kitty",
+      "category": "Terminals",
+      "homepage": "https://sw.kovidgoyal.net/kitty/",
+      "format": "Kitty .conf Theme",
+      "install": "Include .conf from ~/.config/kitty/themes/ in kitty.conf",
+      "installSteps": [
+        "Copy cyclorama-dawn.conf, cyclorama-steel.conf, and cyclorama-day.conf into ~/.config/kitty/themes/.",
+        "Add `include themes/cyclorama-dawn.conf` to ~/.config/kitty/kitty.conf.",
+        "Reload Kitty config (Ctrl+Shift+F5) or switch interactively with `kitten themes`."
+      ],
+      "path": "apps/kitty",
+      "primaryFile": "apps/kitty/cyclorama-dawn.conf",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.conf)",
+          "path": "apps/kitty/cyclorama-dawn.conf"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.conf)",
+          "path": "apps/kitty/cyclorama-steel.conf"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.conf)",
+          "path": "apps/kitty/cyclorama-day.conf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/kitty/cyclorama-dawn.svg",
+          "file": "apps/kitty/cyclorama-dawn.conf",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Dawn Kitty .conf",
+          "copySnippet": "## name: Cyclorama Dawn\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (LX 263 Dark · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #F4F5F8\nbackground              #050507\nselection_foreground    #F4F5F8\nselection_background    #3D2B24\n\n# Cursor & URLs\ncursor                  #F06E2B\ncursor_text_color       #050507\nurl_color               #FF9254\n\n# Window borders\nactive_border_color     #FF9254\ninactive_border_color   #2A2C35\nbell_border_color       #FFC247\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #BD4811\ninactive_tab_foreground #B3B5C0\ninactive_tab_background #0C0C10\ntab_bar_background      #070709\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #BD4811\nmark2_foreground        #FFFFFF\nmark2_background        #18496B\nmark3_foreground        #FFFFFF\nmark3_background        #C92438\n\n# ANSI 0-15 color table\ncolor0                  #0C0C10\ncolor1                  #FF5C6C\ncolor2                  #3DDC97\ncolor3                  #FFC247\ncolor4                  #74B8E8\ncolor5                  #C996F5\ncolor6                  #56D4E0\ncolor7                  #D6D8E0\ncolor8                  #8C8F9D\ncolor9                  #FF9254\ncolor10                 #6CE8B2\ncolor11                 #FFD475\ncolor12                 #99CDF2\ncolor13                 #DCB8FA\ncolor14                 #85E3EC\ncolor15                 #F4F5F8",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/kitty/cyclorama-steel.svg",
+          "file": "apps/kitty/cyclorama-steel.conf",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Steel Kitty .conf",
+          "copySnippet": "## name: Cyclorama Steel\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (LX 263 Dark · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #F4F5F8\nbackground              #050507\nselection_foreground    #F4F5F8\nselection_background    #1D3B57\n\n# Cursor & URLs\ncursor                  #74B8E8\ncursor_text_color       #050507\nurl_color               #74B8E8\n\n# Window borders\nactive_border_color     #74B8E8\ninactive_border_color   #27313D\nbell_border_color       #FFC247\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #18496B\ninactive_tab_foreground #B3B5C0\ninactive_tab_background #0C0C10\ntab_bar_background      #07080B\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #18496B\nmark2_foreground        #FFFFFF\nmark2_background        #BD4811\nmark3_foreground        #FFFFFF\nmark3_background        #C92438\n\n# ANSI 0-15 color table\ncolor0                  #0C0C10\ncolor1                  #FF5C6C\ncolor2                  #3DDC97\ncolor3                  #FFC247\ncolor4                  #74B8E8\ncolor5                  #C996F5\ncolor6                  #56D4E0\ncolor7                  #D6D8E0\ncolor8                  #8C96A6\ncolor9                  #FF9254\ncolor10                 #6CE8B2\ncolor11                 #FFD475\ncolor12                 #99CDF2\ncolor13                 #DCB8FA\ncolor14                 #85E3EC\ncolor15                 #F4F5F8",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/kitty/cyclorama-day.svg",
+          "file": "apps/kitty/cyclorama-day.conf",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Day Kitty .conf",
+          "copySnippet": "## name: Cyclorama Day\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (LX 512 Light · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #0D1016\nbackground              #F5F7F9\nselection_foreground    #0D1016\nselection_background    #C6DAEB\n\n# Cursor & URLs\ncursor                  #AD3D0A\ncursor_text_color       #FFFFFF\nurl_color               #AD3D0A\n\n# Window borders\nactive_border_color     #AD3D0A\ninactive_border_color   #C8D0DA\nbell_border_color       #885800\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #18496B\ninactive_tab_foreground #474D59\ninactive_tab_background #FFFFFF\ntab_bar_background      #EAEEF2\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #18496B\nmark2_foreground        #FFFFFF\nmark2_background        #AD3D0A\nmark3_foreground        #FFFFFF\nmark3_background        #B91C2E\n\n# ANSI 0-15 color table\ncolor0                  #0D1016\ncolor1                  #B91C2E\ncolor2                  #127247\ncolor3                  #885800\ncolor4                  #164669\ncolor5                  #6B38B8\ncolor6                  #0E6674\ncolor7                  #E3E8EE\ncolor8                  #58606E\ncolor9                  #AD3D0A\ncolor10                 #0D5A37\ncolor11                 #704700\ncolor12                 #1F547A\ncolor13                 #572A9E\ncolor14                 #0A525E\ncolor15                 #FFFFFF",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "starship",
+      "name": "Starship",
+      "category": "CLI & TUI",
+      "homepage": "https://starship.rs/",
+      "format": "Starship .toml Palette",
+      "install": "Copy cyclorama-dawn.toml to ~/.config/starship.toml",
+      "installSteps": [
+        "Copy `cyclorama-dawn.toml` (or `steel` / `day`) to `~/.config/starship.toml`.",
+        "Or append `palettes.toml` to your existing `~/.config/starship.toml` and set `palette = \"cyclorama_dawn\"` at the top.",
+        "Start a new shell session to load the updated Starship prompt."
+      ],
+      "path": "apps/starship",
+      "primaryFile": "apps/starship/cyclorama-dawn.toml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Config",
+          "path": "apps/starship/cyclorama-dawn.toml"
+        },
+        {
+          "label": "Cyclorama Steel Config",
+          "path": "apps/starship/cyclorama-steel.toml"
+        },
+        {
+          "label": "Cyclorama Day Config",
+          "path": "apps/starship/cyclorama-day.toml"
+        },
+        {
+          "label": "All 3 Palettes Pack",
+          "path": "apps/starship/palettes.toml"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte dark Starship prompt with Steel Blue path pills, Beacon Orange git segments, and Signal Emerald status.",
+          "preview": "assets/previews/starship/cyclorama-dawn.svg",
+          "file": "apps/starship/cyclorama-dawn.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Dawn Starship palette",
+          "copySnippet": "palette = \"cyclorama_dawn\"\n\n[palettes.cyclorama_dawn]\nbg = \"#050507\"\nrail = \"#070709\"\ncode_bg = \"#08080B\"\nsurface = \"#0C0C10\"\nlist = \"#0F1016\"\nraised = \"#14141A\"\noverlay = \"#1C1D26\"\nborder_subtle = \"#27272E\"\nborder = \"#2A2C35\"\nborder_strong = \"#62646D\"\ntext = \"#F4F5F8\"\ntext_soft = \"#D6D8E0\"\nmute = \"#B3B5C0\"\nsubtle = \"#8C8F9D\"\naccent = \"#FF9254\"\naccent_vivid = \"#F06E2B\"\naccent_hover = \"#FFB07A\"\naccent_fill = \"#BD4811\"\naccent_fill_hover = \"#9E3B0C\"\non_accent = \"#FFFFFF\"\non_vivid = \"#050507\"\nsecondary = \"#74B8E8\"\nsecondary_vivid = \"#1F547A\"\nsecondary_fill = \"#18496B\"\nsecondary_hover = \"#99CDF2\"\nsignal = \"#3DDC97\"\nwarning = \"#FFC247\"\nfault = \"#FF5C6C\"\nfault_fill = \"#C92438\"\nfault_hover = \"#E02E44\"\ncyan = \"#56D4E0\"\nmagenta = \"#C996F5\"\nsteel_wash = \"#133954\"\nbeacon_wash = \"#CC5016\"\nselection_bg = \"#2B2220\"\nselection_active = \"#3D2B24\"\nfind_match = \"#4A3619\"\ndiff_add_bg = \"#0D291E\"\ndiff_del_bg = \"#301218\"\ndiff_chg_bg = \"#112436\"\ncursor = \"#F06E2B\"\ncursor_text = \"#050507\"\nbeam_start = \"#74B8E8\"\nbeam_end = \"#F06E2B\"\nsyntax_keyword = \"#74B8E8\"\nsyntax_function = \"#FF9254\"\nsyntax_string = \"#FFC247\"\nsyntax_number = \"#3DDC97\"\nsyntax_comment = \"#8C8F9D\"\nsyntax_type = \"#56D4E0\"\nsyntax_constant = \"#C996F5\"\nsyntax_operator = \"#D6D8E0\"\nsyntax_property = \"#99CDF2\"\nsyntax_parameter = \"#FFB07A\"\nsyntax_tag = \"#FF5C6C\"\nsyntax_punctuation = \"#B3B5C0\"\nsyntax_diff_add = \"#3DDC97\"\nsyntax_diff_del = \"#FF5C6C\"\nsyntax_diff_change = \"#74B8E8\"\nansi_black = \"#0C0C10\"\nansi_red = \"#FF5C6C\"\nansi_green = \"#3DDC97\"\nansi_yellow = \"#FFC247\"\nansi_blue = \"#74B8E8\"\nansi_magenta = \"#C996F5\"\nansi_cyan = \"#56D4E0\"\nansi_white = \"#D6D8E0\"\nansi_bright_black = \"#8C8F9D\"\nansi_bright_red = \"#FF9254\"\nansi_bright_green = \"#6CE8B2\"\nansi_bright_yellow = \"#FFD475\"\nansi_bright_blue = \"#99CDF2\"\nansi_bright_magenta = \"#DCB8FA\"\nansi_bright_cyan = \"#85E3EC\"\nansi_bright_white = \"#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal Starship prompt with Steel Blue primary focus and Beacon Orange secondary highlights.",
+          "preview": "assets/previews/starship/cyclorama-steel.svg",
+          "file": "apps/starship/cyclorama-steel.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Steel Starship palette",
+          "copySnippet": "palette = \"cyclorama_steel\"\n\n[palettes.cyclorama_steel]\nbg = \"#050507\"\nrail = \"#07080B\"\ncode_bg = \"#080A0E\"\nsurface = \"#0C0C10\"\nlist = \"#0E1117\"\nraised = \"#131820\"\noverlay = \"#1A222E\"\nborder_subtle = \"#222B36\"\nborder = \"#27313D\"\nborder_strong = \"#637284\"\ntext = \"#F4F5F8\"\ntext_soft = \"#D6DCE4\"\nmute = \"#B3B5C0\"\nsubtle = \"#8C96A6\"\naccent = \"#74B8E8\"\naccent_vivid = \"#1F547A\"\naccent_hover = \"#99CDF2\"\naccent_fill = \"#18496B\"\naccent_fill_hover = \"#123955\"\non_accent = \"#FFFFFF\"\non_vivid = \"#FFFFFF\"\nsecondary = \"#FF9254\"\nsecondary_vivid = \"#F06E2B\"\nsecondary_fill = \"#BD4811\"\nsecondary_hover = \"#FFB07A\"\nsignal = \"#3DDC97\"\nwarning = \"#FFC247\"\nfault = \"#FF5C6C\"\nfault_fill = \"#C92438\"\nfault_hover = \"#E02E44\"\ncyan = \"#56D4E0\"\nmagenta = \"#C996F5\"\nsteel_wash = \"#133954\"\nbeacon_wash = \"#CC5016\"\nselection_bg = \"#15293D\"\nselection_active = \"#1D3B57\"\nfind_match = \"#3B3117\"\ndiff_add_bg = \"#0D291E\"\ndiff_del_bg = \"#301218\"\ndiff_chg_bg = \"#13293D\"\ncursor = \"#74B8E8\"\ncursor_text = \"#050507\"\nbeam_start = \"#74B8E8\"\nbeam_end = \"#F06E2B\"\nsyntax_keyword = \"#74B8E8\"\nsyntax_function = \"#FF9254\"\nsyntax_string = \"#FFC247\"\nsyntax_number = \"#3DDC97\"\nsyntax_comment = \"#8C96A6\"\nsyntax_type = \"#56D4E0\"\nsyntax_constant = \"#C996F5\"\nsyntax_operator = \"#D6D8E0\"\nsyntax_property = \"#99CDF2\"\nsyntax_parameter = \"#FFB07A\"\nsyntax_tag = \"#FF5C6C\"\nsyntax_punctuation = \"#B3B5C0\"\nsyntax_diff_add = \"#3DDC97\"\nsyntax_diff_del = \"#FF5C6C\"\nsyntax_diff_change = \"#74B8E8\"\nansi_black = \"#0C0C10\"\nansi_red = \"#FF5C6C\"\nansi_green = \"#3DDC97\"\nansi_yellow = \"#FFC247\"\nansi_blue = \"#74B8E8\"\nansi_magenta = \"#C996F5\"\nansi_cyan = \"#56D4E0\"\nansi_white = \"#D6D8E0\"\nansi_bright_black = \"#8C96A6\"\nansi_bright_red = \"#FF9254\"\nansi_bright_green = \"#6CE8B2\"\nansi_bright_yellow = \"#FFD475\"\nansi_bright_blue = \"#99CDF2\"\nansi_bright_magenta = \"#DCB8FA\"\nansi_bright_cyan = \"#85E3EC\"\nansi_bright_white = \"#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day light Starship prompt with high-contrast Steel pills, burnt Beacon accents, and deep Signal badges.",
+          "preview": "assets/previews/starship/cyclorama-day.svg",
+          "file": "apps/starship/cyclorama-day.toml",
+          "copyLang": "toml",
+          "copyLabel": "Copy Cyclorama Day Starship palette",
+          "copySnippet": "palette = \"cyclorama_day\"\n\n[palettes.cyclorama_day]\nbg = \"#F5F7F9\"\nrail = \"#EAEEF2\"\ncode_bg = \"#EEF2F5\"\nsurface = \"#FFFFFF\"\nlist = \"#F0F3F7\"\nraised = \"#E3E8EE\"\noverlay = \"#D7DFE8\"\nborder_subtle = \"#CFD5DC\"\nborder = \"#C8D0DA\"\nborder_strong = \"#6E7682\"\ntext = \"#0D1016\"\ntext_soft = \"#252A34\"\nmute = \"#474D59\"\nsubtle = \"#58606E\"\naccent = \"#AD3D0A\"\naccent_vivid = \"#CC5016\"\naccent_hover = \"#8B2F06\"\naccent_fill = \"#18496B\"\naccent_fill_hover = \"#113752\"\non_accent = \"#FFFFFF\"\non_vivid = \"#FFFFFF\"\nsecondary = \"#164669\"\nsecondary_vivid = \"#1F547A\"\nsecondary_fill = \"#AD3D0A\"\nsecondary_hover = \"#0F334E\"\nsignal = \"#127247\"\nwarning = \"#885800\"\nfault = \"#B91C2E\"\nfault_fill = \"#B91C2E\"\nfault_hover = \"#991525\"\ncyan = \"#0E6674\"\nmagenta = \"#6B38B8\"\nsteel_wash = \"#DCE7F0\"\nbeacon_wash = \"#F8E3D6\"\nselection_bg = \"#DCE7F0\"\nselection_active = \"#C6DAEB\"\nfind_match = \"#F5DFB0\"\ndiff_add_bg = \"#D9F0E4\"\ndiff_del_bg = \"#F8DADF\"\ndiff_chg_bg = \"#DCE8F3\"\ncursor = \"#AD3D0A\"\ncursor_text = \"#FFFFFF\"\nbeam_start = \"#18496B\"\nbeam_end = \"#AD3D0A\"\nsyntax_keyword = \"#164669\"\nsyntax_function = \"#AD3D0A\"\nsyntax_string = \"#885800\"\nsyntax_number = \"#127247\"\nsyntax_comment = \"#58606E\"\nsyntax_type = \"#0E6674\"\nsyntax_constant = \"#6B38B8\"\nsyntax_operator = \"#252A34\"\nsyntax_property = \"#1F547A\"\nsyntax_parameter = \"#943207\"\nsyntax_tag = \"#B91C2E\"\nsyntax_punctuation = \"#474D59\"\nsyntax_diff_add = \"#127247\"\nsyntax_diff_del = \"#B91C2E\"\nsyntax_diff_change = \"#164669\"\nansi_black = \"#0D1016\"\nansi_red = \"#B91C2E\"\nansi_green = \"#127247\"\nansi_yellow = \"#885800\"\nansi_blue = \"#164669\"\nansi_magenta = \"#6B38B8\"\nansi_cyan = \"#0E6674\"\nansi_white = \"#E3E8EE\"\nansi_bright_black = \"#58606E\"\nansi_bright_red = \"#AD3D0A\"\nansi_bright_green = \"#0D5A37\"\nansi_bright_yellow = \"#704700\"\nansi_bright_blue = \"#1F547A\"\nansi_bright_magenta = \"#572A9E\"\nansi_bright_cyan = \"#0A525E\"\nansi_bright_white = \"#FFFFFF\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "oh-my-posh",
+      "name": "Oh My Posh",
+      "category": "CLI & TUI",
+      "homepage": "https://ohmyposh.dev/",
+      "format": "Oh My Posh v3 .omp.json",
+      "install": "oh-my-posh init <shell> --config apps/oh-my-posh/cyclorama-dawn.omp.json",
+      "installSteps": [
+        "Copy `cyclorama-dawn.omp.json` (or `steel` / `day`) into your Oh My Posh themes folder.",
+        "Initialize Oh My Posh in your shell profile (`~/.zshrc`, `~/.bashrc`, or PowerShell `$PROFILE`) with `--config` pointing to the `.omp.json` file.",
+        "Reload your shell profile to activate the prompt."
+      ],
+      "path": "apps/oh-my-posh",
+      "primaryFile": "apps/oh-my-posh/cyclorama-dawn.omp.json",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Theme",
+          "path": "apps/oh-my-posh/cyclorama-dawn.omp.json"
+        },
+        {
+          "label": "Cyclorama Steel Theme",
+          "path": "apps/oh-my-posh/cyclorama-steel.omp.json"
+        },
+        {
+          "label": "Cyclorama Day Theme",
+          "path": "apps/oh-my-posh/cyclorama-day.omp.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Oh My Posh v3 dark prompt using p:<token> palette references with Beacon Orange git badges and Steel Blue paths.",
+          "preview": "assets/previews/oh-my-posh/cyclorama-dawn.svg",
+          "file": "apps/oh-my-posh/cyclorama-dawn.omp.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Dawn Oh My Posh palette",
+          "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"raised\": \"#14141A\",\n    \"border\": \"#2A2C35\",\n    \"text\": \"#F4F5F8\",\n    \"text_soft\": \"#D6D8E0\",\n    \"mute\": \"#B3B5C0\",\n    \"subtle\": \"#8C8F9D\",\n    \"accent\": \"#FF9254\",\n    \"accent_vivid\": \"#F06E2B\",\n    \"accent_fill\": \"#BD4811\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#74B8E8\",\n    \"secondary_fill\": \"#18496B\",\n    \"signal\": \"#3DDC97\",\n    \"warning\": \"#FFC247\",\n    \"fault\": \"#FF5C6C\",\n    \"fault_fill\": \"#C92438\",\n    \"cyan\": \"#56D4E0\",\n    \"magenta\": \"#C996F5\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Oh My Posh v3 steel-charcoal dark prompt with Steel Blue primary pills and Beacon Orange highlights.",
+          "preview": "assets/previews/oh-my-posh/cyclorama-steel.svg",
+          "file": "apps/oh-my-posh/cyclorama-steel.omp.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Steel Oh My Posh palette",
+          "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"raised\": \"#131820\",\n    \"border\": \"#27313D\",\n    \"text\": \"#F4F5F8\",\n    \"text_soft\": \"#D6DCE4\",\n    \"mute\": \"#B3B5C0\",\n    \"subtle\": \"#8C96A6\",\n    \"accent\": \"#74B8E8\",\n    \"accent_vivid\": \"#1F547A\",\n    \"accent_fill\": \"#18496B\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#FF9254\",\n    \"secondary_fill\": \"#BD4811\",\n    \"signal\": \"#3DDC97\",\n    \"warning\": \"#FFC247\",\n    \"fault\": \"#FF5C6C\",\n    \"fault_fill\": \"#C92438\",\n    \"cyan\": \"#56D4E0\",\n    \"magenta\": \"#C996F5\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Oh My Posh v3 Alabaster Day light prompt with crisp Steel and burnt Beacon contrast across every segment.",
+          "preview": "assets/previews/oh-my-posh/cyclorama-day.svg",
+          "file": "apps/oh-my-posh/cyclorama-day.omp.json",
+          "copyLang": "json",
+          "copyLabel": "Copy Cyclorama Day Oh My Posh palette",
+          "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#F5F7F9\",\n    \"surface\": \"#FFFFFF\",\n    \"raised\": \"#E3E8EE\",\n    \"border\": \"#C8D0DA\",\n    \"text\": \"#0D1016\",\n    \"text_soft\": \"#252A34\",\n    \"mute\": \"#474D59\",\n    \"subtle\": \"#58606E\",\n    \"accent\": \"#AD3D0A\",\n    \"accent_vivid\": \"#CC5016\",\n    \"accent_fill\": \"#18496B\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#164669\",\n    \"secondary_fill\": \"#AD3D0A\",\n    \"signal\": \"#127247\",\n    \"warning\": \"#885800\",\n    \"fault\": \"#B91C2E\",\n    \"fault_fill\": \"#B91C2E\",\n    \"cyan\": \"#0E6674\",\n    \"magenta\": \"#6B38B8\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bat",
+      "name": "bat",
+      "category": "CLI & TUI",
+      "homepage": "https://github.com/sharkdp/bat",
+      "format": "TextMate .tmTheme XML",
+      "install": "Copy *.tmTheme to $(bat --config-dir)/themes/ and run bat cache --build",
+      "installSteps": [
+        "Copy `Cyclorama Dawn.tmTheme`, `Cyclorama Steel.tmTheme`, and `Cyclorama Day.tmTheme` into `\"$(bat --config-dir)/themes/\"`.",
+        "Rebuild bat's syntax theme cache with `bat cache --build`.",
+        "Select your variant with `bat --theme=\"Cyclorama Dawn\"` (or add `--theme=\"Cyclorama Dawn\"` to `$(bat --config-file)`)."
+      ],
+      "path": "apps/bat",
+      "primaryFile": "apps/bat/Cyclorama Dawn.tmTheme",
+      "files": [
+        {
+          "label": "Cyclorama Dawn .tmTheme",
+          "path": "apps/bat/Cyclorama Dawn.tmTheme"
+        },
+        {
+          "label": "Cyclorama Steel .tmTheme",
+          "path": "apps/bat/Cyclorama Steel.tmTheme"
+        },
+        {
+          "label": "Cyclorama Day .tmTheme",
+          "path": "apps/bat/Cyclorama Day.tmTheme"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "TextMate .tmTheme dark syntax palette on #050507 with Beacon Orange functions, Steel keywords, and Signal numbers.",
+          "preview": "assets/previews/bat/cyclorama-dawn.svg",
+          "file": "apps/bat/Cyclorama Dawn.tmTheme",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Dawn bat install command",
+          "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Dawn.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Dawn\" README.md",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "TextMate .tmTheme steel-charcoal dark syntax palette paired with Steel Blue focus and crisp diff scopes.",
+          "preview": "assets/previews/bat/cyclorama-steel.svg",
+          "file": "apps/bat/Cyclorama Steel.tmTheme",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Steel bat install command",
+          "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Steel.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Steel\" README.md",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "TextMate .tmTheme Alabaster Day light syntax palette tuned for bright terminals and WCAG AA readability.",
+          "preview": "assets/previews/bat/cyclorama-day.svg",
+          "file": "apps/bat/Cyclorama Day.tmTheme",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Day bat install command",
+          "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Day.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Day\" README.md",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "delta",
+      "name": "git-delta",
+      "category": "CLI & TUI",
+      "homepage": "https://dandavison.github.io/delta/",
+      "format": "Git Config .gitconfig",
+      "install": "Include apps/delta/cyclorama.gitconfig in ~/.gitconfig and set features = cyclorama-dawn",
+      "installSteps": [
+        "Add `[include]` with `path = /path/to/rfs-themes/apps/delta/cyclorama.gitconfig` to your `~/.gitconfig`.",
+        "Set `features = cyclorama-dawn` (or `cyclorama-steel` / `cyclorama-day`) under `[delta]`.",
+        "Install the matching `.tmTheme` files from `apps/bat/` and run `bat cache --build` so `syntax-theme` resolves cleanly."
+      ],
+      "path": "apps/delta",
+      "primaryFile": "apps/delta/cyclorama.gitconfig",
+      "files": [
+        {
+          "label": "Unified 3-Variant Pack",
+          "path": "apps/delta/cyclorama.gitconfig"
+        },
+        {
+          "label": "Cyclorama Dawn Standalone",
+          "path": "apps/delta/cyclorama-dawn.gitconfig"
+        },
+        {
+          "label": "Cyclorama Steel Standalone",
+          "path": "apps/delta/cyclorama-steel.gitconfig"
+        },
+        {
+          "label": "Cyclorama Day Standalone",
+          "path": "apps/delta/cyclorama-day.gitconfig"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Dark git-delta diff palette with Signal Emerald additions, Signal Crimson deletions, and Beacon Orange file headers.",
+          "preview": "assets/previews/delta/cyclorama-dawn.svg",
+          "file": "apps/delta/cyclorama-dawn.gitconfig",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Dawn git-delta feature",
+          "copySnippet": "[delta \"cyclorama-dawn\"]\n    dark = true\n    light = false\n    syntax-theme = Cyclorama Dawn\n    plus-style = syntax \"#0D291E\"\n    plus-non-emph-style = syntax \"#0D291E\"\n    plus-emph-style = syntax \"#1A5B40\"\n    plus-empty-line-marker-style = normal \"#0D291E\"\n    minus-style = syntax \"#301218\"\n    minus-non-emph-style = syntax \"#301218\"\n    minus-emph-style = syntax \"#6E2831\"\n    minus-empty-line-marker-style = normal \"#301218\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#8C8F9D\"\n    line-numbers-right-style = \"#8C8F9D\"\n    line-numbers-minus-style = \"#FF5C6C\"\n    line-numbers-plus-style = \"#3DDC97\"\n    line-numbers-zero-style = \"#8C8F9D\"\n    file-style = bold \"#FF9254\"\n    file-decoration-style = \"#62646D\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#2A2C35\" box\n    hunk-header-file-style = bold \"#74B8E8\"\n    hunk-header-line-number-style = bold \"#FF9254\"\n    whitespace-error-style = reverse \"#FF5C6C\"\n    blame-palette = \"#050507 #0C0C10 #14141A #1C1D26 #112436\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#74B8E8\"\n    merge-conflict-ours-diff-header-decoration-style = \"#2A2C35\" box\n    merge-conflict-theirs-diff-header-style = bold \"#FF9254\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#2A2C35\" box",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Steel-charcoal dark git-delta diff palette with Steel Blue headers and calibrated blame/hunk framing.",
+          "preview": "assets/previews/delta/cyclorama-steel.svg",
+          "file": "apps/delta/cyclorama-steel.gitconfig",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Steel git-delta feature",
+          "copySnippet": "[delta \"cyclorama-steel\"]\n    dark = true\n    light = false\n    syntax-theme = Cyclorama Steel\n    plus-style = syntax \"#0D291E\"\n    plus-non-emph-style = syntax \"#0D291E\"\n    plus-emph-style = syntax \"#1A5B40\"\n    plus-empty-line-marker-style = normal \"#0D291E\"\n    minus-style = syntax \"#301218\"\n    minus-non-emph-style = syntax \"#301218\"\n    minus-emph-style = syntax \"#6E2831\"\n    minus-empty-line-marker-style = normal \"#301218\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#8C96A6\"\n    line-numbers-right-style = \"#8C96A6\"\n    line-numbers-minus-style = \"#FF5C6C\"\n    line-numbers-plus-style = \"#3DDC97\"\n    line-numbers-zero-style = \"#8C96A6\"\n    file-style = bold \"#74B8E8\"\n    file-decoration-style = \"#637284\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#27313D\" box\n    hunk-header-file-style = bold \"#FF9254\"\n    hunk-header-line-number-style = bold \"#74B8E8\"\n    whitespace-error-style = reverse \"#FF5C6C\"\n    blame-palette = \"#050507 #0C0C10 #131820 #1A222E #13293D\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#FF9254\"\n    merge-conflict-ours-diff-header-decoration-style = \"#27313D\" box\n    merge-conflict-theirs-diff-header-style = bold \"#74B8E8\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#27313D\" box",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day light git-delta diff palette with crisp pastel diff washes and WCAG AA line-number markers.",
+          "preview": "assets/previews/delta/cyclorama-day.svg",
+          "file": "apps/delta/cyclorama-day.gitconfig",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Day git-delta feature",
+          "copySnippet": "[delta \"cyclorama-day\"]\n    dark = false\n    light = true\n    syntax-theme = Cyclorama Day\n    plus-style = syntax \"#D9F0E4\"\n    plus-non-emph-style = syntax \"#D9F0E4\"\n    plus-emph-style = syntax \"#A9D2BE\"\n    plus-empty-line-marker-style = normal \"#D9F0E4\"\n    minus-style = syntax \"#F8DADF\"\n    minus-non-emph-style = syntax \"#F8DADF\"\n    minus-emph-style = syntax \"#E9ACB5\"\n    minus-empty-line-marker-style = normal \"#F8DADF\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#58606E\"\n    line-numbers-right-style = \"#58606E\"\n    line-numbers-minus-style = \"#B91C2E\"\n    line-numbers-plus-style = \"#127247\"\n    line-numbers-zero-style = \"#58606E\"\n    file-style = bold \"#AD3D0A\"\n    file-decoration-style = \"#6E7682\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#C8D0DA\" box\n    hunk-header-file-style = bold \"#164669\"\n    hunk-header-line-number-style = bold \"#AD3D0A\"\n    whitespace-error-style = reverse \"#B91C2E\"\n    blame-palette = \"#F5F7F9 #FFFFFF #E3E8EE #D7DFE8 #DCE8F3\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#164669\"\n    merge-conflict-ours-diff-header-decoration-style = \"#C8D0DA\" box\n    merge-conflict-theirs-diff-header-style = bold \"#AD3D0A\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#C8D0DA\" box",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fzf",
+      "name": "fzf",
+      "category": "CLI & TUI",
+      "homepage": "https://github.com/junegunn/fzf",
+      "format": "Shell .sh & PowerShell .ps1",
+      "install": "Source cyclorama-dawn.sh (bash/zsh) or dot-source cyclorama-dawn.ps1 (PowerShell)",
+      "installSteps": [
+        "Bash / Zsh: add `source /path/to/rfs-themes/apps/fzf/cyclorama-dawn.sh` to `~/.bashrc` or `~/.zshrc`.",
+        "Windows PowerShell / pwsh: add `. C:\\path\\to\\rfs-themes\\apps\\fzf\\cyclorama-dawn.ps1` to your `$PROFILE`.",
+        "Open a new shell session and run `fzf` to confirm the Cyclorama Dawn palette."
+      ],
+      "path": "apps/fzf",
+      "primaryFile": "apps/fzf/cyclorama-dawn.sh",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Shell (.sh)",
+          "path": "apps/fzf/cyclorama-dawn.sh"
+        },
+        {
+          "label": "Cyclorama Dawn PowerShell (.ps1)",
+          "path": "apps/fzf/cyclorama-dawn.ps1"
+        },
+        {
+          "label": "Cyclorama Steel Shell (.sh)",
+          "path": "apps/fzf/cyclorama-steel.sh"
+        },
+        {
+          "label": "Cyclorama Steel PowerShell (.ps1)",
+          "path": "apps/fzf/cyclorama-steel.ps1"
+        },
+        {
+          "label": "Cyclorama Day Shell (.sh)",
+          "path": "apps/fzf/cyclorama-day.sh"
+        },
+        {
+          "label": "Cyclorama Day PowerShell (.ps1)",
+          "path": "apps/fzf/cyclorama-day.ps1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte dark fzf palette with Beacon Orange pointers and active matches, Steel Blue highlights, and Signal markers.",
+          "preview": "assets/previews/fzf/cyclorama-dawn.svg",
+          "file": "apps/fzf/cyclorama-dawn.sh",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Dawn fzf export",
+          "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#050507,bg+:#3D2B24,fg:#D6D8E0,fg+:#F4F5F8,hl:#74B8E8,hl+:#FF9254,info:#FFC247,marker:#3DDC97,pointer:#FF9254,prompt:#FF9254,spinner:#74B8E8,header:#B3B5C0,border:#2A2C35,gutter:#0C0C10,label:#F4F5F8,query:#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Steel-charcoal dark fzf palette with Steel Blue focus, Beacon Orange match highlights, and crisp selection contrast.",
+          "preview": "assets/previews/fzf/cyclorama-steel.svg",
+          "file": "apps/fzf/cyclorama-steel.sh",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Steel fzf export",
+          "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#050507,bg+:#1D3B57,fg:#D6DCE4,fg+:#F4F5F8,hl:#FF9254,hl+:#74B8E8,info:#FFC247,marker:#3DDC97,pointer:#74B8E8,prompt:#74B8E8,spinner:#FF9254,header:#B3B5C0,border:#27313D,gutter:#0C0C10,label:#F4F5F8,query:#F4F5F8\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day light fzf palette with soft Steel active rows, burnt Beacon pointers, and AA-verified text contrast.",
+          "preview": "assets/previews/fzf/cyclorama-day.svg",
+          "file": "apps/fzf/cyclorama-day.sh",
+          "copyLang": "sh",
+          "copyLabel": "Copy Cyclorama Day fzf export",
+          "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#F5F7F9,bg+:#DCE7F0,fg:#252A34,fg+:#0D1016,hl:#164669,hl+:#AD3D0A,info:#885800,marker:#127247,pointer:#AD3D0A,prompt:#AD3D0A,spinner:#164669,header:#474D59,border:#C8D0DA,gutter:#FFFFFF,label:#0D1016,query:#0D1016\"",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "privacynotes",
+      "name": "PrivacyNotes",
+      "category": "Notes & Writing",
+      "homepage": "https://privacynotes.app/",
+      "format": "pn1: theme code",
+      "install": "Settings -> Design -> Paste theme code",
+      "installSteps": [
+        "Copy one of the `pn1:` theme codes below (or grab all three from `apps/privacynotes/codes.txt`).",
+        "Open PrivacyNotes -> Settings -> Design -> Paste theme code.",
+        "Switch themes anytime from the Ninja command palette (`Ctrl+K` -> type `theme` or `cyclorama`)."
+      ],
+      "path": "apps/privacynotes",
+      "primaryFile": "apps/privacynotes/codes.txt",
+      "files": [
+        {
+          "label": "All pn1: Theme Codes (codes.txt)",
+          "path": "apps/privacynotes/codes.txt"
+        },
+        {
+          "label": "Canonical Seeds & Overrides (themes.json)",
+          "path": "apps/privacynotes/themes.json"
+        },
+        {
+          "label": "Install & Token Guide (README.md)",
+          "path": "apps/privacynotes/README.md"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Beacon Orange focus on matte #050507 dark with Steel Blue folder labels.",
+          "preview": "assets/previews/privacynotes/cyclorama-dawn.svg",
+          "file": "apps/privacynotes/codes.txt",
+          "copyLang": "pn1",
+          "copyLabel": "Copy pn1: code",
+          "copySnippet": "pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=FF5C6C,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "Side",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Fill",
+              "hex": "#BD4811"
+            },
+            {
+              "label": "Label",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "OK",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Steel Blue controls on matte #050507 dark with Beacon Orange folder labels.",
+          "preview": "assets/previews/privacynotes/cyclorama-steel.svg",
+          "file": "apps/privacynotes/codes.txt",
+          "copyLang": "pn1",
+          "copyLabel": "Copy pn1: code",
+          "copySnippet": "pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=FF5C6C,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "Side",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Fill",
+              "hex": "#18496B"
+            },
+            {
+              "label": "Label",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "OK",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day #F5F7F9 workspace with white paper, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/privacynotes/cyclorama-day.svg",
+          "file": "apps/privacynotes/codes.txt",
+          "copyLang": "pn1",
+          "copyLabel": "Copy pn1: code",
+          "copySnippet": "pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B91C2E,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Paper",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Fill",
+              "hex": "#18496B"
+            },
+            {
+              "label": "Label",
+              "hex": "#164669"
+            },
+            {
+              "label": "OK",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "obsidian",
+      "name": "Obsidian",
+      "category": "Notes & Writing",
+      "homepage": "https://obsidian.md/",
+      "format": "Obsidian Theme (manifest.json + theme.css)",
+      "install": "Copy manifest.json + theme.css into .obsidian/themes/Cyclorama Dawn/",
+      "installSteps": [
+        "Copy `manifest.json` and `theme.css` into your vault's `.obsidian/themes/Cyclorama Dawn/` folder.",
+        "Open Obsidian -> Settings -> Appearance -> Themes and select **Cyclorama Dawn**.",
+        "Use Base color scheme to switch between **Cyclorama Dawn** (`LX 263` Dark) and **Cyclorama Day** (`LX 512` Light), or enable `snippets/cyclorama-steel.css` (or Style Settings) for **Cyclorama Steel**."
+      ],
+      "path": "apps/obsidian",
+      "primaryFile": "apps/obsidian/theme.css",
+      "files": [
+        {
+          "label": "Theme Manifest",
+          "path": "apps/obsidian/manifest.json"
+        },
+        {
+          "label": "Complete Theme CSS",
+          "path": "apps/obsidian/theme.css"
+        },
+        {
+          "label": "Dawn Snippet (LX 263)",
+          "path": "apps/obsidian/snippets/cyclorama-dawn.css"
+        },
+        {
+          "label": "Steel Snippet (LX 263)",
+          "path": "apps/obsidian/snippets/cyclorama-steel.css"
+        },
+        {
+          "label": "Day Snippet (LX 512)",
+          "path": "apps/obsidian/snippets/cyclorama-day.css"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark vault with Beacon Orange links, Steel Blue tags, and AA-calibrated callouts and graph nodes.",
+          "preview": "assets/previews/obsidian/cyclorama-dawn.svg",
+          "file": "apps/obsidian/snippets/cyclorama-dawn.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Obsidian CSS Snippet",
+          "copySnippet": "/* Cyclorama Dawn (LX 263) — Obsidian CSS Snippet */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-modifier-border: #2A2C35;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --interactive-accent: #BD4811;\n  --text-accent: #FF9254;\n  --link-color: #FF9254;\n  --tag-color: #74B8E8;\n  --code-background: #08080B;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark vault with Steel Blue controls and Beacon Orange secondary highlights via Style Settings or snippet.",
+          "preview": "assets/previews/obsidian/cyclorama-steel.svg",
+          "file": "apps/obsidian/snippets/cyclorama-steel.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Obsidian CSS Snippet",
+          "copySnippet": "/* Cyclorama Steel (LX 263) — Obsidian CSS Snippet */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-modifier-border: #27313D;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --interactive-accent: #18496B;\n  --text-accent: #74B8E8;\n  --link-color: #74B8E8;\n  --tag-color: #FF9254;\n  --code-background: #080A0E;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light vault with white sidebars, burnt Beacon links, and Steel Blue tags.",
+          "preview": "assets/previews/obsidian/cyclorama-day.svg",
+          "file": "apps/obsidian/snippets/cyclorama-day.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Obsidian CSS Snippet",
+          "copySnippet": "/* Cyclorama Day (LX 512) — Obsidian CSS Snippet */\n.theme-light {\n  --background-primary: #F5F7F9;\n  --background-secondary: #FFFFFF;\n  --background-modifier-border: #C8D0DA;\n  --text-normal: #0D1016;\n  --text-muted: #474D59;\n  --interactive-accent: #18496B;\n  --text-accent: #AD3D0A;\n  --link-color: #AD3D0A;\n  --tag-color: #164669;\n  --code-background: #EEF2F5;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "chromium",
+      "name": "Brave / Chrome / Edge",
+      "category": "Browsers & Desktop",
+      "homepage": "https://brave.com/",
+      "format": "Chromium MV3 Browser Theme",
+      "install": "Extensions -> Developer mode -> Load unpacked variant folder",
+      "installSteps": [
+        "Open `brave://extensions`, `chrome://extensions`, or `edge://extensions` and enable **Developer mode**.",
+        "Click **Load unpacked** and select `apps/chromium/cyclorama-dawn` (or `cyclorama-steel` / `cyclorama-day`).",
+        "Switch variants anytime by loading another folder or clicking **Reset to default** in Appearance settings."
+      ],
+      "path": "apps/chromium",
+      "primaryFile": "apps/chromium/cyclorama-dawn/manifest.json",
+      "files": [
+        {
+          "label": "Cyclorama Dawn MV3 Manifest",
+          "path": "apps/chromium/cyclorama-dawn/manifest.json"
+        },
+        {
+          "label": "Cyclorama Steel MV3 Manifest",
+          "path": "apps/chromium/cyclorama-steel/manifest.json"
+        },
+        {
+          "label": "Cyclorama Day MV3 Manifest",
+          "path": "apps/chromium/cyclorama-day/manifest.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 New Tab canvas, #070709 tab strip, #0C0C10 toolbar, and Beacon Orange NTP links & button tint.",
+          "preview": "assets/previews/chromium/cyclorama-dawn.svg",
+          "file": "apps/chromium/cyclorama-dawn/manifest.json",
+          "copyLang": "json",
+          "copyLabel": "Copy MV3 manifest.json",
+          "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Dawn (LX 263)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        7,\n        7,\n        9\n      ],\n      \"frame_inactive\": [\n        5,\n        5,\n        7\n      ],\n      \"frame_incognito\": [\n        19,\n        57,\n        84\n      ],\n      \"toolbar\": [\n        12,\n        12,\n        16\n      ],\n      \"tab_text\": [\n        244,\n        245,\n        248\n      ],\n      \"tab_background_text\": [\n        179,\n        181,\n        192\n      ],\n      \"tab_background_text_inactive\": [\n        140,\n        143,\n        157\n      ],\n      \"bookmark_text\": [\n        214,\n        216,\n        224\n      ],\n      \"ntp_background\": [\n        5,\n        5,\n        7\n      ],\n      \"ntp_text\": [\n        244,\n        245,\n        248\n      ],\n      \"ntp_link\": [\n        255,\n        146,\n        84\n      ],\n      \"ntp_header\": [\n        12,\n        12,\n        16\n      ],\n      \"omnibox_background\": [\n        20,\n        20,\n        26\n      ],\n      \"omnibox_text\": [\n        244,\n        245,\n        248\n      ],\n      \"toolbar_button_icon\": [\n        214,\n        216,\n        224\n      ],\n      \"button_background\": [\n        20,\n        20,\n        26\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.06,\n        1.0,\n        0.665\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal browser chrome with #131820 omnibox and Steel Blue NTP links & button tint.",
+          "preview": "assets/previews/chromium/cyclorama-steel.svg",
+          "file": "apps/chromium/cyclorama-steel/manifest.json",
+          "copyLang": "json",
+          "copyLabel": "Copy MV3 manifest.json",
+          "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Steel (LX 263)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        7,\n        8,\n        11\n      ],\n      \"frame_inactive\": [\n        5,\n        5,\n        7\n      ],\n      \"frame_incognito\": [\n        19,\n        57,\n        84\n      ],\n      \"toolbar\": [\n        12,\n        12,\n        16\n      ],\n      \"tab_text\": [\n        244,\n        245,\n        248\n      ],\n      \"tab_background_text\": [\n        179,\n        181,\n        192\n      ],\n      \"tab_background_text_inactive\": [\n        140,\n        150,\n        166\n      ],\n      \"bookmark_text\": [\n        214,\n        220,\n        228\n      ],\n      \"ntp_background\": [\n        5,\n        5,\n        7\n      ],\n      \"ntp_text\": [\n        244,\n        245,\n        248\n      ],\n      \"ntp_link\": [\n        116,\n        184,\n        232\n      ],\n      \"ntp_header\": [\n        12,\n        12,\n        16\n      ],\n      \"omnibox_background\": [\n        19,\n        24,\n        32\n      ],\n      \"omnibox_text\": [\n        244,\n        245,\n        248\n      ],\n      \"toolbar_button_icon\": [\n        214,\n        220,\n        228\n      ],\n      \"button_background\": [\n        19,\n        24,\n        32\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.569,\n        0.716,\n        0.682\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light browser chrome with white toolbar, soft rail frame, and burnt Beacon links.",
+          "preview": "assets/previews/chromium/cyclorama-day.svg",
+          "file": "apps/chromium/cyclorama-day/manifest.json",
+          "copyLang": "json",
+          "copyLabel": "Copy MV3 manifest.json",
+          "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Day (LX 512)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        234,\n        238,\n        242\n      ],\n      \"frame_inactive\": [\n        225,\n        229,\n        234\n      ],\n      \"frame_incognito\": [\n        225,\n        231,\n        237\n      ],\n      \"toolbar\": [\n        255,\n        255,\n        255\n      ],\n      \"tab_text\": [\n        13,\n        16,\n        22\n      ],\n      \"tab_background_text\": [\n        71,\n        77,\n        89\n      ],\n      \"tab_background_text_inactive\": [\n        88,\n        96,\n        110\n      ],\n      \"bookmark_text\": [\n        37,\n        42,\n        52\n      ],\n      \"ntp_background\": [\n        245,\n        247,\n        249\n      ],\n      \"ntp_text\": [\n        13,\n        16,\n        22\n      ],\n      \"ntp_link\": [\n        173,\n        61,\n        10\n      ],\n      \"ntp_header\": [\n        255,\n        255,\n        255\n      ],\n      \"omnibox_background\": [\n        227,\n        232,\n        238\n      ],\n      \"omnibox_text\": [\n        13,\n        16,\n        22\n      ],\n      \"toolbar_button_icon\": [\n        37,\n        42,\n        52\n      ],\n      \"button_background\": [\n        227,\n        232,\n        238\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.052,\n        0.891,\n        0.359\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "discord",
+      "name": "Discord (Vencord / BetterDiscord)",
+      "category": "Browsers & Desktop",
+      "homepage": "https://vencord.dev/",
+      "format": "Vencord / BetterDiscord .theme.css",
+      "install": "Drop .theme.css into Vencord/BetterDiscord themes folder and enable",
+      "installSteps": [
+        "Open Discord -> Settings -> **Themes** (Vencord or BetterDiscord) -> **Open Themes Folder**.",
+        "Copy `cyclorama-dawn.theme.css`, `cyclorama-steel.theme.css`, or `cyclorama-day.theme.css` into the folder.",
+        "Enable the theme in Settings -> Themes (match Discord Appearance to Dark for Dawn/Steel, Light for Day)."
+      ],
+      "path": "apps/discord",
+      "primaryFile": "apps/discord/cyclorama-dawn.theme.css",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Theme CSS",
+          "path": "apps/discord/cyclorama-dawn.theme.css"
+        },
+        {
+          "label": "Cyclorama Steel Theme CSS",
+          "path": "apps/discord/cyclorama-steel.theme.css"
+        },
+        {
+          "label": "Cyclorama Day Theme CSS",
+          "path": "apps/discord/cyclorama-day.theme.css"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 chat canvas with #0C0C10 channel rail, Beacon Orange links/mentions, and Signal status indicators.",
+          "preview": "assets/previews/discord/cyclorama-dawn.svg",
+          "file": "apps/discord/cyclorama-dawn.theme.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Discord Quick CSS",
+          "copySnippet": "/* Cyclorama Dawn (LX 263) — Discord Quick CSS */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-tertiary: #070709;\n  --channeltextarea-background: #14141A;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --text-link: #FF9254;\n  --brand-experiment: #BD4811;\n  --brand-500: #BD4811;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal Discord theme with Steel Blue brand buttons, #131820 composer, and high-contrast channel lists.",
+          "preview": "assets/previews/discord/cyclorama-steel.svg",
+          "file": "apps/discord/cyclorama-steel.theme.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Discord Quick CSS",
+          "copySnippet": "/* Cyclorama Steel (LX 263) — Discord Quick CSS */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-tertiary: #07080B;\n  --channeltextarea-background: #131820;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --text-link: #74B8E8;\n  --brand-experiment: #18496B;\n  --brand-500: #18496B;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day #F5F7F9 light chat workspace with white channel sidebar, burnt Beacon links, and Steel brand buttons.",
+          "preview": "assets/previews/discord/cyclorama-day.svg",
+          "file": "apps/discord/cyclorama-day.theme.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Discord Quick CSS",
+          "copySnippet": "/* Cyclorama Day (LX 512) — Discord Quick CSS */\n.theme-light {\n  --background-primary: #F5F7F9;\n  --background-secondary: #FFFFFF;\n  --background-tertiary: #EAEEF2;\n  --channeltextarea-background: #E3E8EE;\n  --text-normal: #0D1016;\n  --text-muted: #474D59;\n  --text-link: #AD3D0A;\n  --brand-experiment: #18496B;\n  --brand-500: #18496B;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "qbittorrent",
+      "name": "qBittorrent",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.qbittorrent.org/",
+      "format": "Qt QSS Stylesheet + config.json",
+      "install": "Package stylesheet.qss + config.json into .qbtheme and select in Behavior -> Use custom UI Theme",
+      "installSteps": [
+        "Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `stylesheet.qss` and `config.json`.",
+        "Bundle into a `.qbtheme` resource bundle with Qt `rcc` (or load `stylesheet.qss` via your qBittorrent theme pack).",
+        "Open qBittorrent -> Tools -> Options -> **Behavior** -> enable **Use custom UI Theme**, pick the bundle, and restart."
+      ],
+      "path": "apps/qbittorrent",
+      "primaryFile": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss",
+      "files": [
+        {
+          "label": "Dawn Stylesheet (QSS)",
+          "path": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss"
+        },
+        {
+          "label": "Dawn Transfer Palette (JSON)",
+          "path": "apps/qbittorrent/cyclorama-dawn/config.json"
+        },
+        {
+          "label": "Steel Stylesheet (QSS)",
+          "path": "apps/qbittorrent/cyclorama-steel/stylesheet.qss"
+        },
+        {
+          "label": "Steel Transfer Palette (JSON)",
+          "path": "apps/qbittorrent/cyclorama-steel/config.json"
+        },
+        {
+          "label": "Day Stylesheet (QSS)",
+          "path": "apps/qbittorrent/cyclorama-day/stylesheet.qss"
+        },
+        {
+          "label": "Day Transfer Palette (JSON)",
+          "path": "apps/qbittorrent/cyclorama-day/config.json"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 transfer table with Beacon Orange progress bars, Signal green seeding, and Steel Blue active downloads.",
+          "preview": "assets/previews/qbittorrent/cyclorama-dawn.svg",
+          "file": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss",
+          "copyLang": "json",
+          "copyLabel": "Copy config.json Palette",
+          "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#F4F5F8\",\n    \"Log.Info\": \"#74B8E8\",\n    \"Log.Warning\": \"#FFC247\",\n    \"Log.Critical\": \"#FF5C6C\",\n    \"TransferList.Downloading\": \"#74B8E8\",\n    \"TransferList.ForcedDownloading\": \"#56D4E0\",\n    \"TransferList.DownloadingMetadata\": \"#56D4E0\",\n    \"TransferList.Allocating\": \"#FFC247\",\n    \"TransferList.StalledDownloading\": \"#B3B5C0\",\n    \"TransferList.StalledUploading\": \"#8C8F9D\",\n    \"TransferList.Uploading\": \"#3DDC97\",\n    \"TransferList.ForcedUploading\": \"#3DDC97\",\n    \"TransferList.Seeding\": \"#3DDC97\",\n    \"TransferList.Paused\": \"#FFC247\",\n    \"TransferList.PausedDownloading\": \"#FFC247\",\n    \"TransferList.PausedUploading\": \"#B3B5C0\",\n    \"TransferList.Queued\": \"#B3B5C0\",\n    \"TransferList.Checking\": \"#FF9254\",\n    \"TransferList.CheckingResumeData\": \"#FF9254\",\n    \"TransferList.Moving\": \"#C996F5\",\n    \"TransferList.MissingFiles\": \"#FF5C6C\",\n    \"TransferList.Error\": \"#FF5C6C\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal Qt stylesheet with Steel Blue progress chunks, crisp #27313D gridlines, and Beacon checking states.",
+          "preview": "assets/previews/qbittorrent/cyclorama-steel.svg",
+          "file": "apps/qbittorrent/cyclorama-steel/stylesheet.qss",
+          "copyLang": "json",
+          "copyLabel": "Copy config.json Palette",
+          "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#F4F5F8\",\n    \"Log.Info\": \"#FF9254\",\n    \"Log.Warning\": \"#FFC247\",\n    \"Log.Critical\": \"#FF5C6C\",\n    \"TransferList.Downloading\": \"#FF9254\",\n    \"TransferList.ForcedDownloading\": \"#56D4E0\",\n    \"TransferList.DownloadingMetadata\": \"#56D4E0\",\n    \"TransferList.Allocating\": \"#FFC247\",\n    \"TransferList.StalledDownloading\": \"#B3B5C0\",\n    \"TransferList.StalledUploading\": \"#8C96A6\",\n    \"TransferList.Uploading\": \"#3DDC97\",\n    \"TransferList.ForcedUploading\": \"#3DDC97\",\n    \"TransferList.Seeding\": \"#3DDC97\",\n    \"TransferList.Paused\": \"#FFC247\",\n    \"TransferList.PausedDownloading\": \"#FFC247\",\n    \"TransferList.PausedUploading\": \"#B3B5C0\",\n    \"TransferList.Queued\": \"#B3B5C0\",\n    \"TransferList.Checking\": \"#74B8E8\",\n    \"TransferList.CheckingResumeData\": \"#74B8E8\",\n    \"TransferList.Moving\": \"#C996F5\",\n    \"TransferList.MissingFiles\": \"#FF5C6C\",\n    \"TransferList.Error\": \"#FF5C6C\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day #F5F7F9 light Qt stylesheet with alternating cool rows and WCAG AA transfer status inks.",
+          "preview": "assets/previews/qbittorrent/cyclorama-day.svg",
+          "file": "apps/qbittorrent/cyclorama-day/stylesheet.qss",
+          "copyLang": "json",
+          "copyLabel": "Copy config.json Palette",
+          "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#0D1016\",\n    \"Log.Info\": \"#164669\",\n    \"Log.Warning\": \"#885800\",\n    \"Log.Critical\": \"#B91C2E\",\n    \"TransferList.Downloading\": \"#164669\",\n    \"TransferList.ForcedDownloading\": \"#0E6674\",\n    \"TransferList.DownloadingMetadata\": \"#0E6674\",\n    \"TransferList.Allocating\": \"#885800\",\n    \"TransferList.StalledDownloading\": \"#474D59\",\n    \"TransferList.StalledUploading\": \"#58606E\",\n    \"TransferList.Uploading\": \"#127247\",\n    \"TransferList.ForcedUploading\": \"#127247\",\n    \"TransferList.Seeding\": \"#127247\",\n    \"TransferList.Paused\": \"#885800\",\n    \"TransferList.PausedDownloading\": \"#885800\",\n    \"TransferList.PausedUploading\": \"#474D59\",\n    \"TransferList.Queued\": \"#474D59\",\n    \"TransferList.Checking\": \"#AD3D0A\",\n    \"TransferList.CheckingResumeData\": \"#AD3D0A\",\n    \"TransferList.Moving\": \"#6B38B8\",\n    \"TransferList.MissingFiles\": \"#B91C2E\",\n    \"TransferList.Error\": \"#B91C2E\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "flow-launcher",
+      "name": "Flow Launcher",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.flowlauncher.com/",
+      "format": "WPF XAML Theme",
+      "install": "Copy .xaml files to %APPDATA%\\FlowLauncher\\Themes\\ and choose in Settings -> Appearance",
+      "installSteps": [
+        "Copy `Cyclorama Dawn.xaml`, `Cyclorama Steel.xaml`, and `Cyclorama Day.xaml` into `%APPDATA%\\FlowLauncher\\Themes\\`.",
+        "Restart Flow Launcher and open **Settings -> Appearance -> Theme**.",
+        "Select **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**."
+      ],
+      "path": "apps/flow-launcher",
+      "primaryFile": "apps/flow-launcher/Cyclorama Dawn.xaml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn XAML (LX 263)",
+          "path": "apps/flow-launcher/Cyclorama Dawn.xaml"
+        },
+        {
+          "label": "Cyclorama Steel XAML (LX 263)",
+          "path": "apps/flow-launcher/Cyclorama Steel.xaml"
+        },
+        {
+          "label": "Cyclorama Day XAML (LX 512)",
+          "path": "apps/flow-launcher/Cyclorama Day.xaml"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 spotlight dialog with crisp #62646D frame, Beacon Orange caret/matches, and Steel Blue clock readout.",
+          "preview": "assets/previews/flow-launcher/cyclorama-dawn.svg",
+          "file": "apps/flow-launcher/Cyclorama Dawn.xaml",
+          "copyLang": "xml",
+          "copyLabel": "Copy WPF XAML Theme",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ResourceDictionary xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n    <ResourceDictionary.MergedDictionaries>\n        <ResourceDictionary Source=\"pack://application:,,,/Themes/Base.xaml\" />\n    </ResourceDictionary.MergedDictionaries>\n    <SolidColorBrush x:Key=\"ItemSelectedBackgroundColor\" Color=\"#FF38241C\" />\n    <Style x:Key=\"WindowBorderStyle\" TargetType=\"{x:Type Border}\">\n        <Setter Property=\"Background\" Value=\"#F5050507\" />\n        <Setter Property=\"BorderBrush\" Value=\"#FF62646D\" />\n        <Setter Property=\"BorderThickness\" Value=\"1\" />\n        <Setter Property=\"CornerRadius\" Value=\"10\" />\n    </Style>\n    <Style x:Key=\"WindowStyle\" TargetType=\"{x:Type Window}\">\n        <Setter Property=\"Background\" Value=\"#F5050507\" />\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n    </Style>\n    <Style x:Key=\"QueryBoxStyle\" BasedOn=\"{StaticResource BaseQueryTextBoxStyle}\" TargetType=\"{x:Type TextBox}\">\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n        <Setter Property=\"CaretBrush\" Value=\"#FFF06E2B\" />\n    </Style>\n    <Style x:Key=\"ItemTitleStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFD6D8E0\" />\n    </Style>\n    <Style x:Key=\"ItemTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n    </Style>\n    <Style x:Key=\"ItemSubTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFFF9254\" />\n    </Style>\n    <Style x:Key=\"HighlightStyle\" TargetType=\"{x:Type Run}\">\n        <Setter Property=\"Foreground\" Value=\"#FFFF9254\" />\n    </Style>\n    <Style x:Key=\"SeparatorStyle\" TargetType=\"{x:Type Rectangle}\">\n        <Setter Property=\"Fill\" Value=\"#FF2A2C35\" />\n    </Style>\n</ResourceDictionary>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal spotlight window with Steel Blue selection accent, crisp separators, and Beacon Orange clock readout.",
+          "preview": "assets/previews/flow-launcher/cyclorama-steel.svg",
+          "file": "apps/flow-launcher/Cyclorama Steel.xaml",
+          "copyLang": "xml",
+          "copyLabel": "Copy WPF XAML Theme",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ResourceDictionary xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n    <ResourceDictionary.MergedDictionaries>\n        <ResourceDictionary Source=\"pack://application:,,,/Themes/Base.xaml\" />\n    </ResourceDictionary.MergedDictionaries>\n    <SolidColorBrush x:Key=\"ItemSelectedBackgroundColor\" Color=\"#FF1F2B37\" />\n    <Style x:Key=\"WindowBorderStyle\" TargetType=\"{x:Type Border}\">\n        <Setter Property=\"Background\" Value=\"#F5050507\" />\n        <Setter Property=\"BorderBrush\" Value=\"#FF637284\" />\n        <Setter Property=\"BorderThickness\" Value=\"1\" />\n        <Setter Property=\"CornerRadius\" Value=\"10\" />\n    </Style>\n    <Style x:Key=\"WindowStyle\" TargetType=\"{x:Type Window}\">\n        <Setter Property=\"Background\" Value=\"#F5050507\" />\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n    </Style>\n    <Style x:Key=\"QueryBoxStyle\" BasedOn=\"{StaticResource BaseQueryTextBoxStyle}\" TargetType=\"{x:Type TextBox}\">\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n        <Setter Property=\"CaretBrush\" Value=\"#FF74B8E8\" />\n    </Style>\n    <Style x:Key=\"ItemTitleStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFD6DCE4\" />\n    </Style>\n    <Style x:Key=\"ItemTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFF4F5F8\" />\n    </Style>\n    <Style x:Key=\"ItemSubTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FF74B8E8\" />\n    </Style>\n    <Style x:Key=\"HighlightStyle\" TargetType=\"{x:Type Run}\">\n        <Setter Property=\"Foreground\" Value=\"#FF74B8E8\" />\n    </Style>\n    <Style x:Key=\"SeparatorStyle\" TargetType=\"{x:Type Rectangle}\">\n        <Setter Property=\"Fill\" Value=\"#FF27313D\" />\n    </Style>\n</ResourceDictionary>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Alabaster Day #F5F7F9 light spotlight dialog with high-contrast dark ink and burnt Beacon match highlights.",
+          "preview": "assets/previews/flow-launcher/cyclorama-day.svg",
+          "file": "apps/flow-launcher/Cyclorama Day.xaml",
+          "copyLang": "xml",
+          "copyLabel": "Copy WPF XAML Theme",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ResourceDictionary xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n    <ResourceDictionary.MergedDictionaries>\n        <ResourceDictionary Source=\"pack://application:,,,/Themes/Base.xaml\" />\n    </ResourceDictionary.MergedDictionaries>\n    <SolidColorBrush x:Key=\"ItemSelectedBackgroundColor\" Color=\"#FFF4E4DD\" />\n    <Style x:Key=\"WindowBorderStyle\" TargetType=\"{x:Type Border}\">\n        <Setter Property=\"Background\" Value=\"#F5F5F7F9\" />\n        <Setter Property=\"BorderBrush\" Value=\"#FF6E7682\" />\n        <Setter Property=\"BorderThickness\" Value=\"1\" />\n        <Setter Property=\"CornerRadius\" Value=\"10\" />\n    </Style>\n    <Style x:Key=\"WindowStyle\" TargetType=\"{x:Type Window}\">\n        <Setter Property=\"Background\" Value=\"#F5F5F7F9\" />\n        <Setter Property=\"Foreground\" Value=\"#FF0D1016\" />\n    </Style>\n    <Style x:Key=\"QueryBoxStyle\" BasedOn=\"{StaticResource BaseQueryTextBoxStyle}\" TargetType=\"{x:Type TextBox}\">\n        <Setter Property=\"Foreground\" Value=\"#FF0D1016\" />\n        <Setter Property=\"CaretBrush\" Value=\"#FFAD3D0A\" />\n    </Style>\n    <Style x:Key=\"ItemTitleStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FF252A34\" />\n    </Style>\n    <Style x:Key=\"ItemTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FF0D1016\" />\n    </Style>\n    <Style x:Key=\"ItemSubTitleSelectedStyle\" TargetType=\"{x:Type TextBlock}\">\n        <Setter Property=\"Foreground\" Value=\"#FFAD3D0A\" />\n    </Style>\n    <Style x:Key=\"HighlightStyle\" TargetType=\"{x:Type Run}\">\n        <Setter Property=\"Foreground\" Value=\"#FFAD3D0A\" />\n    </Style>\n    <Style x:Key=\"SeparatorStyle\" TargetType=\"{x:Type Rectangle}\">\n        <Setter Property=\"Fill\" Value=\"#FFC8D0DA\" />\n    </Style>\n</ResourceDictionary>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

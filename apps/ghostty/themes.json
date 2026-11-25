@@ -1,0 +1,149 @@
+{
+  "app": "Ghostty",
+  "slug": "ghostty",
+  "category": "Terminals",
+  "homepage": "https://ghostty.org/",
+  "format": "Ghostty Theme File",
+  "install": "Copy theme into ~/.config/ghostty/themes/ and set theme = cyclorama-dawn",
+  "installSteps": [
+    "Copy cyclorama-dawn, cyclorama-steel, and cyclorama-day into ~/.config/ghostty/themes/.",
+    "Set theme = cyclorama-dawn (or theme = dark:cyclorama-dawn,light:cyclorama-day) in ~/.config/ghostty/config.",
+    "Reload Ghostty configuration (Cmd+Shift+, on macOS or Ctrl+Shift+, on Linux)."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/ghostty/cyclorama-dawn",
+  "files": [
+    {
+      "label": "Cyclorama Dawn (cyclorama-dawn)",
+      "path": "apps/ghostty/cyclorama-dawn"
+    },
+    {
+      "label": "Cyclorama Steel (cyclorama-steel)",
+      "path": "apps/ghostty/cyclorama-steel"
+    },
+    {
+      "label": "Cyclorama Day (cyclorama-day)",
+      "path": "apps/ghostty/cyclorama-day"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/ghostty/previews/cyclorama-dawn.svg",
+      "file": "apps/ghostty/cyclorama-dawn",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Dawn Ghostty theme",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0C0C10\npalette = 1=#FF5C6C\npalette = 2=#3DDC97\npalette = 3=#FFC247\npalette = 4=#74B8E8\npalette = 5=#C996F5\npalette = 6=#56D4E0\npalette = 7=#D6D8E0\npalette = 8=#8C8F9D\npalette = 9=#FF9254\npalette = 10=#6CE8B2\npalette = 11=#FFD475\npalette = 12=#99CDF2\npalette = 13=#DCB8FA\npalette = 14=#85E3EC\npalette = 15=#F4F5F8\nbackground = #050507\nforeground = #F4F5F8\ncursor-color = #F06E2B\ncursor-text = #050507\nselection-background = #3D2B24\nselection-foreground = #F4F5F8",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/ghostty/previews/cyclorama-steel.svg",
+      "file": "apps/ghostty/cyclorama-steel",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Steel Ghostty theme",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0C0C10\npalette = 1=#FF5C6C\npalette = 2=#3DDC97\npalette = 3=#FFC247\npalette = 4=#74B8E8\npalette = 5=#C996F5\npalette = 6=#56D4E0\npalette = 7=#D6D8E0\npalette = 8=#8C96A6\npalette = 9=#FF9254\npalette = 10=#6CE8B2\npalette = 11=#FFD475\npalette = 12=#99CDF2\npalette = 13=#DCB8FA\npalette = 14=#85E3EC\npalette = 15=#F4F5F8\nbackground = #050507\nforeground = #F4F5F8\ncursor-color = #74B8E8\ncursor-text = #050507\nselection-background = #1D3B57\nselection-foreground = #F4F5F8",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/ghostty/previews/cyclorama-day.svg",
+      "file": "apps/ghostty/cyclorama-day",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Day Ghostty theme",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Ghostty Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\npalette = 0=#0D1016\npalette = 1=#B91C2E\npalette = 2=#127247\npalette = 3=#885800\npalette = 4=#164669\npalette = 5=#6B38B8\npalette = 6=#0E6674\npalette = 7=#E3E8EE\npalette = 8=#58606E\npalette = 9=#AD3D0A\npalette = 10=#0D5A37\npalette = 11=#704700\npalette = 12=#1F547A\npalette = 13=#572A9E\npalette = 14=#0A525E\npalette = 15=#FFFFFF\nbackground = #F5F7F9\nforeground = #0D1016\ncursor-color = #AD3D0A\ncursor-text = #FFFFFF\nselection-background = #C6DAEB\nselection-foreground = #0D1016",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

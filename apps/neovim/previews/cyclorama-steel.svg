@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="Neovim Cyclorama Steel (LX 263 DARK) theme preview">
+  <defs>
+    <linearGradient id="hbeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#74B8E8"/>
+      <stop offset="100%" stop-color="#F06E2B"/>
+    </linearGradient>
+    <clipPath id="frame-clip"><rect x="1" y="1" width="658" height="388" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame-clip)">
+    <rect width="660" height="390" fill="#050507"/>
+    <rect width="660" height="3" fill="url(#hbeam)"/>
+
+    <!-- Top chrome bar -->
+    <rect x="0" y="3" width="660" height="33" fill="#0C0C10"/>
+    <line x1="0" y1="36" x2="660" y2="36" stroke="#27313D" stroke-width="1"/>
+    <rect x="14" y="10" width="84" height="19" rx="4" fill="#131820" stroke="#27313D" stroke-width="1"/>
+    <text x="23" y="23" fill="#74B8E8" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[neovim]</text>
+    <text x="110" y="23" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Steel</text>
+    <text x="646" y="23" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="600">LX 263 · DARK · AA PASS</text>
+
+    
+    <!-- Activity rail + File tree (x=0..168) -->
+    <rect x="0" y="36" width="32" height="288" fill="#07080B"/>
+    <line x1="32" y1="36" x2="32" y2="324" stroke="#27313D" stroke-width="1"/>
+    <rect x="0" y="50" width="2.5" height="20" fill="#74B8E8"/>
+    <rect x="10" y="54" width="12" height="12" rx="2" fill="none" stroke="#74B8E8" stroke-width="1.5"/>
+    <circle cx="16" cy="90" r="5.5" fill="none" stroke="#B3B5C0" stroke-width="1.4"/>
+    <rect x="10" y="114" width="12" height="10" rx="1.5" fill="none" stroke="#B3B5C0" stroke-width="1.4"/>
+
+    <rect x="32" y="36" width="136" height="288" fill="#0C0C10"/>
+    <line x1="168" y1="36" x2="168" y2="324" stroke="#27313D" stroke-width="1"/>
+    <text x="44" y="55" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="0.8">EXPLORER</text>
+    <text x="44" y="76" fill="#D6DCE4" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">v src/</text>
+    <rect x="38" y="84" width="124" height="22" rx="4" fill="#1D2833"/>
+    <rect x="38" y="86" width="2.5" height="18" rx="1" fill="#74B8E8"/>
+    <text x="50" y="98.5" fill="#F4F5F8" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">init.lua</text>
+    <text x="50" y="120" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">tokens.json</text>
+    <text x="50" y="140" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">theme.rs</text>
+    <text x="50" y="160" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="9.5">contrast.rs  M</text>
+    <text x="44" y="186" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="0.8">DIAGNOSTICS</text>
+    <rect x="44" y="196" width="112" height="20" rx="4" fill="#131820" stroke="#27313D" stroke-width="1"/>
+    <text x="52" y="209.5" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">[ok] 0 errors</text>
+    <rect x="44" y="222" width="112" height="20" rx="4" fill="#131820" stroke="#27313D" stroke-width="1"/>
+    <text x="52" y="235.5" fill="#FFC247" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">[!] 1 warning</text>
+
+    <!-- Editor tab bar (x=168..660, y=36..64) -->
+    <rect x="168" y="36" width="492" height="28" fill="#07080B"/>
+    <line x1="168" y1="64" x2="660" y2="64" stroke="#27313D" stroke-width="1"/>
+    <rect x="168" y="36" width="128" height="28" fill="#050507"/>
+    <rect x="168" y="36" width="128" height="2" fill="#74B8E8"/>
+    <text x="182" y="54" fill="#F4F5F8" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">init.lua</text>
+    <text x="312" y="54" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">tokens.json</text>
+    <text x="412" y="54" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5">contrast.rs</text>
+
+    <!-- Code canvas (x=168..660, y=64..324) -->
+    <rect x="168" y="64" width="492" height="260" fill="#050507"/>
+    <!-- Active line highlight -->
+    <rect x="168" y="138" width="492" height="21" fill="#131820"/>
+    <!-- Selection highlight -->
+    <rect x="286" y="160" width="136" height="18" rx="2" fill="#1D3B57"/>
+    <!-- Diff gutter markers -->
+    <rect x="200" y="139" width="2.5" height="19" fill="#3DDC97"/>
+    <rect x="200" y="223" width="2.5" height="19" fill="#FF9254"/>
+
+    <!-- Line numbers -->
+    <g fill="#8C96A6" font-family="ui-monospace,Consolas,monospace" font-size="9.5" text-anchor="end">
+      <text x="194" y="88">01</text><text x="194" y="109">02</text><text x="194" y="130">03</text>
+      <text x="194" y="151" fill="#F4F5F8" font-weight="700">04</text>
+      <text x="194" y="172">05</text><text x="194" y="193">06</text><text x="194" y="214">07</text>
+      <text x="194" y="235">08</text><text x="194" y="256">09</text><text x="194" y="277">10</text>
+      <text x="194" y="298">11</text>
+    </g>
+
+    <!-- Syntax highlighted code -->
+    <g font-family="ui-monospace,Consolas,monospace" font-size="10.2">
+      <text x="212" y="88" fill="#8C96A6">// Cyclorama Dawn v2.1.0 — Steel &amp; Beacon Orange</text>
+      <text x="212" y="109"><tspan fill="#74B8E8" font-weight="700">pub struct </tspan><tspan fill="#56D4E0" font-weight="700">StageCue </tspan><tspan fill="#B3B5C0">&#123; </tspan><tspan fill="#99CDF2">lx</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#56D4E0">u16</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#99CDF2">name</tspan><tspan fill="#B3B5C0">: &amp;'static </tspan><tspan fill="#56D4E0">str </tspan><tspan fill="#B3B5C0">&#125;</tspan></text>
+      <text x="212" y="130"><tspan fill="#74B8E8" font-weight="700">pub const </tspan><tspan fill="#C996F5" font-weight="700">DEFAULT_CUE</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#56D4E0">StageCue </tspan><tspan fill="#D6D8E0">= </tspan><tspan fill="#56D4E0">StageCue </tspan><tspan fill="#B3B5C0">&#123;</tspan></text>
+      <text x="212" y="151"><tspan fill="#99CDF2">    lx</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#3DDC97" font-weight="700">263</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#99CDF2">name</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#FFC247">"Beacon Horizon"</tspan><tspan fill="#B3B5C0">,</tspan></text>
+      <text x="212" y="172"><tspan fill="#B3B5C0">&#125;; </tspan><tspan fill="#74B8E8" font-weight="700">pub fn </tspan><tspan fill="#FF9254" font-weight="700">verify_wcag</tspan><tspan fill="#B3B5C0">(</tspan><tspan fill="#FFB07A">fg</tspan><tspan fill="#B3B5C0">: &amp;</tspan><tspan fill="#56D4E0">str</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#FFB07A">bg</tspan><tspan fill="#B3B5C0">: &amp;</tspan><tspan fill="#56D4E0">str</tspan><tspan fill="#B3B5C0">) -&gt; </tspan><tspan fill="#56D4E0">f64 </tspan><tspan fill="#B3B5C0">&#123;</tspan></text>
+      <text x="212" y="193"><tspan fill="#74B8E8" font-weight="700">    let </tspan><tspan fill="#F4F5F8">ratio </tspan><tspan fill="#D6D8E0">= </tspan><tspan fill="#FF9254">contrast_ratio</tspan><tspan fill="#B3B5C0">(</tspan><tspan fill="#FFB07A">fg</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#FFB07A">bg</tspan><tspan fill="#B3B5C0">);</tspan></text>
+      <text x="212" y="214"><tspan fill="#74B8E8" font-weight="700">    assert!</tspan><tspan fill="#B3B5C0">(</tspan><tspan fill="#F4F5F8">ratio </tspan><tspan fill="#D6D8E0">&gt;= </tspan><tspan fill="#3DDC97" font-weight="700">4.5</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#FFC247">"[x] AA contrast failed"</tspan><tspan fill="#B3B5C0">);</tspan></text>
+      <text x="212" y="235"><tspan fill="#74B8E8" font-weight="700">    println!</tspan><tspan fill="#B3B5C0">(</tspan><tspan fill="#FFC247">"[ok] &#123;ratio:.2&#125;:1 calibrated"</tspan><tspan fill="#B3B5C0">);</tspan></text>
+      <text x="212" y="256"><tspan fill="#F4F5F8">    ratio</tspan></text>
+      <text x="212" y="277"><tspan fill="#B3B5C0">&#125;</tspan></text>
+      <text x="212" y="298" fill="#8C96A6">// Built local-first · Real-Fruit-Snacks</text>
+    </g>
+
+    <!-- Status bar (y=324..346) -->
+    <rect x="0" y="324" width="660" height="22" fill="#18496B"/>
+    <text x="14" y="338.5" fill="#FFFFFF" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">NORMAL  ·  init.lua  ·  UTF-8</text>
+    <text x="646" y="338.5" text-anchor="end" fill="#FFFFFF" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="600">Neovim · AA PASS</text>
+    
+
+    <!-- Bottom palette telemetry ribbon -->
+    <rect x="0" y="346" width="660" height="44" fill="#0C0C10"/>
+    <line x1="0" y1="346" x2="660" y2="346" stroke="#27313D" stroke-width="1"/>
+    <rect x="18.0" y="357" width="56" height="10" rx="2.5" fill="#050507" stroke="#27313D" stroke-width="0.8"/><text x="46.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">BG</text><rect x="80.4" y="357" width="56" height="10" rx="2.5" fill="#0C0C10" stroke="#27313D" stroke-width="0.8"/><text x="108.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">SURF</text><rect x="142.8" y="357" width="56" height="10" rx="2.5" fill="#131820" stroke="#27313D" stroke-width="0.8"/><text x="170.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">RAISED</text><rect x="205.2" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#27313D" stroke-width="0.8"/><text x="233.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ACCENT</text><rect x="267.6" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#27313D" stroke-width="0.8"/><text x="295.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STEEL</text><rect x="330.0" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#27313D" stroke-width="0.8"/><text x="358.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">KW</text><rect x="392.4" y="357" width="56" height="10" rx="2.5" fill="#FF9254" stroke="#27313D" stroke-width="0.8"/><text x="420.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">FN</text><rect x="454.8" y="357" width="56" height="10" rx="2.5" fill="#FFC247" stroke="#27313D" stroke-width="0.8"/><text x="482.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STR</text><rect x="517.2" y="357" width="56" height="10" rx="2.5" fill="#3DDC97" stroke="#27313D" stroke-width="0.8"/><text x="545.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">OK</text><rect x="579.6" y="357" width="56" height="10" rx="2.5" fill="#FF5C6C" stroke="#27313D" stroke-width="0.8"/><text x="607.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ERR</text>
+  </g>
+  <rect x="0.5" y="0.5" width="659" height="389" rx="11.5" fill="none" stroke="#27313D" stroke-width="1"/>
+</svg>

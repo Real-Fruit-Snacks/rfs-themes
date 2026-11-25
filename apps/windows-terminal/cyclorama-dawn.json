@@ -1,0 +1,23 @@
+{
+  "name": "Cyclorama Dawn",
+  "background": "#050507",
+  "foreground": "#F4F5F8",
+  "cursorColor": "#F06E2B",
+  "selectionBackground": "#3D2B24",
+  "black": "#0C0C10",
+  "red": "#FF5C6C",
+  "green": "#3DDC97",
+  "yellow": "#FFC247",
+  "blue": "#74B8E8",
+  "purple": "#C996F5",
+  "cyan": "#56D4E0",
+  "white": "#D6D8E0",
+  "brightBlack": "#8C8F9D",
+  "brightRed": "#FF9254",
+  "brightGreen": "#6CE8B2",
+  "brightYellow": "#FFD475",
+  "brightBlue": "#99CDF2",
+  "brightPurple": "#DCB8FA",
+  "brightCyan": "#85E3EC",
+  "brightWhite": "#F4F5F8"
+}

@@ -1,0 +1,149 @@
+{
+  "app": "Kitty",
+  "slug": "kitty",
+  "category": "Terminals",
+  "homepage": "https://sw.kovidgoyal.net/kitty/",
+  "format": "Kitty .conf Theme",
+  "install": "Include .conf from ~/.config/kitty/themes/ in kitty.conf",
+  "installSteps": [
+    "Copy cyclorama-dawn.conf, cyclorama-steel.conf, and cyclorama-day.conf into ~/.config/kitty/themes/.",
+    "Add `include themes/cyclorama-dawn.conf` to ~/.config/kitty/kitty.conf.",
+    "Reload Kitty config (Ctrl+Shift+F5) or switch interactively with `kitten themes`."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/kitty/cyclorama-dawn.conf",
+  "files": [
+    {
+      "label": "Cyclorama Dawn (cyclorama-dawn.conf)",
+      "path": "apps/kitty/cyclorama-dawn.conf"
+    },
+    {
+      "label": "Cyclorama Steel (cyclorama-steel.conf)",
+      "path": "apps/kitty/cyclorama-steel.conf"
+    },
+    {
+      "label": "Cyclorama Day (cyclorama-day.conf)",
+      "path": "apps/kitty/cyclorama-day.conf"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/kitty/previews/cyclorama-dawn.svg",
+      "file": "apps/kitty/cyclorama-dawn.conf",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Dawn Kitty .conf",
+      "copySnippet": "## name: Cyclorama Dawn\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (LX 263 Dark · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #F4F5F8\nbackground              #050507\nselection_foreground    #F4F5F8\nselection_background    #3D2B24\n\n# Cursor & URLs\ncursor                  #F06E2B\ncursor_text_color       #050507\nurl_color               #FF9254\n\n# Window borders\nactive_border_color     #FF9254\ninactive_border_color   #2A2C35\nbell_border_color       #FFC247\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #BD4811\ninactive_tab_foreground #B3B5C0\ninactive_tab_background #0C0C10\ntab_bar_background      #070709\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #BD4811\nmark2_foreground        #FFFFFF\nmark2_background        #18496B\nmark3_foreground        #FFFFFF\nmark3_background        #C92438\n\n# ANSI 0-15 color table\ncolor0                  #0C0C10\ncolor1                  #FF5C6C\ncolor2                  #3DDC97\ncolor3                  #FFC247\ncolor4                  #74B8E8\ncolor5                  #C996F5\ncolor6                  #56D4E0\ncolor7                  #D6D8E0\ncolor8                  #8C8F9D\ncolor9                  #FF9254\ncolor10                 #6CE8B2\ncolor11                 #FFD475\ncolor12                 #99CDF2\ncolor13                 #DCB8FA\ncolor14                 #85E3EC\ncolor15                 #F4F5F8",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/kitty/previews/cyclorama-steel.svg",
+      "file": "apps/kitty/cyclorama-steel.conf",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Steel Kitty .conf",
+      "copySnippet": "## name: Cyclorama Steel\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (LX 263 Dark · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #F4F5F8\nbackground              #050507\nselection_foreground    #F4F5F8\nselection_background    #1D3B57\n\n# Cursor & URLs\ncursor                  #74B8E8\ncursor_text_color       #050507\nurl_color               #74B8E8\n\n# Window borders\nactive_border_color     #74B8E8\ninactive_border_color   #27313D\nbell_border_color       #FFC247\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #18496B\ninactive_tab_foreground #B3B5C0\ninactive_tab_background #0C0C10\ntab_bar_background      #07080B\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #18496B\nmark2_foreground        #FFFFFF\nmark2_background        #BD4811\nmark3_foreground        #FFFFFF\nmark3_background        #C92438\n\n# ANSI 0-15 color table\ncolor0                  #0C0C10\ncolor1                  #FF5C6C\ncolor2                  #3DDC97\ncolor3                  #FFC247\ncolor4                  #74B8E8\ncolor5                  #C996F5\ncolor6                  #56D4E0\ncolor7                  #D6D8E0\ncolor8                  #8C96A6\ncolor9                  #FF9254\ncolor10                 #6CE8B2\ncolor11                 #FFD475\ncolor12                 #99CDF2\ncolor13                 #DCB8FA\ncolor14                 #85E3EC\ncolor15                 #F4F5F8",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/kitty/previews/cyclorama-day.svg",
+      "file": "apps/kitty/cyclorama-day.conf",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Day Kitty .conf",
+      "copySnippet": "## name: Cyclorama Day\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (LX 512 Light · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #0D1016\nbackground              #F5F7F9\nselection_foreground    #0D1016\nselection_background    #C6DAEB\n\n# Cursor & URLs\ncursor                  #AD3D0A\ncursor_text_color       #FFFFFF\nurl_color               #AD3D0A\n\n# Window borders\nactive_border_color     #AD3D0A\ninactive_border_color   #C8D0DA\nbell_border_color       #885800\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #18496B\ninactive_tab_foreground #474D59\ninactive_tab_background #FFFFFF\ntab_bar_background      #EAEEF2\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #18496B\nmark2_foreground        #FFFFFF\nmark2_background        #AD3D0A\nmark3_foreground        #FFFFFF\nmark3_background        #B91C2E\n\n# ANSI 0-15 color table\ncolor0                  #0D1016\ncolor1                  #B91C2E\ncolor2                  #127247\ncolor3                  #885800\ncolor4                  #164669\ncolor5                  #6B38B8\ncolor6                  #0E6674\ncolor7                  #E3E8EE\ncolor8                  #58606E\ncolor9                  #AD3D0A\ncolor10                 #0D5A37\ncolor11                 #704700\ncolor12                 #1F547A\ncolor13                 #572A9E\ncolor14                 #0A525E\ncolor15                 #FFFFFF",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

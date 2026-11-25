@@ -1,0 +1,157 @@
+{
+  "app": "Obsidian",
+  "slug": "obsidian",
+  "category": "Notes & Writing",
+  "homepage": "https://obsidian.md/",
+  "format": "Obsidian Theme (manifest.json + theme.css)",
+  "install": "Copy manifest.json + theme.css into .obsidian/themes/Cyclorama Dawn/",
+  "installSteps": [
+    "Copy `manifest.json` and `theme.css` into your vault's `.obsidian/themes/Cyclorama Dawn/` folder.",
+    "Open Obsidian -> Settings -> Appearance -> Themes and select **Cyclorama Dawn**.",
+    "Use Base color scheme to switch between **Cyclorama Dawn** (`LX 263` Dark) and **Cyclorama Day** (`LX 512` Light), or enable `snippets/cyclorama-steel.css` (or Style Settings) for **Cyclorama Steel**."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/obsidian/theme.css",
+  "files": [
+    {
+      "label": "Theme Manifest",
+      "path": "apps/obsidian/manifest.json"
+    },
+    {
+      "label": "Complete Theme CSS",
+      "path": "apps/obsidian/theme.css"
+    },
+    {
+      "label": "Dawn Snippet (LX 263)",
+      "path": "apps/obsidian/snippets/cyclorama-dawn.css"
+    },
+    {
+      "label": "Steel Snippet (LX 263)",
+      "path": "apps/obsidian/snippets/cyclorama-steel.css"
+    },
+    {
+      "label": "Day Snippet (LX 512)",
+      "path": "apps/obsidian/snippets/cyclorama-day.css"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark vault with Beacon Orange links, Steel Blue tags, and AA-calibrated callouts and graph nodes.",
+      "preview": "apps/obsidian/previews/cyclorama-dawn.svg",
+      "file": "apps/obsidian/snippets/cyclorama-dawn.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Obsidian CSS Snippet",
+      "copySnippet": "/* Cyclorama Dawn (LX 263) — Obsidian CSS Snippet */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-modifier-border: #2A2C35;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --interactive-accent: #BD4811;\n  --text-accent: #FF9254;\n  --link-color: #FF9254;\n  --tag-color: #74B8E8;\n  --code-background: #08080B;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#2A2C35"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark vault with Steel Blue controls and Beacon Orange secondary highlights via Style Settings or snippet.",
+      "preview": "apps/obsidian/previews/cyclorama-steel.svg",
+      "file": "apps/obsidian/snippets/cyclorama-steel.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Obsidian CSS Snippet",
+      "copySnippet": "/* Cyclorama Steel (LX 263) — Obsidian CSS Snippet */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-modifier-border: #27313D;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --interactive-accent: #18496B;\n  --text-accent: #74B8E8;\n  --link-color: #74B8E8;\n  --tag-color: #FF9254;\n  --code-background: #080A0E;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#27313D"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light vault with white sidebars, burnt Beacon links, and Steel Blue tags.",
+      "preview": "apps/obsidian/previews/cyclorama-day.svg",
+      "file": "apps/obsidian/snippets/cyclorama-day.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Obsidian CSS Snippet",
+      "copySnippet": "/* Cyclorama Day (LX 512) — Obsidian CSS Snippet */\n.theme-light {\n  --background-primary: #F5F7F9;\n  --background-secondary: #FFFFFF;\n  --background-modifier-border: #C8D0DA;\n  --text-normal: #0D1016;\n  --text-muted: #474D59;\n  --interactive-accent: #18496B;\n  --text-accent: #AD3D0A;\n  --link-color: #AD3D0A;\n  --tag-color: #164669;\n  --code-background: #EEF2F5;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Border",
+          "hex": "#C8D0DA"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,552 @@
   "source": "https://github.com/Real-Fruit-Snacks/rfs-brand",
   "apps": [
     {
+      "slug": "vscode",
+      "name": "VS Code",
+      "category": "Editors & IDEs",
+      "homepage": "https://code.visualstudio.com/",
+      "format": "VS Code JSON Theme Extension",
+      "install": "Copy apps/vscode/ into ~/.vscode/extensions/rfs-cyclorama-dawn and pick Color Theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/vscode/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/vscode/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/vscode/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/vscode",
+      "data": "apps/vscode/themes.json"
+    },
+    {
+      "slug": "neovim",
+      "name": "Neovim",
+      "category": "Editors & IDEs",
+      "homepage": "https://neovim.io/",
+      "format": "Lua Colorscheme Plugin",
+      "install": "Add apps/neovim to runtimepath (lazy.nvim/packer) and run :colorscheme cyclorama-dawn",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/neovim/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/neovim/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/neovim/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/neovim",
+      "data": "apps/neovim/themes.json"
+    },
+    {
+      "slug": "zed",
+      "name": "Zed",
+      "category": "Editors & IDEs",
+      "homepage": "https://zed.dev/",
+      "format": "Zed JSON Theme (v0.2.0)",
+      "install": "Copy apps/zed/themes/cyclorama.json into ~/.config/zed/themes/ and select theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/zed/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/zed/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/zed/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/zed",
+      "data": "apps/zed/themes.json"
+    },
+    {
+      "slug": "jetbrains",
+      "name": "JetBrains IDEs",
+      "category": "Editors & IDEs",
+      "homepage": "https://www.jetbrains.com/",
+      "format": "IntelliJ .icls + .theme.json",
+      "install": "Import .icls in Settings -> Editor -> Color Scheme, or zip apps/jetbrains/ as a theme plugin",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/jetbrains/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/jetbrains/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/jetbrains/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/jetbrains",
+      "data": "apps/jetbrains/themes.json"
+    },
+    {
+      "slug": "windows-terminal",
+      "name": "Windows Terminal",
+      "category": "Terminals",
+      "homepage": "https://learn.microsoft.com/en-us/windows/terminal/",
+      "format": "JSON Schemes + PSReadLine .ps1",
+      "install": "Paste scheme into settings.json \"schemes\" array + dot-source PSReadLine .ps1",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/windows-terminal/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/windows-terminal/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/windows-terminal/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/windows-terminal",
+      "data": "apps/windows-terminal/themes.json"
+    },
+    {
+      "slug": "wezterm",
+      "name": "WezTerm",
+      "category": "Terminals",
+      "homepage": "https://wezterm.org/",
+      "format": "WezTerm .toml Color Scheme",
+      "install": "Copy .toml into ~/.config/wezterm/colors/ and set config.color_scheme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/wezterm/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/wezterm/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/wezterm/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/wezterm",
+      "data": "apps/wezterm/themes.json"
+    },
+    {
+      "slug": "alacritty",
+      "name": "Alacritty",
+      "category": "Terminals",
+      "homepage": "https://alacritty.org/",
+      "format": "Alacritty v0.13+ .toml",
+      "install": "Import .toml under [general].import in alacritty.toml",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/alacritty/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/alacritty/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/alacritty/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/alacritty",
+      "data": "apps/alacritty/themes.json"
+    },
+    {
+      "slug": "ghostty",
+      "name": "Ghostty",
+      "category": "Terminals",
+      "homepage": "https://ghostty.org/",
+      "format": "Ghostty Theme File",
+      "install": "Copy theme into ~/.config/ghostty/themes/ and set theme = cyclorama-dawn",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/ghostty/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/ghostty/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/ghostty/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/ghostty",
+      "data": "apps/ghostty/themes.json"
+    },
+    {
+      "slug": "kitty",
+      "name": "Kitty",
+      "category": "Terminals",
+      "homepage": "https://sw.kovidgoyal.net/kitty/",
+      "format": "Kitty .conf Theme",
+      "install": "Include .conf from ~/.config/kitty/themes/ in kitty.conf",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/kitty/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/kitty/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/kitty/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/kitty",
+      "data": "apps/kitty/themes.json"
+    },
+    {
+      "slug": "starship",
+      "name": "Starship",
+      "category": "CLI & TUI",
+      "homepage": "https://starship.rs/",
+      "format": "Starship .toml Palette",
+      "install": "Copy cyclorama-dawn.toml to ~/.config/starship.toml",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte dark Starship prompt with Steel Blue path pills, Beacon Orange git segments, and Signal Emerald status.",
+          "preview": "apps/starship/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal Starship prompt with Steel Blue primary focus and Beacon Orange secondary highlights.",
+          "preview": "apps/starship/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day light Starship prompt with high-contrast Steel pills, burnt Beacon accents, and deep Signal badges.",
+          "preview": "apps/starship/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/starship",
+      "data": "apps/starship/themes.json"
+    },
+    {
+      "slug": "oh-my-posh",
+      "name": "Oh My Posh",
+      "category": "CLI & TUI",
+      "homepage": "https://ohmyposh.dev/",
+      "format": "Oh My Posh v3 .omp.json",
+      "install": "oh-my-posh init <shell> --config apps/oh-my-posh/cyclorama-dawn.omp.json",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Oh My Posh v3 dark prompt using p:<token> palette references with Beacon Orange git badges and Steel Blue paths.",
+          "preview": "apps/oh-my-posh/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Oh My Posh v3 steel-charcoal dark prompt with Steel Blue primary pills and Beacon Orange highlights.",
+          "preview": "apps/oh-my-posh/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Oh My Posh v3 Alabaster Day light prompt with crisp Steel and burnt Beacon contrast across every segment.",
+          "preview": "apps/oh-my-posh/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/oh-my-posh",
+      "data": "apps/oh-my-posh/themes.json"
+    },
+    {
+      "slug": "bat",
+      "name": "bat",
+      "category": "CLI & TUI",
+      "homepage": "https://github.com/sharkdp/bat",
+      "format": "TextMate .tmTheme XML",
+      "install": "Copy *.tmTheme to $(bat --config-dir)/themes/ and run bat cache --build",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "TextMate .tmTheme dark syntax palette on #050507 with Beacon Orange functions, Steel keywords, and Signal numbers.",
+          "preview": "apps/bat/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "TextMate .tmTheme steel-charcoal dark syntax palette paired with Steel Blue focus and crisp diff scopes.",
+          "preview": "apps/bat/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "TextMate .tmTheme Alabaster Day light syntax palette tuned for bright terminals and WCAG AA readability.",
+          "preview": "apps/bat/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/bat",
+      "data": "apps/bat/themes.json"
+    },
+    {
+      "slug": "delta",
+      "name": "git-delta",
+      "category": "CLI & TUI",
+      "homepage": "https://dandavison.github.io/delta/",
+      "format": "Git Config .gitconfig",
+      "install": "Include apps/delta/cyclorama.gitconfig in ~/.gitconfig and set features = cyclorama-dawn",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Dark git-delta diff palette with Signal Emerald additions, Signal Crimson deletions, and Beacon Orange file headers.",
+          "preview": "apps/delta/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Steel-charcoal dark git-delta diff palette with Steel Blue headers and calibrated blame/hunk framing.",
+          "preview": "apps/delta/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day light git-delta diff palette with crisp pastel diff washes and WCAG AA line-number markers.",
+          "preview": "apps/delta/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/delta",
+      "data": "apps/delta/themes.json"
+    },
+    {
+      "slug": "fzf",
+      "name": "fzf",
+      "category": "CLI & TUI",
+      "homepage": "https://github.com/junegunn/fzf",
+      "format": "Shell .sh & PowerShell .ps1",
+      "install": "Source cyclorama-dawn.sh (bash/zsh) or dot-source cyclorama-dawn.ps1 (PowerShell)",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte dark fzf palette with Beacon Orange pointers and active matches, Steel Blue highlights, and Signal markers.",
+          "preview": "apps/fzf/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Steel-charcoal dark fzf palette with Steel Blue focus, Beacon Orange match highlights, and crisp selection contrast.",
+          "preview": "apps/fzf/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day light fzf palette with soft Steel active rows, burnt Beacon pointers, and AA-verified text contrast.",
+          "preview": "apps/fzf/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/fzf",
+      "data": "apps/fzf/themes.json"
+    },
+    {
       "slug": "privacynotes",
       "name": "PrivacyNotes",
       "category": "Notes & Writing",
@@ -17,7 +563,7 @@
           "lx": "LX 263",
           "mode": "dark",
           "accentRole": "Beacon Orange",
-          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue folder labels.",
+          "summary": "Beacon Orange focus on matte #050507 dark with Steel Blue folder labels.",
           "preview": "apps/privacynotes/previews/cyclorama-dawn.svg"
         },
         {
@@ -26,7 +572,7 @@
           "lx": "LX 263",
           "mode": "dark",
           "accentRole": "Steel Blue",
-          "summary": "Matte #050507 dark stage with Steel Blue controls and Beacon Orange folder labels.",
+          "summary": "Steel Blue controls on matte #050507 dark with Beacon Orange folder labels.",
           "preview": "apps/privacynotes/previews/cyclorama-steel.svg"
         },
         {
@@ -35,12 +581,207 @@
           "lx": "LX 512",
           "mode": "light",
           "accentRole": "Alabaster Day",
-          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white writing paper, burnt Beacon links, and Steel buttons.",
+          "summary": "Alabaster Day #F5F7F9 workspace with white paper, burnt Beacon links, and Steel buttons.",
           "preview": "apps/privacynotes/previews/cyclorama-day.svg"
         }
       ],
       "path": "apps/privacynotes",
       "data": "apps/privacynotes/themes.json"
+    },
+    {
+      "slug": "obsidian",
+      "name": "Obsidian",
+      "category": "Notes & Writing",
+      "homepage": "https://obsidian.md/",
+      "format": "Obsidian Theme (manifest.json + theme.css)",
+      "install": "Copy manifest.json + theme.css into .obsidian/themes/Cyclorama Dawn/",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark vault with Beacon Orange links, Steel Blue tags, and AA-calibrated callouts and graph nodes.",
+          "preview": "apps/obsidian/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark vault with Steel Blue controls and Beacon Orange secondary highlights via Style Settings or snippet.",
+          "preview": "apps/obsidian/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light vault with white sidebars, burnt Beacon links, and Steel Blue tags.",
+          "preview": "apps/obsidian/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/obsidian",
+      "data": "apps/obsidian/themes.json"
+    },
+    {
+      "slug": "chromium",
+      "name": "Brave / Chrome / Edge",
+      "category": "Browsers & Desktop",
+      "homepage": "https://brave.com/",
+      "format": "Chromium MV3 Browser Theme",
+      "install": "Extensions -> Developer mode -> Load unpacked variant folder",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 New Tab canvas, #070709 tab strip, #0C0C10 toolbar, and Beacon Orange NTP links & button tint.",
+          "preview": "apps/chromium/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal browser chrome with #131820 omnibox and Steel Blue NTP links & button tint.",
+          "preview": "apps/chromium/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light browser chrome with white toolbar, soft rail frame, and burnt Beacon links.",
+          "preview": "apps/chromium/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/chromium",
+      "data": "apps/chromium/themes.json"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord (Vencord / BetterDiscord)",
+      "category": "Browsers & Desktop",
+      "homepage": "https://vencord.dev/",
+      "format": "Vencord / BetterDiscord .theme.css",
+      "install": "Drop .theme.css into Vencord/BetterDiscord themes folder and enable",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 chat canvas with #0C0C10 channel rail, Beacon Orange links/mentions, and Signal status indicators.",
+          "preview": "apps/discord/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal Discord theme with Steel Blue brand buttons, #131820 composer, and high-contrast channel lists.",
+          "preview": "apps/discord/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day #F5F7F9 light chat workspace with white channel sidebar, burnt Beacon links, and Steel brand buttons.",
+          "preview": "apps/discord/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/discord",
+      "data": "apps/discord/themes.json"
+    },
+    {
+      "slug": "qbittorrent",
+      "name": "qBittorrent",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.qbittorrent.org/",
+      "format": "Qt QSS Stylesheet + config.json",
+      "install": "Package stylesheet.qss + config.json into .qbtheme and select in Behavior -> Use custom UI Theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 transfer table with Beacon Orange progress bars, Signal green seeding, and Steel Blue active downloads.",
+          "preview": "apps/qbittorrent/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal Qt stylesheet with Steel Blue progress chunks, crisp #27313D gridlines, and Beacon checking states.",
+          "preview": "apps/qbittorrent/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day #F5F7F9 light Qt stylesheet with alternating cool rows and WCAG AA transfer status inks.",
+          "preview": "apps/qbittorrent/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/qbittorrent",
+      "data": "apps/qbittorrent/themes.json"
+    },
+    {
+      "slug": "flow-launcher",
+      "name": "Flow Launcher",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.flowlauncher.com/",
+      "format": "WPF XAML Theme",
+      "install": "Copy .xaml files to %APPDATA%\\FlowLauncher\\Themes\\ and choose in Settings -> Appearance",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 spotlight dialog with crisp #62646D frame, Beacon Orange caret/matches, and Steel Blue clock readout.",
+          "preview": "apps/flow-launcher/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal spotlight window with Steel Blue selection accent, crisp separators, and Beacon Orange clock readout.",
+          "preview": "apps/flow-launcher/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Alabaster Day #F5F7F9 light spotlight dialog with high-contrast dark ink and burnt Beacon match highlights.",
+          "preview": "apps/flow-launcher/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/flow-launcher",
+      "data": "apps/flow-launcher/themes.json"
     }
   ]
 }

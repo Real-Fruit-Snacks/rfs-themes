@@ -1,0 +1,125 @@
+# Cyclorama Dawn v2.1.0 — git-delta Named Features
+# Author: Real-Fruit-Snacks
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+# Usage in ~/.gitconfig:
+#   [include]
+#       path = /path/to/rfs-themes/apps/delta/cyclorama.gitconfig
+#   [delta]
+#       features = cyclorama-dawn
+
+[delta "cyclorama-dawn"]
+    dark = true
+    light = false
+    syntax-theme = Cyclorama Dawn
+    plus-style = syntax "#0D291E"
+    plus-non-emph-style = syntax "#0D291E"
+    plus-emph-style = syntax "#1A5B40"
+    plus-empty-line-marker-style = normal "#0D291E"
+    minus-style = syntax "#301218"
+    minus-non-emph-style = syntax "#301218"
+    minus-emph-style = syntax "#6E2831"
+    minus-empty-line-marker-style = normal "#301218"
+    zero-style = syntax
+    line-numbers = true
+    line-numbers-left-style = "#8C8F9D"
+    line-numbers-right-style = "#8C8F9D"
+    line-numbers-minus-style = "#FF5C6C"
+    line-numbers-plus-style = "#3DDC97"
+    line-numbers-zero-style = "#8C8F9D"
+    file-style = bold "#FF9254"
+    file-decoration-style = "#62646D" ul
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#2A2C35" box
+    hunk-header-file-style = bold "#74B8E8"
+    hunk-header-line-number-style = bold "#FF9254"
+    whitespace-error-style = reverse "#FF5C6C"
+    blame-palette = "#050507 #0C0C10 #14141A #1C1D26 #112436"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = bold "#74B8E8"
+    merge-conflict-ours-diff-header-decoration-style = "#2A2C35" box
+    merge-conflict-theirs-diff-header-style = bold "#FF9254"
+    merge-conflict-theirs-diff-header-decoration-style = "#2A2C35" box
+
+[delta "cyclorama-steel"]
+    dark = true
+    light = false
+    syntax-theme = Cyclorama Steel
+    plus-style = syntax "#0D291E"
+    plus-non-emph-style = syntax "#0D291E"
+    plus-emph-style = syntax "#1A5B40"
+    plus-empty-line-marker-style = normal "#0D291E"
+    minus-style = syntax "#301218"
+    minus-non-emph-style = syntax "#301218"
+    minus-emph-style = syntax "#6E2831"
+    minus-empty-line-marker-style = normal "#301218"
+    zero-style = syntax
+    line-numbers = true
+    line-numbers-left-style = "#8C96A6"
+    line-numbers-right-style = "#8C96A6"
+    line-numbers-minus-style = "#FF5C6C"
+    line-numbers-plus-style = "#3DDC97"
+    line-numbers-zero-style = "#8C96A6"
+    file-style = bold "#74B8E8"
+    file-decoration-style = "#637284" ul
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#27313D" box
+    hunk-header-file-style = bold "#FF9254"
+    hunk-header-line-number-style = bold "#74B8E8"
+    whitespace-error-style = reverse "#FF5C6C"
+    blame-palette = "#050507 #0C0C10 #131820 #1A222E #13293D"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = bold "#FF9254"
+    merge-conflict-ours-diff-header-decoration-style = "#27313D" box
+    merge-conflict-theirs-diff-header-style = bold "#74B8E8"
+    merge-conflict-theirs-diff-header-decoration-style = "#27313D" box
+
+[delta "cyclorama-day"]
+    dark = false
+    light = true
+    syntax-theme = Cyclorama Day
+    plus-style = syntax "#D9F0E4"
+    plus-non-emph-style = syntax "#D9F0E4"
+    plus-emph-style = syntax "#A9D2BE"
+    plus-empty-line-marker-style = normal "#D9F0E4"
+    minus-style = syntax "#F8DADF"
+    minus-non-emph-style = syntax "#F8DADF"
+    minus-emph-style = syntax "#E9ACB5"
+    minus-empty-line-marker-style = normal "#F8DADF"
+    zero-style = syntax
+    line-numbers = true
+    line-numbers-left-style = "#58606E"
+    line-numbers-right-style = "#58606E"
+    line-numbers-minus-style = "#B91C2E"
+    line-numbers-plus-style = "#127247"
+    line-numbers-zero-style = "#58606E"
+    file-style = bold "#AD3D0A"
+    file-decoration-style = "#6E7682" ul
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#C8D0DA" box
+    hunk-header-file-style = bold "#164669"
+    hunk-header-line-number-style = bold "#AD3D0A"
+    whitespace-error-style = reverse "#B91C2E"
+    blame-palette = "#F5F7F9 #FFFFFF #E3E8EE #D7DFE8 #DCE8F3"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = bold "#164669"
+    merge-conflict-ours-diff-header-decoration-style = "#C8D0DA" box
+    merge-conflict-theirs-diff-header-style = bold "#AD3D0A"
+    merge-conflict-theirs-diff-header-decoration-style = "#C8D0DA" box

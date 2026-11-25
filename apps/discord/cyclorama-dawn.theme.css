@@ -1,0 +1,112 @@
+/**
+ * @name Cyclorama Dawn
+ * @author Real-Fruit-Snacks
+ * @version 2.1.0
+ * @description Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (LX 263 · Beacon Orange)
+ * @source https://github.com/Real-Fruit-Snacks/rfs-themes
+ * @website https://real-fruit-snacks.github.io/rfs-themes/
+ */
+
+.theme-dark {
+  /* Background Overlays */
+  --bg-overlay-app-frame: #070709;
+  --bg-overlay-floating: #0C0C10;
+  --bg-overlay-chat: #050507;
+  --bg-overlay-home: #050507;
+  --bg-overlay-selected: #33211B;
+  --bg-overlay-hover: rgba(28, 29, 38, 0.55);
+  --bg-overlay-active: rgba(255, 146, 84, 0.16);
+  --bg-overlay-1: #0C0C10;
+  --bg-overlay-2: #14141A;
+  --bg-overlay-3: #1C1D26;
+  --bg-overlay-4: #070709;
+
+  /* Core Backgrounds */
+  --background-primary: #050507;
+  --background-secondary: #0C0C10;
+  --background-secondary-alt: #070709;
+  --background-tertiary: #070709;
+  --background-accent: #14141A;
+  --background-floating: #0C0C10;
+  --background-nested-floating: #14141A;
+  --background-mobile-primary: #050507;
+  --background-mobile-secondary: #0C0C10;
+  --background-modifier-hover: rgba(28, 29, 38, 0.55);
+  --background-modifier-active: rgba(255, 146, 84, 0.16);
+  --background-modifier-selected: #33211B;
+  --background-modifier-accent: #2A2C35;
+  --background-mentioned: rgba(255, 146, 84, 0.14);
+  --background-mentioned-hover: rgba(255, 146, 84, 0.22);
+  --home-background: #050507;
+
+  /* Composer & Inputs */
+  --channeltextarea-background: #14141A;
+  --input-background: #14141A;
+  --input-placeholder-text: #8C8F9D;
+  --textbox-markdown-syntax: #B3B5C0;
+
+  /* Typography & Links */
+  --text-normal: #F4F5F8;
+  --text-muted: #B3B5C0;
+  --text-link: #FF9254;
+  --text-positive: #3DDC97;
+  --text-warning: #FFC247;
+  --text-danger: #FF5C6C;
+  --text-brand: #FF9254;
+  --header-primary: #F4F5F8;
+  --header-secondary: #D6D8E0;
+  --channels-default: #B3B5C0;
+  --channel-icon: #8C8F9D;
+  --interactive-normal: #D6D8E0;
+  --interactive-hover: #F4F5F8;
+  --interactive-active: #F4F5F8;
+  --interactive-muted: #8C8F9D;
+
+  /* Brand & Accent Controls */
+  --brand-experiment: #BD4811;
+  --brand-experiment-500: #BD4811;
+  --brand-experiment-560: #9E3B0C;
+  --brand-experiment-600: #9E3B0C;
+  --brand-500: #BD4811;
+  --brand-560: #9E3B0C;
+  --brand-600: #9E3B0C;
+  --control-brand-foreground: #FF9254;
+  --focus-primary: #FF9254;
+
+  /* Semantic Status */
+  --status-positive: #3DDC97;
+  --status-positive-background: #3DDC97;
+  --status-warning: #FFC247;
+  --status-warning-background: #FFC247;
+  --status-danger: #FF5C6C;
+  --status-danger-background: #C92438;
+  --info-warning-foreground: #FFC247;
+  --info-danger-foreground: #FF5C6C;
+  --info-positive-foreground: #3DDC97;
+  --info-help-foreground: #74B8E8;
+
+  /* Scrollbars */
+  --scrollbar-thin-thumb: #2A2C35;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #62646D;
+  --scrollbar-auto-track: #070709;
+  --scrollbar-auto-scrollbar-color-thumb: #62646D;
+  --scrollbar-auto-scrollbar-color-track: #070709;
+}
+
+/* Crisp code blocks, embeds & selection */
+.theme-dark pre,
+.theme-dark code {
+  background-color: #08080B !important;
+  border-color: #2A2C35 !important;
+}
+
+.theme-dark ::selection {
+  background-color: #3D2B24;
+  color: #F4F5F8;
+}
+
+.theme-dark [class*="embedFull"] {
+  background-color: #0C0C10;
+  border-color: #2A2C35;
+}

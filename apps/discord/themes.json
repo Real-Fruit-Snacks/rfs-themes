@@ -1,0 +1,149 @@
+{
+  "app": "Discord (Vencord / BetterDiscord)",
+  "slug": "discord",
+  "category": "Browsers & Desktop",
+  "homepage": "https://vencord.dev/",
+  "format": "Vencord / BetterDiscord .theme.css",
+  "install": "Drop .theme.css into Vencord/BetterDiscord themes folder and enable",
+  "installSteps": [
+    "Open Discord -> Settings -> **Themes** (Vencord or BetterDiscord) -> **Open Themes Folder**.",
+    "Copy `cyclorama-dawn.theme.css`, `cyclorama-steel.theme.css`, or `cyclorama-day.theme.css` into the folder.",
+    "Enable the theme in Settings -> Themes (match Discord Appearance to Dark for Dawn/Steel, Light for Day)."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/discord/cyclorama-dawn.theme.css",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Theme CSS",
+      "path": "apps/discord/cyclorama-dawn.theme.css"
+    },
+    {
+      "label": "Cyclorama Steel Theme CSS",
+      "path": "apps/discord/cyclorama-steel.theme.css"
+    },
+    {
+      "label": "Cyclorama Day Theme CSS",
+      "path": "apps/discord/cyclorama-day.theme.css"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 chat canvas with #0C0C10 channel rail, Beacon Orange links/mentions, and Signal status indicators.",
+      "preview": "apps/discord/previews/cyclorama-dawn.svg",
+      "file": "apps/discord/cyclorama-dawn.theme.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Discord Quick CSS",
+      "copySnippet": "/* Cyclorama Dawn (LX 263) — Discord Quick CSS */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-tertiary: #070709;\n  --channeltextarea-background: #14141A;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --text-link: #FF9254;\n  --brand-experiment: #BD4811;\n  --brand-500: #BD4811;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#2A2C35"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal Discord theme with Steel Blue brand buttons, #131820 composer, and high-contrast channel lists.",
+      "preview": "apps/discord/previews/cyclorama-steel.svg",
+      "file": "apps/discord/cyclorama-steel.theme.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Discord Quick CSS",
+      "copySnippet": "/* Cyclorama Steel (LX 263) — Discord Quick CSS */\n.theme-dark {\n  --background-primary: #050507;\n  --background-secondary: #0C0C10;\n  --background-tertiary: #07080B;\n  --channeltextarea-background: #131820;\n  --text-normal: #F4F5F8;\n  --text-muted: #B3B5C0;\n  --text-link: #74B8E8;\n  --brand-experiment: #18496B;\n  --brand-500: #18496B;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#27313D"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Alabaster Day #F5F7F9 light chat workspace with white channel sidebar, burnt Beacon links, and Steel brand buttons.",
+      "preview": "apps/discord/previews/cyclorama-day.svg",
+      "file": "apps/discord/cyclorama-day.theme.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Discord Quick CSS",
+      "copySnippet": "/* Cyclorama Day (LX 512) — Discord Quick CSS */\n.theme-light {\n  --background-primary: #F5F7F9;\n  --background-secondary: #FFFFFF;\n  --background-tertiary: #EAEEF2;\n  --channeltextarea-background: #E3E8EE;\n  --text-normal: #0D1016;\n  --text-muted: #474D59;\n  --text-link: #AD3D0A;\n  --brand-experiment: #18496B;\n  --brand-500: #18496B;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Border",
+          "hex": "#C8D0DA"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

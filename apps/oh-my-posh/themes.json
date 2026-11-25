@@ -1,0 +1,149 @@
+{
+  "app": "Oh My Posh",
+  "slug": "oh-my-posh",
+  "category": "CLI & TUI",
+  "homepage": "https://ohmyposh.dev/",
+  "format": "Oh My Posh v3 .omp.json",
+  "install": "oh-my-posh init <shell> --config apps/oh-my-posh/cyclorama-dawn.omp.json",
+  "installSteps": [
+    "Copy `cyclorama-dawn.omp.json` (or `steel` / `day`) into your Oh My Posh themes folder.",
+    "Initialize Oh My Posh in your shell profile (`~/.zshrc`, `~/.bashrc`, or PowerShell `$PROFILE`) with `--config` pointing to the `.omp.json` file.",
+    "Reload your shell profile to activate the prompt."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/oh-my-posh/cyclorama-dawn.omp.json",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Theme",
+      "path": "apps/oh-my-posh/cyclorama-dawn.omp.json"
+    },
+    {
+      "label": "Cyclorama Steel Theme",
+      "path": "apps/oh-my-posh/cyclorama-steel.omp.json"
+    },
+    {
+      "label": "Cyclorama Day Theme",
+      "path": "apps/oh-my-posh/cyclorama-day.omp.json"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Oh My Posh v3 dark prompt using p:<token> palette references with Beacon Orange git badges and Steel Blue paths.",
+      "preview": "apps/oh-my-posh/previews/cyclorama-dawn.svg",
+      "file": "apps/oh-my-posh/cyclorama-dawn.omp.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Dawn Oh My Posh palette",
+      "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"raised\": \"#14141A\",\n    \"border\": \"#2A2C35\",\n    \"text\": \"#F4F5F8\",\n    \"text_soft\": \"#D6D8E0\",\n    \"mute\": \"#B3B5C0\",\n    \"subtle\": \"#8C8F9D\",\n    \"accent\": \"#FF9254\",\n    \"accent_vivid\": \"#F06E2B\",\n    \"accent_fill\": \"#BD4811\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#74B8E8\",\n    \"secondary_fill\": \"#18496B\",\n    \"signal\": \"#3DDC97\",\n    \"warning\": \"#FFC247\",\n    \"fault\": \"#FF5C6C\",\n    \"fault_fill\": \"#C92438\",\n    \"cyan\": \"#56D4E0\",\n    \"magenta\": \"#C996F5\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Oh My Posh v3 steel-charcoal dark prompt with Steel Blue primary pills and Beacon Orange highlights.",
+      "preview": "apps/oh-my-posh/previews/cyclorama-steel.svg",
+      "file": "apps/oh-my-posh/cyclorama-steel.omp.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Steel Oh My Posh palette",
+      "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"raised\": \"#131820\",\n    \"border\": \"#27313D\",\n    \"text\": \"#F4F5F8\",\n    \"text_soft\": \"#D6DCE4\",\n    \"mute\": \"#B3B5C0\",\n    \"subtle\": \"#8C96A6\",\n    \"accent\": \"#74B8E8\",\n    \"accent_vivid\": \"#1F547A\",\n    \"accent_fill\": \"#18496B\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#FF9254\",\n    \"secondary_fill\": \"#BD4811\",\n    \"signal\": \"#3DDC97\",\n    \"warning\": \"#FFC247\",\n    \"fault\": \"#FF5C6C\",\n    \"fault_fill\": \"#C92438\",\n    \"cyan\": \"#56D4E0\",\n    \"magenta\": \"#C996F5\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Oh My Posh v3 Alabaster Day light prompt with crisp Steel and burnt Beacon contrast across every segment.",
+      "preview": "apps/oh-my-posh/previews/cyclorama-day.svg",
+      "file": "apps/oh-my-posh/cyclorama-day.omp.json",
+      "copyLang": "json",
+      "copyLabel": "Copy Cyclorama Day Oh My Posh palette",
+      "copySnippet": "{\n  \"palette\": {\n    \"bg\": \"#F5F7F9\",\n    \"surface\": \"#FFFFFF\",\n    \"raised\": \"#E3E8EE\",\n    \"border\": \"#C8D0DA\",\n    \"text\": \"#0D1016\",\n    \"text_soft\": \"#252A34\",\n    \"mute\": \"#474D59\",\n    \"subtle\": \"#58606E\",\n    \"accent\": \"#AD3D0A\",\n    \"accent_vivid\": \"#CC5016\",\n    \"accent_fill\": \"#18496B\",\n    \"on_accent\": \"#FFFFFF\",\n    \"secondary\": \"#164669\",\n    \"secondary_fill\": \"#AD3D0A\",\n    \"signal\": \"#127247\",\n    \"warning\": \"#885800\",\n    \"fault\": \"#B91C2E\",\n    \"fault_fill\": \"#B91C2E\",\n    \"cyan\": \"#0E6674\",\n    \"magenta\": \"#6B38B8\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

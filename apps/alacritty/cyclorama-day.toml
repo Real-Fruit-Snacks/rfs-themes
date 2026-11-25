@@ -1,0 +1,57 @@
+# Cyclorama Day (LX 512 Light · Alabaster Day) — Alacritty v0.13+ Theme
+# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+[colors.primary]
+background = "#F5F7F9"
+foreground = "#0D1016"
+dim_foreground = "#474D59"
+bright_foreground = "#0D1016"
+
+[colors.cursor]
+text = "#FFFFFF"
+cursor = "#AD3D0A"
+
+[colors.vi_mode_cursor]
+text = "#FFFFFF"
+cursor = "#164669"
+
+[colors.selection]
+text = "#0D1016"
+background = "#C6DAEB"
+
+[colors.search.matches]
+foreground = "#0D1016"
+background = "#F5DFB0"
+
+[colors.search.focused_match]
+foreground = "#FFFFFF"
+background = "#18496B"
+
+[colors.hints.start]
+foreground = "#FFFFFF"
+background = "#18496B"
+
+[colors.hints.end]
+foreground = "#FFFFFF"
+background = "#AD3D0A"
+
+[colors.normal]
+black = "#0D1016"
+red = "#B91C2E"
+green = "#127247"
+yellow = "#885800"
+blue = "#164669"
+magenta = "#6B38B8"
+cyan = "#0E6674"
+white = "#E3E8EE"
+
+[colors.bright]
+black = "#58606E"
+red = "#AD3D0A"
+green = "#0D5A37"
+yellow = "#704700"
+blue = "#1F547A"
+magenta = "#572A9E"
+cyan = "#0A525E"
+white = "#FFFFFF"

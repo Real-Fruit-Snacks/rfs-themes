@@ -1,0 +1,23 @@
+{
+  "name": "Cyclorama Day",
+  "background": "#F5F7F9",
+  "foreground": "#0D1016",
+  "cursorColor": "#AD3D0A",
+  "selectionBackground": "#C6DAEB",
+  "black": "#0D1016",
+  "red": "#B91C2E",
+  "green": "#127247",
+  "yellow": "#885800",
+  "blue": "#164669",
+  "purple": "#6B38B8",
+  "cyan": "#0E6674",
+  "white": "#E3E8EE",
+  "brightBlack": "#58606E",
+  "brightRed": "#AD3D0A",
+  "brightGreen": "#0D5A37",
+  "brightYellow": "#704700",
+  "brightBlue": "#1F547A",
+  "brightPurple": "#572A9E",
+  "brightCyan": "#0A525E",
+  "brightWhite": "#FFFFFF"
+}

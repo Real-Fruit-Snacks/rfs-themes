@@ -1,0 +1,149 @@
+{
+  "app": "Alacritty",
+  "slug": "alacritty",
+  "category": "Terminals",
+  "homepage": "https://alacritty.org/",
+  "format": "Alacritty v0.13+ .toml",
+  "install": "Import .toml under [general].import in alacritty.toml",
+  "installSteps": [
+    "Copy cyclorama-dawn.toml (or steel/day) into ~/.config/alacritty/themes/ (Windows: %APPDATA%\\alacritty\\themes\\).",
+    "Import the theme in alacritty.toml under [general] with import = [\"~/.config/alacritty/themes/cyclorama-dawn.toml\"].",
+    "Save alacritty.toml — Alacritty reloads colors live."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/alacritty/cyclorama-dawn.toml",
+  "files": [
+    {
+      "label": "Cyclorama Dawn (cyclorama-dawn.toml)",
+      "path": "apps/alacritty/cyclorama-dawn.toml"
+    },
+    {
+      "label": "Cyclorama Steel (cyclorama-steel.toml)",
+      "path": "apps/alacritty/cyclorama-steel.toml"
+    },
+    {
+      "label": "Cyclorama Day (cyclorama-day.toml)",
+      "path": "apps/alacritty/cyclorama-day.toml"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/alacritty/previews/cyclorama-dawn.svg",
+      "file": "apps/alacritty/cyclorama-dawn.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Dawn Alacritty TOML",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#050507\"\nforeground = \"#F4F5F8\"\ndim_foreground = \"#B3B5C0\"\nbright_foreground = \"#F4F5F8\"\n\n[colors.cursor]\ntext = \"#050507\"\ncursor = \"#F06E2B\"\n\n[colors.vi_mode_cursor]\ntext = \"#050507\"\ncursor = \"#74B8E8\"\n\n[colors.selection]\ntext = \"#F4F5F8\"\nbackground = \"#3D2B24\"\n\n[colors.search.matches]\nforeground = \"#F4F5F8\"\nbackground = \"#4A3619\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.normal]\nblack = \"#0C0C10\"\nred = \"#FF5C6C\"\ngreen = \"#3DDC97\"\nyellow = \"#FFC247\"\nblue = \"#74B8E8\"\nmagenta = \"#C996F5\"\ncyan = \"#56D4E0\"\nwhite = \"#D6D8E0\"\n\n[colors.bright]\nblack = \"#8C8F9D\"\nred = \"#FF9254\"\ngreen = \"#6CE8B2\"\nyellow = \"#FFD475\"\nblue = \"#99CDF2\"\nmagenta = \"#DCB8FA\"\ncyan = \"#85E3EC\"\nwhite = \"#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/alacritty/previews/cyclorama-steel.svg",
+      "file": "apps/alacritty/cyclorama-steel.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Steel Alacritty TOML",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#050507\"\nforeground = \"#F4F5F8\"\ndim_foreground = \"#B3B5C0\"\nbright_foreground = \"#F4F5F8\"\n\n[colors.cursor]\ntext = \"#050507\"\ncursor = \"#74B8E8\"\n\n[colors.vi_mode_cursor]\ntext = \"#050507\"\ncursor = \"#FF9254\"\n\n[colors.selection]\ntext = \"#F4F5F8\"\nbackground = \"#1D3B57\"\n\n[colors.search.matches]\nforeground = \"#F4F5F8\"\nbackground = \"#3B3117\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#BD4811\"\n\n[colors.normal]\nblack = \"#0C0C10\"\nred = \"#FF5C6C\"\ngreen = \"#3DDC97\"\nyellow = \"#FFC247\"\nblue = \"#74B8E8\"\nmagenta = \"#C996F5\"\ncyan = \"#56D4E0\"\nwhite = \"#D6D8E0\"\n\n[colors.bright]\nblack = \"#8C96A6\"\nred = \"#FF9254\"\ngreen = \"#6CE8B2\"\nyellow = \"#FFD475\"\nblue = \"#99CDF2\"\nmagenta = \"#DCB8FA\"\ncyan = \"#85E3EC\"\nwhite = \"#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/alacritty/previews/cyclorama-day.svg",
+      "file": "apps/alacritty/cyclorama-day.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Day Alacritty TOML",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Alacritty v0.13+ Theme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[colors.primary]\nbackground = \"#F5F7F9\"\nforeground = \"#0D1016\"\ndim_foreground = \"#474D59\"\nbright_foreground = \"#0D1016\"\n\n[colors.cursor]\ntext = \"#FFFFFF\"\ncursor = \"#AD3D0A\"\n\n[colors.vi_mode_cursor]\ntext = \"#FFFFFF\"\ncursor = \"#164669\"\n\n[colors.selection]\ntext = \"#0D1016\"\nbackground = \"#C6DAEB\"\n\n[colors.search.matches]\nforeground = \"#0D1016\"\nbackground = \"#F5DFB0\"\n\n[colors.search.focused_match]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.start]\nforeground = \"#FFFFFF\"\nbackground = \"#18496B\"\n\n[colors.hints.end]\nforeground = \"#FFFFFF\"\nbackground = \"#AD3D0A\"\n\n[colors.normal]\nblack = \"#0D1016\"\nred = \"#B91C2E\"\ngreen = \"#127247\"\nyellow = \"#885800\"\nblue = \"#164669\"\nmagenta = \"#6B38B8\"\ncyan = \"#0E6674\"\nwhite = \"#E3E8EE\"\n\n[colors.bright]\nblack = \"#58606E\"\nred = \"#AD3D0A\"\ngreen = \"#0D5A37\"\nyellow = \"#704700\"\nblue = \"#1F547A\"\nmagenta = \"#572A9E\"\ncyan = \"#0A525E\"\nwhite = \"#FFFFFF\"",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

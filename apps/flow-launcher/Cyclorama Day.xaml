@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cyclorama Day (LX 512 · Alabaster Day) — Flow Launcher WPF XAML Theme
+  Author: Real-Fruit-Snacks · Cyclorama Dawn v2.1.0
+  Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Themes/Base.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Selected Row Background Brush -->
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor" Color="#FFF4E4DD" />
+
+    <!-- Base Query TextBox -->
+    <Style x:Key="BaseQueryTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="#FFE3E8EE" />
+        <Setter Property="Foreground" Value="#FF0D1016" />
+        <Setter Property="CaretBrush" Value="#FFAD3D0A" />
+        <Setter Property="SelectionBrush" Value="#FFC6DAEB" />
+        <Setter Property="BorderBrush" Value="#FFC8D0DA" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Padding" Value="6,4" />
+    </Style>
+
+    <!-- Active Query Input Box -->
+    <Style x:Key="QueryBoxStyle" BasedOn="{StaticResource BaseQueryTextBoxStyle}" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#FF0D1016" />
+        <Setter Property="CaretBrush" Value="#FFAD3D0A" />
+        <Setter Property="SelectionBrush" Value="#FFC6DAEB" />
+    </Style>
+
+    <!-- Autocomplete Suggestion Overlay -->
+    <Style x:Key="QuerySuggestionBoxStyle" BasedOn="{StaticResource BaseQueryTextBoxStyle}" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#FF58606E" />
+    </Style>
+
+    <!-- Outer Spotlight Frame & Window -->
+    <Style x:Key="WindowBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="#F5F5F7F9" />
+        <Setter Property="BorderBrush" Value="#FF6E7682" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <Style x:Key="WindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="#F5F5F7F9" />
+        <Setter Property="Foreground" Value="#FF0D1016" />
+        <Setter Property="Width" Value="620" />
+    </Style>
+
+    <!-- Pending Activity Accent Line -->
+    <Style x:Key="PendingLineStyle" TargetType="{x:Type Line}">
+        <Setter Property="Stroke" Value="#FFAD3D0A" />
+        <Setter Property="StrokeThickness" Value="2" />
+    </Style>
+
+    <!-- Result Item Typography -->
+    <Style x:Key="ItemTitleStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FF252A34" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <Style x:Key="ItemSubTitleStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FF474D59" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="ItemTitleSelectedStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FF0D1016" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="ItemSubTitleSelectedStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FFAD3D0A" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- Match Highlight & Divider -->
+    <Style x:Key="HighlightStyle" TargetType="{x:Type Run}">
+        <Setter Property="Foreground" Value="#FFAD3D0A" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="SeparatorStyle" TargetType="{x:Type Rectangle}">
+        <Setter Property="Fill" Value="#FFC8D0DA" />
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Margin" Value="12,4,12,4" />
+    </Style>
+
+    <!-- Scrollbar & Thumb -->
+    <Style x:Key="ThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="Background" Value="#CC6E7682" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="3" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Background" Value="#FFEAEEF2" />
+        <Setter Property="Width" Value="6" />
+        <Setter Property="Margin" Value="0,4,4,4" />
+    </Style>
+
+    <!-- Clock & Date Readout -->
+    <Style x:Key="ClockBox" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FF164669" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="DateBox" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FF474D59" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,148 @@
+/*
+ * Cyclorama Steel (LX 263 · Steel Blue) — Standalone Obsidian CSS Snippet
+ * Author: Real-Fruit-Snacks · Cyclorama Dawn v2.1.0
+ * Drop into <vault>/.obsidian/snippets/ and enable in Settings -> Appearance -> CSS snippets.
+ */
+
+.theme-dark {
+  /* Surfaces & Chrome */
+  --background-primary: #050507;
+  --background-primary-alt: #080A0E;
+  --background-secondary: #0C0C10;
+  --background-secondary-alt: #07080B;
+  --background-modifier-hover: #11141A;
+  --background-modifier-active-hover: #1D2833;
+  --background-modifier-border: #27313D;
+  --background-modifier-border-hover: #637284;
+  --background-modifier-border-focus: #74B8E8;
+  --background-modifier-form-field: #131820;
+  --background-modifier-form-field-highlighted: #1A222E;
+  --background-modifier-box-shadow: rgba(5, 5, 7, 0.55);
+  --background-modifier-success: #3DDC97;
+  --background-modifier-error: #C92438;
+  --background-modifier-error-hover: #E02E44;
+  --background-modifier-cover: rgba(5, 5, 7, 0.78);
+  --titlebar-background: #07080B;
+  --titlebar-background-focused: #0C0C10;
+  --ribbon-background: #07080B;
+  --ribbon-background-collapsed: #07080B;
+  --status-bar-background: #0C0C10;
+  --status-bar-border-color: #27313D;
+  --status-bar-text-color: #B3B5C0;
+  --tab-background-active: #050507;
+  --tab-container-background: #07080B;
+  --tab-outline-color: #27313D;
+  --tab-divider-color: #222B36;
+  --divider-color: #27313D;
+  --divider-color-hover: #74B8E8;
+
+  /* Typography & Ink */
+  --text-normal: #F4F5F8;
+  --text-muted: #B3B5C0;
+  --text-faint: #8C96A6;
+  --text-on-accent: #FFFFFF;
+  --text-on-accent-inverted: #050507;
+  --text-error: #FF5C6C;
+  --text-warning: #FFC247;
+  --text-success: #3DDC97;
+  --text-selection: #1D3B57;
+  --text-highlight-bg: #3B3117;
+  --text-accent: #74B8E8;
+  --text-accent-hover: #99CDF2;
+
+  /* Interactive Accents */
+  --accent-h: 205;
+  --accent-s: 63%;
+  --accent-l: 26%;
+  --interactive-normal: #131820;
+  --interactive-hover: #1A222E;
+  --interactive-accent: #18496B;
+  --interactive-accent-hover: #123955;
+  --interactive-accent-rgb: 24, 73, 107;
+  --caret-color: #74B8E8;
+
+  /* Links, Tags & Navigation */
+  --link-color: #74B8E8;
+  --link-color-hover: #99CDF2;
+  --link-external-color: #FF9254;
+  --link-external-color-hover: #FFB07A;
+  --link-unresolved-color: #B3B5C0;
+  --tag-color: #FF9254;
+  --tag-color-hover: #74B8E8;
+  --tag-background: #33211B;
+  --tag-background-hover: #212E3B;
+  --tag-border-color: #27313D;
+  --tag-border-width: 1px;
+  --nav-item-color: #D6DCE4;
+  --nav-item-color-hover: #F4F5F8;
+  --nav-item-color-active: #F4F5F8;
+  --nav-item-background-hover: #11141A;
+  --nav-item-background-active: #1D2833;
+  --nav-indentation-guide-color: #222B36;
+
+  /* Headings */
+  --h1-color: #F4F5F8;
+  --h2-color: #74B8E8;
+  --h3-color: #FF9254;
+  --h4-color: #3DDC97;
+  --h5-color: #FFC247;
+  --h6-color: #B3B5C0;
+
+  /* Code & Syntax */
+  --code-background: #080A0E;
+  --code-normal: #D6DCE4;
+  --code-comment: #8C96A6;
+  --code-function: #FF9254;
+  --code-important: #FFC247;
+  --code-keyword: #74B8E8;
+  --code-operator: #D6D8E0;
+  --code-property: #99CDF2;
+  --code-punctuation: #B3B5C0;
+  --code-string: #FFC247;
+  --code-tag: #FF5C6C;
+  --code-value: #3DDC97;
+
+  /* Blockquotes, Callouts & Tables */
+  --blockquote-border-color: #FF9254;
+  --blockquote-background-color: #0C0C10;
+  --callout-default: 255, 146, 84;
+  --callout-info: 255, 146, 84;
+  --callout-tip: 86, 212, 224;
+  --callout-success: 61, 220, 151;
+  --callout-warning: 255, 194, 71;
+  --callout-fail: 255, 92, 108;
+  --callout-error: 255, 92, 108;
+  --callout-bug: 255, 92, 108;
+  --callout-example: 201, 150, 245;
+  --callout-quote: 179, 181, 192;
+  --table-header-background: #0C0C10;
+  --table-header-background-hover: #131820;
+  --table-border-color: #27313D;
+  --table-row-alt-background: #080A0E;
+  --hr-color: #27313D;
+
+  /* Graph View */
+  --graph-line: #637284;
+  --graph-node: #FF9254;
+  --graph-node-unresolved: #8C96A6;
+  --graph-node-focused: #74B8E8;
+  --graph-node-tag: #3DDC97;
+  --graph-node-attachment: #FFC247;
+  --graph-text: #D6DCE4;
+
+  /* Scrollbars & Horizon Beam */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #27313D;
+  --scrollbar-active-thumb-bg: #637284;
+  --rfs-beam-start: #74B8E8;
+  --rfs-beam-end: #F06E2B;
+  --rfs-accent-line: #74B8E8;
+}
+
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 2px 0 0 var(--rfs-accent-line);
+  background-image: linear-gradient(90deg in oklab, var(--rfs-beam-start), var(--rfs-beam-end));
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: top;
+}

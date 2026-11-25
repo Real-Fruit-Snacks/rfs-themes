@@ -1,0 +1,153 @@
+{
+  "app": "Starship",
+  "slug": "starship",
+  "category": "CLI & TUI",
+  "homepage": "https://starship.rs/",
+  "format": "Starship .toml Palette",
+  "install": "Copy cyclorama-dawn.toml to ~/.config/starship.toml",
+  "installSteps": [
+    "Copy `cyclorama-dawn.toml` (or `steel` / `day`) to `~/.config/starship.toml`.",
+    "Or append `palettes.toml` to your existing `~/.config/starship.toml` and set `palette = \"cyclorama_dawn\"` at the top.",
+    "Start a new shell session to load the updated Starship prompt."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/starship/cyclorama-dawn.toml",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Config",
+      "path": "apps/starship/cyclorama-dawn.toml"
+    },
+    {
+      "label": "Cyclorama Steel Config",
+      "path": "apps/starship/cyclorama-steel.toml"
+    },
+    {
+      "label": "Cyclorama Day Config",
+      "path": "apps/starship/cyclorama-day.toml"
+    },
+    {
+      "label": "All 3 Palettes Pack",
+      "path": "apps/starship/palettes.toml"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte dark Starship prompt with Steel Blue path pills, Beacon Orange git segments, and Signal Emerald status.",
+      "preview": "apps/starship/previews/cyclorama-dawn.svg",
+      "file": "apps/starship/cyclorama-dawn.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Dawn Starship palette",
+      "copySnippet": "palette = \"cyclorama_dawn\"\n\n[palettes.cyclorama_dawn]\nbg = \"#050507\"\nrail = \"#070709\"\ncode_bg = \"#08080B\"\nsurface = \"#0C0C10\"\nlist = \"#0F1016\"\nraised = \"#14141A\"\noverlay = \"#1C1D26\"\nborder_subtle = \"#27272E\"\nborder = \"#2A2C35\"\nborder_strong = \"#62646D\"\ntext = \"#F4F5F8\"\ntext_soft = \"#D6D8E0\"\nmute = \"#B3B5C0\"\nsubtle = \"#8C8F9D\"\naccent = \"#FF9254\"\naccent_vivid = \"#F06E2B\"\naccent_hover = \"#FFB07A\"\naccent_fill = \"#BD4811\"\naccent_fill_hover = \"#9E3B0C\"\non_accent = \"#FFFFFF\"\non_vivid = \"#050507\"\nsecondary = \"#74B8E8\"\nsecondary_vivid = \"#1F547A\"\nsecondary_fill = \"#18496B\"\nsecondary_hover = \"#99CDF2\"\nsignal = \"#3DDC97\"\nwarning = \"#FFC247\"\nfault = \"#FF5C6C\"\nfault_fill = \"#C92438\"\nfault_hover = \"#E02E44\"\ncyan = \"#56D4E0\"\nmagenta = \"#C996F5\"\nsteel_wash = \"#133954\"\nbeacon_wash = \"#CC5016\"\nselection_bg = \"#2B2220\"\nselection_active = \"#3D2B24\"\nfind_match = \"#4A3619\"\ndiff_add_bg = \"#0D291E\"\ndiff_del_bg = \"#301218\"\ndiff_chg_bg = \"#112436\"\ncursor = \"#F06E2B\"\ncursor_text = \"#050507\"\nbeam_start = \"#74B8E8\"\nbeam_end = \"#F06E2B\"\nsyntax_keyword = \"#74B8E8\"\nsyntax_function = \"#FF9254\"\nsyntax_string = \"#FFC247\"\nsyntax_number = \"#3DDC97\"\nsyntax_comment = \"#8C8F9D\"\nsyntax_type = \"#56D4E0\"\nsyntax_constant = \"#C996F5\"\nsyntax_operator = \"#D6D8E0\"\nsyntax_property = \"#99CDF2\"\nsyntax_parameter = \"#FFB07A\"\nsyntax_tag = \"#FF5C6C\"\nsyntax_punctuation = \"#B3B5C0\"\nsyntax_diff_add = \"#3DDC97\"\nsyntax_diff_del = \"#FF5C6C\"\nsyntax_diff_change = \"#74B8E8\"\nansi_black = \"#0C0C10\"\nansi_red = \"#FF5C6C\"\nansi_green = \"#3DDC97\"\nansi_yellow = \"#FFC247\"\nansi_blue = \"#74B8E8\"\nansi_magenta = \"#C996F5\"\nansi_cyan = \"#56D4E0\"\nansi_white = \"#D6D8E0\"\nansi_bright_black = \"#8C8F9D\"\nansi_bright_red = \"#FF9254\"\nansi_bright_green = \"#6CE8B2\"\nansi_bright_yellow = \"#FFD475\"\nansi_bright_blue = \"#99CDF2\"\nansi_bright_magenta = \"#DCB8FA\"\nansi_bright_cyan = \"#85E3EC\"\nansi_bright_white = \"#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal Starship prompt with Steel Blue primary focus and Beacon Orange secondary highlights.",
+      "preview": "apps/starship/previews/cyclorama-steel.svg",
+      "file": "apps/starship/cyclorama-steel.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Steel Starship palette",
+      "copySnippet": "palette = \"cyclorama_steel\"\n\n[palettes.cyclorama_steel]\nbg = \"#050507\"\nrail = \"#07080B\"\ncode_bg = \"#080A0E\"\nsurface = \"#0C0C10\"\nlist = \"#0E1117\"\nraised = \"#131820\"\noverlay = \"#1A222E\"\nborder_subtle = \"#222B36\"\nborder = \"#27313D\"\nborder_strong = \"#637284\"\ntext = \"#F4F5F8\"\ntext_soft = \"#D6DCE4\"\nmute = \"#B3B5C0\"\nsubtle = \"#8C96A6\"\naccent = \"#74B8E8\"\naccent_vivid = \"#1F547A\"\naccent_hover = \"#99CDF2\"\naccent_fill = \"#18496B\"\naccent_fill_hover = \"#123955\"\non_accent = \"#FFFFFF\"\non_vivid = \"#FFFFFF\"\nsecondary = \"#FF9254\"\nsecondary_vivid = \"#F06E2B\"\nsecondary_fill = \"#BD4811\"\nsecondary_hover = \"#FFB07A\"\nsignal = \"#3DDC97\"\nwarning = \"#FFC247\"\nfault = \"#FF5C6C\"\nfault_fill = \"#C92438\"\nfault_hover = \"#E02E44\"\ncyan = \"#56D4E0\"\nmagenta = \"#C996F5\"\nsteel_wash = \"#133954\"\nbeacon_wash = \"#CC5016\"\nselection_bg = \"#15293D\"\nselection_active = \"#1D3B57\"\nfind_match = \"#3B3117\"\ndiff_add_bg = \"#0D291E\"\ndiff_del_bg = \"#301218\"\ndiff_chg_bg = \"#13293D\"\ncursor = \"#74B8E8\"\ncursor_text = \"#050507\"\nbeam_start = \"#74B8E8\"\nbeam_end = \"#F06E2B\"\nsyntax_keyword = \"#74B8E8\"\nsyntax_function = \"#FF9254\"\nsyntax_string = \"#FFC247\"\nsyntax_number = \"#3DDC97\"\nsyntax_comment = \"#8C96A6\"\nsyntax_type = \"#56D4E0\"\nsyntax_constant = \"#C996F5\"\nsyntax_operator = \"#D6D8E0\"\nsyntax_property = \"#99CDF2\"\nsyntax_parameter = \"#FFB07A\"\nsyntax_tag = \"#FF5C6C\"\nsyntax_punctuation = \"#B3B5C0\"\nsyntax_diff_add = \"#3DDC97\"\nsyntax_diff_del = \"#FF5C6C\"\nsyntax_diff_change = \"#74B8E8\"\nansi_black = \"#0C0C10\"\nansi_red = \"#FF5C6C\"\nansi_green = \"#3DDC97\"\nansi_yellow = \"#FFC247\"\nansi_blue = \"#74B8E8\"\nansi_magenta = \"#C996F5\"\nansi_cyan = \"#56D4E0\"\nansi_white = \"#D6D8E0\"\nansi_bright_black = \"#8C96A6\"\nansi_bright_red = \"#FF9254\"\nansi_bright_green = \"#6CE8B2\"\nansi_bright_yellow = \"#FFD475\"\nansi_bright_blue = \"#99CDF2\"\nansi_bright_magenta = \"#DCB8FA\"\nansi_bright_cyan = \"#85E3EC\"\nansi_bright_white = \"#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Alabaster Day light Starship prompt with high-contrast Steel pills, burnt Beacon accents, and deep Signal badges.",
+      "preview": "apps/starship/previews/cyclorama-day.svg",
+      "file": "apps/starship/cyclorama-day.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Day Starship palette",
+      "copySnippet": "palette = \"cyclorama_day\"\n\n[palettes.cyclorama_day]\nbg = \"#F5F7F9\"\nrail = \"#EAEEF2\"\ncode_bg = \"#EEF2F5\"\nsurface = \"#FFFFFF\"\nlist = \"#F0F3F7\"\nraised = \"#E3E8EE\"\noverlay = \"#D7DFE8\"\nborder_subtle = \"#CFD5DC\"\nborder = \"#C8D0DA\"\nborder_strong = \"#6E7682\"\ntext = \"#0D1016\"\ntext_soft = \"#252A34\"\nmute = \"#474D59\"\nsubtle = \"#58606E\"\naccent = \"#AD3D0A\"\naccent_vivid = \"#CC5016\"\naccent_hover = \"#8B2F06\"\naccent_fill = \"#18496B\"\naccent_fill_hover = \"#113752\"\non_accent = \"#FFFFFF\"\non_vivid = \"#FFFFFF\"\nsecondary = \"#164669\"\nsecondary_vivid = \"#1F547A\"\nsecondary_fill = \"#AD3D0A\"\nsecondary_hover = \"#0F334E\"\nsignal = \"#127247\"\nwarning = \"#885800\"\nfault = \"#B91C2E\"\nfault_fill = \"#B91C2E\"\nfault_hover = \"#991525\"\ncyan = \"#0E6674\"\nmagenta = \"#6B38B8\"\nsteel_wash = \"#DCE7F0\"\nbeacon_wash = \"#F8E3D6\"\nselection_bg = \"#DCE7F0\"\nselection_active = \"#C6DAEB\"\nfind_match = \"#F5DFB0\"\ndiff_add_bg = \"#D9F0E4\"\ndiff_del_bg = \"#F8DADF\"\ndiff_chg_bg = \"#DCE8F3\"\ncursor = \"#AD3D0A\"\ncursor_text = \"#FFFFFF\"\nbeam_start = \"#18496B\"\nbeam_end = \"#AD3D0A\"\nsyntax_keyword = \"#164669\"\nsyntax_function = \"#AD3D0A\"\nsyntax_string = \"#885800\"\nsyntax_number = \"#127247\"\nsyntax_comment = \"#58606E\"\nsyntax_type = \"#0E6674\"\nsyntax_constant = \"#6B38B8\"\nsyntax_operator = \"#252A34\"\nsyntax_property = \"#1F547A\"\nsyntax_parameter = \"#943207\"\nsyntax_tag = \"#B91C2E\"\nsyntax_punctuation = \"#474D59\"\nsyntax_diff_add = \"#127247\"\nsyntax_diff_del = \"#B91C2E\"\nsyntax_diff_change = \"#164669\"\nansi_black = \"#0D1016\"\nansi_red = \"#B91C2E\"\nansi_green = \"#127247\"\nansi_yellow = \"#885800\"\nansi_blue = \"#164669\"\nansi_magenta = \"#6B38B8\"\nansi_cyan = \"#0E6674\"\nansi_white = \"#E3E8EE\"\nansi_bright_black = \"#58606E\"\nansi_bright_red = \"#AD3D0A\"\nansi_bright_green = \"#0D5A37\"\nansi_bright_yellow = \"#704700\"\nansi_bright_blue = \"#1F547A\"\nansi_bright_magenta = \"#572A9E\"\nansi_bright_cyan = \"#0A525E\"\nansi_bright_white = \"#FFFFFF\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

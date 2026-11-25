@@ -1,0 +1,148 @@
+# Cyclorama Dawn v2.1.0 — Starship Prompt Configuration
+# Variant: Cyclorama Day (LX 512 · Light · Alabaster Day)
+# Author:  Real-Fruit-Snacks
+# Source:  https://github.com/Real-Fruit-Snacks/rfs-themes
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+palette = "cyclorama_day"
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$rust\
+$python\
+$nodejs\
+$cmd_duration\
+$line_break\
+$character"""
+
+[directory]
+style = "bold fg:on_accent bg:secondary_fill"
+read_only = " [ro]"
+read_only_style = "bold fault"
+format = "[ $path ]($style)[$read_only]($read_only_style) "
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = "git:"
+style = "bold fg:on_accent bg:accent_fill"
+format = "[ $symbol$branch ]($style) "
+
+[git_status]
+style = "bold warning"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "!"
+ahead = "^${count}"
+behind = "v${count}"
+diverged = "^${ahead_count}v${behind_count}"
+untracked = "?${count}"
+stashed = "*${count}"
+modified = "~${count}"
+staged = "+${count}"
+deleted = "-${count}"
+
+[rust]
+symbol = "rs "
+style = "bold warning"
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = "py "
+style = "bold signal"
+format = "[$symbol$pyenv_prefix($version )(\\($virtualenv\\) )]($style)"
+
+[nodejs]
+symbol = "node "
+style = "bold cyan"
+format = "[$symbol($version)]($style) "
+
+[cmd_duration]
+min_time = 2000
+style = "mute"
+format = "[$duration]($style) "
+
+[character]
+success_symbol = "[>](bold accent)"
+error_symbol = "[x](bold fault)"
+vimcmd_symbol = "[<](bold secondary)"
+
+[palettes.cyclorama_day]
+bg = "#F5F7F9"
+rail = "#EAEEF2"
+code_bg = "#EEF2F5"
+surface = "#FFFFFF"
+list = "#F0F3F7"
+raised = "#E3E8EE"
+overlay = "#D7DFE8"
+border_subtle = "#CFD5DC"
+border = "#C8D0DA"
+border_strong = "#6E7682"
+text = "#0D1016"
+text_soft = "#252A34"
+mute = "#474D59"
+subtle = "#58606E"
+accent = "#AD3D0A"
+accent_vivid = "#CC5016"
+accent_hover = "#8B2F06"
+accent_fill = "#18496B"
+accent_fill_hover = "#113752"
+on_accent = "#FFFFFF"
+on_vivid = "#FFFFFF"
+secondary = "#164669"
+secondary_vivid = "#1F547A"
+secondary_fill = "#AD3D0A"
+secondary_hover = "#0F334E"
+signal = "#127247"
+warning = "#885800"
+fault = "#B91C2E"
+fault_fill = "#B91C2E"
+fault_hover = "#991525"
+cyan = "#0E6674"
+magenta = "#6B38B8"
+steel_wash = "#DCE7F0"
+beacon_wash = "#F8E3D6"
+selection_bg = "#DCE7F0"
+selection_active = "#C6DAEB"
+find_match = "#F5DFB0"
+diff_add_bg = "#D9F0E4"
+diff_del_bg = "#F8DADF"
+diff_chg_bg = "#DCE8F3"
+cursor = "#AD3D0A"
+cursor_text = "#FFFFFF"
+beam_start = "#18496B"
+beam_end = "#AD3D0A"
+syntax_keyword = "#164669"
+syntax_function = "#AD3D0A"
+syntax_string = "#885800"
+syntax_number = "#127247"
+syntax_comment = "#58606E"
+syntax_type = "#0E6674"
+syntax_constant = "#6B38B8"
+syntax_operator = "#252A34"
+syntax_property = "#1F547A"
+syntax_parameter = "#943207"
+syntax_tag = "#B91C2E"
+syntax_punctuation = "#474D59"
+syntax_diff_add = "#127247"
+syntax_diff_del = "#B91C2E"
+syntax_diff_change = "#164669"
+ansi_black = "#0D1016"
+ansi_red = "#B91C2E"
+ansi_green = "#127247"
+ansi_yellow = "#885800"
+ansi_blue = "#164669"
+ansi_magenta = "#6B38B8"
+ansi_cyan = "#0E6674"
+ansi_white = "#E3E8EE"
+ansi_bright_black = "#58606E"
+ansi_bright_red = "#AD3D0A"
+ansi_bright_green = "#0D5A37"
+ansi_bright_yellow = "#704700"
+ansi_bright_blue = "#1F547A"
+ansi_bright_magenta = "#572A9E"
+ansi_bright_cyan = "#0A525E"
+ansi_bright_white = "#FFFFFF"

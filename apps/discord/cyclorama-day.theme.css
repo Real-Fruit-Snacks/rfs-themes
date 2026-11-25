@@ -1,0 +1,112 @@
+/**
+ * @name Cyclorama Day
+ * @author Real-Fruit-Snacks
+ * @version 2.1.0
+ * @description Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (LX 512 · Alabaster Day)
+ * @source https://github.com/Real-Fruit-Snacks/rfs-themes
+ * @website https://real-fruit-snacks.github.io/rfs-themes/
+ */
+
+.theme-light {
+  /* Background Overlays */
+  --bg-overlay-app-frame: #EAEEF2;
+  --bg-overlay-floating: #FFFFFF;
+  --bg-overlay-chat: #F5F7F9;
+  --bg-overlay-home: #F5F7F9;
+  --bg-overlay-selected: #F5E8E2;
+  --bg-overlay-hover: rgba(215, 223, 232, 0.45);
+  --bg-overlay-active: rgba(173, 61, 10, 0.14);
+  --bg-overlay-1: #FFFFFF;
+  --bg-overlay-2: #E3E8EE;
+  --bg-overlay-3: #D7DFE8;
+  --bg-overlay-4: #EAEEF2;
+
+  /* Core Backgrounds */
+  --background-primary: #F5F7F9;
+  --background-secondary: #FFFFFF;
+  --background-secondary-alt: #EAEEF2;
+  --background-tertiary: #EAEEF2;
+  --background-accent: #E3E8EE;
+  --background-floating: #FFFFFF;
+  --background-nested-floating: #E3E8EE;
+  --background-mobile-primary: #F5F7F9;
+  --background-mobile-secondary: #FFFFFF;
+  --background-modifier-hover: rgba(215, 223, 232, 0.45);
+  --background-modifier-active: rgba(173, 61, 10, 0.14);
+  --background-modifier-selected: #F5E8E2;
+  --background-modifier-accent: #C8D0DA;
+  --background-mentioned: rgba(173, 61, 10, 0.12);
+  --background-mentioned-hover: rgba(173, 61, 10, 0.18);
+  --home-background: #F5F7F9;
+
+  /* Composer & Inputs */
+  --channeltextarea-background: #E3E8EE;
+  --input-background: #E3E8EE;
+  --input-placeholder-text: #58606E;
+  --textbox-markdown-syntax: #474D59;
+
+  /* Typography & Links */
+  --text-normal: #0D1016;
+  --text-muted: #474D59;
+  --text-link: #AD3D0A;
+  --text-positive: #127247;
+  --text-warning: #885800;
+  --text-danger: #B91C2E;
+  --text-brand: #AD3D0A;
+  --header-primary: #0D1016;
+  --header-secondary: #252A34;
+  --channels-default: #474D59;
+  --channel-icon: #58606E;
+  --interactive-normal: #252A34;
+  --interactive-hover: #0D1016;
+  --interactive-active: #0D1016;
+  --interactive-muted: #58606E;
+
+  /* Brand & Accent Controls */
+  --brand-experiment: #18496B;
+  --brand-experiment-500: #18496B;
+  --brand-experiment-560: #113752;
+  --brand-experiment-600: #113752;
+  --brand-500: #18496B;
+  --brand-560: #113752;
+  --brand-600: #113752;
+  --control-brand-foreground: #AD3D0A;
+  --focus-primary: #AD3D0A;
+
+  /* Semantic Status */
+  --status-positive: #127247;
+  --status-positive-background: #127247;
+  --status-warning: #885800;
+  --status-warning-background: #885800;
+  --status-danger: #B91C2E;
+  --status-danger-background: #B91C2E;
+  --info-warning-foreground: #885800;
+  --info-danger-foreground: #B91C2E;
+  --info-positive-foreground: #127247;
+  --info-help-foreground: #164669;
+
+  /* Scrollbars */
+  --scrollbar-thin-thumb: #C8D0DA;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #6E7682;
+  --scrollbar-auto-track: #EAEEF2;
+  --scrollbar-auto-scrollbar-color-thumb: #6E7682;
+  --scrollbar-auto-scrollbar-color-track: #EAEEF2;
+}
+
+/* Crisp code blocks, embeds & selection */
+.theme-light pre,
+.theme-light code {
+  background-color: #EEF2F5 !important;
+  border-color: #C8D0DA !important;
+}
+
+.theme-light ::selection {
+  background-color: #C6DAEB;
+  color: #0D1016;
+}
+
+.theme-light [class*="embedFull"] {
+  background-color: #FFFFFF;
+  border-color: #C8D0DA;
+}

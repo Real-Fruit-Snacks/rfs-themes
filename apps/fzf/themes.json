@@ -1,0 +1,161 @@
+{
+  "app": "fzf",
+  "slug": "fzf",
+  "category": "CLI & TUI",
+  "homepage": "https://github.com/junegunn/fzf",
+  "format": "Shell .sh & PowerShell .ps1",
+  "install": "Source cyclorama-dawn.sh (bash/zsh) or dot-source cyclorama-dawn.ps1 (PowerShell)",
+  "installSteps": [
+    "Bash / Zsh: add `source /path/to/rfs-themes/apps/fzf/cyclorama-dawn.sh` to `~/.bashrc` or `~/.zshrc`.",
+    "Windows PowerShell / pwsh: add `. C:\\path\\to\\rfs-themes\\apps\\fzf\\cyclorama-dawn.ps1` to your `$PROFILE`.",
+    "Open a new shell session and run `fzf` to confirm the Cyclorama Dawn palette."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/fzf/cyclorama-dawn.sh",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Shell (.sh)",
+      "path": "apps/fzf/cyclorama-dawn.sh"
+    },
+    {
+      "label": "Cyclorama Dawn PowerShell (.ps1)",
+      "path": "apps/fzf/cyclorama-dawn.ps1"
+    },
+    {
+      "label": "Cyclorama Steel Shell (.sh)",
+      "path": "apps/fzf/cyclorama-steel.sh"
+    },
+    {
+      "label": "Cyclorama Steel PowerShell (.ps1)",
+      "path": "apps/fzf/cyclorama-steel.ps1"
+    },
+    {
+      "label": "Cyclorama Day Shell (.sh)",
+      "path": "apps/fzf/cyclorama-day.sh"
+    },
+    {
+      "label": "Cyclorama Day PowerShell (.ps1)",
+      "path": "apps/fzf/cyclorama-day.ps1"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte dark fzf palette with Beacon Orange pointers and active matches, Steel Blue highlights, and Signal markers.",
+      "preview": "apps/fzf/previews/cyclorama-dawn.svg",
+      "file": "apps/fzf/cyclorama-dawn.sh",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Dawn fzf export",
+      "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#050507,bg+:#3D2B24,fg:#D6D8E0,fg+:#F4F5F8,hl:#74B8E8,hl+:#FF9254,info:#FFC247,marker:#3DDC97,pointer:#FF9254,prompt:#FF9254,spinner:#74B8E8,header:#B3B5C0,border:#2A2C35,gutter:#0C0C10,label:#F4F5F8,query:#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Steel-charcoal dark fzf palette with Steel Blue focus, Beacon Orange match highlights, and crisp selection contrast.",
+      "preview": "apps/fzf/previews/cyclorama-steel.svg",
+      "file": "apps/fzf/cyclorama-steel.sh",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Steel fzf export",
+      "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#050507,bg+:#1D3B57,fg:#D6DCE4,fg+:#F4F5F8,hl:#FF9254,hl+:#74B8E8,info:#FFC247,marker:#3DDC97,pointer:#74B8E8,prompt:#74B8E8,spinner:#FF9254,header:#B3B5C0,border:#27313D,gutter:#0C0C10,label:#F4F5F8,query:#F4F5F8\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Alabaster Day light fzf palette with soft Steel active rows, burnt Beacon pointers, and AA-verified text contrast.",
+      "preview": "apps/fzf/previews/cyclorama-day.svg",
+      "file": "apps/fzf/cyclorama-day.sh",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Day fzf export",
+      "copySnippet": "export FZF_DEFAULT_OPTS=\"$FZF_DEFAULT_OPTS --color=bg:#F5F7F9,bg+:#DCE7F0,fg:#252A34,fg+:#0D1016,hl:#164669,hl+:#AD3D0A,info:#885800,marker:#127247,pointer:#AD3D0A,prompt:#AD3D0A,spinner:#164669,header:#474D59,border:#C8D0DA,gutter:#FFFFFF,label:#0D1016,query:#0D1016\"",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

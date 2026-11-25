@@ -15,6 +15,6 @@ jobs:
           python-version: "3.12"
       - name: Rebuild generated theme outputs and verify contrast & schema
         run: |
-          python tools/build-privacynotes.py
+          python tools/build_all.py
           python tools/verify-themes.py
-          git diff --exit-code -- apps/privacynotes/codes.txt apps/privacynotes/previews/
+          git diff --exit-code -- apps/ docs/assets/catalog.json docs/assets/previews/

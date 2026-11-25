@@ -1,0 +1,153 @@
+{
+  "app": "git-delta",
+  "slug": "delta",
+  "category": "CLI & TUI",
+  "homepage": "https://dandavison.github.io/delta/",
+  "format": "Git Config .gitconfig",
+  "install": "Include apps/delta/cyclorama.gitconfig in ~/.gitconfig and set features = cyclorama-dawn",
+  "installSteps": [
+    "Add `[include]` with `path = /path/to/rfs-themes/apps/delta/cyclorama.gitconfig` to your `~/.gitconfig`.",
+    "Set `features = cyclorama-dawn` (or `cyclorama-steel` / `cyclorama-day`) under `[delta]`.",
+    "Install the matching `.tmTheme` files from `apps/bat/` and run `bat cache --build` so `syntax-theme` resolves cleanly."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/delta/cyclorama.gitconfig",
+  "files": [
+    {
+      "label": "Unified 3-Variant Pack",
+      "path": "apps/delta/cyclorama.gitconfig"
+    },
+    {
+      "label": "Cyclorama Dawn Standalone",
+      "path": "apps/delta/cyclorama-dawn.gitconfig"
+    },
+    {
+      "label": "Cyclorama Steel Standalone",
+      "path": "apps/delta/cyclorama-steel.gitconfig"
+    },
+    {
+      "label": "Cyclorama Day Standalone",
+      "path": "apps/delta/cyclorama-day.gitconfig"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Dark git-delta diff palette with Signal Emerald additions, Signal Crimson deletions, and Beacon Orange file headers.",
+      "preview": "apps/delta/previews/cyclorama-dawn.svg",
+      "file": "apps/delta/cyclorama-dawn.gitconfig",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Dawn git-delta feature",
+      "copySnippet": "[delta \"cyclorama-dawn\"]\n    dark = true\n    light = false\n    syntax-theme = Cyclorama Dawn\n    plus-style = syntax \"#0D291E\"\n    plus-non-emph-style = syntax \"#0D291E\"\n    plus-emph-style = syntax \"#1A5B40\"\n    plus-empty-line-marker-style = normal \"#0D291E\"\n    minus-style = syntax \"#301218\"\n    minus-non-emph-style = syntax \"#301218\"\n    minus-emph-style = syntax \"#6E2831\"\n    minus-empty-line-marker-style = normal \"#301218\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#8C8F9D\"\n    line-numbers-right-style = \"#8C8F9D\"\n    line-numbers-minus-style = \"#FF5C6C\"\n    line-numbers-plus-style = \"#3DDC97\"\n    line-numbers-zero-style = \"#8C8F9D\"\n    file-style = bold \"#FF9254\"\n    file-decoration-style = \"#62646D\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#2A2C35\" box\n    hunk-header-file-style = bold \"#74B8E8\"\n    hunk-header-line-number-style = bold \"#FF9254\"\n    whitespace-error-style = reverse \"#FF5C6C\"\n    blame-palette = \"#050507 #0C0C10 #14141A #1C1D26 #112436\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#74B8E8\"\n    merge-conflict-ours-diff-header-decoration-style = \"#2A2C35\" box\n    merge-conflict-theirs-diff-header-style = bold \"#FF9254\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#2A2C35\" box",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Steel-charcoal dark git-delta diff palette with Steel Blue headers and calibrated blame/hunk framing.",
+      "preview": "apps/delta/previews/cyclorama-steel.svg",
+      "file": "apps/delta/cyclorama-steel.gitconfig",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Steel git-delta feature",
+      "copySnippet": "[delta \"cyclorama-steel\"]\n    dark = true\n    light = false\n    syntax-theme = Cyclorama Steel\n    plus-style = syntax \"#0D291E\"\n    plus-non-emph-style = syntax \"#0D291E\"\n    plus-emph-style = syntax \"#1A5B40\"\n    plus-empty-line-marker-style = normal \"#0D291E\"\n    minus-style = syntax \"#301218\"\n    minus-non-emph-style = syntax \"#301218\"\n    minus-emph-style = syntax \"#6E2831\"\n    minus-empty-line-marker-style = normal \"#301218\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#8C96A6\"\n    line-numbers-right-style = \"#8C96A6\"\n    line-numbers-minus-style = \"#FF5C6C\"\n    line-numbers-plus-style = \"#3DDC97\"\n    line-numbers-zero-style = \"#8C96A6\"\n    file-style = bold \"#74B8E8\"\n    file-decoration-style = \"#637284\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#27313D\" box\n    hunk-header-file-style = bold \"#FF9254\"\n    hunk-header-line-number-style = bold \"#74B8E8\"\n    whitespace-error-style = reverse \"#FF5C6C\"\n    blame-palette = \"#050507 #0C0C10 #131820 #1A222E #13293D\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#FF9254\"\n    merge-conflict-ours-diff-header-decoration-style = \"#27313D\" box\n    merge-conflict-theirs-diff-header-style = bold \"#74B8E8\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#27313D\" box",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Alabaster Day light git-delta diff palette with crisp pastel diff washes and WCAG AA line-number markers.",
+      "preview": "apps/delta/previews/cyclorama-day.svg",
+      "file": "apps/delta/cyclorama-day.gitconfig",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Day git-delta feature",
+      "copySnippet": "[delta \"cyclorama-day\"]\n    dark = false\n    light = true\n    syntax-theme = Cyclorama Day\n    plus-style = syntax \"#D9F0E4\"\n    plus-non-emph-style = syntax \"#D9F0E4\"\n    plus-emph-style = syntax \"#A9D2BE\"\n    plus-empty-line-marker-style = normal \"#D9F0E4\"\n    minus-style = syntax \"#F8DADF\"\n    minus-non-emph-style = syntax \"#F8DADF\"\n    minus-emph-style = syntax \"#E9ACB5\"\n    minus-empty-line-marker-style = normal \"#F8DADF\"\n    zero-style = syntax\n    line-numbers = true\n    line-numbers-left-style = \"#58606E\"\n    line-numbers-right-style = \"#58606E\"\n    line-numbers-minus-style = \"#B91C2E\"\n    line-numbers-plus-style = \"#127247\"\n    line-numbers-zero-style = \"#58606E\"\n    file-style = bold \"#AD3D0A\"\n    file-decoration-style = \"#6E7682\" ul\n    file-added-label = [added]\n    file-copied-label = [copied]\n    file-modified-label = [modified]\n    file-removed-label = [removed]\n    file-renamed-label = [renamed]\n    hunk-header-style = file line-number syntax\n    hunk-header-decoration-style = \"#C8D0DA\" box\n    hunk-header-file-style = bold \"#164669\"\n    hunk-header-line-number-style = bold \"#AD3D0A\"\n    whitespace-error-style = reverse \"#B91C2E\"\n    blame-palette = \"#F5F7F9 #FFFFFF #E3E8EE #D7DFE8 #DCE8F3\"\n    merge-conflict-begin-symbol = ~\n    merge-conflict-end-symbol = ~\n    merge-conflict-ours-diff-header-style = bold \"#164669\"\n    merge-conflict-ours-diff-header-decoration-style = \"#C8D0DA\" box\n    merge-conflict-theirs-diff-header-style = bold \"#AD3D0A\"\n    merge-conflict-theirs-diff-header-decoration-style = \"#C8D0DA\" box",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

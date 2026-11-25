@@ -1,0 +1,17 @@
+<idea-plugin>
+  <id>dev.realfruitsnacks.themes.cyclorama-dawn</id>
+  <name>Cyclorama Dawn Theme</name>
+  <version>2.1.0</version>
+  <vendor url="https://github.com/Real-Fruit-Snacks/rfs-themes">Real-Fruit-Snacks</vendor>
+  <description><![CDATA[
+    Cyclorama Dawn (Steel &amp; Beacon Orange) WCAG AA color themes for JetBrains IDEs:
+    Cyclorama Dawn (LX 263 Dark), Cyclorama Steel (LX 263 Dark), and Cyclorama Day (LX 512 Light).
+  ]]></description>
+  <idea-version since-build="232"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="rfs-cyclorama-dawn" path="/themes/cyclorama-dawn.theme.json"/>
+    <themeProvider id="rfs-cyclorama-steel" path="/themes/cyclorama-steel.theme.json"/>
+    <themeProvider id="rfs-cyclorama-day" path="/themes/cyclorama-day.theme.json"/>
+  </extensions>
+</idea-plugin>

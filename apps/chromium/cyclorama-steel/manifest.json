@@ -1,0 +1,117 @@
+{
+  "manifest_version": 3,
+  "name": "Cyclorama Steel (LX 263)",
+  "version": "2.1.0",
+  "description": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)",
+  "theme": {
+    "colors": {
+      "frame": [
+        7,
+        8,
+        11
+      ],
+      "frame_inactive": [
+        5,
+        5,
+        7
+      ],
+      "frame_incognito": [
+        19,
+        57,
+        84
+      ],
+      "toolbar": [
+        12,
+        12,
+        16
+      ],
+      "tab_text": [
+        244,
+        245,
+        248
+      ],
+      "tab_background_text": [
+        179,
+        181,
+        192
+      ],
+      "tab_background_text_inactive": [
+        140,
+        150,
+        166
+      ],
+      "bookmark_text": [
+        214,
+        220,
+        228
+      ],
+      "ntp_background": [
+        5,
+        5,
+        7
+      ],
+      "ntp_text": [
+        244,
+        245,
+        248
+      ],
+      "ntp_link": [
+        116,
+        184,
+        232
+      ],
+      "ntp_header": [
+        12,
+        12,
+        16
+      ],
+      "omnibox_background": [
+        19,
+        24,
+        32
+      ],
+      "omnibox_text": [
+        244,
+        245,
+        248
+      ],
+      "toolbar_button_icon": [
+        214,
+        220,
+        228
+      ],
+      "button_background": [
+        19,
+        24,
+        32
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.569,
+        0.716,
+        0.682
+      ],
+      "frame": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_inactive": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_incognito": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "background_tab": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    }
+  }
+}

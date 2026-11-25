@@ -1,0 +1,165 @@
+{
+  "app": "JetBrains IDEs",
+  "slug": "jetbrains",
+  "category": "Editors & IDEs",
+  "homepage": "https://www.jetbrains.com/",
+  "format": "IntelliJ .icls + .theme.json",
+  "install": "Import .icls in Settings -> Editor -> Color Scheme, or zip apps/jetbrains/ as a theme plugin",
+  "installSteps": [
+    "**Editor colors only:** open **Settings -> Editor -> Color Scheme**, click the gear icon -> **Import Scheme -> IntelliJ IDEA color scheme (.icls)**, and select `schemes/Cyclorama Dawn.icls` (or Steel / Day).",
+    "**Full UI + Editor plugin:** zip `apps/jetbrains/` (`META-INF/`, `themes/`, `schemes/`) into `cyclorama-dawn-jetbrains.jar` and install via **Settings -> Plugins -> Install Plugin from Disk...**.",
+    "Switch themes anytime from **Settings -> Appearance & Behavior -> Appearance -> Theme**."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/jetbrains/schemes/Cyclorama Dawn.icls",
+  "files": [
+    {
+      "label": "Plugin descriptor (META-INF/plugin.xml)",
+      "path": "apps/jetbrains/META-INF/plugin.xml"
+    },
+    {
+      "label": "Cyclorama Dawn Editor Scheme (.icls)",
+      "path": "apps/jetbrains/schemes/Cyclorama Dawn.icls"
+    },
+    {
+      "label": "Cyclorama Dawn UI Theme (.theme.json)",
+      "path": "apps/jetbrains/themes/cyclorama-dawn.theme.json"
+    },
+    {
+      "label": "Cyclorama Steel Editor Scheme (.icls)",
+      "path": "apps/jetbrains/schemes/Cyclorama Steel.icls"
+    },
+    {
+      "label": "Cyclorama Steel UI Theme (.theme.json)",
+      "path": "apps/jetbrains/themes/cyclorama-steel.theme.json"
+    },
+    {
+      "label": "Cyclorama Day Editor Scheme (.icls)",
+      "path": "apps/jetbrains/schemes/Cyclorama Day.icls"
+    },
+    {
+      "label": "Cyclorama Day UI Theme (.theme.json)",
+      "path": "apps/jetbrains/themes/cyclorama-day.theme.json"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/jetbrains/previews/cyclorama-dawn.svg",
+      "file": "apps/jetbrains/schemes/Cyclorama Dawn.icls",
+      "copyLang": "json",
+      "copyLabel": "JetBrains .theme.json snippet",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Dawn\",\n  \"dark\": true,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Dawn.icls\",\n  \"colors\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"border\": \"#2A2C35\",\n    \"text\": \"#F4F5F8\",\n    \"accent\": \"#FF9254\",\n    \"accentFill\": \"#BD4811\",\n    \"secondary\": \"#74B8E8\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/jetbrains/previews/cyclorama-steel.svg",
+      "file": "apps/jetbrains/schemes/Cyclorama Steel.icls",
+      "copyLang": "json",
+      "copyLabel": "JetBrains .theme.json snippet",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Steel\",\n  \"dark\": true,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Steel.icls\",\n  \"colors\": {\n    \"bg\": \"#050507\",\n    \"surface\": \"#0C0C10\",\n    \"border\": \"#27313D\",\n    \"text\": \"#F4F5F8\",\n    \"accent\": \"#74B8E8\",\n    \"accentFill\": \"#18496B\",\n    \"secondary\": \"#FF9254\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/jetbrains/previews/cyclorama-day.svg",
+      "file": "apps/jetbrains/schemes/Cyclorama Day.icls",
+      "copyLang": "json",
+      "copyLabel": "JetBrains .theme.json snippet",
+      "copySnippet": "{\n  \"name\": \"Cyclorama Day\",\n  \"dark\": false,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Day.icls\",\n  \"colors\": {\n    \"bg\": \"#F5F7F9\",\n    \"surface\": \"#FFFFFF\",\n    \"border\": \"#C8D0DA\",\n    \"text\": \"#0D1016\",\n    \"accent\": \"#AD3D0A\",\n    \"accentFill\": \"#18496B\",\n    \"secondary\": \"#164669\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+# Cyclorama Steel (LX 263 Dark · Steel Blue) — Alacritty v0.13+ Theme
+# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+[colors.primary]
+background = "#050507"
+foreground = "#F4F5F8"
+dim_foreground = "#B3B5C0"
+bright_foreground = "#F4F5F8"
+
+[colors.cursor]
+text = "#050507"
+cursor = "#74B8E8"
+
+[colors.vi_mode_cursor]
+text = "#050507"
+cursor = "#FF9254"
+
+[colors.selection]
+text = "#F4F5F8"
+background = "#1D3B57"
+
+[colors.search.matches]
+foreground = "#F4F5F8"
+background = "#3B3117"
+
+[colors.search.focused_match]
+foreground = "#FFFFFF"
+background = "#18496B"
+
+[colors.hints.start]
+foreground = "#FFFFFF"
+background = "#18496B"
+
+[colors.hints.end]
+foreground = "#FFFFFF"
+background = "#BD4811"
+
+[colors.normal]
+black = "#0C0C10"
+red = "#FF5C6C"
+green = "#3DDC97"
+yellow = "#FFC247"
+blue = "#74B8E8"
+magenta = "#C996F5"
+cyan = "#56D4E0"
+white = "#D6D8E0"
+
+[colors.bright]
+black = "#8C96A6"
+red = "#FF9254"
+green = "#6CE8B2"
+yellow = "#FFD475"
+blue = "#99CDF2"
+magenta = "#DCB8FA"
+cyan = "#85E3EC"
+white = "#F4F5F8"

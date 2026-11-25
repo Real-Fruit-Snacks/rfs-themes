@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="Obsidian Cyclorama Day (LX 512 LIGHT) theme preview">
+  <defs>
+    <linearGradient id="hbeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#18496B"/>
+      <stop offset="100%" stop-color="#AD3D0A"/>
+    </linearGradient>
+    <clipPath id="frame-clip"><rect x="1" y="1" width="658" height="388" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame-clip)">
+    <rect width="660" height="390" fill="#F5F7F9"/>
+    <rect width="660" height="3" fill="url(#hbeam)"/>
+
+    <!-- Top chrome bar -->
+    <rect x="0" y="3" width="660" height="33" fill="#FFFFFF"/>
+    <line x1="0" y1="36" x2="660" y2="36" stroke="#C8D0DA" stroke-width="1"/>
+    <rect x="14" y="10" width="86" height="19" rx="4" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="23" y="23" fill="#AD3D0A" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[obsidian]</text>
+    <text x="112" y="23" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Day</text>
+    <text x="646" y="23" text-anchor="end" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="600">LX 512 · LIGHT · AA PASS</text>
+
+    
+    <!-- Left vault sidebar (x=0..168) -->
+    <rect x="0" y="36" width="168" height="310" fill="#FFFFFF"/>
+    <line x1="168" y1="36" x2="168" y2="346" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="14" y="58" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700" letter-spacing="0.8">VAULT · LOCAL-FIRST</text>
+    <rect x="10" y="68" width="148" height="26" rx="5" fill="#F5E8E2"/>
+    <rect x="10" y="72" width="3" height="18" rx="1" fill="#AD3D0A"/>
+    <text x="22" y="85" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700">Cyclorama Dawn.md</text>
+    <text x="22" y="114" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="10.5">Architecture.md</text>
+    <text x="22" y="138" fill="#474D59" font-family="system-ui,-apple-system,sans-serif" font-size="10.5">Daily Notes / 2026</text>
+    <text x="22" y="162" fill="#474D59" font-family="system-ui,-apple-system,sans-serif" font-size="10.5">Release Checklist</text>
+
+    <!-- Mini Graph box inside sidebar -->
+    <rect x="12" y="194" width="144" height="136" rx="6" fill="#EEF2F5" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="22" y="212" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">LOCAL GRAPH</text>
+    <line x1="84" y1="264" x2="46" y2="236" stroke="#6E7682" stroke-width="1.2"/>
+    <line x1="84" y1="264" x2="128" y2="240" stroke="#6E7682" stroke-width="1.2"/>
+    <line x1="84" y1="264" x2="54" y2="302" stroke="#6E7682" stroke-width="1.2"/>
+    <line x1="84" y1="264" x2="124" y2="298" stroke="#6E7682" stroke-width="1.2"/>
+    <circle cx="84" cy="264" r="7" fill="#AD3D0A"/>
+    <circle cx="46" cy="236" r="4.5" fill="#164669"/>
+    <circle cx="128" cy="240" r="4.5" fill="#127247"/>
+    <circle cx="54" cy="302" r="4.5" fill="#885800"/>
+    <circle cx="124" cy="298" r="4.5" fill="#164669"/>
+
+    <!-- Markdown Note pane (x=168..660) -->
+    <rect x="168" y="36" width="492" height="310" fill="#F5F7F9"/>
+    <text x="194" y="72" fill="#0D1016" font-family="system-ui,-apple-system,sans-serif" font-size="20" font-weight="800">Cyclorama Dawn Knowledge Base</text>
+    <rect x="194" y="84" width="66" height="19" rx="4" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="227" y="96.5" text-anchor="middle" fill="#164669" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">#brand</text>
+    <rect x="268" y="84" width="76" height="19" rx="4" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="1"/>
+    <text x="306" y="96.5" text-anchor="middle" fill="#AD3D0A" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">#obsidian</text>
+
+    <text x="194" y="128" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11.5">Linked to <tspan fill="#AD3D0A" font-weight="700" text-decoration="underline">[[rfs-brand v2.1.0]]</tspan> and <tspan fill="#164669" font-weight="700" text-decoration="underline">[[LX 263 Lighting Cues]]</tspan>.</text>
+    <text x="194" y="148" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="11.5">Every heading, callout, code fence, and graph node stays AA crisp.</text>
+
+    <!-- Callout block -->
+    <rect x="194" y="166" width="440" height="58" rx="6" fill="#FFFFFF" stroke="#C8D0DA" stroke-width="1"/>
+    <rect x="194" y="166" width="3.5" height="58" rx="1.5" fill="#164669"/>
+    <text x="208" y="186" fill="#164669" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[!note] Zero External Dependencies</text>
+    <text x="208" y="206" fill="#252A34" font-family="system-ui,-apple-system,sans-serif" font-size="10.5">Drop theme.css + manifest.json into .obsidian/themes/Cyclorama Dawn/</text>
+
+    <!-- Inline markdown code block -->
+    <rect x="194" y="240" width="440" height="84" rx="6" fill="#EEF2F5" stroke="#C8D0DA" stroke-width="1"/>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="9.5">
+      <text x="208" y="262"><tspan fill="#58606E">```css</tspan></text>
+      <text x="208" y="282"><tspan fill="#164669">--background-primary</tspan><tspan fill="#474D59">: </tspan><tspan fill="#885800">#F5F7F9</tspan><tspan fill="#474D59">;</tspan></text>
+      <text x="208" y="302"><tspan fill="#164669">--text-accent</tspan><tspan fill="#474D59">:        </tspan><tspan fill="#AD3D0A">#AD3D0A</tspan><tspan fill="#474D59">;</tspan></text>
+    </g>
+    
+
+    <!-- Bottom palette telemetry ribbon -->
+    <rect x="0" y="346" width="660" height="44" fill="#FFFFFF"/>
+    <line x1="0" y1="346" x2="660" y2="346" stroke="#C8D0DA" stroke-width="1"/>
+    <rect x="18.0" y="357" width="56" height="10" rx="2.5" fill="#F5F7F9" stroke="#C8D0DA" stroke-width="0.8"/><text x="46.0" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">BG</text><rect x="80.4" y="357" width="56" height="10" rx="2.5" fill="#FFFFFF" stroke="#C8D0DA" stroke-width="0.8"/><text x="108.4" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">SURF</text><rect x="142.8" y="357" width="56" height="10" rx="2.5" fill="#E3E8EE" stroke="#C8D0DA" stroke-width="0.8"/><text x="170.8" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">RAISED</text><rect x="205.2" y="357" width="56" height="10" rx="2.5" fill="#AD3D0A" stroke="#C8D0DA" stroke-width="0.8"/><text x="233.2" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ACCENT</text><rect x="267.6" y="357" width="56" height="10" rx="2.5" fill="#164669" stroke="#C8D0DA" stroke-width="0.8"/><text x="295.6" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STEEL</text><rect x="330.0" y="357" width="56" height="10" rx="2.5" fill="#164669" stroke="#C8D0DA" stroke-width="0.8"/><text x="358.0" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">KW</text><rect x="392.4" y="357" width="56" height="10" rx="2.5" fill="#AD3D0A" stroke="#C8D0DA" stroke-width="0.8"/><text x="420.4" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">FN</text><rect x="454.8" y="357" width="56" height="10" rx="2.5" fill="#885800" stroke="#C8D0DA" stroke-width="0.8"/><text x="482.8" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STR</text><rect x="517.2" y="357" width="56" height="10" rx="2.5" fill="#127247" stroke="#C8D0DA" stroke-width="0.8"/><text x="545.2" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">OK</text><rect x="579.6" y="357" width="56" height="10" rx="2.5" fill="#B91C2E" stroke="#C8D0DA" stroke-width="0.8"/><text x="607.6" y="378" text-anchor="middle" fill="#474D59" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ERR</text>
+  </g>
+  <rect x="0.5" y="0.5" width="659" height="389" rx="11.5" fill="none" stroke="#C8D0DA" stroke-width="1"/>
+</svg>

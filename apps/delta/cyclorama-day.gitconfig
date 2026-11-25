@@ -1,0 +1,48 @@
+# Cyclorama Dawn v2.1.0 — git-delta (Cyclorama Day)
+# Variant: Cyclorama Day (LX 512 · Light · Alabaster Day)
+# Author:  Real-Fruit-Snacks
+# Source:  https://github.com/Real-Fruit-Snacks/rfs-themes
+# Usage in ~/.gitconfig:
+#   [include]
+#       path = /path/to/rfs-themes/apps/delta/cyclorama-day.gitconfig
+#   [delta]
+#       features = cyclorama-day
+
+[delta "cyclorama-day"]
+    dark = false
+    light = true
+    syntax-theme = Cyclorama Day
+    plus-style = syntax "#D9F0E4"
+    plus-non-emph-style = syntax "#D9F0E4"
+    plus-emph-style = syntax "#A9D2BE"
+    plus-empty-line-marker-style = normal "#D9F0E4"
+    minus-style = syntax "#F8DADF"
+    minus-non-emph-style = syntax "#F8DADF"
+    minus-emph-style = syntax "#E9ACB5"
+    minus-empty-line-marker-style = normal "#F8DADF"
+    zero-style = syntax
+    line-numbers = true
+    line-numbers-left-style = "#58606E"
+    line-numbers-right-style = "#58606E"
+    line-numbers-minus-style = "#B91C2E"
+    line-numbers-plus-style = "#127247"
+    line-numbers-zero-style = "#58606E"
+    file-style = bold "#AD3D0A"
+    file-decoration-style = "#6E7682" ul
+    file-added-label = [added]
+    file-copied-label = [copied]
+    file-modified-label = [modified]
+    file-removed-label = [removed]
+    file-renamed-label = [renamed]
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#C8D0DA" box
+    hunk-header-file-style = bold "#164669"
+    hunk-header-line-number-style = bold "#AD3D0A"
+    whitespace-error-style = reverse "#B91C2E"
+    blame-palette = "#F5F7F9 #FFFFFF #E3E8EE #D7DFE8 #DCE8F3"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = bold "#164669"
+    merge-conflict-ours-diff-header-decoration-style = "#C8D0DA" box
+    merge-conflict-theirs-diff-header-style = bold "#AD3D0A"
+    merge-conflict-theirs-diff-header-decoration-style = "#C8D0DA" box

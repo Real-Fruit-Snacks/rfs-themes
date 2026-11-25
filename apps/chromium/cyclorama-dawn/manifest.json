@@ -1,0 +1,117 @@
+{
+  "manifest_version": 3,
+  "name": "Cyclorama Dawn (LX 263)",
+  "version": "2.1.0",
+  "description": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)",
+  "theme": {
+    "colors": {
+      "frame": [
+        7,
+        7,
+        9
+      ],
+      "frame_inactive": [
+        5,
+        5,
+        7
+      ],
+      "frame_incognito": [
+        19,
+        57,
+        84
+      ],
+      "toolbar": [
+        12,
+        12,
+        16
+      ],
+      "tab_text": [
+        244,
+        245,
+        248
+      ],
+      "tab_background_text": [
+        179,
+        181,
+        192
+      ],
+      "tab_background_text_inactive": [
+        140,
+        143,
+        157
+      ],
+      "bookmark_text": [
+        214,
+        216,
+        224
+      ],
+      "ntp_background": [
+        5,
+        5,
+        7
+      ],
+      "ntp_text": [
+        244,
+        245,
+        248
+      ],
+      "ntp_link": [
+        255,
+        146,
+        84
+      ],
+      "ntp_header": [
+        12,
+        12,
+        16
+      ],
+      "omnibox_background": [
+        20,
+        20,
+        26
+      ],
+      "omnibox_text": [
+        244,
+        245,
+        248
+      ],
+      "toolbar_button_icon": [
+        214,
+        216,
+        224
+      ],
+      "button_background": [
+        20,
+        20,
+        26
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.06,
+        1.0,
+        0.665
+      ],
+      "frame": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_inactive": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_incognito": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "background_tab": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    }
+  }
+}

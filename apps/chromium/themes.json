@@ -1,0 +1,149 @@
+{
+  "app": "Brave / Chrome / Edge",
+  "slug": "chromium",
+  "category": "Browsers & Desktop",
+  "homepage": "https://brave.com/",
+  "format": "Chromium MV3 Browser Theme",
+  "install": "Extensions -> Developer mode -> Load unpacked variant folder",
+  "installSteps": [
+    "Open `brave://extensions`, `chrome://extensions`, or `edge://extensions` and enable **Developer mode**.",
+    "Click **Load unpacked** and select `apps/chromium/cyclorama-dawn` (or `cyclorama-steel` / `cyclorama-day`).",
+    "Switch variants anytime by loading another folder or clicking **Reset to default** in Appearance settings."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/chromium/cyclorama-dawn/manifest.json",
+  "files": [
+    {
+      "label": "Cyclorama Dawn MV3 Manifest",
+      "path": "apps/chromium/cyclorama-dawn/manifest.json"
+    },
+    {
+      "label": "Cyclorama Steel MV3 Manifest",
+      "path": "apps/chromium/cyclorama-steel/manifest.json"
+    },
+    {
+      "label": "Cyclorama Day MV3 Manifest",
+      "path": "apps/chromium/cyclorama-day/manifest.json"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 New Tab canvas, #070709 tab strip, #0C0C10 toolbar, and Beacon Orange NTP links & button tint.",
+      "preview": "apps/chromium/previews/cyclorama-dawn.svg",
+      "file": "apps/chromium/cyclorama-dawn/manifest.json",
+      "copyLang": "json",
+      "copyLabel": "Copy MV3 manifest.json",
+      "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Dawn (LX 263)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        7,\n        7,\n        9\n      ],\n      \"frame_inactive\": [\n        5,\n        5,\n        7\n      ],\n      \"frame_incognito\": [\n        19,\n        57,\n        84\n      ],\n      \"toolbar\": [\n        12,\n        12,\n        16\n      ],\n      \"tab_text\": [\n        244,\n        245,\n        248\n      ],\n      \"tab_background_text\": [\n        179,\n        181,\n        192\n      ],\n      \"tab_background_text_inactive\": [\n        140,\n        143,\n        157\n      ],\n      \"bookmark_text\": [\n        214,\n        216,\n        224\n      ],\n      \"ntp_background\": [\n        5,\n        5,\n        7\n      ],\n      \"ntp_text\": [\n        244,\n        245,\n        248\n      ],\n      \"ntp_link\": [\n        255,\n        146,\n        84\n      ],\n      \"ntp_header\": [\n        12,\n        12,\n        16\n      ],\n      \"omnibox_background\": [\n        20,\n        20,\n        26\n      ],\n      \"omnibox_text\": [\n        244,\n        245,\n        248\n      ],\n      \"toolbar_button_icon\": [\n        214,\n        216,\n        224\n      ],\n      \"button_background\": [\n        20,\n        20,\n        26\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.06,\n        1.0,\n        0.665\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#2A2C35"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal browser chrome with #131820 omnibox and Steel Blue NTP links & button tint.",
+      "preview": "apps/chromium/previews/cyclorama-steel.svg",
+      "file": "apps/chromium/cyclorama-steel/manifest.json",
+      "copyLang": "json",
+      "copyLabel": "Copy MV3 manifest.json",
+      "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Steel (LX 263)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        7,\n        8,\n        11\n      ],\n      \"frame_inactive\": [\n        5,\n        5,\n        7\n      ],\n      \"frame_incognito\": [\n        19,\n        57,\n        84\n      ],\n      \"toolbar\": [\n        12,\n        12,\n        16\n      ],\n      \"tab_text\": [\n        244,\n        245,\n        248\n      ],\n      \"tab_background_text\": [\n        179,\n        181,\n        192\n      ],\n      \"tab_background_text_inactive\": [\n        140,\n        150,\n        166\n      ],\n      \"bookmark_text\": [\n        214,\n        220,\n        228\n      ],\n      \"ntp_background\": [\n        5,\n        5,\n        7\n      ],\n      \"ntp_text\": [\n        244,\n        245,\n        248\n      ],\n      \"ntp_link\": [\n        116,\n        184,\n        232\n      ],\n      \"ntp_header\": [\n        12,\n        12,\n        16\n      ],\n      \"omnibox_background\": [\n        19,\n        24,\n        32\n      ],\n      \"omnibox_text\": [\n        244,\n        245,\n        248\n      ],\n      \"toolbar_button_icon\": [\n        214,\n        220,\n        228\n      ],\n      \"button_background\": [\n        19,\n        24,\n        32\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.569,\n        0.716,\n        0.682\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#27313D"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light browser chrome with white toolbar, soft rail frame, and burnt Beacon links.",
+      "preview": "apps/chromium/previews/cyclorama-day.svg",
+      "file": "apps/chromium/cyclorama-day/manifest.json",
+      "copyLang": "json",
+      "copyLabel": "Copy MV3 manifest.json",
+      "copySnippet": "{\n  \"manifest_version\": 3,\n  \"name\": \"Cyclorama Day (LX 512)\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)\",\n  \"theme\": {\n    \"colors\": {\n      \"frame\": [\n        234,\n        238,\n        242\n      ],\n      \"frame_inactive\": [\n        225,\n        229,\n        234\n      ],\n      \"frame_incognito\": [\n        225,\n        231,\n        237\n      ],\n      \"toolbar\": [\n        255,\n        255,\n        255\n      ],\n      \"tab_text\": [\n        13,\n        16,\n        22\n      ],\n      \"tab_background_text\": [\n        71,\n        77,\n        89\n      ],\n      \"tab_background_text_inactive\": [\n        88,\n        96,\n        110\n      ],\n      \"bookmark_text\": [\n        37,\n        42,\n        52\n      ],\n      \"ntp_background\": [\n        245,\n        247,\n        249\n      ],\n      \"ntp_text\": [\n        13,\n        16,\n        22\n      ],\n      \"ntp_link\": [\n        173,\n        61,\n        10\n      ],\n      \"ntp_header\": [\n        255,\n        255,\n        255\n      ],\n      \"omnibox_background\": [\n        227,\n        232,\n        238\n      ],\n      \"omnibox_text\": [\n        13,\n        16,\n        22\n      ],\n      \"toolbar_button_icon\": [\n        37,\n        42,\n        52\n      ],\n      \"button_background\": [\n        227,\n        232,\n        238\n      ]\n    },\n    \"tints\": {\n      \"buttons\": [\n        0.052,\n        0.891,\n        0.359\n      ],\n      \"frame\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_inactive\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"frame_incognito\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ],\n      \"background_tab\": [\n        -1.0,\n        -1.0,\n        -1.0\n      ]\n    }\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Border",
+          "hex": "#C8D0DA"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

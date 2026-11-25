@@ -1,0 +1,149 @@
+{
+  "app": "WezTerm",
+  "slug": "wezterm",
+  "category": "Terminals",
+  "homepage": "https://wezterm.org/",
+  "format": "WezTerm .toml Color Scheme",
+  "install": "Copy .toml into ~/.config/wezterm/colors/ and set config.color_scheme",
+  "installSteps": [
+    "Copy cyclorama-dawn.toml, cyclorama-steel.toml, and cyclorama-day.toml into ~/.config/wezterm/colors/ (Windows: %USERPROFILE%\\.config\\wezterm\\colors\\).",
+    "Set config.color_scheme = \"Cyclorama Dawn\" (or \"Cyclorama Steel\" / \"Cyclorama Day\") in your wezterm.lua.",
+    "Reload WezTerm (config auto-reloads on save)."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/wezterm/cyclorama-dawn.toml",
+  "files": [
+    {
+      "label": "Cyclorama Dawn (cyclorama-dawn.toml)",
+      "path": "apps/wezterm/cyclorama-dawn.toml"
+    },
+    {
+      "label": "Cyclorama Steel (cyclorama-steel.toml)",
+      "path": "apps/wezterm/cyclorama-steel.toml"
+    },
+    {
+      "label": "Cyclorama Day (cyclorama-day.toml)",
+      "path": "apps/wezterm/cyclorama-day.toml"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/wezterm/previews/cyclorama-dawn.svg",
+      "file": "apps/wezterm/cyclorama-dawn.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Dawn WezTerm TOML",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Dawn\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#F4F5F8\"\nbackground = \"#050507\"\ncursor_bg = \"#F06E2B\"\ncursor_fg = \"#050507\"\ncursor_border = \"#F06E2B\"\nselection_fg = \"#F4F5F8\"\nselection_bg = \"#3D2B24\"\nscrollbar_thumb = \"#62646D\"\nsplit = \"#2A2C35\"\nansi = [\"#0C0C10\", \"#FF5C6C\", \"#3DDC97\", \"#FFC247\", \"#74B8E8\", \"#C996F5\", \"#56D4E0\", \"#D6D8E0\"]\nbrights = [\"#8C8F9D\", \"#FF9254\", \"#6CE8B2\", \"#FFD475\", \"#99CDF2\", \"#DCB8FA\", \"#85E3EC\", \"#F4F5F8\"]\n\n[colors.tab_bar]\nbackground = \"#070709\"\ninactive_tab_edge = \"#2A2C35\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#BD4811\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#0C0C10\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#14141A\"\nfg_color = \"#F4F5F8\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#070709\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#14141A\"\nfg_color = \"#FF9254\"\nitalic = false",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/wezterm/previews/cyclorama-steel.svg",
+      "file": "apps/wezterm/cyclorama-steel.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Steel WezTerm TOML",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Steel\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#F4F5F8\"\nbackground = \"#050507\"\ncursor_bg = \"#74B8E8\"\ncursor_fg = \"#050507\"\ncursor_border = \"#74B8E8\"\nselection_fg = \"#F4F5F8\"\nselection_bg = \"#1D3B57\"\nscrollbar_thumb = \"#637284\"\nsplit = \"#27313D\"\nansi = [\"#0C0C10\", \"#FF5C6C\", \"#3DDC97\", \"#FFC247\", \"#74B8E8\", \"#C996F5\", \"#56D4E0\", \"#D6D8E0\"]\nbrights = [\"#8C96A6\", \"#FF9254\", \"#6CE8B2\", \"#FFD475\", \"#99CDF2\", \"#DCB8FA\", \"#85E3EC\", \"#F4F5F8\"]\n\n[colors.tab_bar]\nbackground = \"#07080B\"\ninactive_tab_edge = \"#27313D\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#18496B\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#0C0C10\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#131820\"\nfg_color = \"#F4F5F8\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#07080B\"\nfg_color = \"#B3B5C0\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#131820\"\nfg_color = \"#74B8E8\"\nitalic = false",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/wezterm/previews/cyclorama-day.svg",
+      "file": "apps/wezterm/cyclorama-day.toml",
+      "copyLang": "toml",
+      "copyLabel": "Copy Cyclorama Day WezTerm TOML",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — WezTerm Color Scheme\n# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n\n[metadata]\nname = \"Cyclorama Day\"\nauthor = \"Real-Fruit-Snacks\"\norigin_url = \"https://github.com/Real-Fruit-Snacks/rfs-themes\"\n\n[colors]\nforeground = \"#0D1016\"\nbackground = \"#F5F7F9\"\ncursor_bg = \"#AD3D0A\"\ncursor_fg = \"#FFFFFF\"\ncursor_border = \"#AD3D0A\"\nselection_fg = \"#0D1016\"\nselection_bg = \"#C6DAEB\"\nscrollbar_thumb = \"#6E7682\"\nsplit = \"#C8D0DA\"\nansi = [\"#0D1016\", \"#B91C2E\", \"#127247\", \"#885800\", \"#164669\", \"#6B38B8\", \"#0E6674\", \"#E3E8EE\"]\nbrights = [\"#58606E\", \"#AD3D0A\", \"#0D5A37\", \"#704700\", \"#1F547A\", \"#572A9E\", \"#0A525E\", \"#FFFFFF\"]\n\n[colors.tab_bar]\nbackground = \"#EAEEF2\"\ninactive_tab_edge = \"#C8D0DA\"\n\n[colors.tab_bar.active_tab]\nbg_color = \"#18496B\"\nfg_color = \"#FFFFFF\"\nintensity = \"Bold\"\nunderline = \"None\"\nitalic = false\nstrikethrough = false\n\n[colors.tab_bar.inactive_tab]\nbg_color = \"#FFFFFF\"\nfg_color = \"#474D59\"\n\n[colors.tab_bar.inactive_tab_hover]\nbg_color = \"#E3E8EE\"\nfg_color = \"#0D1016\"\nitalic = false\n\n[colors.tab_bar.new_tab]\nbg_color = \"#EAEEF2\"\nfg_color = \"#474D59\"\n\n[colors.tab_bar.new_tab_hover]\nbg_color = \"#E3E8EE\"\nfg_color = \"#AD3D0A\"\nitalic = false",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "app": "qBittorrent",
+  "slug": "qbittorrent",
+  "category": "Browsers & Desktop",
+  "homepage": "https://www.qbittorrent.org/",
+  "format": "Qt QSS Stylesheet + config.json",
+  "install": "Package stylesheet.qss + config.json into .qbtheme and select in Behavior -> Use custom UI Theme",
+  "installSteps": [
+    "Choose a variant folder (`apps/qbittorrent/cyclorama-dawn/`, `cyclorama-steel/`, or `cyclorama-day/`) containing `stylesheet.qss` and `config.json`.",
+    "Bundle into a `.qbtheme` resource bundle with Qt `rcc` (or load `stylesheet.qss` via your qBittorrent theme pack).",
+    "Open qBittorrent -> Tools -> Options -> **Behavior** -> enable **Use custom UI Theme**, pick the bundle, and restart."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss",
+  "files": [
+    {
+      "label": "Dawn Stylesheet (QSS)",
+      "path": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss"
+    },
+    {
+      "label": "Dawn Transfer Palette (JSON)",
+      "path": "apps/qbittorrent/cyclorama-dawn/config.json"
+    },
+    {
+      "label": "Steel Stylesheet (QSS)",
+      "path": "apps/qbittorrent/cyclorama-steel/stylesheet.qss"
+    },
+    {
+      "label": "Steel Transfer Palette (JSON)",
+      "path": "apps/qbittorrent/cyclorama-steel/config.json"
+    },
+    {
+      "label": "Day Stylesheet (QSS)",
+      "path": "apps/qbittorrent/cyclorama-day/stylesheet.qss"
+    },
+    {
+      "label": "Day Transfer Palette (JSON)",
+      "path": "apps/qbittorrent/cyclorama-day/config.json"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 transfer table with Beacon Orange progress bars, Signal green seeding, and Steel Blue active downloads.",
+      "preview": "apps/qbittorrent/previews/cyclorama-dawn.svg",
+      "file": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss",
+      "copyLang": "json",
+      "copyLabel": "Copy config.json Palette",
+      "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#F4F5F8\",\n    \"Log.Info\": \"#74B8E8\",\n    \"Log.Warning\": \"#FFC247\",\n    \"Log.Critical\": \"#FF5C6C\",\n    \"TransferList.Downloading\": \"#74B8E8\",\n    \"TransferList.ForcedDownloading\": \"#56D4E0\",\n    \"TransferList.DownloadingMetadata\": \"#56D4E0\",\n    \"TransferList.Allocating\": \"#FFC247\",\n    \"TransferList.StalledDownloading\": \"#B3B5C0\",\n    \"TransferList.StalledUploading\": \"#8C8F9D\",\n    \"TransferList.Uploading\": \"#3DDC97\",\n    \"TransferList.ForcedUploading\": \"#3DDC97\",\n    \"TransferList.Seeding\": \"#3DDC97\",\n    \"TransferList.Paused\": \"#FFC247\",\n    \"TransferList.PausedDownloading\": \"#FFC247\",\n    \"TransferList.PausedUploading\": \"#B3B5C0\",\n    \"TransferList.Queued\": \"#B3B5C0\",\n    \"TransferList.Checking\": \"#FF9254\",\n    \"TransferList.CheckingResumeData\": \"#FF9254\",\n    \"TransferList.Moving\": \"#C996F5\",\n    \"TransferList.MissingFiles\": \"#FF5C6C\",\n    \"TransferList.Error\": \"#FF5C6C\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#2A2C35"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal Qt stylesheet with Steel Blue progress chunks, crisp #27313D gridlines, and Beacon checking states.",
+      "preview": "apps/qbittorrent/previews/cyclorama-steel.svg",
+      "file": "apps/qbittorrent/cyclorama-steel/stylesheet.qss",
+      "copyLang": "json",
+      "copyLabel": "Copy config.json Palette",
+      "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#F4F5F8\",\n    \"Log.Info\": \"#FF9254\",\n    \"Log.Warning\": \"#FFC247\",\n    \"Log.Critical\": \"#FF5C6C\",\n    \"TransferList.Downloading\": \"#FF9254\",\n    \"TransferList.ForcedDownloading\": \"#56D4E0\",\n    \"TransferList.DownloadingMetadata\": \"#56D4E0\",\n    \"TransferList.Allocating\": \"#FFC247\",\n    \"TransferList.StalledDownloading\": \"#B3B5C0\",\n    \"TransferList.StalledUploading\": \"#8C96A6\",\n    \"TransferList.Uploading\": \"#3DDC97\",\n    \"TransferList.ForcedUploading\": \"#3DDC97\",\n    \"TransferList.Seeding\": \"#3DDC97\",\n    \"TransferList.Paused\": \"#FFC247\",\n    \"TransferList.PausedDownloading\": \"#FFC247\",\n    \"TransferList.PausedUploading\": \"#B3B5C0\",\n    \"TransferList.Queued\": \"#B3B5C0\",\n    \"TransferList.Checking\": \"#74B8E8\",\n    \"TransferList.CheckingResumeData\": \"#74B8E8\",\n    \"TransferList.Moving\": \"#C996F5\",\n    \"TransferList.MissingFiles\": \"#FF5C6C\",\n    \"TransferList.Error\": \"#FF5C6C\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#27313D"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Alabaster Day #F5F7F9 light Qt stylesheet with alternating cool rows and WCAG AA transfer status inks.",
+      "preview": "apps/qbittorrent/previews/cyclorama-day.svg",
+      "file": "apps/qbittorrent/cyclorama-day/stylesheet.qss",
+      "copyLang": "json",
+      "copyLabel": "Copy config.json Palette",
+      "copySnippet": "{\n  \"colors\": {\n    \"Log.Normal\": \"#0D1016\",\n    \"Log.Info\": \"#164669\",\n    \"Log.Warning\": \"#885800\",\n    \"Log.Critical\": \"#B91C2E\",\n    \"TransferList.Downloading\": \"#164669\",\n    \"TransferList.ForcedDownloading\": \"#0E6674\",\n    \"TransferList.DownloadingMetadata\": \"#0E6674\",\n    \"TransferList.Allocating\": \"#885800\",\n    \"TransferList.StalledDownloading\": \"#474D59\",\n    \"TransferList.StalledUploading\": \"#58606E\",\n    \"TransferList.Uploading\": \"#127247\",\n    \"TransferList.ForcedUploading\": \"#127247\",\n    \"TransferList.Seeding\": \"#127247\",\n    \"TransferList.Paused\": \"#885800\",\n    \"TransferList.PausedDownloading\": \"#885800\",\n    \"TransferList.PausedUploading\": \"#474D59\",\n    \"TransferList.Queued\": \"#474D59\",\n    \"TransferList.Checking\": \"#AD3D0A\",\n    \"TransferList.CheckingResumeData\": \"#AD3D0A\",\n    \"TransferList.Moving\": \"#6B38B8\",\n    \"TransferList.MissingFiles\": \"#B91C2E\",\n    \"TransferList.Error\": \"#B91C2E\"\n  }\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Border",
+          "hex": "#C8D0DA"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

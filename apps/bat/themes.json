@@ -1,0 +1,149 @@
+{
+  "app": "bat",
+  "slug": "bat",
+  "category": "CLI & TUI",
+  "homepage": "https://github.com/sharkdp/bat",
+  "format": "TextMate .tmTheme XML",
+  "install": "Copy *.tmTheme to $(bat --config-dir)/themes/ and run bat cache --build",
+  "installSteps": [
+    "Copy `Cyclorama Dawn.tmTheme`, `Cyclorama Steel.tmTheme`, and `Cyclorama Day.tmTheme` into `\"$(bat --config-dir)/themes/\"`.",
+    "Rebuild bat's syntax theme cache with `bat cache --build`.",
+    "Select your variant with `bat --theme=\"Cyclorama Dawn\"` (or add `--theme=\"Cyclorama Dawn\"` to `$(bat --config-file)`)."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/bat/Cyclorama Dawn.tmTheme",
+  "files": [
+    {
+      "label": "Cyclorama Dawn .tmTheme",
+      "path": "apps/bat/Cyclorama Dawn.tmTheme"
+    },
+    {
+      "label": "Cyclorama Steel .tmTheme",
+      "path": "apps/bat/Cyclorama Steel.tmTheme"
+    },
+    {
+      "label": "Cyclorama Day .tmTheme",
+      "path": "apps/bat/Cyclorama Day.tmTheme"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "TextMate .tmTheme dark syntax palette on #050507 with Beacon Orange functions, Steel keywords, and Signal numbers.",
+      "preview": "apps/bat/previews/cyclorama-dawn.svg",
+      "file": "apps/bat/Cyclorama Dawn.tmTheme",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Dawn bat install command",
+      "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Dawn.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Dawn\" README.md",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "TextMate .tmTheme steel-charcoal dark syntax palette paired with Steel Blue focus and crisp diff scopes.",
+      "preview": "apps/bat/previews/cyclorama-steel.svg",
+      "file": "apps/bat/Cyclorama Steel.tmTheme",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Steel bat install command",
+      "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Steel.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Steel\" README.md",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "TextMate .tmTheme Alabaster Day light syntax palette tuned for bright terminals and WCAG AA readability.",
+      "preview": "apps/bat/previews/cyclorama-day.svg",
+      "file": "apps/bat/Cyclorama Day.tmTheme",
+      "copyLang": "sh",
+      "copyLabel": "Copy Cyclorama Day bat install command",
+      "copySnippet": "mkdir -p \"$(bat --config-dir)/themes\"\ncp \"apps/bat/Cyclorama Day.tmTheme\" \"$(bat --config-dir)/themes/\"\nbat cache --build\nbat --theme=\"Cyclorama Day\" README.md",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

@@ -3,50 +3,80 @@
   <img alt="rfs-themes: Cyclorama Dawn themes and ports for everyday apps" src="docs/assets/cover-light.svg" width="100%">
 </picture>
 
-**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for everyday tools, derived from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
+**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **20 everyday apps** (**60 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
 
-Browse live previews and copy theme codes with one click at **[real-fruit-snacks.github.io/rfs-themes](https://real-fruit-snacks.github.io/rfs-themes/)**.
+Browse live previews, filter by category, copy snippets, and download configs at **[real-fruit-snacks.github.io/rfs-themes](https://real-fruit-snacks.github.io/rfs-themes/)**.
 
-## Application Ports
+## Three Standard Variants
 
-| App | Category | Variants | Format | Port |
-|---|---|---|---|---|
-| **[PrivacyNotes](https://privacynotes.app/)** | Notes & Writing | `Cyclorama Dawn` · `Cyclorama Steel` · `Cyclorama Day` | `pn1:` theme code | [`apps/privacynotes/`](apps/privacynotes/) |
+| Variant | Lighting Cue | Mode | Role |
+|---|---|---|---|
+| **Cyclorama Dawn** | `LX 263` | Dark (`#050507`) | Beacon Orange (`#FF9254`) primary focus, Steel Blue (`#74B8E8`) secondary |
+| **Cyclorama Steel** | `LX 263` | Dark (`#050507`) | Steel Blue (`#74B8E8`) primary focus, Beacon Orange (`#FF9254`) secondary |
+| **Cyclorama Day** | `LX 512` | Light (`#F5F7F9`) | Alabaster Day light workspace, burnt Beacon (`#AD3D0A`) & Steel (`#164669`) |
 
-*Built as a modular multi-app hub — future ports (editors, terminals, note apps, browsers) drop straight into `apps/<app>/`.*
+## Application Ports (20 Apps · 60 Variants)
 
-## Quick Copy — PrivacyNotes
+### Editors & IDEs (4)
 
-Open **PrivacyNotes → Settings → Design → Paste theme code**:
+| App | Format | Install Summary | Port |
+|---|---|---|---|
+| **VS Code** | VS Code JSON Theme Extension | Copy `apps/vscode/` into `~/.vscode/extensions/rfs-cyclorama-dawn` and pick Color Theme | [`apps/vscode/`](apps/vscode/) |
+| **Neovim** | Lua Colorscheme Plugin | Add `apps/neovim/` to your plugin manager and run `:colorscheme cyclorama-dawn` | [`apps/neovim/`](apps/neovim/) |
+| **Zed** | Zed JSON Theme (v0.2.0) | Copy `themes/cyclorama.json` into `~/.config/zed/themes/` and select a variant | [`apps/zed/`](apps/zed/) |
+| **JetBrains IDEs** | IntelliJ `.icls` + `.theme.json` | Import `.icls` under Settings → Editor → Color Scheme or load UI theme plugin | [`apps/jetbrains/`](apps/jetbrains/) |
 
-- **Cyclorama Dawn** (`LX 263 Dark` · Beacon accent, Steel labels):
-  ```text
-  pn1:Cyclorama Dawn:050507,0C0C10,2A2C35,F4F5F8,B3B5C0,FF9254:list=0F1016,paper=050507,well=14141A,soft=D6D8E0,hover=FFB07A,fill=BD4811,fillhover=9E3B0C,danger=FF5C6C,warning=FFC247,success=3DDC97,label=74B8E8,by=Real-Fruit-Snacks
-  ```
-- **Cyclorama Steel** (`LX 263 Dark` · Steel accent, Beacon labels):
-  ```text
-  pn1:Cyclorama Steel:050507,0C0C10,27313D,F4F5F8,B3B5C0,74B8E8:list=0E1117,paper=050507,well=131820,soft=D6DCE4,hover=99CDF2,fill=18496B,fillhover=123955,danger=FF5C6C,warning=FFC247,success=3DDC97,label=FF9254,by=Real-Fruit-Snacks
-  ```
-- **Cyclorama Day** (`LX 512 Light` · Alabaster Day):
-  ```text
-  pn1:Cyclorama Day:F5F7F9,E9EEF3,C8D0DA,0D1016,474D59,AD3D0A:list=F0F3F7,paper=FFFFFF,well=E3E8EE,soft=252A34,hover=8B2F06,fill=18496B,fillhover=113752,danger=B91C2E,warning=8D5400,success=127247,label=164669,by=Real-Fruit-Snacks
-  ```
+### Terminals (5)
+
+| App | Format | Install Summary | Port |
+|---|---|---|---|
+| **Windows Terminal** | JSON Schemes + PSReadLine `.ps1` | Paste scheme into `settings.json` `"schemes"` array + dot-source PSReadLine `.ps1` | [`apps/windows-terminal/`](apps/windows-terminal/) |
+| **WezTerm** | TOML Color Scheme + Lua Snippet | Copy `.toml` into `~/.config/wezterm/colors/` and set `config.color_scheme` | [`apps/wezterm/`](apps/wezterm/) |
+| **Alacritty** | TOML Theme (`v0.13+`) | Import `cyclorama-*.toml` via `general.import` in `alacritty.toml` | [`apps/alacritty/`](apps/alacritty/) |
+| **Ghostty** | Ghostty `key = value` Theme | Copy theme file to `~/.config/ghostty/themes/` and set `theme = cyclorama-dawn` | [`apps/ghostty/`](apps/ghostty/) |
+| **Kitty** | Kitty `.conf` Theme | Include `cyclorama-*.conf` in `kitty.conf` or run `kitty +kitten themes` | [`apps/kitty/`](apps/kitty/) |
+
+### CLI & TUI (5)
+
+| App | Format | Install Summary | Port |
+|---|---|---|---|
+| **Starship** | Starship `.toml` Palette | Copy `cyclorama-dawn.toml` to `~/.config/starship.toml` or include `palettes.toml` | [`apps/starship/`](apps/starship/) |
+| **Oh My Posh** | Oh My Posh `.omp.json` | Pass `--config apps/oh-my-posh/cyclorama-dawn.omp.json` to `oh-my-posh init` | [`apps/oh-my-posh/`](apps/oh-my-posh/) |
+| **bat** | TextMate `.tmTheme` XML | Copy `.tmTheme` files into `$(bat --config-dir)/themes` and run `bat cache --build` | [`apps/bat/`](apps/bat/) |
+| **git-delta** | Git Config `[delta]` Feature | Include `cyclorama-*.gitconfig` in `~/.gitconfig` and enable `features` | [`apps/delta/`](apps/delta/) |
+| **fzf** | Shell / PowerShell `FZF_DEFAULT_OPTS` | Source `cyclorama-dawn.sh` (Bash/Zsh) or `cyclorama-dawn.ps1` (PowerShell) | [`apps/fzf/`](apps/fzf/) |
+
+### Notes & Writing (2)
+
+| App | Format | Install Summary | Port |
+|---|---|---|---|
+| **PrivacyNotes** | `pn1:` theme code | Settings → Design → Paste theme code (all 17/17 contrast checks passing) | [`apps/privacynotes/`](apps/privacynotes/) |
+| **Obsidian** | Obsidian Theme (`manifest.json` + `theme.css`) | Copy into `.obsidian/themes/Cyclorama Dawn/` or enable CSS snippets | [`apps/obsidian/`](apps/obsidian/) |
+
+### Browsers & Desktop (4)
+
+| App | Format | Install Summary | Port |
+|---|---|---|---|
+| **Brave / Chrome / Edge** | Chromium MV3 Browser Theme | Extensions → Developer mode → Load unpacked variant folder | [`apps/chromium/`](apps/chromium/) |
+| **Discord (Vencord / BetterDiscord)** | `.theme.css` Client Theme | Drop `cyclorama-*.theme.css` into your Vencord / BetterDiscord `themes/` folder | [`apps/discord/`](apps/discord/) |
+| **qBittorrent** | QSS Stylesheet + `config.json` | Package `.qbtheme` or point Behavior → Custom UI Theme to a variant folder | [`apps/qbittorrent/`](apps/qbittorrent/) |
+| **Flow Launcher** | WPF XAML ResourceDictionary | Copy `Cyclorama *.xaml` into `%APPDATA%\FlowLauncher\Themes\` | [`apps/flow-launcher/`](apps/flow-launcher/) |
 
 ## Repository Layout
 
 | Path | What it holds |
 |---|---|
 | `apps/<slug>/` | Self-contained theme port for each application (`themes.json`, native configs/codes, `previews/`, `README.md`) |
-| `apps/manifest.json` | Machine-readable registry of every supported app and variant |
-| `brand/rfs.tokens.json` | Canonical Cyclorama Dawn tokens synced from `rfs-brand` `v2.0.0` |
-| `tools/` | Zero-dependency Python generators and WCAG/app-spec contrast validators |
-| `docs/` | Interactive Cyclorama Dawn theme gallery published via GitHub Pages |
+| `apps/manifest.json` | Machine-readable registry of all 20 supported apps and 60 variants |
+| `brand/rfs.tokens.json` | Canonical Cyclorama Dawn tokens synced from `rfs-brand` `v2.1.0` |
+| `tools/` | Zero-dependency Python palette engine, SVG preview renderers, master orchestrator, and CI validator |
+| `docs/` | Interactive Cyclorama Dawn 20-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
 
-## Verify Locally
+## Build & Verify Locally
 
 ```sh
-python tools/build-privacynotes.py
+python tools/build_all.py
 python tools/verify-themes.py
 ```
 
-See [`AGENTS.md`](AGENTS.md) for the contract when adding a new application port.
+See [`AGENTS.md`](AGENTS.md) for the contributor and automation contract when adding or updating an application port.

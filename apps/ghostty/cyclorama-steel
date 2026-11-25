@@ -1,0 +1,26 @@
+# Cyclorama Steel (LX 263 Dark · Steel Blue) — Ghostty Theme
+# Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+palette = 0=#0C0C10
+palette = 1=#FF5C6C
+palette = 2=#3DDC97
+palette = 3=#FFC247
+palette = 4=#74B8E8
+palette = 5=#C996F5
+palette = 6=#56D4E0
+palette = 7=#D6D8E0
+palette = 8=#8C96A6
+palette = 9=#FF9254
+palette = 10=#6CE8B2
+palette = 11=#FFD475
+palette = 12=#99CDF2
+palette = 13=#DCB8FA
+palette = 14=#85E3EC
+palette = 15=#F4F5F8
+background = #050507
+foreground = #F4F5F8
+cursor-color = #74B8E8
+cursor-text = #050507
+selection-background = #1D3B57
+selection-foreground = #F4F5F8

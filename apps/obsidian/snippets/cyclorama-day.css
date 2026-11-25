@@ -1,0 +1,148 @@
+/*
+ * Cyclorama Day (LX 512 · Alabaster Day) — Standalone Obsidian CSS Snippet
+ * Author: Real-Fruit-Snacks · Cyclorama Dawn v2.1.0
+ * Drop into <vault>/.obsidian/snippets/ and enable in Settings -> Appearance -> CSS snippets.
+ */
+
+.theme-light {
+  /* Surfaces & Chrome */
+  --background-primary: #F5F7F9;
+  --background-primary-alt: #EEF2F5;
+  --background-secondary: #FFFFFF;
+  --background-secondary-alt: #EAEEF2;
+  --background-modifier-hover: #EDF0F4;
+  --background-modifier-active-hover: #F5E8E2;
+  --background-modifier-border: #C8D0DA;
+  --background-modifier-border-hover: #6E7682;
+  --background-modifier-border-focus: #AD3D0A;
+  --background-modifier-form-field: #E3E8EE;
+  --background-modifier-form-field-highlighted: #D7DFE8;
+  --background-modifier-box-shadow: rgba(13, 16, 22, 0.12);
+  --background-modifier-success: #127247;
+  --background-modifier-error: #B91C2E;
+  --background-modifier-error-hover: #991525;
+  --background-modifier-cover: rgba(245, 247, 249, 0.78);
+  --titlebar-background: #EAEEF2;
+  --titlebar-background-focused: #FFFFFF;
+  --ribbon-background: #EAEEF2;
+  --ribbon-background-collapsed: #EAEEF2;
+  --status-bar-background: #FFFFFF;
+  --status-bar-border-color: #C8D0DA;
+  --status-bar-text-color: #474D59;
+  --tab-background-active: #F5F7F9;
+  --tab-container-background: #EAEEF2;
+  --tab-outline-color: #C8D0DA;
+  --tab-divider-color: #CFD5DC;
+  --divider-color: #C8D0DA;
+  --divider-color-hover: #AD3D0A;
+
+  /* Typography & Ink */
+  --text-normal: #0D1016;
+  --text-muted: #474D59;
+  --text-faint: #58606E;
+  --text-on-accent: #FFFFFF;
+  --text-on-accent-inverted: #F5F7F9;
+  --text-error: #B91C2E;
+  --text-warning: #885800;
+  --text-success: #127247;
+  --text-selection: #C6DAEB;
+  --text-highlight-bg: #F5DFB0;
+  --text-accent: #AD3D0A;
+  --text-accent-hover: #8B2F06;
+
+  /* Interactive Accents */
+  --accent-h: 19;
+  --accent-s: 89%;
+  --accent-l: 36%;
+  --interactive-normal: #E3E8EE;
+  --interactive-hover: #D7DFE8;
+  --interactive-accent: #18496B;
+  --interactive-accent-hover: #113752;
+  --interactive-accent-rgb: 24, 73, 107;
+  --caret-color: #AD3D0A;
+
+  /* Links, Tags & Navigation */
+  --link-color: #AD3D0A;
+  --link-color-hover: #8B2F06;
+  --link-external-color: #164669;
+  --link-external-color-hover: #0F334E;
+  --link-unresolved-color: #474D59;
+  --tag-color: #164669;
+  --tag-color-hover: #AD3D0A;
+  --tag-background: #E3E9ED;
+  --tag-background-hover: #F4E4DD;
+  --tag-border-color: #C8D0DA;
+  --tag-border-width: 1px;
+  --nav-item-color: #252A34;
+  --nav-item-color-hover: #0D1016;
+  --nav-item-color-active: #0D1016;
+  --nav-item-background-hover: #EDF0F4;
+  --nav-item-background-active: #F5E8E2;
+  --nav-indentation-guide-color: #CFD5DC;
+
+  /* Headings */
+  --h1-color: #0D1016;
+  --h2-color: #AD3D0A;
+  --h3-color: #164669;
+  --h4-color: #127247;
+  --h5-color: #885800;
+  --h6-color: #474D59;
+
+  /* Code & Syntax */
+  --code-background: #EEF2F5;
+  --code-normal: #252A34;
+  --code-comment: #58606E;
+  --code-function: #AD3D0A;
+  --code-important: #885800;
+  --code-keyword: #164669;
+  --code-operator: #252A34;
+  --code-property: #1F547A;
+  --code-punctuation: #474D59;
+  --code-string: #885800;
+  --code-tag: #B91C2E;
+  --code-value: #127247;
+
+  /* Blockquotes, Callouts & Tables */
+  --blockquote-border-color: #164669;
+  --blockquote-background-color: #FFFFFF;
+  --callout-default: 22, 70, 105;
+  --callout-info: 22, 70, 105;
+  --callout-tip: 14, 102, 116;
+  --callout-success: 18, 114, 71;
+  --callout-warning: 136, 88, 0;
+  --callout-fail: 185, 28, 46;
+  --callout-error: 185, 28, 46;
+  --callout-bug: 185, 28, 46;
+  --callout-example: 107, 56, 184;
+  --callout-quote: 71, 77, 89;
+  --table-header-background: #FFFFFF;
+  --table-header-background-hover: #E3E8EE;
+  --table-border-color: #C8D0DA;
+  --table-row-alt-background: #EEF2F5;
+  --hr-color: #C8D0DA;
+
+  /* Graph View */
+  --graph-line: #6E7682;
+  --graph-node: #164669;
+  --graph-node-unresolved: #58606E;
+  --graph-node-focused: #AD3D0A;
+  --graph-node-tag: #127247;
+  --graph-node-attachment: #885800;
+  --graph-text: #252A34;
+
+  /* Scrollbars & Horizon Beam */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #C8D0DA;
+  --scrollbar-active-thumb-bg: #6E7682;
+  --rfs-beam-start: #18496B;
+  --rfs-beam-end: #AD3D0A;
+  --rfs-accent-line: #AD3D0A;
+}
+
+.theme-light .workspace-tab-header.is-active {
+  box-shadow: inset 0 2px 0 0 var(--rfs-accent-line);
+  background-image: linear-gradient(90deg in oklab, var(--rfs-beam-start), var(--rfs-beam-end));
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
