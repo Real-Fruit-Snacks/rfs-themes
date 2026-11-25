@@ -486,8 +486,8 @@ def _build_installer_ps1(v: dict) -> str:
     exports a one-time registry backup (backup-pre-rfs.reg), configures Personalize,
     DWM, Explorer AccentPalette (32 bytes), and applies the wallpaper and accents live.
 .PARAMETER Resolution
-    Wallpaper resolution: 'auto' (4k when primary screen width > 2560, else 1080p),
-    '1080p', or '4k'.
+    Wallpaper resolution: 'auto' (4k when any connected display exceeds 1920x1080 —
+    such as 1440p, ultrawide, or 4K — else 1080p), '1080p', or '4k'.
 .PARAMETER TintTaskbar
     When specified, enables accent tinting on Start and Taskbar (ColorPrevalence = 1).
     Defaults to off so the taskbar stays matte {mode_win.lower()}.
@@ -515,27 +515,55 @@ $WallpaperDest  = Join-Path $InstallRoot 'wallpapers'
 $WinThemesDir   = Join-Path $env:LOCALAPPDATA 'Microsoft\\Windows\\Themes'
 $BackupRegPath  = Join-Path $InstallRoot 'backup-pre-rfs.reg'
 
-# 1. Resolve target display resolution ('auto' -> 4k if primary width > 2560 else 1080p)
+if (-not ([System.Management.Automation.PSTypeName]'RfsThemes.NativeWin32').Type) {{
+    Add-Type -Namespace 'RfsThemes' -Name 'NativeWin32' -MemberDefinition @'
+        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        public static extern bool SetProcessDpiAwarenessContext(System.IntPtr value);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
+        public static extern bool SystemParametersInfoW(uint uiAction, uint uiParam, string pvParam, uint fWinIni);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
+        public static extern System.IntPtr SendMessageTimeoutW(
+            System.IntPtr hWnd,
+            uint Msg,
+            System.UIntPtr wParam,
+            string lParam,
+            uint fuFlags,
+            uint uTimeout,
+            out System.UIntPtr lpdwResult
+        );
+'@
+}}
+
+# 1. Resolve target display resolution ('auto' -> 4k if any connected monitor exceeds 1920x1080)
 if ($Resolution -eq 'auto') {{
-    $screenWidth = 0
-    # Query physical horizontal pixels first (unaffected by Windows 150%/200% DPI scaling)
+    $screenWidth  = 0
+    $screenHeight = 0
+    # Query physical pixels via WMI video controllers (unaffected by DPI scaling)
     try {{
         $controllers = Get-CimInstance -ClassName Win32_VideoController -ErrorAction Stop |
-            Where-Object {{ $_.CurrentHorizontalResolution }}
+            Where-Object {{ $_.CurrentHorizontalResolution -and $_.CurrentVerticalResolution }}
         foreach ($vc in $controllers) {{
-            $screenWidth = [Math]::Max($screenWidth, [int]$vc.CurrentHorizontalResolution)
+            $screenWidth  = [Math]::Max($screenWidth,  [int]$vc.CurrentHorizontalResolution)
+            $screenHeight = [Math]::Max($screenHeight, [int]$vc.CurrentVerticalResolution)
         }}
     }} catch {{}}
-    # Also check WinForms bounds as a fallback and take the max
+    # Enable Per-Monitor V2 DPI awareness (-4) and inspect ALL connected screens
+    try {{
+        $null = [RfsThemes.NativeWin32]::SetProcessDpiAwarenessContext([System.IntPtr](-4))
+    }} catch {{}}
     try {{
         Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
-        $wfWidth = [int][System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Width
-        $screenWidth = [Math]::Max($screenWidth, $wfWidth)
+        foreach ($scr in [System.Windows.Forms.Screen]::AllScreens) {{
+            $screenWidth  = [Math]::Max($screenWidth,  [int]$scr.Bounds.Width)
+            $screenHeight = [Math]::Max($screenHeight, [int]$scr.Bounds.Height)
+        }}
     }} catch {{}}
     if ($screenWidth -le 0) {{
         $screenWidth = 1920
     }}
-    $Resolution = if ($screenWidth -gt 2560) {{ '4k' }} else {{ '1080p' }}
+    $Resolution = if ($screenWidth -gt 1920 -or $screenHeight -gt 1080) {{ '4k' }} else {{ '1080p' }}
 }}
 
 # 2. Copy wallpapers and native Windows 11 .theme files to permanent directories
@@ -648,24 +676,6 @@ Set-RegistryValue -Path $DesktopKey -Name 'WallpaperStyle' -Value '10' -Type Str
 Set-RegistryValue -Path $DesktopKey -Name 'TileWallpaper'  -Value '0'  -Type String
 
 # 8. Apply wallpaper live and broadcast WM_SETTINGCHANGE ("ImmersiveColorSet")
-if (-not ([System.Management.Automation.PSTypeName]'RfsThemes.NativeWin32').Type) {{
-    Add-Type -Namespace 'RfsThemes' -Name 'NativeWin32' -MemberDefinition @'
-        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
-        public static extern bool SystemParametersInfoW(uint uiAction, uint uiParam, string pvParam, uint fWinIni);
-
-        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
-        public static extern System.IntPtr SendMessageTimeoutW(
-            System.IntPtr hWnd,
-            uint Msg,
-            System.UIntPtr wParam,
-            string lParam,
-            uint fuFlags,
-            uint uTimeout,
-            out System.UIntPtr lpdwResult
-        );
-'@
-}}
-
 $null = [RfsThemes.NativeWin32]::SystemParametersInfoW(0x0014, 0, $wpPath, 3)
 $broadcastResult = [System.UIntPtr]::Zero
 $null = [RfsThemes.NativeWin32]::SendMessageTimeoutW(
@@ -725,7 +735,7 @@ def _render_readme(
         "### Quick PowerShell Install",
         "",
         "```powershell",
-        "# Auto-detects 4K (>2560px) vs 1080p and backs up current settings to backup-pre-rfs.reg",
+        "# Auto-detects 4K (>1920x1080 across all monitors: 1440p/ultrawide/4K) vs 1080p and backs up current settings to backup-pre-rfs.reg",
         ".\\install-cyclorama-dawn.ps1",
         "",
         "# Optional: force 4K or enable taskbar accent tinting",

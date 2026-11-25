@@ -11,7 +11,7 @@ Native Windows 11 `.theme` packs, pure-Oklab 1080p & 4K wallpapers (zero 8-bit b
 ### Quick PowerShell Install
 
 ```powershell
-# Auto-detects 4K (>2560px) vs 1080p and backs up current settings to backup-pre-rfs.reg
+# Auto-detects 4K (>1920x1080 across all monitors: 1440p/ultrawide/4K) vs 1080p and backs up current settings to backup-pre-rfs.reg
 .\install-cyclorama-dawn.ps1
 
 # Optional: force 4K or enable taskbar accent tinting
