@@ -1018,45 +1018,6 @@
       "data": "apps/discord/themes.json"
     },
     {
-      "slug": "proton-mail",
-      "name": "Proton Mail",
-      "category": "Browsers & Desktop",
-      "homepage": "https://proton.me/mail",
-      "format": "Custom Theme CSS",
-      "install": "Proton Mail -> Settings -> Appearance -> Custom theme -> Paste CSS",
-      "variants": [
-        {
-          "id": "cyclorama-dawn",
-          "name": "Cyclorama Dawn",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Beacon Orange",
-          "summary": "Matte #050507 Proton Mail dark workspace with Beacon Orange (#FF9254) active indicators, high-contrast compose CTA (#BD4811), and Steel Blue info signals.",
-          "preview": "apps/proton-mail/previews/cyclorama-dawn.svg"
-        },
-        {
-          "id": "cyclorama-steel",
-          "name": "Cyclorama Steel",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Steel Blue",
-          "summary": "Cool steel-charcoal Proton Mail dark workspace with Steel Blue (#74B8E8) focus rings, #18496B primary buttons, and Beacon Orange secondary highlights.",
-          "preview": "apps/proton-mail/previews/cyclorama-steel.svg"
-        },
-        {
-          "id": "cyclorama-day",
-          "name": "Cyclorama Day",
-          "lx": "LX 512",
-          "mode": "light",
-          "accentRole": "Alabaster Day",
-          "summary": "Crisp #F5F7F9 Alabaster Day light mailbox with white message panes, burnt Beacon (#AD3D0A) focus markers, and Steel Blue primary buttons.",
-          "preview": "apps/proton-mail/previews/cyclorama-day.svg"
-        }
-      ],
-      "path": "apps/proton-mail",
-      "data": "apps/proton-mail/themes.json"
-    },
-    {
       "slug": "qbittorrent",
       "name": "qBittorrent",
       "category": "Browsers & Desktop",

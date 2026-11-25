@@ -3,7 +3,7 @@
   <img alt="rfs-themes: Cyclorama Dawn themes and ports for everyday apps" src="docs/assets/cover-light.svg" width="100%">
 </picture>
 
-**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **29 everyday apps** (**87 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
+**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **28 everyday apps** (**84 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
 
 Browse live previews, filter by category, copy snippets, and download configs at **[real-fruit-snacks.github.io/rfs-themes](https://real-fruit-snacks.github.io/rfs-themes/)**.
 
@@ -15,7 +15,7 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **Cyclorama Steel** | `LX 263` | Dark (`#050507`) | Steel Blue (`#74B8E8`) primary focus, Beacon Orange (`#FF9254`) secondary |
 | **Cyclorama Day** | `LX 512` | Light (`#F5F7F9`) | Alabaster Day light workspace, burnt Beacon (`#AD3D0A`) & Steel (`#164669`) |
 
-## Application Ports (29 Apps · 87 Variants)
+## Application Ports (28 Apps · 84 Variants)
 
 ### Editors & IDEs (8)
 
@@ -60,14 +60,13 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **PrivacyNotes** | `pn1:` theme code | Settings → Design → Paste theme code (all 17/17 contrast checks passing) | [`apps/privacynotes/`](apps/privacynotes/) |
 | **Obsidian** | Obsidian Theme (`manifest.json` + `theme.css`) | Copy into `.obsidian/themes/Cyclorama Dawn/` or enable CSS snippets | [`apps/obsidian/`](apps/obsidian/) |
 
-### Browsers & Desktop (6)
+### Browsers & Desktop (5)
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
 | **Windows 11** | `.theme` + Oklab Wallpapers + `.ps1` | Run `install-cyclorama-dawn.ps1` (auto 1080p/4K + registry backup) or double-click `.theme` | [`apps/windows/`](apps/windows/) |
 | **Brave / Chrome / Edge** | Chromium MV3 Browser Theme | Extensions → Developer mode → Load unpacked variant folder | [`apps/chromium/`](apps/chromium/) |
 | **Discord (Vencord / BetterDiscord)** | `.theme.css` Client Theme | Drop `cyclorama-*.theme.css` into your Vencord / BetterDiscord `themes/` folder | [`apps/discord/`](apps/discord/) |
-| [**Proton Mail**](https://proton.me/mail) | Custom Theme CSS | Proton Mail → Settings → Appearance → Custom theme → Paste CSS | [`apps/proton-mail/`](apps/proton-mail/) |
 | **qBittorrent** | QSS Stylesheet + `config.json` | qBittorrent 5.x: Behavior → Use custom UI theme → pick `config.json` (`FolderThemeSource`) | [`apps/qbittorrent/`](apps/qbittorrent/) |
 | **Flow Launcher** | WPF XAML ResourceDictionary | Copy `Cyclorama *.xaml` into `%APPDATA%\FlowLauncher\Themes\` | [`apps/flow-launcher/`](apps/flow-launcher/) |
 
@@ -76,10 +75,10 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | Path | What it holds |
 |---|---|
 | `apps/<slug>/` | Self-contained theme port for each application (`themes.json`, native configs/codes, `previews/`, `README.md`) |
-| `apps/manifest.json` | Machine-readable registry of all 29 supported apps and 87 variants |
+| `apps/manifest.json` | Machine-readable registry of all 28 supported apps and 84 variants |
 | `brand/rfs.tokens.json` | Canonical Cyclorama Dawn tokens synced from `rfs-brand` `v2.1.0` |
 | `tools/` | Zero-dependency Python palette engine, SVG preview renderers, master orchestrator, and CI validator |
-| `docs/` | Interactive Cyclorama Dawn 29-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
+| `docs/` | Interactive Cyclorama Dawn 28-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
 
 ## Build & Verify Locally
 

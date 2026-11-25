@@ -3,7 +3,7 @@
 
 Runs all 9 zero-dependency theme port builders in deterministic order, then
 compiles:
-  - apps/manifest.json        (repo-root machine-readable registry of all 29 apps)
+  - apps/manifest.json        (repo-root machine-readable registry of all 28 apps)
   - docs/assets/catalog.json  (normalized gallery catalog for docs/index.html)
 
 Zero external dependencies (Python 3.11+ standard library only).
@@ -29,13 +29,13 @@ MANIFEST_PATH = os.path.join(ROOT, "apps", "manifest.json")
 CATALOG_PATH = os.path.join(ROOT, "docs", "assets", "catalog.json")
 BRAND_SOURCE = "https://github.com/Real-Fruit-Snacks/rfs-brand"
 
-# Ordered categories and app slugs (29 apps across 5 categories)
+# Ordered categories and app slugs (28 apps across 5 categories)
 CATEGORY_SPEC: list[tuple[str, str, list[str]]] = [
     ("Editors & IDEs", "editors-ides", ["vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise", "t3code"]),
     ("Terminals", "terminals", ["windows-terminal", "wezterm", "alacritty", "ghostty", "kitty", "git-bash", "qterminal", "windows-console"]),
     ("CLI & TUI", "cli-tui", ["starship", "oh-my-posh", "bat", "delta", "fzf"]),
     ("Notes & Writing", "notes-writing", ["privacynotes", "obsidian"]),
-    ("Browsers & Desktop", "browsers-desktop", ["windows", "chromium", "discord", "proton-mail", "qbittorrent", "flow-launcher"]),
+    ("Browsers & Desktop", "browsers-desktop", ["windows", "chromium", "discord", "qbittorrent", "flow-launcher"]),
 ]
 
 PRIVACYNOTES_META = {
@@ -233,7 +233,7 @@ def run_builders() -> int:
 
 
 def compile_registries() -> tuple[dict, dict]:
-    """Read all 29 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
+    """Read all 28 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
     brand_tokens = pal.load_brand_tokens()
     brand_version = brand_tokens["meta"]["version"]
 

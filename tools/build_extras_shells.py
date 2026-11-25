@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Generate 4 Cyclorama Dawn v2.1.0 Terminal, Console & Mail ports for rfs-themes.
+"""Generate 3 Cyclorama Dawn v2.1.0 Terminal & Console ports for rfs-themes.
 
-Builds 4 self-contained app ports (12 total variants across Dawn, Steel, and Day)
+Builds 3 self-contained app ports (9 total variants across Dawn, Steel, and Day)
 plus mirrored SVG previews in apps/<slug>/previews/ and docs/assets/previews/<slug>/:
   1. apps/git-bash/        — Git Bash (Mintty .minttyrc) + Native Git CLI (.gitconfig)
   2. apps/qterminal/       — QTerminal / QTermWidget6 (.colorscheme INI)
   3. apps/windows-console/ — Windows Console Host / conhost (.reg HKCU\\Console + restore-defaults.reg)
-  4. apps/proton-mail/     — Proton Mail (Custom Theme CSS + 3-pane SVG previews)
 
 Zero external dependencies (Python 3.11+ standard library only).
 Zero hardcoded hex literals — every color derives from tools/rfs_palette.py.
@@ -16,7 +15,6 @@ from __future__ import annotations
 
 import configparser
 import hashlib
-from html import escape
 import json
 import os
 import re
@@ -40,12 +38,9 @@ from rfs_palette import (  # noqa: E402
     VARIANTS,
     contrast,
     hex_to_rgb,
-    mix,
     rgb_to_hex,
 )
 from svg_previews import (  # noqa: E402
-    _frame_shell,
-    _standard_swatches,
     render_terminal_preview,
     write_preview_pair,
 )
@@ -70,46 +65,6 @@ CAMPBELL_RGB: tuple[tuple[int, int, int], ...] = (
     (180, 0, 158),    # 13 Magenta
     (249, 241, 165),  # 14 Yellow
     (242, 242, 242),  # 15 White
-)
-
-PROTON_REQUIRED_VARS: tuple[str, ...] = (
-    "--background-norm",
-    "--background-weak",
-    "--background-strong",
-    "--background-elevated",
-    "--background-lowered",
-    "--interaction-norm",
-    "--interaction-norm-major-1",
-    "--interaction-norm-major-2",
-    "--interaction-norm-major-3",
-    "--interaction-norm-contrast",
-    "--interaction-weak",
-    "--interaction-weak-major-1",
-    "--interaction-weak-major-2",
-    "--interaction-default",
-    "--interaction-default-hover",
-    "--text-norm",
-    "--text-weak",
-    "--text-hint",
-    "--text-disabled",
-    "--text-invert",
-    "--border-norm",
-    "--border-weak",
-    "--signal-danger",
-    "--signal-danger-major-1",
-    "--signal-warning",
-    "--signal-success",
-    "--signal-info",
-    "--focus-outline",
-    "--primary",
-    "--primary-contrast",
-    "--scrollbar-thumb-color",
-    "--scrollbar-thumb-hover-color",
-    "--navigation-current-item-background-color",
-    "--navigation-current-item-text-color",
-    "--email-item-unread-background-color",
-    "--email-item-read-background-color",
-    "--email-item-selected-background-color",
 )
 
 
@@ -154,18 +109,6 @@ def _terminal_swatches(v: dict) -> list[dict[str, str]]:
         {"label": "SELECT", "hex": ui["selection_active"]},
         {"label": "ACCENT", "hex": ui["accent"]},
         {"label": secondary_label, "hex": ui["secondary"]},
-    ]
-
-
-def _desktop_swatches(v: dict) -> list[dict[str, str]]:
-    ui = v["ui"]
-    return [
-        {"label": "Background", "hex": ui["bg"]},
-        {"label": "Surface", "hex": ui["surface"]},
-        {"label": "Border", "hex": ui["border"]},
-        {"label": "Text", "hex": ui["text"]},
-        {"label": "Accent", "hex": ui["accent"]},
-        {"label": "Secondary", "hex": ui["secondary"]},
     ]
 
 
@@ -935,435 +878,15 @@ Browse all ports in the [{BRAND_NAME} Theme Gallery]({GALLERY_URL}) or on [GitHu
 
 
 # ---------------------------------------------------------------------------
-# 4. Proton Mail (apps/proton-mail/)
-# ---------------------------------------------------------------------------
-
-def _proton_mail_css(v: dict) -> str:
-    ui = v["ui"]
-    is_dark = v["mode"] == "dark"
-    mode_lbl = "Dark" if is_dark else "Light"
-    color_scheme = "dark" if is_dark else "light"
-
-    norm_m2 = mix(ui["accent_fill_hover"], ui["bg"] if is_dark else ui["text"], 0.18)
-    norm_m3 = mix(ui["accent_fill_hover"], ui["bg"] if is_dark else ui["text"], 0.32)
-    weak_m2 = mix(ui["overlay"], ui["border_strong"], 0.28)
-    hover_default = mix(ui["surface"], ui["raised"], 0.65)
-    disabled_ink = mix(ui["subtle"], ui["bg"], 0.30)
-    nav_active_bg = mix(ui["surface"], ui["accent"], 0.16 if is_dark else 0.12)
-    signal_contrast = ui["bg"] if is_dark else ui["on_accent"]
-    danger_m1 = mix(ui["fault"], ui["text"], 0.16) if is_dark else ui["fault_hover"]
-    danger_m2 = mix(ui["fault"], ui["text"], 0.30) if is_dark else mix(ui["fault_hover"], ui["text"], 0.16)
-
-    return f"""/*
- * {v["name"]} ({v["lx"]} {mode_lbl} · {v["accentRole"]}) — Proton Mail Custom Theme
- * Author: {AUTHOR} | Brand: {BRAND_NAME} v{v["version"]}
- * Source: {REPO_URL}
- * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save
- */
-
-:root {{
-  color-scheme: {color_scheme};
-
-  /* Surfaces & Elevation */
-  --background-norm: {ui["bg"]};
-  --background-weak: {ui["surface"]};
-  --background-strong: {ui["raised"]};
-  --background-elevated: {ui["overlay"]};
-  --background-lowered: {ui["rail"]};
-
-  /* Primary & Norm Interactions */
-  --primary: {ui["accent_fill"]};
-  --primary-contrast: {ui["on_accent"]};
-  --interaction-norm: {ui["accent_fill"]};
-  --interaction-norm-major-1: {ui["accent_fill_hover"]};
-  --interaction-norm-major-2: {norm_m2};
-  --interaction-norm-major-3: {norm_m3};
-  --interaction-norm-contrast: {ui["on_accent"]};
-
-  /* Secondary / Weak & Default Interactions */
-  --interaction-weak: {ui["raised"]};
-  --interaction-weak-major-1: {ui["overlay"]};
-  --interaction-weak-major-2: {weak_m2};
-  --interaction-default: transparent;
-  --interaction-default-hover: {hover_default};
-  --interaction-default-active: {ui["raised"]};
-
-  /* Typography & Ink */
-  --text-norm: {ui["text"]};
-  --text-weak: {ui["mute"]};
-  --text-hint: {ui["subtle"]};
-  --text-disabled: {disabled_ink};
-  --text-invert: {ui["bg"]};
-
-  /* Borders & Hairlines */
-  --border-norm: {ui["border"]};
-  --border-weak: {ui["border_subtle"]};
-
-  /* Semantic Signals & Focus */
-  --signal-danger: {ui["fault"]};
-  --signal-danger-major-1: {danger_m1};
-  --signal-danger-major-2: {danger_m2};
-  --signal-danger-contrast: {signal_contrast};
-  --signal-warning: {ui["warning"]};
-  --signal-warning-contrast: {signal_contrast};
-  --signal-success: {ui["signal"]};
-  --signal-success-contrast: {signal_contrast};
-  --signal-info: {ui["secondary"]};
-  --signal-info-contrast: {signal_contrast};
-  --focus-outline: {ui["accent"]};
-  --focus-ring: {ui["accent"]};
-
-  /* Scrollbars */
-  --scrollbar-thumb-color: {ui["border"]};
-  --scrollbar-thumb-hover-color: {ui["border_strong"]};
-
-  /* Navigation & Mailbox List */
-  --navigation-current-item-background-color: {nav_active_bg};
-  --navigation-current-item-text-color: {ui["text"]};
-  --navigation-current-item-marker-color: {ui["accent"]};
-  --email-item-unread-background-color: {ui["bg"]};
-  --email-item-read-background-color: {ui["surface"]};
-  --email-item-selected-background-color: {ui["selection_active"]};
-  --email-item-selected-text-color: {ui["text"]};
-
-  /* Cyclorama Dawn Horizon Tokens */
-  --rfs-link-color: {ui["accent"]};
-  --rfs-link-hover: {ui["accent_hover"]};
-  --rfs-secondary-ink: {ui["secondary"]};
-  --rfs-beam-start: {ui["beam_start"]};
-  --rfs-beam-end: {ui["beam_end"]};
-}}
-
-/* Active sidebar item & horizon indicator */
-.navigation-link[aria-current="page"],
-.navigation-link.active {{
-  background-color: var(--navigation-current-item-background-color);
-  color: var(--navigation-current-item-text-color);
-  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);
-}}
-
-/* Unread & selected message rows */
-.item-container.unread {{
-  background-color: var(--email-item-unread-background-color);
-  color: var(--text-norm);
-}}
-
-.item-container.read {{
-  background-color: var(--email-item-read-background-color);
-}}
-
-.item-container.item-is-selected {{
-  background-color: var(--email-item-selected-background-color);
-  color: var(--email-item-selected-text-color);
-  box-shadow: inset 3px 0 0 0 var(--focus-outline);
-}}
-
-/* Links & top horizon hairline */
-.link,
-a.link {{
-  color: var(--rfs-link-color);
-}}
-
-.link:hover,
-a.link:hover {{
-  color: var(--rfs-link-hover);
-}}
-
-.header::before {{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));
-  pointer-events: none;
-}}
-"""
-
-
-def render_proton_mail_preview(variant: dict) -> str:
-    """Render a 660x390 3-pane Proton Mail inbox SVG preview reusing _frame_shell."""
-    ui = variant["ui"]
-    is_dark = variant["mode"] == "dark"
-    sel_nav = mix(ui["surface"], ui["accent"], 0.16 if is_dark else 0.12)
-    unread_dot = ui["accent"]
-    secondary_dot = ui["secondary"]
-
-    body = f'''
-    <!-- Pane 1: Sidebar folders (x=0..146, y=36..346) -->
-    <rect x="0" y="36" width="146" height="310" fill="{ui["rail"]}"/>
-    <line x1="146" y1="36" x2="146" y2="346" stroke="{ui["border"]}" stroke-width="1"/>
-
-    <!-- Compose primary CTA -->
-    <rect x="12" y="48" width="122" height="26" rx="5" fill="{ui["accent_fill"]}"/>
-    <text x="73" y="64.5" text-anchor="middle" fill="{ui["on_accent"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">+ New message</text>
-
-    <!-- Active folder: Inbox -->
-    <rect x="8" y="86" width="130" height="24" rx="4" fill="{sel_nav}"/>
-    <rect x="8" y="88" width="3" height="20" rx="1" fill="{ui["accent"]}"/>
-    <text x="20" y="101.5" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Inbox</text>
-    <rect x="114" y="91" width="18" height="14" rx="7" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.8"/>
-    <text x="123" y="101" text-anchor="middle" fill="{ui["accent"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">3</text>
-
-    <!-- Other folders -->
-    <g font-family="system-ui,-apple-system,sans-serif" font-size="9.8">
-      <text x="20" y="127" fill="{ui["text_soft"]}">Drafts</text>
-      <text x="20" y="149" fill="{ui["mute"]}">Sent</text>
-      <text x="20" y="171" fill="{ui["mute"]}">Starred</text>
-      <text x="20" y="193" fill="{ui["mute"]}">Archive</text>
-      <text x="20" y="215" fill="{ui["mute"]}">All Mail</text>
-    </g>
-
-    <!-- Labels section -->
-    <line x1="12" y1="229" x2="134" y2="229" stroke="{ui["border_subtle"]}" stroke-width="1"/>
-    <text x="16" y="245" fill="{ui["subtle"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700" letter-spacing="0.8">LABELS</text>
-    <circle cx="20" cy="262" r="3.5" fill="{ui["signal"]}"/>
-    <text x="30" y="265.5" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Security</text>
-    <circle cx="20" cy="282" r="3.5" fill="{ui["secondary"]}"/>
-    <text x="30" y="285.5" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Releases</text>
-    <circle cx="20" cy="302" r="3.5" fill="{ui["accent"]}"/>
-    <text x="30" y="305.5" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Brand Kit</text>
-
-    <!-- Encryption status pill -->
-    <rect x="12" y="317" width="122" height="20" rx="4" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
-    <text x="73" y="330" text-anchor="middle" fill="{ui["signal"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">[ok] E2E PGP Active</text>
-
-    <!-- Pane 2: Inbox message list (x=146..356, y=36..346) -->
-    <rect x="146" y="36" width="210" height="310" fill="{ui["surface"]}"/>
-    <line x1="356" y1="36" x2="356" y2="346" stroke="{ui["border"]}" stroke-width="1"/>
-
-    <!-- List header bar -->
-    <rect x="146" y="36" width="210" height="28" fill="{ui["surface"]}"/>
-    <line x1="146" y1="64" x2="356" y2="64" stroke="{ui["border"]}" stroke-width="1"/>
-    <text x="158" y="54" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">Inbox</text>
-    <text x="344" y="54" text-anchor="end" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5">3 unread</text>
-
-    <!-- Message 1: Selected + Unread -->
-    <rect x="146" y="64" width="210" height="68" fill="{ui["selection_active"]}"/>
-    <rect x="146" y="64" width="3" height="68" fill="{ui["accent"]}"/>
-    <circle cx="160" cy="81" r="3.5" fill="{unread_dot}"/>
-    <text x="170" y="84.5" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Real-Fruit-Snacks</text>
-    <text x="346" y="84.5" text-anchor="end" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">14:05</text>
-    <text x="158" y="102" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.8" font-weight="700">Cyclorama Dawn v2.1.0</text>
-    <text x="158" y="118" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9">Custom CSS tokens · AA verified</text>
-    <line x1="146" y1="132" x2="356" y2="132" stroke="{ui["border"]}" stroke-width="1"/>
-
-    <!-- Message 2: Unread -->
-    <rect x="146" y="132" width="210" height="68" fill="{ui["bg"]}"/>
-    <circle cx="160" cy="149" r="3.5" fill="{secondary_dot}"/>
-    <text x="170" y="152.5" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Proton Security</text>
-    <text x="346" y="152.5" text-anchor="end" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">12:40</text>
-    <text x="158" y="170" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.6" font-weight="600">PGP key fingerprint verified</text>
-    <text x="158" y="186" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9">Zero-access mailbox sealed</text>
-    <line x1="146" y1="200" x2="356" y2="200" stroke="{ui["border_subtle"]}" stroke-width="1"/>
-
-    <!-- Message 3: Read -->
-    <rect x="146" y="200" width="210" height="68" fill="{ui["surface"]}"/>
-    <text x="158" y="220" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600">GitHub Releases</text>
-    <text x="346" y="220" text-anchor="end" fill="{ui["subtle"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">Nov 24</text>
-    <text x="158" y="237" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">rfs-themes tagged v2.1.0</text>
-    <text x="158" y="253" fill="{ui["subtle"]}" font-family="system-ui,-apple-system,sans-serif" font-size="8.8">CI passed · zero external deps</text>
-    <line x1="146" y1="268" x2="356" y2="268" stroke="{ui["border_subtle"]}" stroke-width="1"/>
-
-    <!-- Message 4: Read -->
-    <rect x="146" y="268" width="210" height="78" fill="{ui["surface"]}"/>
-    <text x="158" y="288" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600">Design Telemetry</text>
-    <text x="346" y="288" text-anchor="end" fill="{ui["subtle"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">Nov 23</text>
-    <text x="158" y="305" fill="{ui["mute"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">LX 263 / LX 512 audit</text>
-    <text x="158" y="321" fill="{ui["subtle"]}" font-family="system-ui,-apple-system,sans-serif" font-size="8.8">All contrast ratios &gt;= 4.5:1</text>
-
-    <!-- Pane 3: Encrypted Reading Pane (x=356..660, y=36..346) -->
-    <rect x="356" y="36" width="304" height="310" fill="{ui["bg"]}"/>
-
-    <!-- Reading toolbar -->
-    <rect x="356" y="36" width="304" height="28" fill="{ui["surface"]}"/>
-    <line x1="356" y1="64" x2="660" y2="64" stroke="{ui["border"]}" stroke-width="1"/>
-    <rect x="368" y="42" width="44" height="17" rx="3.5" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
-    <text x="390" y="53.5" text-anchor="middle" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="600">Reply</text>
-    <rect x="418" y="42" width="52" height="17" rx="3.5" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="0.9"/>
-    <text x="444" y="53.5" text-anchor="middle" fill="{ui["text_soft"]}" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="600">Archive</text>
-    <rect x="568" y="42" width="80" height="17" rx="3.5" fill="{ui["raised"]}" stroke="{ui["signal"]}" stroke-width="0.9"/>
-    <text x="608" y="53.5" text-anchor="middle" fill="{ui["signal"]}" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">PGP VERIFIED</text>
-
-    <!-- Message subject & sender header -->
-    <text x="372" y="88" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" font-weight="800">Cyclorama Dawn v2.1.0</text>
-    <circle cx="384" cy="112" r="11" fill="{ui["accent_fill"]}"/>
-    <text x="384" y="115.5" text-anchor="middle" fill="{ui["on_accent"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">RF</text>
-    <text x="402" y="109" fill="{ui["text"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700">Real-Fruit-Snacks</text>
-    <text x="402" y="122" fill="{ui["secondary"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5">&lt;themes@rfs.tools&gt; · Encrypted</text>
-    <text x="646" y="109" text-anchor="end" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">14:05</text>
-    <line x1="372" y1="134" x2="646" y2="134" stroke="{ui["border_subtle"]}" stroke-width="1"/>
-
-    <!-- Encrypted message card -->
-    <rect x="372" y="146" width="274" height="114" rx="6" fill="{ui["surface"]}" stroke="{ui["border"]}" stroke-width="1"/>
-    <rect x="372" y="152" width="3" height="102" rx="1.5" fill="{ui["secondary"]}"/>
-    <g font-family="system-ui,-apple-system,sans-serif" font-size="10">
-      <text x="386" y="167" fill="{ui["text_soft"]}">Your Proton Mail workspace is calibrated</text>
-      <text x="386" y="183" fill="{ui["text_soft"]}">to <tspan fill="{ui["accent"]}" font-weight="700">{escape(variant["name"])}</tspan> ({escape(variant["lx"])}).</text>
-    </g>
-    <g font-family="ui-monospace,Consolas,monospace" font-size="8.6">
-      <text x="386" y="207"><tspan fill="{ui["secondary"]}">--background-norm:</tspan><tspan fill="{ui["text"]}"> {ui["bg"]}</tspan></text>
-      <text x="386" y="223"><tspan fill="{ui["secondary"]}">--interaction-norm:</tspan><tspan fill="{ui["accent"]}"> {ui["accent_fill"]}</tspan></text>
-      <text x="386" y="242"><tspan fill="{ui["signal"]}" font-weight="700">[ok]</tspan><tspan fill="{ui["mute"]}"> Zero-access CSS · WCAG AA</tspan></text>
-    </g>
-
-    <!-- Quick reply composer -->
-    <rect x="372" y="274" width="274" height="56" rx="6" fill="{ui["raised"]}" stroke="{ui["border"]}" stroke-width="1"/>
-    <text x="384" y="293" fill="{ui["subtle"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9.5">Reply encrypted to Real-Fruit-Snacks...</text>
-    <rect x="582" y="302" width="54" height="20" rx="4" fill="{ui["accent_fill"]}"/>
-    <text x="609" y="315" text-anchor="middle" fill="{ui["on_accent"]}" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700">Send</text>
-    '''
-    return _frame_shell(variant, "[proton-mail]", "Proton Mail", "E2E CSS", body, _standard_swatches(variant))
-
-
-def build_proton_mail() -> dict:
-    slug = "proton-mail"
-    app_name = "Proton Mail"
-    category = "Browsers & Desktop"
-    homepage = "https://proton.me/mail"
-    fmt = "Custom Theme CSS"
-    install = "Proton Mail -> Settings -> Appearance -> Custom theme -> Paste CSS"
-    app_dir = os.path.join(ROOT, "apps", slug)
-    version = VARIANTS["cyclorama-dawn"]["version"]
-
-    summaries = {
-        "cyclorama-dawn": (
-            f"Matte {VARIANTS['cyclorama-dawn']['ui']['bg']} Proton Mail dark workspace with "
-            f"Beacon Orange ({VARIANTS['cyclorama-dawn']['ui']['accent']}) active indicators, "
-            f"high-contrast compose CTA ({VARIANTS['cyclorama-dawn']['ui']['accent_fill']}), and Steel Blue info signals."
-        ),
-        "cyclorama-steel": (
-            f"Cool steel-charcoal Proton Mail dark workspace with Steel Blue ({VARIANTS['cyclorama-steel']['ui']['accent']}) "
-            f"focus rings, {VARIANTS['cyclorama-steel']['ui']['accent_fill']} primary buttons, and Beacon Orange secondary highlights."
-        ),
-        "cyclorama-day": (
-            f"Crisp {VARIANTS['cyclorama-day']['ui']['bg']} Alabaster Day light mailbox with white message panes, "
-            f"burnt Beacon ({VARIANTS['cyclorama-day']['ui']['accent']}) focus markers, and Steel Blue primary buttons."
-        ),
-    }
-
-    files: list[dict[str, str]] = []
-    theme_entries: list[dict] = []
-    css_links: dict[str, str] = {}
-
-    for vid in VARIANT_ORDER:
-        v = VARIANTS[vid]
-        fname = f"{vid}.css"
-        css_text = _proton_mail_css(v)
-        _write_text(os.path.join(app_dir, fname), css_text)
-
-        files.append({"label": f"{v['name']} CSS ({fname})", "path": f"apps/{slug}/{fname}"})
-        css_links[vid] = _md_file_link(fname)
-
-        theme_entries.append({
-            "id": v["id"],
-            "name": v["name"],
-            "lx": v["lx"],
-            "mode": v["mode"],
-            "accentRole": v["accentRole"],
-            "tagline": summaries[vid],
-            "preview": f"apps/{slug}/previews/{vid}.svg",
-            "file": f"apps/{slug}/{fname}",
-            "copyLang": "css",
-            "copyLabel": f"Copy {v['name']} Proton Mail CSS",
-            "copySnippet": css_text.rstrip("\n"),
-            "swatches": _desktop_swatches(v),
-        })
-
-        svg = render_proton_mail_preview(v)
-        write_preview_pair(slug, vid, svg)
-
-    install_steps = [
-        "Open **Proton Mail** (`proton.me/mail`) -> **Settings (gear icon) -> All settings -> Appearance**.",
-        "Scroll to **Custom theme** (or toggle **Custom theme** on) and open the CSS editor.",
-        "Paste the full contents of `cyclorama-dawn.css` (or `cyclorama-steel.css` / `cyclorama-day.css`) and click **Save** — applies across Proton Mail, Calendar, and Drive.",
-    ]
-
-    _write_json(os.path.join(app_dir, "themes.json"), {
-        "app": app_name,
-        "slug": slug,
-        "category": category,
-        "homepage": homepage,
-        "format": fmt,
-        "install": install,
-        "installSteps": install_steps,
-        "author": AUTHOR,
-        "brandVersion": version,
-        "primaryFile": f"apps/{slug}/cyclorama-dawn.css",
-        "files": files,
-        "themes": theme_entries,
-    })
-
-    dawn_ui = VARIANTS["cyclorama-dawn"]["ui"]
-    steel_ui = VARIANTS["cyclorama-steel"]["ui"]
-    day_ui = VARIANTS["cyclorama-day"]["ui"]
-
-    token_table = "\n".join([
-        "| Proton Design Token | Cyclorama Dawn (`LX 263`) | Cyclorama Steel (`LX 263`) | Cyclorama Day (`LX 512`) |",
-        "|---|---|---|---|",
-        f"| `--background-norm` / `--background-weak` | `{dawn_ui['bg']}` / `{dawn_ui['surface']}` | `{steel_ui['bg']}` / `{steel_ui['surface']}` | `{day_ui['bg']}` / `{day_ui['surface']}` |",
-        f"| `--background-strong` / `--background-lowered` | `{dawn_ui['raised']}` / `{dawn_ui['rail']}` | `{steel_ui['raised']}` / `{steel_ui['rail']}` | `{day_ui['raised']}` / `{day_ui['rail']}` |",
-        f"| `--interaction-norm` / `--primary` | `{dawn_ui['accent_fill']}` | `{steel_ui['accent_fill']}` | `{day_ui['accent_fill']}` |",
-        f"| `--text-norm` / `--text-weak` | `{dawn_ui['text']}` / `{dawn_ui['mute']}` | `{steel_ui['text']}` / `{steel_ui['mute']}` | `{day_ui['text']}` / `{day_ui['mute']}` |",
-        f"| `--focus-outline` / `--signal-info` | `{dawn_ui['accent']}` / `{dawn_ui['secondary']}` | `{steel_ui['accent']}` / `{steel_ui['secondary']}` | `{day_ui['accent']}` / `{day_ui['secondary']}` |",
-        f"| `--signal-success` / `--signal-danger` | `{dawn_ui['signal']}` / `{dawn_ui['fault']}` | `{steel_ui['signal']}` / `{steel_ui['fault']}` | `{day_ui['signal']}` / `{day_ui['fault']}` |",
-    ])
-
-    readme = f"""# {BRAND_NAME} for Proton Mail
-
-Three **{BRAND_NAME} v{version} (Steel & Beacon Orange)** ready-to-paste Custom Theme CSS files for **[Proton Mail]({homepage})** (Proton Design System `:root` tokens), calibrated from [`Real-Fruit-Snacks/rfs-brand`]({BRAND_REPO_URL}).
-
-## Variants
-
-{_variant_table(css_links)}
-
-## Install
-
-1. Open **Proton Mail** and go to **Settings -> All settings -> Appearance**.
-2. Enable **Custom theme** and open the custom CSS text box.
-3. Paste the full contents of `cyclorama-dawn.css` (or `cyclorama-steel.css` / `cyclorama-day.css`) and click **Save**.
-
-## Previews
-
-{_previews_markdown(app_name, summaries=summaries)}
-
-## Token Mapping
-
-{token_table}
-
-## Regenerating
-
-```sh
-python tools/build_extras_shells.py
-```
-
-Browse all ports in the [{BRAND_NAME} Theme Gallery]({GALLERY_URL}) or on [GitHub]({REPO_URL}).
-"""
-    _write_text(os.path.join(app_dir, "README.md"), readme)
-
-    return _manifest_entry(
-        slug=slug,
-        name=app_name,
-        category=category,
-        homepage=homepage,
-        fmt=fmt,
-        install=install,
-        summaries=summaries,
-    )
-
-
-# ---------------------------------------------------------------------------
 # Entrypoint & Self-Verification
 # ---------------------------------------------------------------------------
 
 def build() -> list[dict]:
-    """Generate all 4 shell, console & mail app ports and return manifest entries."""
+    """Generate all 3 shell & console app ports and return manifest entries."""
     return [
         build_git_bash(),
         build_qterminal(),
         build_windows_console(),
-        build_proton_mail(),
     ]
 
 
@@ -1379,20 +902,6 @@ def _parse_ini_strict(text: str) -> configparser.RawConfigParser:
     return cp
 
 
-def _check_balanced_braces_css(text: str) -> bool:
-    no_cmt = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
-    no_str = re.sub(r'"(?:[^"\\]|\\.)*"|\'(?:[^\'\\]|\\.)*\'', '""', no_cmt)
-    depth = 0
-    for ch in no_str:
-        if ch == "{":
-            depth += 1
-        elif ch == "}":
-            depth -= 1
-            if depth < 0:
-                return False
-    return depth == 0 and "{" in no_str
-
-
 def _colorref_dword_to_hex(dword_str: str) -> str:
     m = re.match(r"^dword:00([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$", dword_str)
     if not m:
@@ -1402,7 +911,7 @@ def _colorref_dword_to_hex(dword_str: str) -> str:
 
 
 def _verify_generated(entries: list[dict]) -> None:
-    expected_slugs = {"git-bash", "qterminal", "windows-console", "proton-mail"}
+    expected_slugs = {"git-bash", "qterminal", "windows-console"}
     got_slugs = {e["slug"] for e in entries}
     if got_slugs != expected_slugs:
         raise AssertionError(f"slug mismatch: {got_slugs ^ expected_slugs}")
@@ -1429,7 +938,6 @@ def _verify_generated(entries: list[dict]) -> None:
         *(f"Color{i}" for i in range(8)),
         *(f"Color{i}Intense" for i in range(8)),
     }
-    rx_oklch = re.compile(r"\bin\s+oklch\b", re.I)
     md_link_rx = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
     bad_space_link_rx = re.compile(r"!?\[[^\]]*\]\((?!<)[^)\n]+\s+[^)\n]*\)")
 
@@ -1441,7 +949,6 @@ def _verify_generated(entries: list[dict]) -> None:
     gitconfig_count = 0
     colorscheme_count = 0
     reg_count = 0
-    css_count = 0
 
     for entry in entries:
         slug = entry["slug"]
@@ -1463,9 +970,6 @@ def _verify_generated(entries: list[dict]) -> None:
             lang = t["copyLang"]
             if lang == "ini":
                 _parse_ini_strict(snip)
-            elif lang == "css":
-                assert _check_balanced_braces_css(snip), f"{slug}/{t['id']}: unbalanced CSS copySnippet"
-                assert not rx_oklch.search(snip), f"{slug}/{t['id']}: forbidden in oklch"
             elif lang == "conf":
                 assert "=" in snip and len(snip.splitlines()) >= 19
 
@@ -1563,29 +1067,6 @@ def _verify_generated(entries: list[dict]) -> None:
                     assert contrast(tbl_hex[pc_fg], tbl_hex[pc_bg]) >= 4.5, f"{fn}: PopupColors contrast < 4.5:1"
                     reg_count += 1
 
-                elif fn.endswith(".css"):
-                    assert _check_balanced_braces_css(txt), f"{fn}: unbalanced CSS braces"
-                    assert not rx_oklch.search(txt), f"{fn}: forbidden `in oklch` detected"
-                    css_vars = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*([^;]+);", txt))
-                    for prop in PROTON_REQUIRED_VARS:
-                        assert prop in css_vars, f"{fn}: missing required Proton token {prop}"
-                    for bg_var, fg_var in (
-                        ("--interaction-norm", "--interaction-norm-contrast"),
-                        ("--interaction-norm-major-1", "--interaction-norm-contrast"),
-                        ("--interaction-norm-major-2", "--interaction-norm-contrast"),
-                        ("--interaction-norm-major-3", "--interaction-norm-contrast"),
-                        ("--signal-danger", "--signal-danger-contrast"),
-                        ("--signal-danger-major-1", "--signal-danger-contrast"),
-                        ("--signal-danger-major-2", "--signal-danger-contrast"),
-                        ("--signal-warning", "--signal-warning-contrast"),
-                        ("--signal-success", "--signal-success-contrast"),
-                        ("--signal-info", "--signal-info-contrast"),
-                    ):
-                        assert contrast(css_vars[fg_var].strip(), css_vars[bg_var].strip()) >= 4.5, (
-                            f"{fn}: {fg_var} on {bg_var} contrast < 4.5:1"
-                        )
-                    css_count += 1
-
                 elif fn.endswith(".svg"):
                     docs_svg = os.path.join(ROOT, "docs", "assets", "previews", slug, fn)
                     assert os.path.isfile(docs_svg), f"missing docs preview mirror {docs_svg}"
@@ -1619,9 +1100,9 @@ def _verify_generated(entries: list[dict]) -> None:
                             assert os.path.exists(resolved), f"{slug}/README.md broken relative link: {target}"
 
     print(
-        f"[ok] built & verified {len(entries)} shell/console/mail ports "
+        f"[ok] built & verified {len(entries)} shell/console ports "
         f"({gitconfig_count} .gitconfig, {colorscheme_count} .colorscheme, "
-        f"{reg_count} .reg, {css_count} .css, {svg_count} SVG preview pairs)"
+        f"{reg_count} .reg, {svg_count} SVG preview pairs)"
     )
 
 

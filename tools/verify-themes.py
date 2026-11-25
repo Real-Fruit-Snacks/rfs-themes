@@ -58,7 +58,7 @@ EXPECTED_APP_ORDER = (
     "windows-terminal", "wezterm", "alacritty", "ghostty", "kitty", "git-bash", "qterminal", "windows-console",
     "starship", "oh-my-posh", "bat", "delta", "fzf",
     "privacynotes", "obsidian",
-    "windows", "chromium", "discord", "proton-mail", "qbittorrent", "flow-launcher",
+    "windows", "chromium", "discord", "qbittorrent", "flow-launcher",
 )
 EXPECTED_APPS = set(EXPECTED_APP_ORDER)
 
@@ -198,28 +198,6 @@ QTERMINAL_EXPECTED_SECTIONS = {
     *(f"Color{i}" for i in range(8)),
     *(f"Color{i}Intense" for i in range(8)),
 }
-
-PROTON_EXPECTED_VARS = (
-    "--background-norm", "--background-weak", "--background-strong",
-    "--background-elevated", "--background-lowered",
-    "--primary", "--primary-contrast",
-    "--interaction-norm", "--interaction-norm-major-1",
-    "--interaction-norm-major-2", "--interaction-norm-major-3",
-    "--interaction-norm-contrast",
-    "--interaction-weak", "--interaction-weak-major-1", "--interaction-weak-major-2",
-    "--interaction-default", "--interaction-default-hover",
-    "--text-norm", "--text-weak", "--text-hint", "--text-disabled", "--text-invert",
-    "--border-norm", "--border-weak",
-    "--signal-danger", "--signal-danger-major-1", "--signal-danger-contrast",
-    "--signal-warning", "--signal-warning-contrast",
-    "--signal-success", "--signal-success-contrast",
-    "--signal-info", "--signal-info-contrast",
-    "--focus-outline",
-    "--scrollbar-thumb-color", "--scrollbar-thumb-hover-color",
-    "--navigation-current-item-background-color", "--navigation-current-item-text-color",
-    "--email-item-unread-background-color", "--email-item-read-background-color",
-    "--email-item-selected-background-color",
-)
 
 WINDOWS_EXPECTED_SPECS: dict[str, dict] = {
     "cyclorama-dawn": {
@@ -437,15 +415,15 @@ def main() -> int:
         ok(f"rfs_palette WCAG AA contrast verified ({len(pal_checks)}/{len(pal_checks)} checks >= 4.5:1)")
 
     # ------------------------------------------------------------------
-    # 3. apps/manifest.json validation (29 apps x 3 variants = 87)
+    # 3. apps/manifest.json validation (28 apps x 3 variants = 84)
     # ------------------------------------------------------------------
     e0 = len(errors)
     manifest_path = os.path.join(ROOT, "apps", "manifest.json")
     manifest = json.loads(read_utf8(manifest_path))
     m_apps = manifest.get("apps", [])
     m_slugs = [a.get("slug") for a in m_apps]
-    if len(m_apps) != 29 or tuple(m_slugs) != EXPECTED_APP_ORDER:
-        fail(f"apps/manifest.json expected 29 canonical apps in category order, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
+    if len(m_apps) != 28 or tuple(m_slugs) != EXPECTED_APP_ORDER:
+        fail(f"apps/manifest.json expected 28 canonical apps in category order, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
     for app in m_apps:
         slug = app["slug"]
         for rel in (app["path"], app["data"]):
@@ -461,7 +439,7 @@ def main() -> int:
         ok(f"apps/manifest.json valid ({len(m_apps)} apps, {sum(len(a['variants']) for a in m_apps)} variants)")
 
     # ------------------------------------------------------------------
-    # 4. docs/assets/catalog.json validation (29 apps x 3 variants = 87)
+    # 4. docs/assets/catalog.json validation (28 apps x 3 variants = 84)
     # ------------------------------------------------------------------
     e0 = len(errors)
     catalog_path = os.path.join(ROOT, "docs", "assets", "catalog.json")
@@ -473,15 +451,15 @@ def main() -> int:
         c_apps = catalog.get("apps", [])
         if [a.get("slug") for a in c_apps] != m_slugs:
             fail("docs/assets/catalog.json app order/slugs do not match apps/manifest.json")
-        if catalog.get("stats", {}).get("apps") != 29 or catalog.get("stats", {}).get("variants") != 87 or catalog.get("stats", {}).get("categories") != 5:
-            fail(f"catalog.json stats invalid (expected 29 apps, 87 variants, 5 categories): {catalog.get('stats')}")
+        if catalog.get("stats", {}).get("apps") != 28 or catalog.get("stats", {}).get("variants") != 84 or catalog.get("stats", {}).get("categories") != 5:
+            fail(f"catalog.json stats invalid (expected 28 apps, 84 variants, 5 categories): {catalog.get('stats')}")
         cat_counts = {c.get("name"): c.get("count") for c in catalog.get("categories", [])}
         expected_cat_counts = {
             "Editors & IDEs": 8,
             "Terminals": 8,
             "CLI & TUI": 5,
             "Notes & Writing": 2,
-            "Browsers & Desktop": 6,
+            "Browsers & Desktop": 5,
         }
         if cat_counts != expected_cat_counts:
             fail(f"catalog.json category counts mismatch (expected {expected_cat_counts}, got {cat_counts})")
@@ -541,10 +519,10 @@ def main() -> int:
                     if not sw.get("label") or not HEX6_RE.match(sw.get("hex", "")):
                         fail(f"catalog {slug}/{vid}: invalid swatch {sw}")
         if len(errors) == e0:
-            ok("docs/assets/catalog.json valid (29 apps, 87 variants, snippets & swatches verified)")
+            ok("docs/assets/catalog.json valid (28 apps, 84 variants, snippets & swatches verified)")
 
     # ------------------------------------------------------------------
-    # 5. All 87 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
+    # 5. All 84 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
     # ------------------------------------------------------------------
     e0 = len(errors)
     svg_count = 0
@@ -581,23 +559,6 @@ def main() -> int:
                 )
                 if not has_win_clip:
                     fail(f"windows/{vid}.svg Settings window missing inner <clipPath> (left rail bleeds over rounded bottom-left border)")
-            if slug == "proton-mail":
-                # Ensure encrypted message card (x=372, y=146, height=114, rx=6) left stripe is either inset or clipped so it does not poke past rx=6 corners
-                clips = list(svg_root.iter("{http://www.w3.org/2000/svg}clipPath"))
-                has_card_clip = any(
-                    r.attrib.get("x") == "372" and r.attrib.get("y") == "146"
-                    for cp_el in clips
-                    for r in cp_el.iter("{http://www.w3.org/2000/svg}rect")
-                )
-                unclipped_bleed = any(
-                    r.attrib.get("x") == "372"
-                    and r.attrib.get("width") == "3"
-                    and r.attrib.get("y") == "146"
-                    and r.attrib.get("height") == "114"
-                    for r in svg_root.iter("{http://www.w3.org/2000/svg}rect")
-                )
-                if unclipped_bleed and not has_card_clip:
-                    fail(f"proton-mail/{vid}.svg encrypted message card left bar (y=146, height=114) bleeds outside rx=6 rounded corners")
             if slug == "t3code":
                 # Ensure rounded cards (rx >= 4) with left accent stripes inset their stripes inside rx corners
                 all_rects = list(svg_root.iter("{http://www.w3.org/2000/svg}rect"))
@@ -617,11 +578,11 @@ def main() -> int:
                                 if ry_pos < cy + crx - 0.5 or (ry_pos + rh_val) > (cy + ch - crx + 0.5):
                                     fail(f"t3code/{vid}.svg left stripe at ({rx_pos},{ry_pos},h={rh_val}) bleeds over rx={crx} card corners")
             svg_count += 1
-    if len(errors) == e0 and svg_count == 87:
-        ok("all 87 SVG preview pairs synced, XML-valid, and swatch-accurate")
+    if len(errors) == e0 and svg_count == 84:
+        ok("all 84 SVG preview pairs synced, XML-valid, and swatch-accurate")
 
     # ------------------------------------------------------------------
-    # 6. Native format schema & syntax verification for ALL 29 apps
+    # 6. Native format schema & syntax verification for ALL 28 apps
     # ------------------------------------------------------------------
 
     # 6.1 PrivacyNotes
@@ -1558,48 +1519,7 @@ def main() -> int:
     if len(errors) == e0:
         ok("windows-console: 3 Cyclorama .reg + restore-defaults.reg (VGA 00bbggrr & Screen/Popup AA) verified")
 
-    # 6.25 Proton Mail (3 Custom Theme CSS files + Proton Design System tokens + WCAG AA)
-    e0 = len(errors)
-    pm_dir = os.path.join(ROOT, "apps", "proton-mail")
-    pm_contrast_pairs = (
-        ("--text-norm", "--background-norm"),
-        ("--text-norm", "--background-weak"),
-        ("--text-norm", "--background-strong"),
-        ("--text-weak", "--background-norm"),
-        ("--text-hint", "--background-norm"),
-        ("--primary-contrast", "--primary"),
-        ("--interaction-norm-contrast", "--interaction-norm"),
-        ("--interaction-norm-contrast", "--interaction-norm-major-1"),
-        ("--signal-danger-contrast", "--signal-danger"),
-        ("--signal-danger-contrast", "--signal-danger-major-1"),
-        ("--signal-warning-contrast", "--signal-warning"),
-        ("--signal-success-contrast", "--signal-success"),
-        ("--signal-info-contrast", "--signal-info"),
-        ("--navigation-current-item-text-color", "--navigation-current-item-background-color"),
-        ("--email-item-selected-text-color", "--email-item-selected-background-color"),
-    )
-    for vid in EXPECTED_VARIANTS:
-        pm_css = read_utf8(os.path.join(pm_dir, f"{vid}.css"))
-        if not check_balanced_braces_css(pm_css):
-            fail(f"proton-mail/{vid}.css unbalanced braces")
-        if re.search(r"\bin\s+oklch\b", pm_css, re.I):
-            fail(f"proton-mail/{vid}.css contains forbidden `in oklch`")
-        for req_var in PROTON_EXPECTED_VARS:
-            if f"{req_var}:" not in pm_css:
-                fail(f"proton-mail/{vid}.css missing Proton Design System token {req_var}")
-        pm_props = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9A-Fa-f]{6})\s*;", pm_css))
-        for fg_var, bg_var in pm_contrast_pairs:
-            if fg_var in pm_props and bg_var in pm_props:
-                cr = pal.contrast(pm_props[fg_var], pm_props[bg_var])
-                if cr < 4.5:
-                    fail(
-                        f"proton-mail/{vid}.css: {fg_var} ({pm_props[fg_var]}) on "
-                        f"{bg_var} ({pm_props[bg_var]}) = {cr:.2f}:1 (< 4.5:1 WCAG AA)"
-                    )
-    if len(errors) == e0:
-        ok("proton-mail: 3 Proton Design System Custom Theme .css files & contrast pairs verified")
-
-    # 6.26 T3 Code (3 v1 Theme JSON + CSS files, 61 THEME_COLOR_ROLES, CSS security, WCAG AA w/ RGBA compositing)
+    # 6.25 T3 Code (3 v1 Theme JSON + CSS files, 61 THEME_COLOR_ROLES, CSS security, WCAG AA w/ RGBA compositing)
     e0 = len(errors)
     t3_dir = os.path.join(ROOT, "apps", "t3code")
     t3_themes_meta = json.loads(read_utf8(os.path.join(t3_dir, "themes.json")))
@@ -1738,7 +1658,7 @@ def main() -> int:
             ok(f"powershell AST: all {len(ps1_files_to_parse)} .ps1 scripts parsed with 0 syntax errors")
 
     # ------------------------------------------------------------------
-    # 7. Relative Markdown & HTML link integrity + 29-app/87-variant telemetry
+    # 7. Relative Markdown & HTML link integrity + 28-app/84-variant telemetry
     # ------------------------------------------------------------------
     e0 = len(errors)
     md_files = [
@@ -1746,8 +1666,8 @@ def main() -> int:
         os.path.join(ROOT, "AGENTS.md"),
         *(os.path.join(ROOT, "apps", slug, "README.md") for slug in sorted(EXPECTED_APPS)),
     ]
-    if len(md_files) != 31:
-        fail(f"expected 31 Markdown files (README.md, AGENTS.md, + 29 app READMEs), got {len(md_files)}")
+    if len(md_files) != 30:
+        fail(f"expected 30 Markdown files (README.md, AGENTS.md, + 28 app READMEs), got {len(md_files)}")
     md_link_rx = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
     bad_space_link_rx = re.compile(r"!?\[[^\]]*\]\((?!<)[^)\n]+\s+[^)\n]*\)")
     html_attr_rx = re.compile(r'(?:href|src|srcset)="([^"]+)"')
@@ -1783,22 +1703,23 @@ def main() -> int:
     docs_html_path = os.path.join(ROOT, "docs", "index.html")
     docs_html = read_utf8(docs_html_path)
     for req_html_copy in (
-        "29 · Across 5 categories",
-        "87 · Dawn, Steel, Day",
-        "Showing 29 of 29 apps",
-        '<span>All</span> <span class="chip-count">(29)</span>',
+        "28 · Across 5 categories",
+        "84 · Dawn, Steel, Day",
+        "Showing 28 of 28 apps",
+        '<span>All</span> <span class="chip-count">(28)</span>',
         '<span>Editors &amp; IDEs</span> <span class="chip-count">(8)</span>',
+        '<span>Browsers &amp; Desktop</span> <span class="chip-count">(5)</span>',
     ):
         if req_html_copy not in docs_html:
-            fail(f"docs/index.html missing updated 29-app/87-variant copy: {req_html_copy!r}")
+            fail(f"docs/index.html missing updated 28-app/84-variant copy: {req_html_copy!r}")
     if re.search(
         r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20|"
         r"21\s+everyday|63\s+verified|21\s+ports|Showing\s+21|21\s*·\s*Across|63\s*·\s*Dawn|"
-        r"28\s+everyday|84\s+verified|28\s+ports|Showing\s+28|28\s*·\s*Across|84\s*·\s*Dawn)\b",
+        r"29\s+everyday|87\s+verified|29\s+ports|Showing\s+29|29\s*·\s*Across|87\s*·\s*Dawn)\b",
         docs_html,
         re.I,
     ):
-        fail("docs/index.html contains stale 20/21/28-app or 60/63/84-variant telemetry copy")
+        fail("docs/index.html contains stale 20/21/29-app or 60/63/87-variant telemetry copy")
 
     doc_ids = set(re.findall(r'\bid="([^"]+)"', docs_html))
     for m in html_attr_rx.finditer(docs_html):
@@ -1819,7 +1740,7 @@ def main() -> int:
                     fail(f"missing SVG symbol #{parts[1]} referenced in docs/index.html")
 
     if len(errors) == e0:
-        ok(f"all relative links & 29-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
+        ok(f"all relative links & 28-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
 
     # ------------------------------------------------------------------
     # 8. Brand & hygiene invariants (oklch, modals, innerHTML, URLs, CRLF)
@@ -1898,7 +1819,7 @@ def main() -> int:
 
     if not errors:
         ok("zero `in oklch`, native modals, `innerHTML`, private-repo leaks, or CRLF drift")
-        ok("all rfs-themes checks passed (29 apps · 87 variants)")
+        ok("all rfs-themes checks passed (28 apps · 84 variants)")
         return 0
 
     print(f"[x]  verification failed with {len(errors)} error(s)")
