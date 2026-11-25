@@ -160,6 +160,123 @@
       "data": "apps/jetbrains/themes.json"
     },
     {
+      "slug": "notepad-plus-plus",
+      "name": "Notepad++",
+      "category": "Editors & IDEs",
+      "homepage": "https://notepad-plus-plus.org/",
+      "format": "Notepad++ XML + Dark Mode .ps1",
+      "install": "Run apply-cyclorama-dawn.ps1 (copies XMLs + sets Custom Dark Mode) or copy *.xml to %APPDATA%\\Notepad++\\themes\\",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/notepad-plus-plus/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/notepad-plus-plus/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/notepad-plus-plus/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/notepad-plus-plus",
+      "data": "apps/notepad-plus-plus/themes.json"
+    },
+    {
+      "slug": "python-idle",
+      "name": "Python IDLE",
+      "category": "Editors & IDEs",
+      "homepage": "https://docs.python.org/3/library/idle.html",
+      "format": "IDLE config-highlight.cfg",
+      "install": "Append apps/python-idle/config-highlight.cfg to ~/.idlerc/config-highlight.cfg and pick in Options -> Configure IDLE -> Highlights",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/python-idle/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/python-idle/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/python-idle/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/python-idle",
+      "data": "apps/python-idle/themes.json"
+    },
+    {
+      "slug": "powershell-ise",
+      "name": "Windows PowerShell ISE",
+      "category": "Editors & IDEs",
+      "homepage": "https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise",
+      "format": ".StorableColorTheme.ps1xml",
+      "install": "Run install-cyclorama-dawn.ps1 in Windows PowerShell 5.1 or import .StorableColorTheme.ps1xml via Tools -> Options -> Manage Themes",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/powershell-ise/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/powershell-ise/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/powershell-ise/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/powershell-ise",
+      "data": "apps/powershell-ise/themes.json"
+    },
+    {
       "slug": "windows-terminal",
       "name": "Windows Terminal",
       "category": "Terminals",
@@ -353,6 +470,123 @@
       ],
       "path": "apps/kitty",
       "data": "apps/kitty/themes.json"
+    },
+    {
+      "slug": "git-bash",
+      "name": "Git Bash (Mintty)",
+      "category": "Terminals",
+      "homepage": "https://gitforwindows.org/",
+      "format": "Mintty .minttyrc + Git .gitconfig",
+      "install": "Copy .minttyrc to ~/.mintty/themes/ + include git-colors-*.gitconfig in ~/.gitconfig",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/git-bash/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/git-bash/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/git-bash/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/git-bash",
+      "data": "apps/git-bash/themes.json"
+    },
+    {
+      "slug": "qterminal",
+      "name": "QTerminal",
+      "category": "Terminals",
+      "homepage": "https://github.com/lxqt/qterminal",
+      "format": "QTermWidget .colorscheme INI",
+      "install": "Copy .colorscheme into ~/.local/share/qtermwidget6/color-schemes/ and select in Preferences",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/qterminal/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/qterminal/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/qterminal/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/qterminal",
+      "data": "apps/qterminal/themes.json"
+    },
+    {
+      "slug": "windows-console",
+      "name": "Windows Console",
+      "category": "Terminals",
+      "homepage": "https://learn.microsoft.com/en-us/windows/console/",
+      "format": "Windows Registry .reg (HKCU\\Console)",
+      "install": "Double-click cyclorama-dawn.reg (or run reg import) and open a new cmd.exe window",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/windows-console/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/windows-console/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/windows-console/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/windows-console",
+      "data": "apps/windows-console/themes.json"
     },
     {
       "slug": "starship",
@@ -628,6 +862,45 @@
       "data": "apps/obsidian/themes.json"
     },
     {
+      "slug": "windows",
+      "name": "Windows 11",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.microsoft.com/windows/",
+      "format": "Windows 11 .theme + Wallpapers + .ps1",
+      "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
+          "preview": "apps/windows/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
+          "preview": "apps/windows/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
+          "preview": "apps/windows/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/windows",
+      "data": "apps/windows/themes.json"
+    },
+    {
       "slug": "chromium",
       "name": "Brave / Chrome / Edge",
       "category": "Browsers & Desktop",
@@ -706,6 +979,45 @@
       "data": "apps/discord/themes.json"
     },
     {
+      "slug": "proton-mail",
+      "name": "Proton Mail",
+      "category": "Browsers & Desktop",
+      "homepage": "https://proton.me/mail",
+      "format": "Custom Theme CSS",
+      "install": "Proton Mail -> Settings -> Appearance -> Custom theme -> Paste CSS",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 Proton Mail dark workspace with Beacon Orange (#FF9254) active indicators, high-contrast compose CTA (#BD4811), and Steel Blue info signals.",
+          "preview": "apps/proton-mail/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal Proton Mail dark workspace with Steel Blue (#74B8E8) focus rings, #18496B primary buttons, and Beacon Orange secondary highlights.",
+          "preview": "apps/proton-mail/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light mailbox with white message panes, burnt Beacon (#AD3D0A) focus markers, and Steel Blue primary buttons.",
+          "preview": "apps/proton-mail/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/proton-mail",
+      "data": "apps/proton-mail/themes.json"
+    },
+    {
       "slug": "qbittorrent",
       "name": "qBittorrent",
       "category": "Browsers & Desktop",
@@ -782,45 +1094,6 @@
       ],
       "path": "apps/flow-launcher",
       "data": "apps/flow-launcher/themes.json"
-    },
-    {
-      "slug": "windows",
-      "name": "Windows 11",
-      "category": "Browsers & Desktop",
-      "homepage": "https://www.microsoft.com/windows/",
-      "format": "Windows 11 .theme + Wallpapers + .ps1",
-      "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
-      "variants": [
-        {
-          "id": "cyclorama-dawn",
-          "name": "Cyclorama Dawn",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Beacon Orange",
-          "summary": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
-          "preview": "apps/windows/previews/cyclorama-dawn.svg"
-        },
-        {
-          "id": "cyclorama-steel",
-          "name": "Cyclorama Steel",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Steel Blue",
-          "summary": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
-          "preview": "apps/windows/previews/cyclorama-steel.svg"
-        },
-        {
-          "id": "cyclorama-day",
-          "name": "Cyclorama Day",
-          "lx": "LX 512",
-          "mode": "light",
-          "accentRole": "Alabaster Day",
-          "summary": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
-          "preview": "apps/windows/previews/cyclorama-day.svg"
-        }
-      ],
-      "path": "apps/windows",
-      "data": "apps/windows/themes.json"
     }
   ]
 }

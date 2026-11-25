@@ -1,0 +1,125 @@
+/*
+ * Cyclorama Steel (LX 263 Dark · Steel Blue) — Proton Mail Custom Theme
+ * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+ * Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+ * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces & Elevation */
+  --background-norm: #050507;
+  --background-weak: #0C0C10;
+  --background-strong: #131820;
+  --background-elevated: #1A222E;
+  --background-lowered: #07080B;
+
+  /* Primary & Norm Interactions */
+  --primary: #18496B;
+  --primary-contrast: #FFFFFF;
+  --interaction-norm: #18496B;
+  --interaction-norm-major-1: #123955;
+  --interaction-norm-major-2: #103047;
+  --interaction-norm-major-3: #0E283C;
+  --interaction-norm-contrast: #FFFFFF;
+
+  /* Secondary / Weak & Default Interactions */
+  --interaction-weak: #131820;
+  --interaction-weak-major-1: #1A222E;
+  --interaction-weak-major-2: #2E3846;
+  --interaction-default: transparent;
+  --interaction-default-hover: #11141A;
+  --interaction-default-active: #131820;
+
+  /* Typography & Ink */
+  --text-norm: #F4F5F8;
+  --text-weak: #B3B5C0;
+  --text-hint: #8C96A6;
+  --text-disabled: #646B76;
+  --text-invert: #050507;
+
+  /* Borders & Hairlines */
+  --border-norm: #27313D;
+  --border-weak: #222B36;
+
+  /* Semantic Signals & Focus */
+  --signal-danger: #FF5C6C;
+  --signal-danger-major-1: #FD7482;
+  --signal-danger-major-2: #FC8A96;
+  --signal-danger-contrast: #050507;
+  --signal-warning: #FFC247;
+  --signal-warning-contrast: #050507;
+  --signal-success: #3DDC97;
+  --signal-success-contrast: #050507;
+  --signal-info: #FF9254;
+  --signal-info-contrast: #050507;
+  --focus-outline: #74B8E8;
+  --focus-ring: #74B8E8;
+
+  /* Scrollbars */
+  --scrollbar-thumb-color: #27313D;
+  --scrollbar-thumb-hover-color: #637284;
+
+  /* Navigation & Mailbox List */
+  --navigation-current-item-background-color: #1D2833;
+  --navigation-current-item-text-color: #F4F5F8;
+  --navigation-current-item-marker-color: #74B8E8;
+  --email-item-unread-background-color: #050507;
+  --email-item-read-background-color: #0C0C10;
+  --email-item-selected-background-color: #1D3B57;
+  --email-item-selected-text-color: #F4F5F8;
+
+  /* Cyclorama Dawn Horizon Tokens */
+  --rfs-link-color: #74B8E8;
+  --rfs-link-hover: #99CDF2;
+  --rfs-secondary-ink: #FF9254;
+  --rfs-beam-start: #74B8E8;
+  --rfs-beam-end: #F06E2B;
+}
+
+/* Active sidebar item & horizon indicator */
+.navigation-link[aria-current="page"],
+.navigation-link.active {
+  background-color: var(--navigation-current-item-background-color);
+  color: var(--navigation-current-item-text-color);
+  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);
+}
+
+/* Unread & selected message rows */
+.item-container.unread {
+  background-color: var(--email-item-unread-background-color);
+  color: var(--text-norm);
+}
+
+.item-container.read {
+  background-color: var(--email-item-read-background-color);
+}
+
+.item-container.item-is-selected {
+  background-color: var(--email-item-selected-background-color);
+  color: var(--email-item-selected-text-color);
+  box-shadow: inset 3px 0 0 0 var(--focus-outline);
+}
+
+/* Links & top horizon hairline */
+.link,
+a.link {
+  color: var(--rfs-link-color);
+}
+
+.link:hover,
+a.link:hover {
+  color: var(--rfs-link-hover);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));
+  pointer-events: none;
+}

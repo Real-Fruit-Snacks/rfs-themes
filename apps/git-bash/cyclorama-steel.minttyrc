@@ -1,0 +1,23 @@
+# Cyclorama Steel (LX 263 Dark · Steel Blue) — Git Bash (Mintty) Theme
+# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+ForegroundColour=244,245,248
+BackgroundColour=5,5,7
+CursorColour=116,184,232
+Black=12,12,16
+BoldBlack=140,150,166
+Red=255,92,108
+BoldRed=255,146,84
+Green=61,220,151
+BoldGreen=108,232,178
+Yellow=255,194,71
+BoldYellow=255,212,117
+Blue=116,184,232
+BoldBlue=153,205,242
+Magenta=201,150,245
+BoldMagenta=220,184,250
+Cyan=86,212,224
+BoldCyan=133,227,236
+White=214,216,224
+BoldWhite=244,245,248

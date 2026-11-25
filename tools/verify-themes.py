@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify rfs-themes integrity across all 21 apps (63 variants), WCAG AA contrast,
+"""Verify rfs-themes integrity across all 28 apps (84 variants), WCAG AA contrast,
 native format schemas, relative links, SVG previews, Oklab PNG wallpapers, and
 Cyclorama Dawn invariants.
 
@@ -53,13 +53,111 @@ LUA_RESERVED = {
 }
 
 EXPECTED_VARIANTS = ("cyclorama-dawn", "cyclorama-steel", "cyclorama-day")
-EXPECTED_APPS = {
-    "vscode", "neovim", "zed", "jetbrains",
-    "windows-terminal", "wezterm", "alacritty", "ghostty", "kitty",
+EXPECTED_APP_ORDER = (
+    "vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise",
+    "windows-terminal", "wezterm", "alacritty", "ghostty", "kitty", "git-bash", "qterminal", "windows-console",
     "starship", "oh-my-posh", "bat", "delta", "fzf",
     "privacynotes", "obsidian",
-    "chromium", "discord", "qbittorrent", "flow-launcher", "windows",
+    "windows", "chromium", "discord", "proton-mail", "qbittorrent", "flow-launcher",
+)
+EXPECTED_APPS = set(EXPECTED_APP_ORDER)
+
+NPP_EXPECTED_LEXERS = {
+    "c", "cpp", "cs", "rust", "python", "powershell", "bash",
+    "javascript.js", "typescript", "json", "yaml", "html", "css",
+    "xml", "markdown", "sql", "ini", "diff", "batch",
 }
+NPP_EXPECTED_GLOBALS = {
+    "Global override", "Default Style", "Indent guideline style",
+    "Brace highlight style", "Bad brace colour", "Current line background colour",
+    "Selected text colour", "Caret colour", "Multi-selected text color",
+    "Line number margin", "Bookmark margin", "Change History margin",
+    "Fold", "Fold active", "Fold margin", "White space symbol",
+    "Smart Highlighting", "Find Mark Style", "Active tab focused indicator",
+    "Active tab unfocused indicator", "Active tab text", "Inactive tabs",
+    "URL hovered", "EOL custom color", "Non-printing characters custom color",
+}
+
+IDLE_EXPECTED_KEYS = {
+    "normal-foreground", "normal-background",
+    "keyword-foreground", "keyword-background",
+    "builtin-foreground", "builtin-background",
+    "comment-foreground", "comment-background",
+    "string-foreground", "string-background",
+    "definition-foreground", "definition-background",
+    "hilite-foreground", "hilite-background",
+    "break-foreground", "break-background",
+    "hit-foreground", "hit-background",
+    "error-foreground", "error-background",
+    "context-foreground", "context-background",
+    "linenumber-foreground", "linenumber-background",
+    "cursor-foreground",
+    "stdout-foreground", "stdout-background",
+    "stderr-foreground", "stderr-background",
+    "console-foreground", "console-background",
+}
+
+ISE_PANE_KEYS = (
+    "ErrorForegroundColor", "ErrorBackgroundColor",
+    "WarningForegroundColor", "WarningBackgroundColor",
+    "VerboseForegroundColor", "VerboseBackgroundColor",
+    "DebugForegroundColor", "DebugBackgroundColor",
+    "ConsolePaneBackgroundColor", "ConsolePaneTextBackgroundColor",
+    "ConsolePaneForegroundColor", "ScriptPaneBackgroundColor",
+    "ScriptPaneForegroundColor",
+)
+ISE_TOKEN_NAMES = (
+    "Attribute", "Command", "CommandArgument", "CommandParameter", "Comment",
+    "GroupEnd", "GroupStart", "Keyword", "LineContinuation", "LoopLabel",
+    "Member", "NewLine", "Number", "Operator", "Position",
+    "StatementSeparator", "String", "Type", "Unknown", "Variable",
+)
+ISE_XML_TOKEN_NAMES = (
+    "CharacterData", "QuotedString", "Comment", "CommentDelimiter",
+    "15", "13", "12", "14", "18", "MarkupExtension", "Quote", "17",
+    "ElementName", "11", "19", "16", "Attribute", "10", "Tag", "Text",
+)
+ISE_EXPECTED_73_KEYS = (
+    *ISE_PANE_KEYS,
+    *(f"TokenColors\\{k}" for k in ISE_TOKEN_NAMES),
+    *(f"ConsoleTokenColors\\{k}" for k in ISE_TOKEN_NAMES),
+    *(f"XmlTokenColors\\{k}" for k in ISE_XML_TOKEN_NAMES),
+)
+
+MINTTY_EXPECTED_KEYS = {
+    "ForegroundColour", "BackgroundColour", "CursorColour",
+    "Black", "BoldBlack", "Red", "BoldRed", "Green", "BoldGreen",
+    "Yellow", "BoldYellow", "Blue", "BoldBlue", "Magenta", "BoldMagenta",
+    "Cyan", "BoldCyan", "White", "BoldWhite",
+}
+
+QTERMINAL_EXPECTED_SECTIONS = {
+    "General", "Background", "BackgroundIntense", "Foreground", "ForegroundIntense",
+    *(f"Color{i}" for i in range(8)),
+    *(f"Color{i}Intense" for i in range(8)),
+}
+
+PROTON_EXPECTED_VARS = (
+    "--background-norm", "--background-weak", "--background-strong",
+    "--background-elevated", "--background-lowered",
+    "--primary", "--primary-contrast",
+    "--interaction-norm", "--interaction-norm-major-1",
+    "--interaction-norm-major-2", "--interaction-norm-major-3",
+    "--interaction-norm-contrast",
+    "--interaction-weak", "--interaction-weak-major-1", "--interaction-weak-major-2",
+    "--interaction-default", "--interaction-default-hover",
+    "--text-norm", "--text-weak", "--text-hint", "--text-disabled", "--text-invert",
+    "--border-norm", "--border-weak",
+    "--signal-danger", "--signal-danger-major-1", "--signal-danger-contrast",
+    "--signal-warning", "--signal-warning-contrast",
+    "--signal-success", "--signal-success-contrast",
+    "--signal-info", "--signal-info-contrast",
+    "--focus-outline",
+    "--scrollbar-thumb-color", "--scrollbar-thumb-hover-color",
+    "--navigation-current-item-background-color", "--navigation-current-item-text-color",
+    "--email-item-unread-background-color", "--email-item-read-background-color",
+    "--email-item-selected-background-color",
+)
 
 WINDOWS_EXPECTED_SPECS: dict[str, dict] = {
     "cyclorama-dawn": {
@@ -262,15 +360,15 @@ def main() -> int:
         ok(f"rfs_palette WCAG AA contrast verified ({len(pal_checks)}/{len(pal_checks)} checks >= 4.5:1)")
 
     # ------------------------------------------------------------------
-    # 3. apps/manifest.json validation (21 apps x 3 variants = 63)
+    # 3. apps/manifest.json validation (28 apps x 3 variants = 84)
     # ------------------------------------------------------------------
     e0 = len(errors)
     manifest_path = os.path.join(ROOT, "apps", "manifest.json")
     manifest = json.loads(read_utf8(manifest_path))
     m_apps = manifest.get("apps", [])
     m_slugs = [a.get("slug") for a in m_apps]
-    if len(m_apps) != 21 or set(m_slugs) != EXPECTED_APPS:
-        fail(f"apps/manifest.json expected 21 canonical apps, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
+    if len(m_apps) != 28 or tuple(m_slugs) != EXPECTED_APP_ORDER:
+        fail(f"apps/manifest.json expected 28 canonical apps in category order, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
     for app in m_apps:
         slug = app["slug"]
         for rel in (app["path"], app["data"]):
@@ -286,7 +384,7 @@ def main() -> int:
         ok(f"apps/manifest.json valid ({len(m_apps)} apps, {sum(len(a['variants']) for a in m_apps)} variants)")
 
     # ------------------------------------------------------------------
-    # 4. docs/assets/catalog.json validation (21 apps x 3 variants = 63)
+    # 4. docs/assets/catalog.json validation (28 apps x 3 variants = 84)
     # ------------------------------------------------------------------
     e0 = len(errors)
     catalog_path = os.path.join(ROOT, "docs", "assets", "catalog.json")
@@ -298,8 +396,8 @@ def main() -> int:
         c_apps = catalog.get("apps", [])
         if [a.get("slug") for a in c_apps] != m_slugs:
             fail("docs/assets/catalog.json app order/slugs do not match apps/manifest.json")
-        if catalog.get("stats", {}).get("apps") != 21 or catalog.get("stats", {}).get("variants") != 63:
-            fail(f"catalog.json stats invalid (expected 21 apps, 63 variants): {catalog.get('stats')}")
+        if catalog.get("stats", {}).get("apps") != 28 or catalog.get("stats", {}).get("variants") != 84 or catalog.get("stats", {}).get("categories") != 5:
+            fail(f"catalog.json stats invalid (expected 28 apps, 84 variants, 5 categories): {catalog.get('stats')}")
         for app in c_apps:
             slug = app["slug"]
             steps = app.get("installSteps", [])
@@ -356,10 +454,10 @@ def main() -> int:
                     if not sw.get("label") or not HEX6_RE.match(sw.get("hex", "")):
                         fail(f"catalog {slug}/{vid}: invalid swatch {sw}")
         if len(errors) == e0:
-            ok("docs/assets/catalog.json valid (21 apps, 63 variants, snippets & swatches verified)")
+            ok("docs/assets/catalog.json valid (28 apps, 84 variants, snippets & swatches verified)")
 
     # ------------------------------------------------------------------
-    # 5. All 63 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
+    # 5. All 84 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
     # ------------------------------------------------------------------
     e0 = len(errors)
     svg_count = 0
@@ -396,12 +494,29 @@ def main() -> int:
                 )
                 if not has_win_clip:
                     fail(f"windows/{vid}.svg Settings window missing inner <clipPath> (left rail bleeds over rounded bottom-left border)")
+            if slug == "proton-mail":
+                # Ensure encrypted message card (x=372, y=146, height=114, rx=6) left stripe is either inset or clipped so it does not poke past rx=6 corners
+                clips = list(svg_root.iter("{http://www.w3.org/2000/svg}clipPath"))
+                has_card_clip = any(
+                    r.attrib.get("x") == "372" and r.attrib.get("y") == "146"
+                    for cp_el in clips
+                    for r in cp_el.iter("{http://www.w3.org/2000/svg}rect")
+                )
+                unclipped_bleed = any(
+                    r.attrib.get("x") == "372"
+                    and r.attrib.get("width") == "3"
+                    and r.attrib.get("y") == "146"
+                    and r.attrib.get("height") == "114"
+                    for r in svg_root.iter("{http://www.w3.org/2000/svg}rect")
+                )
+                if unclipped_bleed and not has_card_clip:
+                    fail(f"proton-mail/{vid}.svg encrypted message card left bar (y=146, height=114) bleeds outside rx=6 rounded corners")
             svg_count += 1
-    if len(errors) == e0 and svg_count == 63:
-        ok("all 63 SVG preview pairs synced, XML-valid, and swatch-accurate")
+    if len(errors) == e0 and svg_count == 84:
+        ok("all 84 SVG preview pairs synced, XML-valid, and swatch-accurate")
 
     # ------------------------------------------------------------------
-    # 6. Native format schema & syntax verification for ALL 21 apps
+    # 6. Native format schema & syntax verification for ALL 28 apps
     # ------------------------------------------------------------------
 
     # 6.1 PrivacyNotes
@@ -983,7 +1098,403 @@ def main() -> int:
             if req_tok not in inst_txt:
                 fail(f"windows/install-{vid}.ps1 missing {req_tok}")
 
-    # Optional native PowerShell AST Parser check when running on Windows
+    if len(errors) == e0:
+        ok("windows: 3 .theme packs, 6 Oklab PNG wallpapers (1080p + 4K), and 3 .ps1 installers verified")
+
+    # 6.19 Notepad++ (3 XML themes + 19 LexerTypes + GlobalStyles + 3 backup-first Dark Mode .ps1 appliers)
+    e0 = len(errors)
+    npp_dir = os.path.join(ROOT, "apps", "notepad-plus-plus")
+
+    def _colorref_int(hx: str) -> int:
+        r, g, b = pal.hex_to_rgb(hx)
+        return r + (g << 8) + (b << 16)
+
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        ui = v["ui"]
+        xml_name = f"{v['name']}.xml"
+        xp = os.path.join(npp_dir, xml_name)
+        if not os.path.isfile(xp):
+            fail(f"notepad-plus-plus missing {xml_name}")
+        else:
+            xroot = ET.fromstring(read_utf8(xp))
+            if xroot.tag != "NotepadPlus":
+                fail(f"notepad-plus-plus/{xml_name}: root tag {xroot.tag!r} != 'NotepadPlus'")
+            lex_els = xroot.findall("./LexerStyles/LexerType")
+            found_lexers = {el.attrib.get("name", "") for el in lex_els}
+            if len(lex_els) != 19 or found_lexers != NPP_EXPECTED_LEXERS:
+                fail(f"notepad-plus-plus/{xml_name}: expected 19 LexerTypes, diff={found_lexers ^ NPP_EXPECTED_LEXERS}")
+            glob_els = xroot.findall("./GlobalStyles/WidgetStyle")
+            found_globals = {el.attrib.get("name", "") for el in glob_els}
+            missing_globals = NPP_EXPECTED_GLOBALS - found_globals
+            if missing_globals:
+                fail(f"notepad-plus-plus/{xml_name}: missing GlobalStyles WidgetStyle(s): {sorted(missing_globals)}")
+            for el in xroot.iter():
+                for attr in ("fgColor", "bgColor"):
+                    cval = el.attrib.get(attr)
+                    if cval is not None and not ICLS_HEX_RE.match(cval):
+                        fail(f"notepad-plus-plus/{xml_name}: invalid {attr}={cval!r} (must be 6 uppercase hex without #)")
+                if el.tag == "WordsStyle":
+                    fg_c, bg_c = el.attrib.get("fgColor"), el.attrib.get("bgColor")
+                    if fg_c and bg_c and ICLS_HEX_RE.match(fg_c) and ICLS_HEX_RE.match(bg_c) and fg_c != bg_c:
+                        cr = pal.contrast(f"#{fg_c}", f"#{bg_c}")
+                        if cr < 4.5:
+                            fail(
+                                f"notepad-plus-plus/{xml_name} WordsStyle {el.attrib.get('name')!r}: "
+                                f"#{fg_c} on #{bg_c} = {cr:.2f}:1 (< 4.5:1 WCAG AA)"
+                            )
+
+        ps_path = os.path.join(npp_dir, f"apply-{vid}.ps1")
+        ps1_files_to_parse.append(ps_path)
+        if not os.path.isfile(ps_path):
+            fail(f"notepad-plus-plus missing apply-{vid}.ps1")
+            continue
+        ps_txt = read_utf8(ps_path)
+        if not check_balanced_delimiters(strip_ps1_strings_and_comments(ps_txt)):
+            fail(f"notepad-plus-plus/apply-{vid}.ps1 unbalanced delimiters")
+        if "config.xml.pre-rfs.bak" not in ps_txt:
+            fail(f"notepad-plus-plus/apply-{vid}.ps1 missing config.xml.pre-rfs.bak backup")
+
+        # Verify exact Notepad++ 8.x DarkMode attributes & Win32 COLORREF values:
+        # In Notepad++ 8.x (PowerEditor/src/NppDarkMode.h & NppConstants.h):
+        #   NppDarkMode::ColorTone::customizedTone == 32 (colorTone="5" is cyanTone!)
+        #   FluentColor::custom == 9 (*TbFluentColor="5" is FluentColor::cyan!)
+        if v["mode"] == "dark":
+            exp_npp_attrs = {
+                "enable": "yes",
+                "colorTone": "32",
+                "customColorTop": str(_colorref_int(ui["rail"])),
+                "customColorMenuHotTrack": str(_colorref_int(ui["raised"])),
+                "customColorActive": str(_colorref_int(ui["surface"])),
+                "customColorMain": str(_colorref_int(ui["bg"])),
+                "customColorError": str(_colorref_int(ui["fault_fill"])),
+                "customColorText": str(_colorref_int(ui["text"])),
+                "customColorDarkText": str(_colorref_int(ui["mute"])),
+                "customColorDisabledText": str(_colorref_int(ui["subtle"])),
+                "customColorLinkText": str(_colorref_int(ui["accent"])),
+                "customColorEdge": str(_colorref_int(ui["border"])),
+                "customColorHotEdge": str(_colorref_int(ui["accent"])),
+                "customColorDisabledEdge": str(_colorref_int(ui["border_subtle"])),
+                "darkThemeName": xml_name,
+                "darkTbFluentColor": "9",
+                "darkTbFluentCustomColor": str(_colorref_int(ui["accent"])),
+            }
+        else:
+            exp_npp_attrs = {
+                "enable": "no",
+                "lightThemeName": xml_name,
+                "lightTbFluentColor": "9",
+                "lightTbFluentCustomColor": str(_colorref_int(ui["accent"])),
+            }
+            if "stylerTheme" not in ps_txt:
+                fail(f"notepad-plus-plus/apply-{vid}.ps1 missing stylerTheme update for light mode")
+
+        for ak, aval in exp_npp_attrs.items():
+            if not re.search(rf"'{re.escape(ak)}'\s*=\s*'{re.escape(aval)}'", ps_txt):
+                fail(f"notepad-plus-plus/apply-{vid}.ps1 missing or wrong DarkMode attribute '{ak}' = '{aval}'")
+
+    if len(errors) == e0:
+        ok("notepad-plus-plus: 3 XML themes (19 lexers + GlobalStyles) & 3 Custom Dark Mode .ps1 appliers verified")
+
+    # 6.20 Python IDLE (config-highlight.cfg + cyclorama-*.cfg + config-main-*.cfg + 48 WCAG AA pairs)
+    e0 = len(errors)
+    idle_dir = os.path.join(ROOT, "apps", "python-idle")
+    idle_unified_cp = parse_ini_strict(read_utf8(os.path.join(idle_dir, "config-highlight.cfg")))
+    idle_roles = (
+        "normal", "keyword", "builtin", "comment", "string", "definition",
+        "hilite", "break", "hit", "error", "context", "linenumber",
+        "stdout", "stderr", "console",
+    )
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        sec = v["name"]
+        short = v["short"].lower()
+        single_cp = parse_ini_strict(read_utf8(os.path.join(idle_dir, f"{vid}.cfg")))
+        main_cp = parse_ini_strict(read_utf8(os.path.join(idle_dir, f"config-main-{short}.cfg")))
+        if not idle_unified_cp.has_section(sec) or list(single_cp.sections()) != [sec]:
+            fail(f"python-idle: missing or invalid section [{sec}]")
+            continue
+        u_items = dict(idle_unified_cp.items(sec))
+        s_items = dict(single_cp.items(sec))
+        if u_items != s_items:
+            fail(f"python-idle/{vid}.cfg out of sync with config-highlight.cfg [{sec}]")
+        if set(u_items.keys()) != IDLE_EXPECTED_KEYS:
+            fail(f"python-idle [{sec}] key mismatch: {set(u_items.keys()) ^ IDLE_EXPECTED_KEYS}")
+            continue
+        for ik, iv in u_items.items():
+            if not HEX6_RE.match(iv):
+                fail(f"python-idle [{sec}] invalid hex {ik}={iv!r}")
+        for role in idle_roles:
+            fg_h, bg_h = u_items[f"{role}-foreground"], u_items[f"{role}-background"]
+            cr = pal.contrast(fg_h, bg_h)
+            if cr < 4.5:
+                fail(f"python-idle [{sec}] {role} contrast {cr:.2f}:1 < 4.5:1 ({fg_h} on {bg_h})")
+        cur_cr = pal.contrast(u_items["cursor-foreground"], u_items["normal-background"])
+        if cur_cr < 4.5:
+            fail(f"python-idle [{sec}] cursor-foreground contrast {cur_cr:.2f}:1 < 4.5:1")
+        if not main_cp.has_section("Theme") or main_cp.get("Theme", "default", fallback="") != "False" or main_cp.get("Theme", "name", fallback="") != sec:
+            fail(f"python-idle/config-main-{short}.cfg invalid [Theme] selector")
+    if len(errors) == e0:
+        ok("python-idle: unified + 3 highlight .cfg + 3 config-main .cfg (31 keys & 48/48 AA checks) verified")
+
+    # 6.21 Windows PowerShell ISE (3 .StorableColorTheme.ps1xml + 73 keys + 3 .ps1 installers)
+    e0 = len(errors)
+    ise_dir = os.path.join(ROOT, "apps", "powershell-ise")
+    ise_xml_paths: list[tuple[str, str]] = []
+
+    def _srgb_linear(ch: int) -> float:
+        s = ch / 255.0
+        return s / 12.92 if s <= 0.04045 else ((s + 0.055) / 1.055) ** 2.4
+
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        ps1xml_name = f"{v['name']}.StorableColorTheme.ps1xml"
+        xp = os.path.join(ise_dir, ps1xml_name)
+        ise_xml_paths.append((vid, xp))
+        if not os.path.isfile(xp):
+            fail(f"powershell-ise missing {ps1xml_name}")
+        else:
+            xroot = ET.fromstring(read_utf8(xp))
+            keys = tuple(el.text or "" for el in xroot.findall("./Keys/string"))
+            colors = xroot.findall("./Values/Color")
+            if keys != ISE_EXPECTED_73_KEYS or len(colors) != 73:
+                fail(f"powershell-ise/{ps1xml_name}: expected exact 73 keys/values, got {len(keys)}/{len(colors)}")
+            if xroot.findtext("./Name") != v["name"] or not xroot.findtext("./FontFamily") or not (xroot.findtext("./FontSize") or "").isdigit():
+                fail(f"powershell-ise/{ps1xml_name}: missing or invalid Name, FontFamily, or FontSize")
+            for k_name, c_el in zip(keys, colors):
+                try:
+                    ca = int(c_el.findtext("A") or "-1")
+                    cr_i = int(c_el.findtext("R") or "-1")
+                    cg_i = int(c_el.findtext("G") or "-1")
+                    cb_i = int(c_el.findtext("B") or "-1")
+                    sca = float(c_el.findtext("ScA") or "-1")
+                    scr = float(c_el.findtext("ScR") or "-1")
+                    scg = float(c_el.findtext("ScG") or "-1")
+                    scb = float(c_el.findtext("ScB") or "-1")
+                except ValueError:
+                    fail(f"powershell-ise/{ps1xml_name}: non-numeric ARGB/ScRGB in {k_name}")
+                    break
+                if not all(0 <= x <= 255 for x in (ca, cr_i, cg_i, cb_i)):
+                    fail(f"powershell-ise/{ps1xml_name}: out-of-range ARGB in {k_name}")
+                if (
+                    abs(sca - (ca / 255.0)) > 1e-4
+                    or abs(scr - _srgb_linear(cr_i)) > 1e-4
+                    or abs(scg - _srgb_linear(cg_i)) > 1e-4
+                    or abs(scb - _srgb_linear(cb_i)) > 1e-4
+                ):
+                    fail(f"powershell-ise/{ps1xml_name}: ScRGB mismatch in {k_name}")
+                if ca == 255 and k_name not in ("ConsolePaneBackgroundColor", "ConsolePaneTextBackgroundColor", "ScriptPaneBackgroundColor"):
+                    hx_fg = pal.rgb_to_hex((cr_i, cg_i, cb_i))
+                    bg_ref = v["ui"]["code_bg"] if k_name.startswith(("Console", "Error", "Warning", "Verbose", "Debug")) else v["ui"]["bg"]
+                    if pal.contrast(hx_fg, bg_ref) < 4.5:
+                        fail(f"powershell-ise/{ps1xml_name}: {k_name} ({hx_fg}) contrast < 4.5:1 on {bg_ref}")
+
+        ise_ps_path = os.path.join(ise_dir, f"install-{vid}.ps1")
+        ps1_files_to_parse.append(ise_ps_path)
+        if not os.path.isfile(ise_ps_path):
+            fail(f"powershell-ise missing install-{vid}.ps1")
+            continue
+        ise_ps_txt = read_utf8(ise_ps_path)
+        if not check_balanced_delimiters(strip_ps1_strings_and_comments(ise_ps_txt)):
+            fail(f"powershell-ise/install-{vid}.ps1 unbalanced delimiters")
+        for req_tok in ("StorableColorTheme", "FromFile", "Validate", "StoreTheme", "Get-Variable -Name 'psISE'"):
+            if req_tok not in ise_ps_txt:
+                fail(f"powershell-ise/install-{vid}.ps1 missing {req_tok!r}")
+
+    win_ps51 = shutil.which("powershell.exe")
+    if os.name == "nt" and win_ps51 and all(os.path.isfile(p) for _, p in ise_xml_paths):
+        ise_pairs_lit = ", ".join(
+            f"@('{p.replace(chr(39), chr(39)*2)}', '{'Light Console, Light Editor' if vid == 'cyclorama-day' else 'Dark Console, Dark Editor'}')"
+            for vid, p in ise_xml_paths
+        )
+        ise_validate_cmd = (
+            "Add-Type -AssemblyName PresentationFramework; "
+            "Add-Type -AssemblyName Microsoft.PowerShell.GPowerShell; "
+            "if ($null -eq [System.Windows.Application]::Current) { $null = New-Object System.Windows.Application }; "
+            "$asm = [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.PowerShell.GPowerShell'); "
+            "$flags = [System.Reflection.BindingFlags]'Public,NonPublic,Static,Instance'; "
+            "$t = $asm.GetType('Microsoft.Windows.PowerShell.Gui.Internal.StorableColorTheme'); "
+            "$pt = $asm.GetType('Microsoft.Windows.PowerShell.Gui.Internal.PresetThemes'); "
+            "$presets = $pt.GetProperty('Themes', $flags).GetValue($null); "
+            "$fromFile = $t.GetMethod('FromFile', $flags); "
+            "$validate = $t.GetMethod('Validate', $flags); "
+            f"foreach ($pair in @({ise_pairs_lit})) {{ "
+            "  $obj = $fromFile.Invoke($null, [object[]]@($pair[0])); "
+            "  $errs = $validate.Invoke($obj, [object[]]@($presets[$pair[1]])); "
+            "  if ($errs.Count -ne 0) { Write-Error ($pair[0] + ': ' + ($errs -join '; ')); exit 3 } "
+            "}"
+        )
+        ise_res = subprocess.run([win_ps51, "-NoProfile", "-STA", "-Command", ise_validate_cmd], capture_output=True, text=True)
+        if ise_res.returncode != 0:
+            fail(f"powershell-ise StorableColorTheme::FromFile().Validate() failed: {ise_res.stderr.strip()}")
+
+    if len(errors) == e0:
+        ok("powershell-ise: 3 .StorableColorTheme.ps1xml (73 keys, ScRGB, live Validate) & 3 .ps1 installers verified")
+
+    # 6.22 Git Bash (Mintty .minttyrc + Native Git CLI .gitconfig)
+    e0 = len(errors)
+    gb_dir = os.path.join(ROOT, "apps", "git-bash")
+    rgb_csv_rx = re.compile(r"^(\d{1,3}),(\d{1,3}),(\d{1,3})$")
+    git_exe = shutil.which("git")
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        short = v["short"].lower()
+        rc_txt = read_utf8(os.path.join(gb_dir, f"{vid}.minttyrc"))
+        rc_map: dict[str, str] = {}
+        for ln in rc_txt.splitlines():
+            ln = ln.strip()
+            if not ln or ln.startswith("#"):
+                continue
+            if "=" not in ln:
+                fail(f"git-bash/{vid}.minttyrc malformed line: {ln!r}")
+                continue
+            mk, mv = ln.split("=", 1)
+            m_rgb = rgb_csv_rx.match(mv.strip())
+            if not m_rgb or not all(0 <= int(x) <= 255 for x in m_rgb.groups()):
+                fail(f"git-bash/{vid}.minttyrc invalid RGB {mk}={mv!r}")
+            rc_map[mk.strip()] = mv.strip()
+        if set(rc_map.keys()) != MINTTY_EXPECTED_KEYS:
+            fail(f"git-bash/{vid}.minttyrc key mismatch: {set(rc_map.keys()) ^ MINTTY_EXPECTED_KEYS}")
+
+        gpath = os.path.join(gb_dir, f"git-colors-{short}.gitconfig")
+        gtxt = read_utf8(gpath)
+        for sec_hdr in ("[color]", '[color "diff"]', '[color "status"]', '[color "branch"]', '[color "grep"]'):
+            if sec_hdr not in gtxt:
+                fail(f"git-bash/git-colors-{short}.gitconfig missing section {sec_hdr}")
+        if git_exe:
+            gres = subprocess.run([git_exe, "config", "--file", gpath, "--list"], capture_output=True, text=True)
+            if gres.returncode != 0:
+                fail(f"git-bash/git-colors-{short}.gitconfig git config --list failed: {gres.stderr.strip()}")
+            gc_res = subprocess.run(
+                [git_exe, "config", "--file", gpath, "--get-color", "color.diff.new", ""],
+                capture_output=True,
+                text=True,
+            )
+            if gc_res.returncode != 0 or not gc_res.stdout.startswith("\x1b["):
+                fail(f"git-bash/git-colors-{short}.gitconfig git --get-color color.diff.new failed")
+    if len(errors) == e0:
+        ok("git-bash: 3 Mintty .minttyrc (19 keys) + 3 native Git CLI .gitconfig files verified")
+
+    # 6.23 QTerminal (.colorscheme INI)
+    e0 = len(errors)
+    qt_dir = os.path.join(ROOT, "apps", "qterminal")
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        cs_name = f"{v['name']}.colorscheme"
+        cs_cp = parse_ini_strict(read_utf8(os.path.join(qt_dir, cs_name)))
+        if set(cs_cp.sections()) != QTERMINAL_EXPECTED_SECTIONS:
+            fail(f"qterminal/{cs_name} section mismatch: {set(cs_cp.sections()) ^ QTERMINAL_EXPECTED_SECTIONS}")
+            continue
+        if cs_cp.get("General", "Description", fallback="") != v["name"]:
+            fail(f"qterminal/{cs_name} Description mismatch")
+        for sec in QTERMINAL_EXPECTED_SECTIONS - {"General"}:
+            c_str = cs_cp.get(sec, "Color", fallback="")
+            m_rgb = rgb_csv_rx.match(c_str)
+            if not m_rgb or not all(0 <= int(x) <= 255 for x in m_rgb.groups()):
+                fail(f"qterminal/{cs_name} invalid Color={c_str!r} in [{sec}]")
+    if len(errors) == e0:
+        ok("qterminal: 3 QTermWidget6 .colorscheme INI files verified")
+
+    # 6.24 Windows Console Host (.reg HKCU\Console + restore-defaults.reg + VGA order + WCAG AA)
+    e0 = len(errors)
+    wc_dir = os.path.join(ROOT, "apps", "windows-console")
+    dword_colorref_rx = re.compile(r"^dword:00([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$")
+    reg_targets = [*(f"{vid}.reg" for vid in EXPECTED_VARIANTS), "restore-defaults.reg"]
+    for rname in reg_targets:
+        rpath = os.path.join(wc_dir, rname)
+        if not os.path.isfile(rpath):
+            fail(f"windows-console missing {rname}")
+            continue
+        rlines = read_utf8(rpath).splitlines()
+        if not rlines or rlines[0] != "Windows Registry Editor Version 5.00":
+            fail(f"windows-console/{rname}: missing 'Windows Registry Editor Version 5.00' header")
+            continue
+        rcp = parse_ini_strict("\n".join(rlines[1:]))
+        sec = r"HKEY_CURRENT_USER\Console"
+        if not rcp.has_section(sec):
+            fail(f"windows-console/{rname}: missing [{sec}]")
+            continue
+        slot_hexes: list[str] = []
+        for idx in range(16):
+            raw_dw = rcp.get(sec, f'"ColorTable{idx:02d}"', fallback="")
+            m_dw = dword_colorref_rx.match(raw_dw)
+            if not m_dw:
+                fail(f"windows-console/{rname}: invalid ColorTable{idx:02d}={raw_dw!r} (expected dword:00bbggrr)")
+                break
+            b_i, g_i, r_i = (int(x, 16) for x in m_dw.groups())
+            slot_hexes.append(pal.rgb_to_hex((r_i, g_i, b_i)))
+        if len(slot_hexes) != 16:
+            continue
+        if rname != "restore-defaults.reg":
+            vid = rname[:-4]
+            v = pal.VARIANTS[vid]
+            a = v["ansi"]
+            exp_vga = [
+                v["ui"]["bg"], a["blue"], a["green"], a["cyan"],
+                a["red"], a["magenta"], a["yellow"], v["ui"]["text"],
+                a["brightBlack"], a["brightBlue"], a["brightGreen"], a["brightCyan"],
+                a["brightRed"], a["brightMagenta"], a["brightYellow"], a["brightWhite"],
+            ]
+            if slot_hexes != exp_vga:
+                fail(f"windows-console/{rname}: VGA ColorTable00..15 / 00bbggrr mismatch")
+        for key_lbl in ('"ScreenColors"', '"PopupColors"'):
+            attr_dw = rcp.get(sec, key_lbl, fallback="")
+            if not re.match(r"^dword:000000[0-9a-f]{2}$", attr_dw):
+                fail(f"windows-console/{rname}: invalid {key_lbl}={attr_dw!r}")
+                continue
+            byte_v = int(attr_dw.split(":")[1], 16)
+            bg_idx, fg_idx = (byte_v >> 4) & 0xF, byte_v & 0xF
+            cr = pal.contrast(slot_hexes[fg_idx], slot_hexes[bg_idx])
+            if cr < 4.5:
+                fail(
+                    f"windows-console/{rname} {key_lbl}: slot {fg_idx:02d} ({slot_hexes[fg_idx]}) on "
+                    f"slot {bg_idx:02d} ({slot_hexes[bg_idx]}) = {cr:.2f}:1 (< 4.5:1 WCAG AA)"
+                )
+    if len(errors) == e0:
+        ok("windows-console: 3 Cyclorama .reg + restore-defaults.reg (VGA 00bbggrr & Screen/Popup AA) verified")
+
+    # 6.25 Proton Mail (3 Custom Theme CSS files + Proton Design System tokens + WCAG AA)
+    e0 = len(errors)
+    pm_dir = os.path.join(ROOT, "apps", "proton-mail")
+    pm_contrast_pairs = (
+        ("--text-norm", "--background-norm"),
+        ("--text-norm", "--background-weak"),
+        ("--text-norm", "--background-strong"),
+        ("--text-weak", "--background-norm"),
+        ("--text-hint", "--background-norm"),
+        ("--primary-contrast", "--primary"),
+        ("--interaction-norm-contrast", "--interaction-norm"),
+        ("--interaction-norm-contrast", "--interaction-norm-major-1"),
+        ("--signal-danger-contrast", "--signal-danger"),
+        ("--signal-danger-contrast", "--signal-danger-major-1"),
+        ("--signal-warning-contrast", "--signal-warning"),
+        ("--signal-success-contrast", "--signal-success"),
+        ("--signal-info-contrast", "--signal-info"),
+        ("--navigation-current-item-text-color", "--navigation-current-item-background-color"),
+        ("--email-item-selected-text-color", "--email-item-selected-background-color"),
+    )
+    for vid in EXPECTED_VARIANTS:
+        pm_css = read_utf8(os.path.join(pm_dir, f"{vid}.css"))
+        if not check_balanced_braces_css(pm_css):
+            fail(f"proton-mail/{vid}.css unbalanced braces")
+        if re.search(r"\bin\s+oklch\b", pm_css, re.I):
+            fail(f"proton-mail/{vid}.css contains forbidden `in oklch`")
+        for req_var in PROTON_EXPECTED_VARS:
+            if f"{req_var}:" not in pm_css:
+                fail(f"proton-mail/{vid}.css missing Proton Design System token {req_var}")
+        pm_props = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9A-Fa-f]{6})\s*;", pm_css))
+        for fg_var, bg_var in pm_contrast_pairs:
+            if fg_var in pm_props and bg_var in pm_props:
+                cr = pal.contrast(pm_props[fg_var], pm_props[bg_var])
+                if cr < 4.5:
+                    fail(
+                        f"proton-mail/{vid}.css: {fg_var} ({pm_props[fg_var]}) on "
+                        f"{bg_var} ({pm_props[bg_var]}) = {cr:.2f}:1 (< 4.5:1 WCAG AA)"
+                    )
+    if len(errors) == e0:
+        ok("proton-mail: 3 Proton Design System Custom Theme .css files & contrast pairs verified")
+
+    # Optional native PowerShell AST Parser check across ALL .ps1 scripts when running on Windows
     ps_exe = shutil.which("powershell.exe") or shutil.which("pwsh")
     if ps_exe and ps1_files_to_parse:
         ps_list_lit = ", ".join("'" + p.replace("'", "''") + "'" for p in ps1_files_to_parse)
@@ -997,12 +1508,11 @@ def main() -> int:
         ps_res = subprocess.run([ps_exe, "-NoProfile", "-Command", ps_cmd], capture_output=True, text=True)
         if ps_res.returncode != 0:
             fail(f"PowerShell AST parser reported syntax error(s): {ps_res.stderr.strip()}")
-
-    if len(errors) == e0:
-        ok("windows: 3 .theme packs, 6 Oklab PNG wallpapers (1080p + 4K), and 3 .ps1 installers verified")
+        else:
+            ok(f"powershell AST: all {len(ps1_files_to_parse)} .ps1 scripts parsed with 0 syntax errors")
 
     # ------------------------------------------------------------------
-    # 7. Relative Markdown & HTML link integrity + 21-app/63-variant telemetry
+    # 7. Relative Markdown & HTML link integrity + 28-app/84-variant telemetry
     # ------------------------------------------------------------------
     e0 = len(errors)
     md_files = [
@@ -1044,11 +1554,11 @@ def main() -> int:
 
     docs_html_path = os.path.join(ROOT, "docs", "index.html")
     docs_html = read_utf8(docs_html_path)
-    for req_html_copy in ("21 · Across 5 categories", "63 · Dawn, Steel, Day", "Showing 21 of 21 apps"):
+    for req_html_copy in ("28 · Across 5 categories", "84 · Dawn, Steel, Day", "Showing 28 of 28 apps"):
         if req_html_copy not in docs_html:
-            fail(f"docs/index.html missing updated 21-app/63-variant copy: {req_html_copy!r}")
-    if re.search(r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20)\b", docs_html, re.I):
-        fail("docs/index.html contains stale 20-app / 60-variant telemetry copy")
+            fail(f"docs/index.html missing updated 28-app/84-variant copy: {req_html_copy!r}")
+    if re.search(r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20|21\s+everyday|63\s+verified|21\s+ports|Showing\s+21|21\s*·\s*Across|63\s*·\s*Dawn)\b", docs_html, re.I):
+        fail("docs/index.html contains stale 20/21-app or 60/63-variant telemetry copy")
 
     doc_ids = set(re.findall(r'\bid="([^"]+)"', docs_html))
     for m in html_attr_rx.finditer(docs_html):
@@ -1069,7 +1579,7 @@ def main() -> int:
                     fail(f"missing SVG symbol #{parts[1]} referenced in docs/index.html")
 
     if len(errors) == e0:
-        ok(f"all relative links & 21-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
+        ok(f"all relative links & 28-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
 
     # ------------------------------------------------------------------
     # 8. Brand & hygiene invariants (oklch, modals, innerHTML, URLs, CRLF)
@@ -1092,7 +1602,12 @@ def main() -> int:
             js_probe = (
                 f"{m_fn.group(0)}\n"
                 f"const cat = JSON.parse(require('fs').readFileSync({json.dumps(catalog_path)}, 'utf8'));\n"
-                "const allowed = {json:['.json'],toml:['.toml'],lua:['.lua'],css:['.css'],sh:['.sh'],ps1:['.ps1'],ini:['.gitconfig','.ini','.theme'],conf:['.conf',''],xml:['.xaml','.xml'],pn1:['.txt']};\n"
+                "const allowed = {"
+                "json:['.json'],toml:['.toml'],lua:['.lua'],css:['.css'],sh:['.sh'],ps1:['.ps1'],"
+                "ini:['.gitconfig','.ini','.theme','.cfg','.colorscheme','.reg'],"
+                "conf:['.conf','.minttyrc',''],"
+                "xml:['.xaml','.xml','.ps1xml'],"
+                "pn1:['.txt']};\n"
                 "for (const a of cat.apps) { for (const v of a.variants) {\n"
                 "  const fn = deriveDownloadFilename(a, v);\n"
                 "  if (/\\s/.test(fn)) { console.error(`${a.slug}/${v.id}: whitespace in download filename ${fn}`); process.exit(2); }\n"
@@ -1135,6 +1650,7 @@ def main() -> int:
             if fn.endswith((
                 ".html", ".js", ".json", ".toml", ".md", ".py", ".txt", ".css", ".qss",
                 ".lua", ".ps1", ".sh", ".gitconfig", ".conf", ".xaml", ".icls", ".tmTheme", ".theme", ".svg",
+                ".xml", ".ps1xml", ".cfg", ".minttyrc", ".colorscheme", ".reg",
             )):
                 txt = open(fp, encoding="utf-8", errors="ignore").read()
                 if rx_private.search(txt):
@@ -1142,7 +1658,7 @@ def main() -> int:
 
     if not errors:
         ok("zero `in oklch`, native modals, `innerHTML`, private-repo leaks, or CRLF drift")
-        ok("all rfs-themes checks passed (21 apps · 63 variants)")
+        ok("all rfs-themes checks passed (28 apps · 84 variants)")
         return 0
 
     print(f"[x]  verification failed with {len(errors)} error(s)")

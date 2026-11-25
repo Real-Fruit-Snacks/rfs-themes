@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows Console Host (HKCU\Console)
+; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+; Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).
+
+[HKEY_CURRENT_USER\Console]
+"ColorTable00"=dword:00070505
+"ColorTable01"=dword:00e8b874
+"ColorTable02"=dword:0097dc3d
+"ColorTable03"=dword:00e0d456
+"ColorTable04"=dword:006c5cff
+"ColorTable05"=dword:00f596c9
+"ColorTable06"=dword:0047c2ff
+"ColorTable07"=dword:00f8f5f4
+"ColorTable08"=dword:009d8f8c
+"ColorTable09"=dword:00f2cd99
+"ColorTable10"=dword:00b2e86c
+"ColorTable11"=dword:00ece385
+"ColorTable12"=dword:005492ff
+"ColorTable13"=dword:00fab8dc
+"ColorTable14"=dword:0075d4ff
+"ColorTable15"=dword:00f8f5f4
+"ScreenColors"=dword:00000007
+"PopupColors"=dword:000000f0

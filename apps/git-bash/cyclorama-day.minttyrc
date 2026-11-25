@@ -1,0 +1,23 @@
+# Cyclorama Day (LX 512 Light · Alabaster Day) — Git Bash (Mintty) Theme
+# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+
+ForegroundColour=13,16,22
+BackgroundColour=245,247,249
+CursorColour=173,61,10
+Black=13,16,22
+BoldBlack=88,96,110
+Red=185,28,46
+BoldRed=173,61,10
+Green=18,114,71
+BoldGreen=13,90,55
+Yellow=136,88,0
+BoldYellow=112,71,0
+Blue=22,70,105
+BoldBlue=31,84,122
+Magenta=107,56,184
+BoldMagenta=87,42,158
+Cyan=14,102,116
+BoldCyan=10,82,94
+White=227,232,238
+BoldWhite=255,255,255

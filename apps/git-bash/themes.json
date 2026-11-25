@@ -1,0 +1,161 @@
+{
+  "app": "Git Bash (Mintty)",
+  "slug": "git-bash",
+  "category": "Terminals",
+  "homepage": "https://gitforwindows.org/",
+  "format": "Mintty .minttyrc + Git .gitconfig",
+  "install": "Copy .minttyrc to ~/.mintty/themes/ + include git-colors-*.gitconfig in ~/.gitconfig",
+  "installSteps": [
+    "Copy `cyclorama-dawn.minttyrc` (or `steel` / `day`) into `~/.mintty/themes/` (or `C:\\Program Files\\Git\\usr\\share\\mintty\\themes\\`), then add `ThemeFile=cyclorama-dawn.minttyrc` to `~/.minttyrc` — or select it in **Mintty Options -> Looks -> Theme**.",
+    "Alternatively, paste the `.minttyrc` color lines directly into `~/.minttyrc` and restart Git Bash.",
+    "Enable matching truecolor `git diff`, `git status`, `git branch`, and `git grep` output by adding `[include]` -> `path = ~/rfs-themes/apps/git-bash/git-colors-dawn.gitconfig` to `~/.gitconfig`."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/git-bash/cyclorama-dawn.minttyrc",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Mintty (cyclorama-dawn.minttyrc)",
+      "path": "apps/git-bash/cyclorama-dawn.minttyrc"
+    },
+    {
+      "label": "Cyclorama Dawn Git CLI (git-colors-dawn.gitconfig)",
+      "path": "apps/git-bash/git-colors-dawn.gitconfig"
+    },
+    {
+      "label": "Cyclorama Steel Mintty (cyclorama-steel.minttyrc)",
+      "path": "apps/git-bash/cyclorama-steel.minttyrc"
+    },
+    {
+      "label": "Cyclorama Steel Git CLI (git-colors-steel.gitconfig)",
+      "path": "apps/git-bash/git-colors-steel.gitconfig"
+    },
+    {
+      "label": "Cyclorama Day Mintty (cyclorama-day.minttyrc)",
+      "path": "apps/git-bash/cyclorama-day.minttyrc"
+    },
+    {
+      "label": "Cyclorama Day Git CLI (git-colors-day.gitconfig)",
+      "path": "apps/git-bash/git-colors-day.gitconfig"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/git-bash/previews/cyclorama-dawn.svg",
+      "file": "apps/git-bash/cyclorama-dawn.minttyrc",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Dawn Mintty .minttyrc",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=240,110,43\nBlack=12,12,16\nBoldBlack=140,143,157\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/git-bash/previews/cyclorama-steel.svg",
+      "file": "apps/git-bash/cyclorama-steel.minttyrc",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Steel Mintty .minttyrc",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=116,184,232\nBlack=12,12,16\nBoldBlack=140,150,166\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/git-bash/previews/cyclorama-day.svg",
+      "file": "apps/git-bash/cyclorama-day.minttyrc",
+      "copyLang": "conf",
+      "copyLabel": "Copy Cyclorama Day Mintty .minttyrc",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=13,16,22\nBackgroundColour=245,247,249\nCursorColour=173,61,10\nBlack=13,16,22\nBoldBlack=88,96,110\nRed=185,28,46\nBoldRed=173,61,10\nGreen=18,114,71\nBoldGreen=13,90,55\nYellow=136,88,0\nBoldYellow=112,71,0\nBlue=22,70,105\nBoldBlue=31,84,122\nMagenta=107,56,184\nBoldMagenta=87,42,158\nCyan=14,102,116\nBoldCyan=10,82,94\nWhite=227,232,238\nBoldWhite=255,255,255",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

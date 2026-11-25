@@ -1,0 +1,36 @@
+# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Native Git CLI Truecolor Theme
+# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+# Include from ~/.gitconfig via [include] path = ...
+
+[color]
+	ui = auto
+
+[color "diff"]
+	meta = "#74B8E8 bold"
+	frag = "#56D4E0 bold"
+	old = "#FF5C6C"
+	new = "#3DDC97"
+	context = "#B3B5C0"
+	whitespace = "#FFFFFF #C92438"
+	func = "#FF9254"
+
+[color "status"]
+	header = "#B3B5C0"
+	added = "#3DDC97 bold"
+	changed = "#FFC247 bold"
+	untracked = "#FF9254"
+	branch = "#74B8E8 bold"
+	nobranch = "#FF5C6C bold"
+
+[color "branch"]
+	current = "#FF9254 bold"
+	local = "#F4F5F8"
+	remote = "#74B8E8"
+	upstream = "#3DDC97"
+
+[color "grep"]
+	filename = "#74B8E8 bold"
+	linenumber = "#8C8F9D"
+	match = "#FFFFFF #BD4811 bold"
+	separator = "#B3B5C0"

@@ -1,0 +1,165 @@
+{
+  "app": "Python IDLE",
+  "slug": "python-idle",
+  "category": "Editors & IDEs",
+  "homepage": "https://docs.python.org/3/library/idle.html",
+  "format": "IDLE config-highlight.cfg",
+  "install": "Append apps/python-idle/config-highlight.cfg to ~/.idlerc/config-highlight.cfg and pick in Options -> Configure IDLE -> Highlights",
+  "installSteps": [
+    "Copy or append `apps/python-idle/config-highlight.cfg` into `~/.idlerc/config-highlight.cfg` (on Windows: `%USERPROFILE%\\.idlerc\\config-highlight.cfg`).",
+    "Open Python IDLE -> **Options -> Configure IDLE -> Highlights**, select **a Custom Theme**, and pick **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**.",
+    "Optional: copy the matching `config-main-dawn.cfg`, `config-main-steel.cfg`, or `config-main-day.cfg` `[Theme]` block into `~/.idlerc/config-main.cfg` to activate immediately."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/python-idle/config-highlight.cfg",
+  "files": [
+    {
+      "label": "All 3 Variants Unified (config-highlight.cfg)",
+      "path": "apps/python-idle/config-highlight.cfg"
+    },
+    {
+      "label": "Cyclorama Dawn Highlight Theme (cyclorama-dawn.cfg)",
+      "path": "apps/python-idle/cyclorama-dawn.cfg"
+    },
+    {
+      "label": "Cyclorama Dawn Active Theme Config (config-main-dawn.cfg)",
+      "path": "apps/python-idle/config-main-dawn.cfg"
+    },
+    {
+      "label": "Cyclorama Steel Highlight Theme (cyclorama-steel.cfg)",
+      "path": "apps/python-idle/cyclorama-steel.cfg"
+    },
+    {
+      "label": "Cyclorama Steel Active Theme Config (config-main-steel.cfg)",
+      "path": "apps/python-idle/config-main-steel.cfg"
+    },
+    {
+      "label": "Cyclorama Day Highlight Theme (cyclorama-day.cfg)",
+      "path": "apps/python-idle/cyclorama-day.cfg"
+    },
+    {
+      "label": "Cyclorama Day Active Theme Config (config-main-day.cfg)",
+      "path": "apps/python-idle/config-main-day.cfg"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/python-idle/previews/cyclorama-dawn.svg",
+      "file": "apps/python-idle/cyclorama-dawn.cfg",
+      "copyLang": "ini",
+      "copyLabel": "IDLE config-highlight.cfg section",
+      "copySnippet": "[Cyclorama Dawn]\nnormal-foreground = #F4F5F8\nnormal-background = #050507\nkeyword-foreground = #74B8E8\nkeyword-background = #050507\nbuiltin-foreground = #56D4E0\nbuiltin-background = #050507\ncomment-foreground = #8C8F9D\ncomment-background = #050507\nstring-foreground = #FFC247\nstring-background = #050507\ndefinition-foreground = #FF9254\ndefinition-background = #050507\nhilite-foreground = #F4F5F8\nhilite-background = #3D2B24\nbreak-foreground = #F4F5F8\nbreak-background = #4A3619\nhit-foreground = #FFFFFF\nhit-background = #BD4811\nerror-foreground = #FFFFFF\nerror-background = #C92438\ncontext-foreground = #F4F5F8\ncontext-background = #14141A\nlinenumber-foreground = #8C8F9D\nlinenumber-background = #0C0C10\ncursor-foreground = #F06E2B\nstdout-foreground = #74B8E8\nstdout-background = #050507\nstderr-foreground = #FF5C6C\nstderr-background = #050507\nconsole-foreground = #FF9254\nconsole-background = #050507",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/python-idle/previews/cyclorama-steel.svg",
+      "file": "apps/python-idle/cyclorama-steel.cfg",
+      "copyLang": "ini",
+      "copyLabel": "IDLE config-highlight.cfg section",
+      "copySnippet": "[Cyclorama Steel]\nnormal-foreground = #F4F5F8\nnormal-background = #050507\nkeyword-foreground = #74B8E8\nkeyword-background = #050507\nbuiltin-foreground = #56D4E0\nbuiltin-background = #050507\ncomment-foreground = #8C96A6\ncomment-background = #050507\nstring-foreground = #FFC247\nstring-background = #050507\ndefinition-foreground = #FF9254\ndefinition-background = #050507\nhilite-foreground = #F4F5F8\nhilite-background = #1D3B57\nbreak-foreground = #F4F5F8\nbreak-background = #3B3117\nhit-foreground = #FFFFFF\nhit-background = #18496B\nerror-foreground = #FFFFFF\nerror-background = #C92438\ncontext-foreground = #F4F5F8\ncontext-background = #131820\nlinenumber-foreground = #8C96A6\nlinenumber-background = #0C0C10\ncursor-foreground = #74B8E8\nstdout-foreground = #FF9254\nstdout-background = #050507\nstderr-foreground = #FF5C6C\nstderr-background = #050507\nconsole-foreground = #74B8E8\nconsole-background = #050507",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/python-idle/previews/cyclorama-day.svg",
+      "file": "apps/python-idle/cyclorama-day.cfg",
+      "copyLang": "ini",
+      "copyLabel": "IDLE config-highlight.cfg section",
+      "copySnippet": "[Cyclorama Day]\nnormal-foreground = #0D1016\nnormal-background = #F5F7F9\nkeyword-foreground = #164669\nkeyword-background = #F5F7F9\nbuiltin-foreground = #0E6674\nbuiltin-background = #F5F7F9\ncomment-foreground = #58606E\ncomment-background = #F5F7F9\nstring-foreground = #885800\nstring-background = #F5F7F9\ndefinition-foreground = #AD3D0A\ndefinition-background = #F5F7F9\nhilite-foreground = #0D1016\nhilite-background = #C6DAEB\nbreak-foreground = #0D1016\nbreak-background = #F5DFB0\nhit-foreground = #FFFFFF\nhit-background = #18496B\nerror-foreground = #FFFFFF\nerror-background = #B91C2E\ncontext-foreground = #0D1016\ncontext-background = #E3E8EE\nlinenumber-foreground = #58606E\nlinenumber-background = #FFFFFF\ncursor-foreground = #AD3D0A\nstdout-foreground = #164669\nstdout-background = #F5F7F9\nstderr-foreground = #B91C2E\nstderr-background = #F5F7F9\nconsole-foreground = #AD3D0A\nconsole-background = #F5F7F9",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

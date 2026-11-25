@@ -1,0 +1,149 @@
+{
+  "app": "QTerminal",
+  "slug": "qterminal",
+  "category": "Terminals",
+  "homepage": "https://github.com/lxqt/qterminal",
+  "format": "QTermWidget .colorscheme INI",
+  "install": "Copy .colorscheme into ~/.local/share/qtermwidget6/color-schemes/ and select in Preferences",
+  "installSteps": [
+    "Copy `Cyclorama Dawn.colorscheme`, `Cyclorama Steel.colorscheme`, and `Cyclorama Day.colorscheme` into `~/.local/share/qtermwidget6/color-schemes/` (or `~/.local/share/qtermwidget5/color-schemes/` on Qt5 builds; system-wide: `/usr/share/qtermwidget6/color-schemes/`).",
+    "Open QTerminal -> **File -> Preferences -> Appearance -> Color scheme** and select **Cyclorama Dawn** (or **Cyclorama Steel** / **Cyclorama Day**).",
+    "Click **Apply** — compatible with QTerminal on WSLg, LXQt, and Konsole-format QTermWidget terminals."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/qterminal/Cyclorama Dawn.colorscheme",
+  "files": [
+    {
+      "label": "Cyclorama Dawn (Cyclorama Dawn.colorscheme)",
+      "path": "apps/qterminal/Cyclorama Dawn.colorscheme"
+    },
+    {
+      "label": "Cyclorama Steel (Cyclorama Steel.colorscheme)",
+      "path": "apps/qterminal/Cyclorama Steel.colorscheme"
+    },
+    {
+      "label": "Cyclorama Day (Cyclorama Day.colorscheme)",
+      "path": "apps/qterminal/Cyclorama Day.colorscheme"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/qterminal/previews/cyclorama-dawn.svg",
+      "file": "apps/qterminal/Cyclorama Dawn.colorscheme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Dawn QTerminal .colorscheme",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Dawn\nOpacity=1\n\n[Background]\nBold=false\nColor=5,5,7\n\n[BackgroundIntense]\nBold=false\nColor=12,12,16\n\n[Foreground]\nBold=false\nColor=244,245,248\n\n[ForegroundIntense]\nBold=false\nColor=244,245,248\n\n[Color0]\nBold=false\nColor=12,12,16\n\n[Color0Intense]\nBold=false\nColor=140,143,157\n\n[Color1]\nBold=false\nColor=255,92,108\n\n[Color1Intense]\nBold=false\nColor=255,146,84\n\n[Color2]\nBold=false\nColor=61,220,151\n\n[Color2Intense]\nBold=false\nColor=108,232,178\n\n[Color3]\nBold=false\nColor=255,194,71\n\n[Color3Intense]\nBold=false\nColor=255,212,117\n\n[Color4]\nBold=false\nColor=116,184,232\n\n[Color4Intense]\nBold=false\nColor=153,205,242\n\n[Color5]\nBold=false\nColor=201,150,245\n\n[Color5Intense]\nBold=false\nColor=220,184,250\n\n[Color6]\nBold=false\nColor=86,212,224\n\n[Color6Intense]\nBold=false\nColor=133,227,236\n\n[Color7]\nBold=false\nColor=214,216,224\n\n[Color7Intense]\nBold=false\nColor=244,245,248",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/qterminal/previews/cyclorama-steel.svg",
+      "file": "apps/qterminal/Cyclorama Steel.colorscheme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Steel QTerminal .colorscheme",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Steel\nOpacity=1\n\n[Background]\nBold=false\nColor=5,5,7\n\n[BackgroundIntense]\nBold=false\nColor=12,12,16\n\n[Foreground]\nBold=false\nColor=244,245,248\n\n[ForegroundIntense]\nBold=false\nColor=244,245,248\n\n[Color0]\nBold=false\nColor=12,12,16\n\n[Color0Intense]\nBold=false\nColor=140,150,166\n\n[Color1]\nBold=false\nColor=255,92,108\n\n[Color1Intense]\nBold=false\nColor=255,146,84\n\n[Color2]\nBold=false\nColor=61,220,151\n\n[Color2Intense]\nBold=false\nColor=108,232,178\n\n[Color3]\nBold=false\nColor=255,194,71\n\n[Color3Intense]\nBold=false\nColor=255,212,117\n\n[Color4]\nBold=false\nColor=116,184,232\n\n[Color4Intense]\nBold=false\nColor=153,205,242\n\n[Color5]\nBold=false\nColor=201,150,245\n\n[Color5Intense]\nBold=false\nColor=220,184,250\n\n[Color6]\nBold=false\nColor=86,212,224\n\n[Color6Intense]\nBold=false\nColor=133,227,236\n\n[Color7]\nBold=false\nColor=214,216,224\n\n[Color7Intense]\nBold=false\nColor=244,245,248",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/qterminal/previews/cyclorama-day.svg",
+      "file": "apps/qterminal/Cyclorama Day.colorscheme",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Day QTerminal .colorscheme",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Day\nOpacity=1\n\n[Background]\nBold=false\nColor=245,247,249\n\n[BackgroundIntense]\nBold=false\nColor=255,255,255\n\n[Foreground]\nBold=false\nColor=13,16,22\n\n[ForegroundIntense]\nBold=false\nColor=13,16,22\n\n[Color0]\nBold=false\nColor=13,16,22\n\n[Color0Intense]\nBold=false\nColor=88,96,110\n\n[Color1]\nBold=false\nColor=185,28,46\n\n[Color1Intense]\nBold=false\nColor=173,61,10\n\n[Color2]\nBold=false\nColor=18,114,71\n\n[Color2Intense]\nBold=false\nColor=13,90,55\n\n[Color3]\nBold=false\nColor=136,88,0\n\n[Color3Intense]\nBold=false\nColor=112,71,0\n\n[Color4]\nBold=false\nColor=22,70,105\n\n[Color4Intense]\nBold=false\nColor=31,84,122\n\n[Color5]\nBold=false\nColor=107,56,184\n\n[Color5Intense]\nBold=false\nColor=87,42,158\n\n[Color6]\nBold=false\nColor=14,102,116\n\n[Color6Intense]\nBold=false\nColor=10,82,94\n\n[Color7]\nBold=false\nColor=227,232,238\n\n[Color7Intense]\nBold=false\nColor=255,255,255",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

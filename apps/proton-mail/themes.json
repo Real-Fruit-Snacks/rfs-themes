@@ -1,0 +1,149 @@
+{
+  "app": "Proton Mail",
+  "slug": "proton-mail",
+  "category": "Browsers & Desktop",
+  "homepage": "https://proton.me/mail",
+  "format": "Custom Theme CSS",
+  "install": "Proton Mail -> Settings -> Appearance -> Custom theme -> Paste CSS",
+  "installSteps": [
+    "Open **Proton Mail** (`proton.me/mail`) -> **Settings (gear icon) -> All settings -> Appearance**.",
+    "Scroll to **Custom theme** (or toggle **Custom theme** on) and open the CSS editor.",
+    "Paste the full contents of `cyclorama-dawn.css` (or `cyclorama-steel.css` / `cyclorama-day.css`) and click **Save** — applies across Proton Mail, Calendar, and Drive."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/proton-mail/cyclorama-dawn.css",
+  "files": [
+    {
+      "label": "Cyclorama Dawn CSS (cyclorama-dawn.css)",
+      "path": "apps/proton-mail/cyclorama-dawn.css"
+    },
+    {
+      "label": "Cyclorama Steel CSS (cyclorama-steel.css)",
+      "path": "apps/proton-mail/cyclorama-steel.css"
+    },
+    {
+      "label": "Cyclorama Day CSS (cyclorama-day.css)",
+      "path": "apps/proton-mail/cyclorama-day.css"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 Proton Mail dark workspace with Beacon Orange (#FF9254) active indicators, high-contrast compose CTA (#BD4811), and Steel Blue info signals.",
+      "preview": "apps/proton-mail/previews/cyclorama-dawn.svg",
+      "file": "apps/proton-mail/cyclorama-dawn.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Cyclorama Dawn Proton Mail CSS",
+      "copySnippet": "/*\n * Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: dark;\n\n  /* Surfaces & Elevation */\n  --background-norm: #050507;\n  --background-weak: #0C0C10;\n  --background-strong: #14141A;\n  --background-elevated: #1C1D26;\n  --background-lowered: #070709;\n\n  /* Primary & Norm Interactions */\n  --primary: #BD4811;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #BD4811;\n  --interaction-norm-major-1: #9E3B0C;\n  --interaction-norm-major-2: #82310B;\n  --interaction-norm-major-3: #6D2A0A;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #14141A;\n  --interaction-weak-major-1: #1C1D26;\n  --interaction-weak-major-2: #30313A;\n  --interaction-default: transparent;\n  --interaction-default-hover: #111117;\n  --interaction-default-active: #14141A;\n\n  /* Typography & Ink */\n  --text-norm: #F4F5F8;\n  --text-weak: #B3B5C0;\n  --text-hint: #8C8F9D;\n  --text-disabled: #646670;\n  --text-invert: #050507;\n\n  /* Borders & Hairlines */\n  --border-norm: #2A2C35;\n  --border-weak: #27272E;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #FF5C6C;\n  --signal-danger-major-1: #FD7482;\n  --signal-danger-major-2: #FC8A96;\n  --signal-danger-contrast: #050507;\n  --signal-warning: #FFC247;\n  --signal-warning-contrast: #050507;\n  --signal-success: #3DDC97;\n  --signal-success-contrast: #050507;\n  --signal-info: #74B8E8;\n  --signal-info-contrast: #050507;\n  --focus-outline: #FF9254;\n  --focus-ring: #FF9254;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #2A2C35;\n  --scrollbar-thumb-hover-color: #62646D;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #33211B;\n  --navigation-current-item-text-color: #F4F5F8;\n  --navigation-current-item-marker-color: #FF9254;\n  --email-item-unread-background-color: #050507;\n  --email-item-read-background-color: #0C0C10;\n  --email-item-selected-background-color: #3D2B24;\n  --email-item-selected-text-color: #F4F5F8;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #FF9254;\n  --rfs-link-hover: #FFB07A;\n  --rfs-secondary-ink: #74B8E8;\n  --rfs-beam-start: #74B8E8;\n  --rfs-beam-end: #F06E2B;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#2A2C35"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal Proton Mail dark workspace with Steel Blue (#74B8E8) focus rings, #18496B primary buttons, and Beacon Orange secondary highlights.",
+      "preview": "apps/proton-mail/previews/cyclorama-steel.svg",
+      "file": "apps/proton-mail/cyclorama-steel.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Cyclorama Steel Proton Mail CSS",
+      "copySnippet": "/*\n * Cyclorama Steel (LX 263 Dark · Steel Blue) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: dark;\n\n  /* Surfaces & Elevation */\n  --background-norm: #050507;\n  --background-weak: #0C0C10;\n  --background-strong: #131820;\n  --background-elevated: #1A222E;\n  --background-lowered: #07080B;\n\n  /* Primary & Norm Interactions */\n  --primary: #18496B;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #18496B;\n  --interaction-norm-major-1: #123955;\n  --interaction-norm-major-2: #103047;\n  --interaction-norm-major-3: #0E283C;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #131820;\n  --interaction-weak-major-1: #1A222E;\n  --interaction-weak-major-2: #2E3846;\n  --interaction-default: transparent;\n  --interaction-default-hover: #11141A;\n  --interaction-default-active: #131820;\n\n  /* Typography & Ink */\n  --text-norm: #F4F5F8;\n  --text-weak: #B3B5C0;\n  --text-hint: #8C96A6;\n  --text-disabled: #646B76;\n  --text-invert: #050507;\n\n  /* Borders & Hairlines */\n  --border-norm: #27313D;\n  --border-weak: #222B36;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #FF5C6C;\n  --signal-danger-major-1: #FD7482;\n  --signal-danger-major-2: #FC8A96;\n  --signal-danger-contrast: #050507;\n  --signal-warning: #FFC247;\n  --signal-warning-contrast: #050507;\n  --signal-success: #3DDC97;\n  --signal-success-contrast: #050507;\n  --signal-info: #FF9254;\n  --signal-info-contrast: #050507;\n  --focus-outline: #74B8E8;\n  --focus-ring: #74B8E8;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #27313D;\n  --scrollbar-thumb-hover-color: #637284;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #1D2833;\n  --navigation-current-item-text-color: #F4F5F8;\n  --navigation-current-item-marker-color: #74B8E8;\n  --email-item-unread-background-color: #050507;\n  --email-item-read-background-color: #0C0C10;\n  --email-item-selected-background-color: #1D3B57;\n  --email-item-selected-text-color: #F4F5F8;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #74B8E8;\n  --rfs-link-hover: #99CDF2;\n  --rfs-secondary-ink: #FF9254;\n  --rfs-beam-start: #74B8E8;\n  --rfs-beam-end: #F06E2B;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Border",
+          "hex": "#27313D"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light mailbox with white message panes, burnt Beacon (#AD3D0A) focus markers, and Steel Blue primary buttons.",
+      "preview": "apps/proton-mail/previews/cyclorama-day.svg",
+      "file": "apps/proton-mail/cyclorama-day.css",
+      "copyLang": "css",
+      "copyLabel": "Copy Cyclorama Day Proton Mail CSS",
+      "copySnippet": "/*\n * Cyclorama Day (LX 512 Light · Alabaster Day) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: light;\n\n  /* Surfaces & Elevation */\n  --background-norm: #F5F7F9;\n  --background-weak: #FFFFFF;\n  --background-strong: #E3E8EE;\n  --background-elevated: #D7DFE8;\n  --background-lowered: #EAEEF2;\n\n  /* Primary & Norm Interactions */\n  --primary: #18496B;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #18496B;\n  --interaction-norm-major-1: #113752;\n  --interaction-norm-major-2: #103047;\n  --interaction-norm-major-3: #102B3F;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #E3E8EE;\n  --interaction-weak-major-1: #D7DFE8;\n  --interaction-weak-major-2: #BAC2CB;\n  --interaction-default: transparent;\n  --interaction-default-hover: #EDF0F4;\n  --interaction-default-active: #E3E8EE;\n\n  /* Typography & Ink */\n  --text-norm: #0D1016;\n  --text-weak: #474D59;\n  --text-hint: #58606E;\n  --text-disabled: #878D98;\n  --text-invert: #F5F7F9;\n\n  /* Borders & Hairlines */\n  --border-norm: #C8D0DA;\n  --border-weak: #CFD5DC;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #B91C2E;\n  --signal-danger-major-1: #991525;\n  --signal-danger-major-2: #831423;\n  --signal-danger-contrast: #FFFFFF;\n  --signal-warning: #885800;\n  --signal-warning-contrast: #FFFFFF;\n  --signal-success: #127247;\n  --signal-success-contrast: #FFFFFF;\n  --signal-info: #164669;\n  --signal-info-contrast: #FFFFFF;\n  --focus-outline: #AD3D0A;\n  --focus-ring: #AD3D0A;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #C8D0DA;\n  --scrollbar-thumb-hover-color: #6E7682;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #F5E8E2;\n  --navigation-current-item-text-color: #0D1016;\n  --navigation-current-item-marker-color: #AD3D0A;\n  --email-item-unread-background-color: #F5F7F9;\n  --email-item-read-background-color: #FFFFFF;\n  --email-item-selected-background-color: #C6DAEB;\n  --email-item-selected-text-color: #0D1016;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #AD3D0A;\n  --rfs-link-hover: #8B2F06;\n  --rfs-secondary-ink: #164669;\n  --rfs-beam-start: #18496B;\n  --rfs-beam-end: #AD3D0A;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Border",
+          "hex": "#C8D0DA"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

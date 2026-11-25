@@ -1,0 +1,153 @@
+{
+  "app": "Windows Console",
+  "slug": "windows-console",
+  "category": "Terminals",
+  "homepage": "https://learn.microsoft.com/en-us/windows/console/",
+  "format": "Windows Registry .reg (HKCU\\Console)",
+  "install": "Double-click cyclorama-dawn.reg (or run reg import) and open a new cmd.exe window",
+  "installSteps": [
+    "Double-click `cyclorama-dawn.reg` (or `cyclorama-steel.reg` / `cyclorama-day.reg`) and confirm the Registry Editor prompt — or run `reg import apps\\windows-console\\cyclorama-dawn.reg` in `cmd.exe`.",
+    "Open a new **Command Prompt** (`cmd.exe`) or legacy `conhost.exe` window to see the Cyclorama palette (`ScreenColors` maps slot `00` background and slot `07` foreground automatically).",
+    "Revert to official Windows 10/11 Campbell defaults anytime in one click by importing `restore-defaults.reg`."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/windows-console/cyclorama-dawn.reg",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Registry (cyclorama-dawn.reg)",
+      "path": "apps/windows-console/cyclorama-dawn.reg"
+    },
+    {
+      "label": "Cyclorama Steel Registry (cyclorama-steel.reg)",
+      "path": "apps/windows-console/cyclorama-steel.reg"
+    },
+    {
+      "label": "Cyclorama Day Registry (cyclorama-day.reg)",
+      "path": "apps/windows-console/cyclorama-day.reg"
+    },
+    {
+      "label": "Restore Windows Campbell Defaults (restore-defaults.reg)",
+      "path": "apps/windows-console/restore-defaults.reg"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/windows-console/previews/cyclorama-dawn.svg",
+      "file": "apps/windows-console/cyclorama-dawn.reg",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Dawn HKCU\\Console Registry Values",
+      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:009d8f8c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#F06E2B"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#3D2B24"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#74B8E8"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/windows-console/previews/cyclorama-steel.svg",
+      "file": "apps/windows-console/cyclorama-steel.reg",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Steel HKCU\\Console Registry Values",
+      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:00a6968c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#050507"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#1D3B57"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "BEACON",
+          "hex": "#FF9254"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/windows-console/previews/cyclorama-day.svg",
+      "file": "apps/windows-console/cyclorama-day.reg",
+      "copyLang": "ini",
+      "copyLabel": "Copy Cyclorama Day HKCU\\Console Registry Values",
+      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00f9f7f5\n\"ColorTable01\"=dword:00694616\n\"ColorTable02\"=dword:00477212\n\"ColorTable03\"=dword:0074660e\n\"ColorTable04\"=dword:002e1cb9\n\"ColorTable05\"=dword:00b8386b\n\"ColorTable06\"=dword:00005888\n\"ColorTable07\"=dword:0016100d\n\"ColorTable08\"=dword:006e6058\n\"ColorTable09\"=dword:007a541f\n\"ColorTable10\"=dword:00375a0d\n\"ColorTable11\"=dword:005e520a\n\"ColorTable12\"=dword:000a3dad\n\"ColorTable13\"=dword:009e2a57\n\"ColorTable14\"=dword:00004770\n\"ColorTable15\"=dword:00ffffff\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:0000007f",
+      "swatches": [
+        {
+          "label": "BG",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "TEXT",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "CURSOR",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "SELECT",
+          "hex": "#C6DAEB"
+        },
+        {
+          "label": "ACCENT",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "STEEL",
+          "hex": "#164669"
+        }
+      ]
+    }
+  ]
+}

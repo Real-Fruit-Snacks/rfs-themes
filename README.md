@@ -3,7 +3,7 @@
   <img alt="rfs-themes: Cyclorama Dawn themes and ports for everyday apps" src="docs/assets/cover-light.svg" width="100%">
 </picture>
 
-**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **21 everyday apps** (**63 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
+**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **28 everyday apps** (**84 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
 
 Browse live previews, filter by category, copy snippets, and download configs at **[real-fruit-snacks.github.io/rfs-themes](https://real-fruit-snacks.github.io/rfs-themes/)**.
 
@@ -15,9 +15,9 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **Cyclorama Steel** | `LX 263` | Dark (`#050507`) | Steel Blue (`#74B8E8`) primary focus, Beacon Orange (`#FF9254`) secondary |
 | **Cyclorama Day** | `LX 512` | Light (`#F5F7F9`) | Alabaster Day light workspace, burnt Beacon (`#AD3D0A`) & Steel (`#164669`) |
 
-## Application Ports (21 Apps · 63 Variants)
+## Application Ports (28 Apps · 84 Variants)
 
-### Editors & IDEs (4)
+### Editors & IDEs (7)
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
@@ -25,8 +25,11 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **Neovim** | Lua Colorscheme Plugin | Add `apps/neovim/` to your plugin manager and run `:colorscheme cyclorama-dawn` | [`apps/neovim/`](apps/neovim/) |
 | **Zed** | Zed JSON Theme (v0.2.0) | Copy `themes/cyclorama.json` into `~/.config/zed/themes/` and select a variant | [`apps/zed/`](apps/zed/) |
 | **JetBrains IDEs** | IntelliJ `.icls` + `.theme.json` | Import `.icls` under Settings → Editor → Color Scheme or load UI theme plugin | [`apps/jetbrains/`](apps/jetbrains/) |
+| [**Notepad++**](https://notepad-plus-plus.org/) | Notepad++ XML + Dark Mode `.ps1` | Run `apply-cyclorama-dawn.ps1` (copies XMLs + sets Custom Dark Mode) or copy `*.xml` to `%APPDATA%\Notepad++\themes\` | [`apps/notepad-plus-plus/`](apps/notepad-plus-plus/) |
+| [**Python IDLE**](https://docs.python.org/3/library/idle.html) | IDLE `config-highlight.cfg` | Append `apps/python-idle/config-highlight.cfg` to `~/.idlerc/config-highlight.cfg` and pick in Options → Configure IDLE → Highlights | [`apps/python-idle/`](apps/python-idle/) |
+| [**Windows PowerShell ISE**](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise) | `.StorableColorTheme.ps1xml` | Run `install-cyclorama-dawn.ps1` in Windows PowerShell 5.1 or import `.StorableColorTheme.ps1xml` via Tools → Options → Manage Themes | [`apps/powershell-ise/`](apps/powershell-ise/) |
 
-### Terminals (5)
+### Terminals (8)
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
@@ -35,6 +38,9 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **Alacritty** | TOML Theme (`v0.13+`) | Import `cyclorama-*.toml` via `general.import` in `alacritty.toml` | [`apps/alacritty/`](apps/alacritty/) |
 | **Ghostty** | Ghostty `key = value` Theme | Copy theme file to `~/.config/ghostty/themes/` and set `theme = cyclorama-dawn` | [`apps/ghostty/`](apps/ghostty/) |
 | **Kitty** | Kitty `.conf` Theme | Include `cyclorama-*.conf` in `kitty.conf` or run `kitty +kitten themes` | [`apps/kitty/`](apps/kitty/) |
+| [**Git Bash (Mintty)**](https://gitforwindows.org/) | Mintty `.minttyrc` + Git `.gitconfig` | Copy `.minttyrc` to `~/.mintty/themes/` + include `git-colors-*.gitconfig` in `~/.gitconfig` | [`apps/git-bash/`](apps/git-bash/) |
+| [**QTerminal**](https://github.com/lxqt/qterminal) | QTermWidget `.colorscheme` INI | Copy `.colorscheme` into `~/.local/share/qtermwidget6/color-schemes/` and select in Preferences | [`apps/qterminal/`](apps/qterminal/) |
+| [**Windows Console**](https://learn.microsoft.com/en-us/windows/console/) | Windows Registry `.reg` (`HKCU\Console`) | Double-click `cyclorama-dawn.reg` (or run `reg import`) and open a new `cmd.exe` window | [`apps/windows-console/`](apps/windows-console/) |
 
 ### CLI & TUI (5)
 
@@ -53,25 +59,26 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **PrivacyNotes** | `pn1:` theme code | Settings → Design → Paste theme code (all 17/17 contrast checks passing) | [`apps/privacynotes/`](apps/privacynotes/) |
 | **Obsidian** | Obsidian Theme (`manifest.json` + `theme.css`) | Copy into `.obsidian/themes/Cyclorama Dawn/` or enable CSS snippets | [`apps/obsidian/`](apps/obsidian/) |
 
-### Browsers & Desktop (5)
+### Browsers & Desktop (6)
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
+| **Windows 11** | `.theme` + Oklab Wallpapers + `.ps1` | Run `install-cyclorama-dawn.ps1` (auto 1080p/4K + registry backup) or double-click `.theme` | [`apps/windows/`](apps/windows/) |
 | **Brave / Chrome / Edge** | Chromium MV3 Browser Theme | Extensions → Developer mode → Load unpacked variant folder | [`apps/chromium/`](apps/chromium/) |
 | **Discord (Vencord / BetterDiscord)** | `.theme.css` Client Theme | Drop `cyclorama-*.theme.css` into your Vencord / BetterDiscord `themes/` folder | [`apps/discord/`](apps/discord/) |
+| [**Proton Mail**](https://proton.me/mail) | Custom Theme CSS | Proton Mail → Settings → Appearance → Custom theme → Paste CSS | [`apps/proton-mail/`](apps/proton-mail/) |
 | **qBittorrent** | QSS Stylesheet + `config.json` | qBittorrent 5.x: Behavior → Use custom UI theme → pick `config.json` (`FolderThemeSource`) | [`apps/qbittorrent/`](apps/qbittorrent/) |
 | **Flow Launcher** | WPF XAML ResourceDictionary | Copy `Cyclorama *.xaml` into `%APPDATA%\FlowLauncher\Themes\` | [`apps/flow-launcher/`](apps/flow-launcher/) |
-| **Windows 11** | `.theme` + Oklab Wallpapers + `.ps1` | Run `install-cyclorama-dawn.ps1` (auto 1080p/4K + registry backup) or double-click `.theme` | [`apps/windows/`](apps/windows/) |
 
 ## Repository Layout
 
 | Path | What it holds |
 |---|---|
 | `apps/<slug>/` | Self-contained theme port for each application (`themes.json`, native configs/codes, `previews/`, `README.md`) |
-| `apps/manifest.json` | Machine-readable registry of all 21 supported apps and 63 variants |
+| `apps/manifest.json` | Machine-readable registry of all 28 supported apps and 84 variants |
 | `brand/rfs.tokens.json` | Canonical Cyclorama Dawn tokens synced from `rfs-brand` `v2.1.0` |
 | `tools/` | Zero-dependency Python palette engine, SVG preview renderers, master orchestrator, and CI validator |
-| `docs/` | Interactive Cyclorama Dawn 21-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
+| `docs/` | Interactive Cyclorama Dawn 28-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
 
 ## Build & Verify Locally
 

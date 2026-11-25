@@ -1,0 +1,161 @@
+{
+  "app": "Notepad++",
+  "slug": "notepad-plus-plus",
+  "category": "Editors & IDEs",
+  "homepage": "https://notepad-plus-plus.org/",
+  "format": "Notepad++ XML + Dark Mode .ps1",
+  "install": "Run apply-cyclorama-dawn.ps1 (copies XMLs + sets Custom Dark Mode) or copy *.xml to %APPDATA%\\Notepad++\\themes\\",
+  "installSteps": [
+    "Close Notepad++ so it does not overwrite `config.xml` on exit.",
+    "Run `powershell -ExecutionPolicy Bypass -File apps/notepad-plus-plus/apply-cyclorama-dawn.ps1` (or `steel` / `day`). The script copies all three `.xml` files into `%APPDATA%\\Notepad++\\themes\\`, writes a one-time `config.xml.pre-rfs.bak` backup, and configures Notepad++ 8.x Custom Dark Mode (`colorTone=\"32\"`) or Day light mode.",
+    "Alternatively, copy `Cyclorama Dawn.xml`, `Cyclorama Steel.xml`, and `Cyclorama Day.xml` into `%APPDATA%\\Notepad++\\themes\\` and select the theme in **Settings -> Style Configurator**."
+  ],
+  "author": "Real-Fruit-Snacks",
+  "brandVersion": "2.1.0",
+  "primaryFile": "apps/notepad-plus-plus/Cyclorama Dawn.xml",
+  "files": [
+    {
+      "label": "Cyclorama Dawn Theme XML (Cyclorama Dawn.xml)",
+      "path": "apps/notepad-plus-plus/Cyclorama Dawn.xml"
+    },
+    {
+      "label": "Cyclorama Dawn PowerShell Applier (apply-cyclorama-dawn.ps1)",
+      "path": "apps/notepad-plus-plus/apply-cyclorama-dawn.ps1"
+    },
+    {
+      "label": "Cyclorama Steel Theme XML (Cyclorama Steel.xml)",
+      "path": "apps/notepad-plus-plus/Cyclorama Steel.xml"
+    },
+    {
+      "label": "Cyclorama Steel PowerShell Applier (apply-cyclorama-steel.ps1)",
+      "path": "apps/notepad-plus-plus/apply-cyclorama-steel.ps1"
+    },
+    {
+      "label": "Cyclorama Day Theme XML (Cyclorama Day.xml)",
+      "path": "apps/notepad-plus-plus/Cyclorama Day.xml"
+    },
+    {
+      "label": "Cyclorama Day PowerShell Applier (apply-cyclorama-day.ps1)",
+      "path": "apps/notepad-plus-plus/apply-cyclorama-day.ps1"
+    }
+  ],
+  "themes": [
+    {
+      "id": "cyclorama-dawn",
+      "name": "Cyclorama Dawn",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Beacon Orange",
+      "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+      "preview": "apps/notepad-plus-plus/previews/cyclorama-dawn.svg",
+      "file": "apps/notepad-plus-plus/Cyclorama Dawn.xml",
+      "copyLang": "xml",
+      "copyLabel": "Notepad++ GlobalStyles XML snippet",
+      "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"F4F5F8\" bgColor=\"050507\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"14141A\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"F4F5F8\" bgColor=\"3D2B24\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"F06E2B\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"8C8F9D\" bgColor=\"0C0C10\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"FF9254\" bgColor=\"14141A\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"133954\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"4A3619\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"FF9254\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"FF9254\" />\n    </GlobalStyles>\n</NotepadPlus>",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-steel",
+      "name": "Cyclorama Steel",
+      "lx": "LX 263",
+      "mode": "dark",
+      "accentRole": "Steel Blue",
+      "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+      "preview": "apps/notepad-plus-plus/previews/cyclorama-steel.svg",
+      "file": "apps/notepad-plus-plus/Cyclorama Steel.xml",
+      "copyLang": "xml",
+      "copyLabel": "Notepad++ GlobalStyles XML snippet",
+      "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"F4F5F8\" bgColor=\"050507\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"131820\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"F4F5F8\" bgColor=\"1D3B57\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"74B8E8\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"8C96A6\" bgColor=\"0C0C10\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"74B8E8\" bgColor=\"131820\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"133954\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"3B3117\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"74B8E8\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"74B8E8\" />\n    </GlobalStyles>\n</NotepadPlus>",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#050507"
+        },
+        {
+          "label": "Surface",
+          "hex": "#0C0C10"
+        },
+        {
+          "label": "Text",
+          "hex": "#F4F5F8"
+        },
+        {
+          "label": "Accent",
+          "hex": "#74B8E8"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#FF9254"
+        },
+        {
+          "label": "Signal",
+          "hex": "#3DDC97"
+        }
+      ]
+    },
+    {
+      "id": "cyclorama-day",
+      "name": "Cyclorama Day",
+      "lx": "LX 512",
+      "mode": "light",
+      "accentRole": "Alabaster Day",
+      "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+      "preview": "apps/notepad-plus-plus/previews/cyclorama-day.svg",
+      "file": "apps/notepad-plus-plus/Cyclorama Day.xml",
+      "copyLang": "xml",
+      "copyLabel": "Notepad++ GlobalStyles XML snippet",
+      "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"0D1016\" bgColor=\"F5F7F9\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"E3E8EE\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"0D1016\" bgColor=\"C6DAEB\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"AD3D0A\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"58606E\" bgColor=\"FFFFFF\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"AD3D0A\" bgColor=\"E3E8EE\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"DCE7F0\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"F5DFB0\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"AD3D0A\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"AD3D0A\" />\n    </GlobalStyles>\n</NotepadPlus>",
+      "swatches": [
+        {
+          "label": "Background",
+          "hex": "#F5F7F9"
+        },
+        {
+          "label": "Surface",
+          "hex": "#FFFFFF"
+        },
+        {
+          "label": "Text",
+          "hex": "#0D1016"
+        },
+        {
+          "label": "Accent",
+          "hex": "#AD3D0A"
+        },
+        {
+          "label": "Secondary",
+          "hex": "#164669"
+        },
+        {
+          "label": "Signal",
+          "hex": "#127247"
+        }
+      ]
+    }
+  ]
+}

@@ -368,9 +368,9 @@
       css: [".css"],
       sh: [".sh"],
       ps1: [".ps1"],
-      ini: [".gitconfig", ".ini", ".theme"],
-      conf: [".conf"],
-      xml: [".xaml", ".xml"],
+      ini: [".gitconfig", ".ini", ".theme", ".cfg", ".colorscheme", ".reg"],
+      conf: [".conf", ".minttyrc"],
+      xml: [".xaml", ".xml", ".ps1xml"],
       pn1: [".txt"],
     };
     const lang = variant.copyLang || "text";
@@ -507,7 +507,7 @@
   };
 
   // =========================================================================
-  // 5. 21-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
+  // 5. 28-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
   // =========================================================================
   const state = {
     catalog: null,

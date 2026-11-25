@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows Console Host (HKCU\Console)
+; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+; Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).
+
+[HKEY_CURRENT_USER\Console]
+"ColorTable00"=dword:00f9f7f5
+"ColorTable01"=dword:00694616
+"ColorTable02"=dword:00477212
+"ColorTable03"=dword:0074660e
+"ColorTable04"=dword:002e1cb9
+"ColorTable05"=dword:00b8386b
+"ColorTable06"=dword:00005888
+"ColorTable07"=dword:0016100d
+"ColorTable08"=dword:006e6058
+"ColorTable09"=dword:007a541f
+"ColorTable10"=dword:00375a0d
+"ColorTable11"=dword:005e520a
+"ColorTable12"=dword:000a3dad
+"ColorTable13"=dword:009e2a57
+"ColorTable14"=dword:00004770
+"ColorTable15"=dword:00ffffff
+"ScreenColors"=dword:00000007
+"PopupColors"=dword:0000007f

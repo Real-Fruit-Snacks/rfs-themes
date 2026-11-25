@@ -1,0 +1,36 @@
+# Cyclorama Day (LX 512 Light · Alabaster Day) — Native Git CLI Truecolor Theme
+# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+# Source: https://github.com/Real-Fruit-Snacks/rfs-themes
+# Include from ~/.gitconfig via [include] path = ...
+
+[color]
+	ui = auto
+
+[color "diff"]
+	meta = "#164669 bold"
+	frag = "#0E6674 bold"
+	old = "#B91C2E"
+	new = "#127247"
+	context = "#474D59"
+	whitespace = "#FFFFFF #B91C2E"
+	func = "#AD3D0A"
+
+[color "status"]
+	header = "#474D59"
+	added = "#127247 bold"
+	changed = "#885800 bold"
+	untracked = "#AD3D0A"
+	branch = "#164669 bold"
+	nobranch = "#B91C2E bold"
+
+[color "branch"]
+	current = "#AD3D0A bold"
+	local = "#0D1016"
+	remote = "#164669"
+	upstream = "#127247"
+
+[color "grep"]
+	filename = "#164669 bold"
+	linenumber = "#58606E"
+	match = "#FFFFFF #18496B bold"
+	separator = "#474D59"

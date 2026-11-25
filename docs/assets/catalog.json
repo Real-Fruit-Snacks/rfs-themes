@@ -3,20 +3,20 @@
   "version": "2.1.0",
   "source": "https://github.com/Real-Fruit-Snacks/rfs-brand",
   "stats": {
-    "apps": 21,
-    "variants": 63,
+    "apps": 28,
+    "variants": 84,
     "categories": 5
   },
   "categories": [
     {
       "name": "Editors & IDEs",
       "slug": "editors-ides",
-      "count": 4
+      "count": 7
     },
     {
       "name": "Terminals",
       "slug": "terminals",
-      "count": 5
+      "count": 8
     },
     {
       "name": "CLI & TUI",
@@ -31,7 +31,7 @@
     {
       "name": "Browsers & Desktop",
       "slug": "browsers-desktop",
-      "count": 5
+      "count": 6
     }
   ],
   "apps": [
@@ -634,6 +634,490 @@
           "copyLang": "json",
           "copyLabel": "JetBrains .theme.json snippet",
           "copySnippet": "{\n  \"name\": \"Cyclorama Day\",\n  \"dark\": false,\n  \"author\": \"Real-Fruit-Snacks\",\n  \"editorScheme\": \"/schemes/Cyclorama Day.icls\",\n  \"colors\": {\n    \"bg\": \"#F5F7F9\",\n    \"surface\": \"#FFFFFF\",\n    \"border\": \"#C8D0DA\",\n    \"text\": \"#0D1016\",\n    \"accent\": \"#AD3D0A\",\n    \"accentFill\": \"#18496B\",\n    \"secondary\": \"#164669\"\n  },\n  \"ui\": {\n    \"Panel.background\": \"surface\",\n    \"EditorTabs.underlineColor\": \"accent\",\n    \"Button.default.startBackground\": \"accentFill\",\n    \"StatusBar.background\": \"bg\",\n    \"Focus.borderColor\": \"accent\"\n  }\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "notepad-plus-plus",
+      "name": "Notepad++",
+      "category": "Editors & IDEs",
+      "homepage": "https://notepad-plus-plus.org/",
+      "format": "Notepad++ XML + Dark Mode .ps1",
+      "install": "Run apply-cyclorama-dawn.ps1 (copies XMLs + sets Custom Dark Mode) or copy *.xml to %APPDATA%\\Notepad++\\themes\\",
+      "installSteps": [
+        "Close Notepad++ so it does not overwrite `config.xml` on exit.",
+        "Run `powershell -ExecutionPolicy Bypass -File apps/notepad-plus-plus/apply-cyclorama-dawn.ps1` (or `steel` / `day`). The script copies all three `.xml` files into `%APPDATA%\\Notepad++\\themes\\`, writes a one-time `config.xml.pre-rfs.bak` backup, and configures Notepad++ 8.x Custom Dark Mode (`colorTone=\"32\"`) or Day light mode.",
+        "Alternatively, copy `Cyclorama Dawn.xml`, `Cyclorama Steel.xml`, and `Cyclorama Day.xml` into `%APPDATA%\\Notepad++\\themes\\` and select the theme in **Settings -> Style Configurator**."
+      ],
+      "path": "apps/notepad-plus-plus",
+      "primaryFile": "apps/notepad-plus-plus/Cyclorama Dawn.xml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Theme XML (Cyclorama Dawn.xml)",
+          "path": "apps/notepad-plus-plus/Cyclorama Dawn.xml"
+        },
+        {
+          "label": "Cyclorama Dawn PowerShell Applier (apply-cyclorama-dawn.ps1)",
+          "path": "apps/notepad-plus-plus/apply-cyclorama-dawn.ps1"
+        },
+        {
+          "label": "Cyclorama Steel Theme XML (Cyclorama Steel.xml)",
+          "path": "apps/notepad-plus-plus/Cyclorama Steel.xml"
+        },
+        {
+          "label": "Cyclorama Steel PowerShell Applier (apply-cyclorama-steel.ps1)",
+          "path": "apps/notepad-plus-plus/apply-cyclorama-steel.ps1"
+        },
+        {
+          "label": "Cyclorama Day Theme XML (Cyclorama Day.xml)",
+          "path": "apps/notepad-plus-plus/Cyclorama Day.xml"
+        },
+        {
+          "label": "Cyclorama Day PowerShell Applier (apply-cyclorama-day.ps1)",
+          "path": "apps/notepad-plus-plus/apply-cyclorama-day.ps1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/notepad-plus-plus/cyclorama-dawn.svg",
+          "file": "apps/notepad-plus-plus/Cyclorama Dawn.xml",
+          "copyLang": "xml",
+          "copyLabel": "Notepad++ GlobalStyles XML snippet",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"F4F5F8\" bgColor=\"050507\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"14141A\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"F4F5F8\" bgColor=\"3D2B24\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"F06E2B\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"8C8F9D\" bgColor=\"0C0C10\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"FF9254\" bgColor=\"14141A\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"133954\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"4A3619\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"FF9254\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"FF9254\" />\n    </GlobalStyles>\n</NotepadPlus>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/notepad-plus-plus/cyclorama-steel.svg",
+          "file": "apps/notepad-plus-plus/Cyclorama Steel.xml",
+          "copyLang": "xml",
+          "copyLabel": "Notepad++ GlobalStyles XML snippet",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"F4F5F8\" bgColor=\"050507\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"131820\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"F4F5F8\" bgColor=\"1D3B57\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"74B8E8\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"8C96A6\" bgColor=\"0C0C10\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"74B8E8\" bgColor=\"131820\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"133954\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"3B3117\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"74B8E8\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"74B8E8\" />\n    </GlobalStyles>\n</NotepadPlus>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/notepad-plus-plus/cyclorama-day.svg",
+          "file": "apps/notepad-plus-plus/Cyclorama Day.xml",
+          "copyLang": "xml",
+          "copyLabel": "Notepad++ GlobalStyles XML snippet",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<NotepadPlus>\n    <GlobalStyles>\n        <WidgetStyle name=\"Default Style\" styleID=\"32\" fgColor=\"0D1016\" bgColor=\"F5F7F9\" fontName=\"Consolas\" fontStyle=\"0\" fontSize=\"10\" />\n        <WidgetStyle name=\"Current line background colour\" styleID=\"0\" bgColor=\"E3E8EE\" />\n        <WidgetStyle name=\"Selected text colour\" styleID=\"0\" fgColor=\"0D1016\" bgColor=\"C6DAEB\" />\n        <WidgetStyle name=\"Caret colour\" styleID=\"2069\" fgColor=\"AD3D0A\" />\n        <WidgetStyle name=\"Line number margin\" styleID=\"33\" fgColor=\"58606E\" bgColor=\"FFFFFF\" />\n        <WidgetStyle name=\"Brace highlight style\" styleID=\"34\" fgColor=\"AD3D0A\" bgColor=\"E3E8EE\" fontStyle=\"1\" />\n        <WidgetStyle name=\"Smart Highlighting\" styleID=\"29\" bgColor=\"DCE7F0\" />\n        <WidgetStyle name=\"Find Mark Style\" styleID=\"31\" bgColor=\"F5DFB0\" />\n        <WidgetStyle name=\"Active tab focused indicator\" styleID=\"0\" fgColor=\"AD3D0A\" />\n        <WidgetStyle name=\"URL hovered\" styleID=\"0\" fgColor=\"AD3D0A\" />\n    </GlobalStyles>\n</NotepadPlus>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "python-idle",
+      "name": "Python IDLE",
+      "category": "Editors & IDEs",
+      "homepage": "https://docs.python.org/3/library/idle.html",
+      "format": "IDLE config-highlight.cfg",
+      "install": "Append apps/python-idle/config-highlight.cfg to ~/.idlerc/config-highlight.cfg and pick in Options -> Configure IDLE -> Highlights",
+      "installSteps": [
+        "Copy or append `apps/python-idle/config-highlight.cfg` into `~/.idlerc/config-highlight.cfg` (on Windows: `%USERPROFILE%\\.idlerc\\config-highlight.cfg`).",
+        "Open Python IDLE -> **Options -> Configure IDLE -> Highlights**, select **a Custom Theme**, and pick **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**.",
+        "Optional: copy the matching `config-main-dawn.cfg`, `config-main-steel.cfg`, or `config-main-day.cfg` `[Theme]` block into `~/.idlerc/config-main.cfg` to activate immediately."
+      ],
+      "path": "apps/python-idle",
+      "primaryFile": "apps/python-idle/config-highlight.cfg",
+      "files": [
+        {
+          "label": "All 3 Variants Unified (config-highlight.cfg)",
+          "path": "apps/python-idle/config-highlight.cfg"
+        },
+        {
+          "label": "Cyclorama Dawn Highlight Theme (cyclorama-dawn.cfg)",
+          "path": "apps/python-idle/cyclorama-dawn.cfg"
+        },
+        {
+          "label": "Cyclorama Dawn Active Theme Config (config-main-dawn.cfg)",
+          "path": "apps/python-idle/config-main-dawn.cfg"
+        },
+        {
+          "label": "Cyclorama Steel Highlight Theme (cyclorama-steel.cfg)",
+          "path": "apps/python-idle/cyclorama-steel.cfg"
+        },
+        {
+          "label": "Cyclorama Steel Active Theme Config (config-main-steel.cfg)",
+          "path": "apps/python-idle/config-main-steel.cfg"
+        },
+        {
+          "label": "Cyclorama Day Highlight Theme (cyclorama-day.cfg)",
+          "path": "apps/python-idle/cyclorama-day.cfg"
+        },
+        {
+          "label": "Cyclorama Day Active Theme Config (config-main-day.cfg)",
+          "path": "apps/python-idle/config-main-day.cfg"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/python-idle/cyclorama-dawn.svg",
+          "file": "apps/python-idle/cyclorama-dawn.cfg",
+          "copyLang": "ini",
+          "copyLabel": "IDLE config-highlight.cfg section",
+          "copySnippet": "[Cyclorama Dawn]\nnormal-foreground = #F4F5F8\nnormal-background = #050507\nkeyword-foreground = #74B8E8\nkeyword-background = #050507\nbuiltin-foreground = #56D4E0\nbuiltin-background = #050507\ncomment-foreground = #8C8F9D\ncomment-background = #050507\nstring-foreground = #FFC247\nstring-background = #050507\ndefinition-foreground = #FF9254\ndefinition-background = #050507\nhilite-foreground = #F4F5F8\nhilite-background = #3D2B24\nbreak-foreground = #F4F5F8\nbreak-background = #4A3619\nhit-foreground = #FFFFFF\nhit-background = #BD4811\nerror-foreground = #FFFFFF\nerror-background = #C92438\ncontext-foreground = #F4F5F8\ncontext-background = #14141A\nlinenumber-foreground = #8C8F9D\nlinenumber-background = #0C0C10\ncursor-foreground = #F06E2B\nstdout-foreground = #74B8E8\nstdout-background = #050507\nstderr-foreground = #FF5C6C\nstderr-background = #050507\nconsole-foreground = #FF9254\nconsole-background = #050507",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/python-idle/cyclorama-steel.svg",
+          "file": "apps/python-idle/cyclorama-steel.cfg",
+          "copyLang": "ini",
+          "copyLabel": "IDLE config-highlight.cfg section",
+          "copySnippet": "[Cyclorama Steel]\nnormal-foreground = #F4F5F8\nnormal-background = #050507\nkeyword-foreground = #74B8E8\nkeyword-background = #050507\nbuiltin-foreground = #56D4E0\nbuiltin-background = #050507\ncomment-foreground = #8C96A6\ncomment-background = #050507\nstring-foreground = #FFC247\nstring-background = #050507\ndefinition-foreground = #FF9254\ndefinition-background = #050507\nhilite-foreground = #F4F5F8\nhilite-background = #1D3B57\nbreak-foreground = #F4F5F8\nbreak-background = #3B3117\nhit-foreground = #FFFFFF\nhit-background = #18496B\nerror-foreground = #FFFFFF\nerror-background = #C92438\ncontext-foreground = #F4F5F8\ncontext-background = #131820\nlinenumber-foreground = #8C96A6\nlinenumber-background = #0C0C10\ncursor-foreground = #74B8E8\nstdout-foreground = #FF9254\nstdout-background = #050507\nstderr-foreground = #FF5C6C\nstderr-background = #050507\nconsole-foreground = #74B8E8\nconsole-background = #050507",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/python-idle/cyclorama-day.svg",
+          "file": "apps/python-idle/cyclorama-day.cfg",
+          "copyLang": "ini",
+          "copyLabel": "IDLE config-highlight.cfg section",
+          "copySnippet": "[Cyclorama Day]\nnormal-foreground = #0D1016\nnormal-background = #F5F7F9\nkeyword-foreground = #164669\nkeyword-background = #F5F7F9\nbuiltin-foreground = #0E6674\nbuiltin-background = #F5F7F9\ncomment-foreground = #58606E\ncomment-background = #F5F7F9\nstring-foreground = #885800\nstring-background = #F5F7F9\ndefinition-foreground = #AD3D0A\ndefinition-background = #F5F7F9\nhilite-foreground = #0D1016\nhilite-background = #C6DAEB\nbreak-foreground = #0D1016\nbreak-background = #F5DFB0\nhit-foreground = #FFFFFF\nhit-background = #18496B\nerror-foreground = #FFFFFF\nerror-background = #B91C2E\ncontext-foreground = #0D1016\ncontext-background = #E3E8EE\nlinenumber-foreground = #58606E\nlinenumber-background = #FFFFFF\ncursor-foreground = #AD3D0A\nstdout-foreground = #164669\nstdout-background = #F5F7F9\nstderr-foreground = #B91C2E\nstderr-background = #F5F7F9\nconsole-foreground = #AD3D0A\nconsole-background = #F5F7F9",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "powershell-ise",
+      "name": "Windows PowerShell ISE",
+      "category": "Editors & IDEs",
+      "homepage": "https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise",
+      "format": ".StorableColorTheme.ps1xml",
+      "install": "Run install-cyclorama-dawn.ps1 in Windows PowerShell 5.1 or import .StorableColorTheme.ps1xml via Tools -> Options -> Manage Themes",
+      "installSteps": [
+        "Run `powershell.exe -ExecutionPolicy Bypass -File apps/powershell-ise/install-cyclorama-dawn.ps1` (or `steel` / `day`) in Windows PowerShell 5.1 to validate and register the theme via `StorableColorTheme::StoreTheme()`.",
+        "Open **Windows PowerShell ISE** -> **Tools -> Options -> Colors and Fonts -> Manage Themes** and select **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**.",
+        "Alternatively, click **Import...** inside **Manage Themes** and choose any `.StorableColorTheme.ps1xml` file directly."
+      ],
+      "path": "apps/powershell-ise",
+      "primaryFile": "apps/powershell-ise/Cyclorama Dawn.StorableColorTheme.ps1xml",
+      "files": [
+        {
+          "label": "Cyclorama Dawn ISE Theme (Cyclorama Dawn.StorableColorTheme.ps1xml)",
+          "path": "apps/powershell-ise/Cyclorama Dawn.StorableColorTheme.ps1xml"
+        },
+        {
+          "label": "Cyclorama Dawn ISE Installer (install-cyclorama-dawn.ps1)",
+          "path": "apps/powershell-ise/install-cyclorama-dawn.ps1"
+        },
+        {
+          "label": "Cyclorama Steel ISE Theme (Cyclorama Steel.StorableColorTheme.ps1xml)",
+          "path": "apps/powershell-ise/Cyclorama Steel.StorableColorTheme.ps1xml"
+        },
+        {
+          "label": "Cyclorama Steel ISE Installer (install-cyclorama-steel.ps1)",
+          "path": "apps/powershell-ise/install-cyclorama-steel.ps1"
+        },
+        {
+          "label": "Cyclorama Day ISE Theme (Cyclorama Day.StorableColorTheme.ps1xml)",
+          "path": "apps/powershell-ise/Cyclorama Day.StorableColorTheme.ps1xml"
+        },
+        {
+          "label": "Cyclorama Day ISE Installer (install-cyclorama-day.ps1)",
+          "path": "apps/powershell-ise/install-cyclorama-day.ps1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/powershell-ise/cyclorama-dawn.svg",
+          "file": "apps/powershell-ise/Cyclorama Dawn.StorableColorTheme.ps1xml",
+          "copyLang": "xml",
+          "copyLabel": "PowerShell ISE StorableColorTheme XML excerpt",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<StorableColorTheme xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <Keys>\n    <string>ConsolePaneBackgroundColor</string>\n    <string>ConsolePaneForegroundColor</string>\n    <string>ScriptPaneBackgroundColor</string>\n    <string>TokenColors\\Keyword</string>\n    <string>TokenColors\\Command</string>\n  </Keys>\n  <Values>\n    <Color><A>255</A><R>8</R><G>8</G><B>11</B><ScA>1</ScA><ScR>0.0024282</ScR><ScG>0.0024282</ScG><ScB>0.0033465</ScB></Color>\n    <Color><A>255</A><R>244</R><G>245</G><B>248</B><ScA>1</ScA><ScR>0.9046612</ScR><ScG>0.9130987</ScG><ScB>0.9386857</ScB></Color>\n    <Color><A>255</A><R>5</R><G>5</G><B>7</B><ScA>1</ScA><ScR>0.0015176</ScR><ScG>0.0015176</ScG><ScB>0.0021247</ScB></Color>\n    <Color><A>255</A><R>116</R><G>184</G><B>232</B><ScA>1</ScA><ScR>0.1746474</ScR><ScG>0.4793202</ScG><ScB>0.8069523</ScB></Color>\n    <Color><A>255</A><R>255</R><G>146</G><B>84</B><ScA>1</ScA><ScR>1</ScR><ScG>0.2874408</ScG><ScB>0.0886556</ScB></Color>\n  </Values>\n  <Name>Cyclorama Dawn</Name>\n  <FontFamily>Consolas</FontFamily>\n  <FontSize>10</FontSize>\n</StorableColorTheme>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/powershell-ise/cyclorama-steel.svg",
+          "file": "apps/powershell-ise/Cyclorama Steel.StorableColorTheme.ps1xml",
+          "copyLang": "xml",
+          "copyLabel": "PowerShell ISE StorableColorTheme XML excerpt",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<StorableColorTheme xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <Keys>\n    <string>ConsolePaneBackgroundColor</string>\n    <string>ConsolePaneForegroundColor</string>\n    <string>ScriptPaneBackgroundColor</string>\n    <string>TokenColors\\Keyword</string>\n    <string>TokenColors\\Command</string>\n  </Keys>\n  <Values>\n    <Color><A>255</A><R>8</R><G>10</G><B>14</B><ScA>1</ScA><ScR>0.0024282</ScR><ScG>0.0030353</ScG><ScB>0.0043914</ScB></Color>\n    <Color><A>255</A><R>244</R><G>245</G><B>248</B><ScA>1</ScA><ScR>0.9046612</ScR><ScG>0.9130987</ScG><ScB>0.9386857</ScB></Color>\n    <Color><A>255</A><R>5</R><G>5</G><B>7</B><ScA>1</ScA><ScR>0.0015176</ScR><ScG>0.0015176</ScG><ScB>0.0021247</ScB></Color>\n    <Color><A>255</A><R>116</R><G>184</G><B>232</B><ScA>1</ScA><ScR>0.1746474</ScR><ScG>0.4793202</ScG><ScB>0.8069523</ScB></Color>\n    <Color><A>255</A><R>255</R><G>146</G><B>84</B><ScA>1</ScA><ScR>1</ScR><ScG>0.2874408</ScG><ScB>0.0886556</ScB></Color>\n  </Values>\n  <Name>Cyclorama Steel</Name>\n  <FontFamily>Consolas</FontFamily>\n  <FontSize>10</FontSize>\n</StorableColorTheme>",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/powershell-ise/cyclorama-day.svg",
+          "file": "apps/powershell-ise/Cyclorama Day.StorableColorTheme.ps1xml",
+          "copyLang": "xml",
+          "copyLabel": "PowerShell ISE StorableColorTheme XML excerpt",
+          "copySnippet": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<StorableColorTheme xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <Keys>\n    <string>ConsolePaneBackgroundColor</string>\n    <string>ConsolePaneForegroundColor</string>\n    <string>ScriptPaneBackgroundColor</string>\n    <string>TokenColors\\Keyword</string>\n    <string>TokenColors\\Command</string>\n  </Keys>\n  <Values>\n    <Color><A>255</A><R>238</R><G>242</G><B>245</B><ScA>1</ScA><ScR>0.8549926</ScR><ScG>0.8879231</ScG><ScB>0.9130987</ScB></Color>\n    <Color><A>255</A><R>13</R><G>16</G><B>22</B><ScA>1</ScA><ScR>0.0040247</ScR><ScG>0.0051815</ScG><ScB>0.0080232</ScB></Color>\n    <Color><A>255</A><R>245</R><G>247</G><B>249</B><ScA>1</ScA><ScR>0.9130987</ScR><ScG>0.9301109</ScG><ScB>0.9473065</ScB></Color>\n    <Color><A>255</A><R>22</R><G>70</G><B>105</B><ScA>1</ScA><ScR>0.0080232</ScR><ScG>0.0612461</ScG><ScB>0.1412633</ScB></Color>\n    <Color><A>255</A><R>173</R><G>61</G><B>10</B><ScA>1</ScA><ScR>0.4178851</ScR><ScG>0.0466651</ScG><ScB>0.0030353</ScB></Color>\n  </Values>\n  <Name>Cyclorama Day</Name>\n  <FontFamily>Consolas</FontFamily>\n  <FontSize>10</FontSize>\n</StorableColorTheme>",
           "swatches": [
             {
               "label": "Background",
@@ -1390,6 +1874,466 @@
           "copyLang": "conf",
           "copyLabel": "Copy Cyclorama Day Kitty .conf",
           "copySnippet": "## name: Cyclorama Day\n## author: Real-Fruit-Snacks\n## license: MIT\n## upstream: https://github.com/Real-Fruit-Snacks/rfs-themes\n## blurb: Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons. (LX 512 Light · Cyclorama Dawn v2.1.0)\n\n# Basic colors\nforeground              #0D1016\nbackground              #F5F7F9\nselection_foreground    #0D1016\nselection_background    #C6DAEB\n\n# Cursor & URLs\ncursor                  #AD3D0A\ncursor_text_color       #FFFFFF\nurl_color               #AD3D0A\n\n# Window borders\nactive_border_color     #AD3D0A\ninactive_border_color   #C8D0DA\nbell_border_color       #885800\n\n# Tab bar\nactive_tab_foreground   #FFFFFF\nactive_tab_background   #18496B\ninactive_tab_foreground #474D59\ninactive_tab_background #FFFFFF\ntab_bar_background      #EAEEF2\n\n# Marks\nmark1_foreground        #FFFFFF\nmark1_background        #18496B\nmark2_foreground        #FFFFFF\nmark2_background        #AD3D0A\nmark3_foreground        #FFFFFF\nmark3_background        #B91C2E\n\n# ANSI 0-15 color table\ncolor0                  #0D1016\ncolor1                  #B91C2E\ncolor2                  #127247\ncolor3                  #885800\ncolor4                  #164669\ncolor5                  #6B38B8\ncolor6                  #0E6674\ncolor7                  #E3E8EE\ncolor8                  #58606E\ncolor9                  #AD3D0A\ncolor10                 #0D5A37\ncolor11                 #704700\ncolor12                 #1F547A\ncolor13                 #572A9E\ncolor14                 #0A525E\ncolor15                 #FFFFFF",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "git-bash",
+      "name": "Git Bash (Mintty)",
+      "category": "Terminals",
+      "homepage": "https://gitforwindows.org/",
+      "format": "Mintty .minttyrc + Git .gitconfig",
+      "install": "Copy .minttyrc to ~/.mintty/themes/ + include git-colors-*.gitconfig in ~/.gitconfig",
+      "installSteps": [
+        "Copy `cyclorama-dawn.minttyrc` (or `steel` / `day`) into `~/.mintty/themes/` (or `C:\\Program Files\\Git\\usr\\share\\mintty\\themes\\`), then add `ThemeFile=cyclorama-dawn.minttyrc` to `~/.minttyrc` — or select it in **Mintty Options -> Looks -> Theme**.",
+        "Alternatively, paste the `.minttyrc` color lines directly into `~/.minttyrc` and restart Git Bash.",
+        "Enable matching truecolor `git diff`, `git status`, `git branch`, and `git grep` output by adding `[include]` -> `path = ~/rfs-themes/apps/git-bash/git-colors-dawn.gitconfig` to `~/.gitconfig`."
+      ],
+      "path": "apps/git-bash",
+      "primaryFile": "apps/git-bash/cyclorama-dawn.minttyrc",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Mintty (cyclorama-dawn.minttyrc)",
+          "path": "apps/git-bash/cyclorama-dawn.minttyrc"
+        },
+        {
+          "label": "Cyclorama Dawn Git CLI (git-colors-dawn.gitconfig)",
+          "path": "apps/git-bash/git-colors-dawn.gitconfig"
+        },
+        {
+          "label": "Cyclorama Steel Mintty (cyclorama-steel.minttyrc)",
+          "path": "apps/git-bash/cyclorama-steel.minttyrc"
+        },
+        {
+          "label": "Cyclorama Steel Git CLI (git-colors-steel.gitconfig)",
+          "path": "apps/git-bash/git-colors-steel.gitconfig"
+        },
+        {
+          "label": "Cyclorama Day Mintty (cyclorama-day.minttyrc)",
+          "path": "apps/git-bash/cyclorama-day.minttyrc"
+        },
+        {
+          "label": "Cyclorama Day Git CLI (git-colors-day.gitconfig)",
+          "path": "apps/git-bash/git-colors-day.gitconfig"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/git-bash/cyclorama-dawn.svg",
+          "file": "apps/git-bash/cyclorama-dawn.minttyrc",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Dawn Mintty .minttyrc",
+          "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=240,110,43\nBlack=12,12,16\nBoldBlack=140,143,157\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/git-bash/cyclorama-steel.svg",
+          "file": "apps/git-bash/cyclorama-steel.minttyrc",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Steel Mintty .minttyrc",
+          "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=116,184,232\nBlack=12,12,16\nBoldBlack=140,150,166\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/git-bash/cyclorama-day.svg",
+          "file": "apps/git-bash/cyclorama-day.minttyrc",
+          "copyLang": "conf",
+          "copyLabel": "Copy Cyclorama Day Mintty .minttyrc",
+          "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=13,16,22\nBackgroundColour=245,247,249\nCursorColour=173,61,10\nBlack=13,16,22\nBoldBlack=88,96,110\nRed=185,28,46\nBoldRed=173,61,10\nGreen=18,114,71\nBoldGreen=13,90,55\nYellow=136,88,0\nBoldYellow=112,71,0\nBlue=22,70,105\nBoldBlue=31,84,122\nMagenta=107,56,184\nBoldMagenta=87,42,158\nCyan=14,102,116\nBoldCyan=10,82,94\nWhite=227,232,238\nBoldWhite=255,255,255",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "qterminal",
+      "name": "QTerminal",
+      "category": "Terminals",
+      "homepage": "https://github.com/lxqt/qterminal",
+      "format": "QTermWidget .colorscheme INI",
+      "install": "Copy .colorscheme into ~/.local/share/qtermwidget6/color-schemes/ and select in Preferences",
+      "installSteps": [
+        "Copy `Cyclorama Dawn.colorscheme`, `Cyclorama Steel.colorscheme`, and `Cyclorama Day.colorscheme` into `~/.local/share/qtermwidget6/color-schemes/` (or `~/.local/share/qtermwidget5/color-schemes/` on Qt5 builds; system-wide: `/usr/share/qtermwidget6/color-schemes/`).",
+        "Open QTerminal -> **File -> Preferences -> Appearance -> Color scheme** and select **Cyclorama Dawn** (or **Cyclorama Steel** / **Cyclorama Day**).",
+        "Click **Apply** — compatible with QTerminal on WSLg, LXQt, and Konsole-format QTermWidget terminals."
+      ],
+      "path": "apps/qterminal",
+      "primaryFile": "apps/qterminal/Cyclorama Dawn.colorscheme",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (Cyclorama Dawn.colorscheme)",
+          "path": "apps/qterminal/Cyclorama Dawn.colorscheme"
+        },
+        {
+          "label": "Cyclorama Steel (Cyclorama Steel.colorscheme)",
+          "path": "apps/qterminal/Cyclorama Steel.colorscheme"
+        },
+        {
+          "label": "Cyclorama Day (Cyclorama Day.colorscheme)",
+          "path": "apps/qterminal/Cyclorama Day.colorscheme"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/qterminal/cyclorama-dawn.svg",
+          "file": "apps/qterminal/Cyclorama Dawn.colorscheme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Dawn QTerminal .colorscheme",
+          "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Dawn\nOpacity=1\n\n[Background]\nBold=false\nColor=5,5,7\n\n[BackgroundIntense]\nBold=false\nColor=12,12,16\n\n[Foreground]\nBold=false\nColor=244,245,248\n\n[ForegroundIntense]\nBold=false\nColor=244,245,248\n\n[Color0]\nBold=false\nColor=12,12,16\n\n[Color0Intense]\nBold=false\nColor=140,143,157\n\n[Color1]\nBold=false\nColor=255,92,108\n\n[Color1Intense]\nBold=false\nColor=255,146,84\n\n[Color2]\nBold=false\nColor=61,220,151\n\n[Color2Intense]\nBold=false\nColor=108,232,178\n\n[Color3]\nBold=false\nColor=255,194,71\n\n[Color3Intense]\nBold=false\nColor=255,212,117\n\n[Color4]\nBold=false\nColor=116,184,232\n\n[Color4Intense]\nBold=false\nColor=153,205,242\n\n[Color5]\nBold=false\nColor=201,150,245\n\n[Color5Intense]\nBold=false\nColor=220,184,250\n\n[Color6]\nBold=false\nColor=86,212,224\n\n[Color6Intense]\nBold=false\nColor=133,227,236\n\n[Color7]\nBold=false\nColor=214,216,224\n\n[Color7Intense]\nBold=false\nColor=244,245,248",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/qterminal/cyclorama-steel.svg",
+          "file": "apps/qterminal/Cyclorama Steel.colorscheme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Steel QTerminal .colorscheme",
+          "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Steel\nOpacity=1\n\n[Background]\nBold=false\nColor=5,5,7\n\n[BackgroundIntense]\nBold=false\nColor=12,12,16\n\n[Foreground]\nBold=false\nColor=244,245,248\n\n[ForegroundIntense]\nBold=false\nColor=244,245,248\n\n[Color0]\nBold=false\nColor=12,12,16\n\n[Color0Intense]\nBold=false\nColor=140,150,166\n\n[Color1]\nBold=false\nColor=255,92,108\n\n[Color1Intense]\nBold=false\nColor=255,146,84\n\n[Color2]\nBold=false\nColor=61,220,151\n\n[Color2Intense]\nBold=false\nColor=108,232,178\n\n[Color3]\nBold=false\nColor=255,194,71\n\n[Color3Intense]\nBold=false\nColor=255,212,117\n\n[Color4]\nBold=false\nColor=116,184,232\n\n[Color4Intense]\nBold=false\nColor=153,205,242\n\n[Color5]\nBold=false\nColor=201,150,245\n\n[Color5Intense]\nBold=false\nColor=220,184,250\n\n[Color6]\nBold=false\nColor=86,212,224\n\n[Color6Intense]\nBold=false\nColor=133,227,236\n\n[Color7]\nBold=false\nColor=214,216,224\n\n[Color7Intense]\nBold=false\nColor=244,245,248",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/qterminal/cyclorama-day.svg",
+          "file": "apps/qterminal/Cyclorama Day.colorscheme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Day QTerminal .colorscheme",
+          "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — QTerminal / QTermWidget6 Color Scheme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[General]\nDescription=Cyclorama Day\nOpacity=1\n\n[Background]\nBold=false\nColor=245,247,249\n\n[BackgroundIntense]\nBold=false\nColor=255,255,255\n\n[Foreground]\nBold=false\nColor=13,16,22\n\n[ForegroundIntense]\nBold=false\nColor=13,16,22\n\n[Color0]\nBold=false\nColor=13,16,22\n\n[Color0Intense]\nBold=false\nColor=88,96,110\n\n[Color1]\nBold=false\nColor=185,28,46\n\n[Color1Intense]\nBold=false\nColor=173,61,10\n\n[Color2]\nBold=false\nColor=18,114,71\n\n[Color2Intense]\nBold=false\nColor=13,90,55\n\n[Color3]\nBold=false\nColor=136,88,0\n\n[Color3Intense]\nBold=false\nColor=112,71,0\n\n[Color4]\nBold=false\nColor=22,70,105\n\n[Color4Intense]\nBold=false\nColor=31,84,122\n\n[Color5]\nBold=false\nColor=107,56,184\n\n[Color5Intense]\nBold=false\nColor=87,42,158\n\n[Color6]\nBold=false\nColor=14,102,116\n\n[Color6Intense]\nBold=false\nColor=10,82,94\n\n[Color7]\nBold=false\nColor=227,232,238\n\n[Color7Intense]\nBold=false\nColor=255,255,255",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#C6DAEB"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "windows-console",
+      "name": "Windows Console",
+      "category": "Terminals",
+      "homepage": "https://learn.microsoft.com/en-us/windows/console/",
+      "format": "Windows Registry .reg (HKCU\\Console)",
+      "install": "Double-click cyclorama-dawn.reg (or run reg import) and open a new cmd.exe window",
+      "installSteps": [
+        "Double-click `cyclorama-dawn.reg` (or `cyclorama-steel.reg` / `cyclorama-day.reg`) and confirm the Registry Editor prompt — or run `reg import apps\\windows-console\\cyclorama-dawn.reg` in `cmd.exe`.",
+        "Open a new **Command Prompt** (`cmd.exe`) or legacy `conhost.exe` window to see the Cyclorama palette (`ScreenColors` maps slot `00` background and slot `07` foreground automatically).",
+        "Revert to official Windows 10/11 Campbell defaults anytime in one click by importing `restore-defaults.reg`."
+      ],
+      "path": "apps/windows-console",
+      "primaryFile": "apps/windows-console/cyclorama-dawn.reg",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Registry (cyclorama-dawn.reg)",
+          "path": "apps/windows-console/cyclorama-dawn.reg"
+        },
+        {
+          "label": "Cyclorama Steel Registry (cyclorama-steel.reg)",
+          "path": "apps/windows-console/cyclorama-steel.reg"
+        },
+        {
+          "label": "Cyclorama Day Registry (cyclorama-day.reg)",
+          "path": "apps/windows-console/cyclorama-day.reg"
+        },
+        {
+          "label": "Restore Windows Campbell Defaults (restore-defaults.reg)",
+          "path": "apps/windows-console/restore-defaults.reg"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/windows-console/cyclorama-dawn.svg",
+          "file": "apps/windows-console/cyclorama-dawn.reg",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Dawn HKCU\\Console Registry Values",
+          "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:009d8f8c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#3D2B24"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "STEEL",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/windows-console/cyclorama-steel.svg",
+          "file": "apps/windows-console/cyclorama-steel.reg",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Steel HKCU\\Console Registry Values",
+          "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:00a6968c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+          "swatches": [
+            {
+              "label": "BG",
+              "hex": "#050507"
+            },
+            {
+              "label": "TEXT",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "CURSOR",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "SELECT",
+              "hex": "#1D3B57"
+            },
+            {
+              "label": "ACCENT",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "BEACON",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/windows-console/cyclorama-day.svg",
+          "file": "apps/windows-console/cyclorama-day.reg",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Day HKCU\\Console Registry Values",
+          "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00f9f7f5\n\"ColorTable01\"=dword:00694616\n\"ColorTable02\"=dword:00477212\n\"ColorTable03\"=dword:0074660e\n\"ColorTable04\"=dword:002e1cb9\n\"ColorTable05\"=dword:00b8386b\n\"ColorTable06\"=dword:00005888\n\"ColorTable07\"=dword:0016100d\n\"ColorTable08\"=dword:006e6058\n\"ColorTable09\"=dword:007a541f\n\"ColorTable10\"=dword:00375a0d\n\"ColorTable11\"=dword:005e520a\n\"ColorTable12\"=dword:000a3dad\n\"ColorTable13\"=dword:009e2a57\n\"ColorTable14\"=dword:00004770\n\"ColorTable15\"=dword:00ffffff\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:0000007f",
           "swatches": [
             {
               "label": "BG",
@@ -2484,6 +3428,190 @@
       ]
     },
     {
+      "slug": "windows",
+      "name": "Windows 11",
+      "category": "Browsers & Desktop",
+      "homepage": "https://www.microsoft.com/windows/",
+      "format": "Windows 11 .theme + Wallpapers + .ps1",
+      "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
+      "installSteps": [
+        "Run `.\\install-cyclorama-dawn.ps1` (or `steel` / `day`) from `apps/windows/` — it auto-detects `1080p` vs `4k` (`-Resolution auto|1080p|4k`), saves a one-time registry backup to `%LOCALAPPDATA%\\rfs-themes\\windows\\backup-pre-rfs.reg`, installs wallpapers & `.theme` files, sets the 32-byte `AccentPalette`, and refreshes Windows live.",
+        "Pass `-TintTaskbar` if you want Start/Taskbar tinted with the accent color (off by default so the taskbar stays matte `#050507` or Alabaster `#F5F7F9`).",
+        "Switch between **Cyclorama Dawn**, **Cyclorama Steel**, and **Cyclorama Day** anytime from **Settings -> Personalization -> Themes**, or double-click `backup-pre-rfs.reg` to revert."
+      ],
+      "path": "apps/windows",
+      "primaryFile": "apps/windows/Cyclorama Dawn.theme",
+      "files": [
+        {
+          "label": "Cyclorama Dawn Theme (Cyclorama Dawn.theme)",
+          "path": "apps/windows/Cyclorama Dawn.theme"
+        },
+        {
+          "label": "Cyclorama Steel Theme (Cyclorama Steel.theme)",
+          "path": "apps/windows/Cyclorama Steel.theme"
+        },
+        {
+          "label": "Cyclorama Day Theme (Cyclorama Day.theme)",
+          "path": "apps/windows/Cyclorama Day.theme"
+        },
+        {
+          "label": "Cyclorama Dawn Installer (install-cyclorama-dawn.ps1)",
+          "path": "apps/windows/install-cyclorama-dawn.ps1"
+        },
+        {
+          "label": "Cyclorama Steel Installer (install-cyclorama-steel.ps1)",
+          "path": "apps/windows/install-cyclorama-steel.ps1"
+        },
+        {
+          "label": "Cyclorama Day Installer (install-cyclorama-day.ps1)",
+          "path": "apps/windows/install-cyclorama-day.ps1"
+        },
+        {
+          "label": "Cyclorama Dawn Wallpaper 1080p",
+          "path": "apps/windows/wallpapers/cyclorama-dawn-1080p.png"
+        },
+        {
+          "label": "Cyclorama Dawn Wallpaper 4K",
+          "path": "apps/windows/wallpapers/cyclorama-dawn-4k.png"
+        },
+        {
+          "label": "Cyclorama Steel Wallpaper 1080p",
+          "path": "apps/windows/wallpapers/cyclorama-steel-1080p.png"
+        },
+        {
+          "label": "Cyclorama Steel Wallpaper 4K",
+          "path": "apps/windows/wallpapers/cyclorama-steel-4k.png"
+        },
+        {
+          "label": "Cyclorama Day Wallpaper 1080p",
+          "path": "apps/windows/wallpapers/cyclorama-day-1080p.png"
+        },
+        {
+          "label": "Cyclorama Day Wallpaper 4K",
+          "path": "apps/windows/wallpapers/cyclorama-day-4k.png"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
+          "preview": "assets/previews/windows/cyclorama-dawn.svg",
+          "file": "apps/windows/Cyclorama Dawn.theme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Dawn Windows 11 .theme",
+          "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Dawn\nThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-dawn-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4F06E2B\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Colorize",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "Dark1",
+              "hex": "#CC5016"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
+          "preview": "assets/previews/windows/cyclorama-steel.svg",
+          "file": "apps/windows/Cyclorama Steel.theme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Steel Windows 11 .theme",
+          "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Steel\nThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-steel-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC41F547A\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Colorize",
+              "hex": "#1F547A"
+            },
+            {
+              "label": "Dark1",
+              "hex": "#18496B"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
+          "preview": "assets/previews/windows/cyclorama-day.svg",
+          "file": "apps/windows/Cyclorama Day.theme",
+          "copyLang": "ini",
+          "copyLabel": "Copy Cyclorama Day Windows 11 .theme",
+          "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Day\nThemeId={3D9B7F12-161C-5234-9FC0-7951A0F89626}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-day-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=245 247 249\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4AD3D0A\nVisualStyleVersion=10\nSystemMode=Light\nAppMode=Light\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Colorize",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Dark1",
+              "hex": "#8B2F06"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "slug": "chromium",
       "name": "Brave / Chrome / Edge",
       "category": "Browsers & Desktop",
@@ -2750,6 +3878,154 @@
           "copyLang": "css",
           "copyLabel": "Copy Discord Quick CSS",
           "copySnippet": "/* Cyclorama Day (LX 512) — Discord Quick CSS */\n.theme-light {\n  --background-primary: #F5F7F9;\n  --background-secondary: #FFFFFF;\n  --background-tertiary: #EAEEF2;\n  --channeltextarea-background: #E3E8EE;\n  --text-normal: #0D1016;\n  --text-muted: #474D59;\n  --text-link: #AD3D0A;\n  --brand-experiment: #18496B;\n  --brand-500: #18496B;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Border",
+              "hex": "#C8D0DA"
+            },
+            {
+              "label": "Text",
+              "hex": "#0D1016"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#164669"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "proton-mail",
+      "name": "Proton Mail",
+      "category": "Browsers & Desktop",
+      "homepage": "https://proton.me/mail",
+      "format": "Custom Theme CSS",
+      "install": "Proton Mail -> Settings -> Appearance -> Custom theme -> Paste CSS",
+      "installSteps": [
+        "Open **Proton Mail** (`proton.me/mail`) -> **Settings (gear icon) -> All settings -> Appearance**.",
+        "Scroll to **Custom theme** (or toggle **Custom theme** on) and open the CSS editor.",
+        "Paste the full contents of `cyclorama-dawn.css` (or `cyclorama-steel.css` / `cyclorama-day.css`) and click **Save** — applies across Proton Mail, Calendar, and Drive."
+      ],
+      "path": "apps/proton-mail",
+      "primaryFile": "apps/proton-mail/cyclorama-dawn.css",
+      "files": [
+        {
+          "label": "Cyclorama Dawn CSS (cyclorama-dawn.css)",
+          "path": "apps/proton-mail/cyclorama-dawn.css"
+        },
+        {
+          "label": "Cyclorama Steel CSS (cyclorama-steel.css)",
+          "path": "apps/proton-mail/cyclorama-steel.css"
+        },
+        {
+          "label": "Cyclorama Day CSS (cyclorama-day.css)",
+          "path": "apps/proton-mail/cyclorama-day.css"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 Proton Mail dark workspace with Beacon Orange (#FF9254) active indicators, high-contrast compose CTA (#BD4811), and Steel Blue info signals.",
+          "preview": "assets/previews/proton-mail/cyclorama-dawn.svg",
+          "file": "apps/proton-mail/cyclorama-dawn.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Cyclorama Dawn Proton Mail CSS",
+          "copySnippet": "/*\n * Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: dark;\n\n  /* Surfaces & Elevation */\n  --background-norm: #050507;\n  --background-weak: #0C0C10;\n  --background-strong: #14141A;\n  --background-elevated: #1C1D26;\n  --background-lowered: #070709;\n\n  /* Primary & Norm Interactions */\n  --primary: #BD4811;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #BD4811;\n  --interaction-norm-major-1: #9E3B0C;\n  --interaction-norm-major-2: #82310B;\n  --interaction-norm-major-3: #6D2A0A;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #14141A;\n  --interaction-weak-major-1: #1C1D26;\n  --interaction-weak-major-2: #30313A;\n  --interaction-default: transparent;\n  --interaction-default-hover: #111117;\n  --interaction-default-active: #14141A;\n\n  /* Typography & Ink */\n  --text-norm: #F4F5F8;\n  --text-weak: #B3B5C0;\n  --text-hint: #8C8F9D;\n  --text-disabled: #646670;\n  --text-invert: #050507;\n\n  /* Borders & Hairlines */\n  --border-norm: #2A2C35;\n  --border-weak: #27272E;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #FF5C6C;\n  --signal-danger-major-1: #FD7482;\n  --signal-danger-major-2: #FC8A96;\n  --signal-danger-contrast: #050507;\n  --signal-warning: #FFC247;\n  --signal-warning-contrast: #050507;\n  --signal-success: #3DDC97;\n  --signal-success-contrast: #050507;\n  --signal-info: #74B8E8;\n  --signal-info-contrast: #050507;\n  --focus-outline: #FF9254;\n  --focus-ring: #FF9254;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #2A2C35;\n  --scrollbar-thumb-hover-color: #62646D;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #33211B;\n  --navigation-current-item-text-color: #F4F5F8;\n  --navigation-current-item-marker-color: #FF9254;\n  --email-item-unread-background-color: #050507;\n  --email-item-read-background-color: #0C0C10;\n  --email-item-selected-background-color: #3D2B24;\n  --email-item-selected-text-color: #F4F5F8;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #FF9254;\n  --rfs-link-hover: #FFB07A;\n  --rfs-secondary-ink: #74B8E8;\n  --rfs-beam-start: #74B8E8;\n  --rfs-beam-end: #F06E2B;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#2A2C35"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#FF9254"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#74B8E8"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal Proton Mail dark workspace with Steel Blue (#74B8E8) focus rings, #18496B primary buttons, and Beacon Orange secondary highlights.",
+          "preview": "assets/previews/proton-mail/cyclorama-steel.svg",
+          "file": "apps/proton-mail/cyclorama-steel.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Cyclorama Steel Proton Mail CSS",
+          "copySnippet": "/*\n * Cyclorama Steel (LX 263 Dark · Steel Blue) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: dark;\n\n  /* Surfaces & Elevation */\n  --background-norm: #050507;\n  --background-weak: #0C0C10;\n  --background-strong: #131820;\n  --background-elevated: #1A222E;\n  --background-lowered: #07080B;\n\n  /* Primary & Norm Interactions */\n  --primary: #18496B;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #18496B;\n  --interaction-norm-major-1: #123955;\n  --interaction-norm-major-2: #103047;\n  --interaction-norm-major-3: #0E283C;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #131820;\n  --interaction-weak-major-1: #1A222E;\n  --interaction-weak-major-2: #2E3846;\n  --interaction-default: transparent;\n  --interaction-default-hover: #11141A;\n  --interaction-default-active: #131820;\n\n  /* Typography & Ink */\n  --text-norm: #F4F5F8;\n  --text-weak: #B3B5C0;\n  --text-hint: #8C96A6;\n  --text-disabled: #646B76;\n  --text-invert: #050507;\n\n  /* Borders & Hairlines */\n  --border-norm: #27313D;\n  --border-weak: #222B36;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #FF5C6C;\n  --signal-danger-major-1: #FD7482;\n  --signal-danger-major-2: #FC8A96;\n  --signal-danger-contrast: #050507;\n  --signal-warning: #FFC247;\n  --signal-warning-contrast: #050507;\n  --signal-success: #3DDC97;\n  --signal-success-contrast: #050507;\n  --signal-info: #FF9254;\n  --signal-info-contrast: #050507;\n  --focus-outline: #74B8E8;\n  --focus-ring: #74B8E8;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #27313D;\n  --scrollbar-thumb-hover-color: #637284;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #1D2833;\n  --navigation-current-item-text-color: #F4F5F8;\n  --navigation-current-item-marker-color: #74B8E8;\n  --email-item-unread-background-color: #050507;\n  --email-item-read-background-color: #0C0C10;\n  --email-item-selected-background-color: #1D3B57;\n  --email-item-selected-text-color: #F4F5F8;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #74B8E8;\n  --rfs-link-hover: #99CDF2;\n  --rfs-secondary-ink: #FF9254;\n  --rfs-beam-start: #74B8E8;\n  --rfs-beam-end: #F06E2B;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
+          "swatches": [
+            {
+              "label": "Background",
+              "hex": "#050507"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Border",
+              "hex": "#27313D"
+            },
+            {
+              "label": "Text",
+              "hex": "#F4F5F8"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Secondary",
+              "hex": "#FF9254"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light mailbox with white message panes, burnt Beacon (#AD3D0A) focus markers, and Steel Blue primary buttons.",
+          "preview": "assets/previews/proton-mail/cyclorama-day.svg",
+          "file": "apps/proton-mail/cyclorama-day.css",
+          "copyLang": "css",
+          "copyLabel": "Copy Cyclorama Day Proton Mail CSS",
+          "copySnippet": "/*\n * Cyclorama Day (LX 512 Light · Alabaster Day) — Proton Mail Custom Theme\n * Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n * Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n * Install: Proton Mail -> Settings -> Appearance -> Custom theme -> Paste & Save\n */\n\n:root {\n  color-scheme: light;\n\n  /* Surfaces & Elevation */\n  --background-norm: #F5F7F9;\n  --background-weak: #FFFFFF;\n  --background-strong: #E3E8EE;\n  --background-elevated: #D7DFE8;\n  --background-lowered: #EAEEF2;\n\n  /* Primary & Norm Interactions */\n  --primary: #18496B;\n  --primary-contrast: #FFFFFF;\n  --interaction-norm: #18496B;\n  --interaction-norm-major-1: #113752;\n  --interaction-norm-major-2: #103047;\n  --interaction-norm-major-3: #102B3F;\n  --interaction-norm-contrast: #FFFFFF;\n\n  /* Secondary / Weak & Default Interactions */\n  --interaction-weak: #E3E8EE;\n  --interaction-weak-major-1: #D7DFE8;\n  --interaction-weak-major-2: #BAC2CB;\n  --interaction-default: transparent;\n  --interaction-default-hover: #EDF0F4;\n  --interaction-default-active: #E3E8EE;\n\n  /* Typography & Ink */\n  --text-norm: #0D1016;\n  --text-weak: #474D59;\n  --text-hint: #58606E;\n  --text-disabled: #878D98;\n  --text-invert: #F5F7F9;\n\n  /* Borders & Hairlines */\n  --border-norm: #C8D0DA;\n  --border-weak: #CFD5DC;\n\n  /* Semantic Signals & Focus */\n  --signal-danger: #B91C2E;\n  --signal-danger-major-1: #991525;\n  --signal-danger-major-2: #831423;\n  --signal-danger-contrast: #FFFFFF;\n  --signal-warning: #885800;\n  --signal-warning-contrast: #FFFFFF;\n  --signal-success: #127247;\n  --signal-success-contrast: #FFFFFF;\n  --signal-info: #164669;\n  --signal-info-contrast: #FFFFFF;\n  --focus-outline: #AD3D0A;\n  --focus-ring: #AD3D0A;\n\n  /* Scrollbars */\n  --scrollbar-thumb-color: #C8D0DA;\n  --scrollbar-thumb-hover-color: #6E7682;\n\n  /* Navigation & Mailbox List */\n  --navigation-current-item-background-color: #F5E8E2;\n  --navigation-current-item-text-color: #0D1016;\n  --navigation-current-item-marker-color: #AD3D0A;\n  --email-item-unread-background-color: #F5F7F9;\n  --email-item-read-background-color: #FFFFFF;\n  --email-item-selected-background-color: #C6DAEB;\n  --email-item-selected-text-color: #0D1016;\n\n  /* Cyclorama Dawn Horizon Tokens */\n  --rfs-link-color: #AD3D0A;\n  --rfs-link-hover: #8B2F06;\n  --rfs-secondary-ink: #164669;\n  --rfs-beam-start: #18496B;\n  --rfs-beam-end: #AD3D0A;\n}\n\n/* Active sidebar item & horizon indicator */\n.navigation-link[aria-current=\"page\"],\n.navigation-link.active {\n  background-color: var(--navigation-current-item-background-color);\n  color: var(--navigation-current-item-text-color);\n  box-shadow: inset 3px 0 0 0 var(--navigation-current-item-marker-color);\n}\n\n/* Unread & selected message rows */\n.item-container.unread {\n  background-color: var(--email-item-unread-background-color);\n  color: var(--text-norm);\n}\n\n.item-container.read {\n  background-color: var(--email-item-read-background-color);\n}\n\n.item-container.item-is-selected {\n  background-color: var(--email-item-selected-background-color);\n  color: var(--email-item-selected-text-color);\n  box-shadow: inset 3px 0 0 0 var(--focus-outline);\n}\n\n/* Links & top horizon hairline */\n.link,\na.link {\n  color: var(--rfs-link-color);\n}\n\n.link:hover,\na.link:hover {\n  color: var(--rfs-link-hover);\n}\n\n.header::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(90deg, var(--rfs-beam-start), var(--rfs-beam-end));\n  pointer-events: none;\n}",
           "swatches": [
             {
               "label": "Background",
@@ -3078,190 +4354,6 @@
             {
               "label": "Accent",
               "hex": "#AD3D0A"
-            },
-            {
-              "label": "Secondary",
-              "hex": "#164669"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "slug": "windows",
-      "name": "Windows 11",
-      "category": "Browsers & Desktop",
-      "homepage": "https://www.microsoft.com/windows/",
-      "format": "Windows 11 .theme + Wallpapers + .ps1",
-      "install": "Run install-cyclorama-dawn.ps1 or double-click .theme",
-      "installSteps": [
-        "Run `.\\install-cyclorama-dawn.ps1` (or `steel` / `day`) from `apps/windows/` — it auto-detects `1080p` vs `4k` (`-Resolution auto|1080p|4k`), saves a one-time registry backup to `%LOCALAPPDATA%\\rfs-themes\\windows\\backup-pre-rfs.reg`, installs wallpapers & `.theme` files, sets the 32-byte `AccentPalette`, and refreshes Windows live.",
-        "Pass `-TintTaskbar` if you want Start/Taskbar tinted with the accent color (off by default so the taskbar stays matte `#050507` or Alabaster `#F5F7F9`).",
-        "Switch between **Cyclorama Dawn**, **Cyclorama Steel**, and **Cyclorama Day** anytime from **Settings -> Personalization -> Themes**, or double-click `backup-pre-rfs.reg` to revert."
-      ],
-      "path": "apps/windows",
-      "primaryFile": "apps/windows/Cyclorama Dawn.theme",
-      "files": [
-        {
-          "label": "Cyclorama Dawn Theme (Cyclorama Dawn.theme)",
-          "path": "apps/windows/Cyclorama Dawn.theme"
-        },
-        {
-          "label": "Cyclorama Steel Theme (Cyclorama Steel.theme)",
-          "path": "apps/windows/Cyclorama Steel.theme"
-        },
-        {
-          "label": "Cyclorama Day Theme (Cyclorama Day.theme)",
-          "path": "apps/windows/Cyclorama Day.theme"
-        },
-        {
-          "label": "Cyclorama Dawn Installer (install-cyclorama-dawn.ps1)",
-          "path": "apps/windows/install-cyclorama-dawn.ps1"
-        },
-        {
-          "label": "Cyclorama Steel Installer (install-cyclorama-steel.ps1)",
-          "path": "apps/windows/install-cyclorama-steel.ps1"
-        },
-        {
-          "label": "Cyclorama Day Installer (install-cyclorama-day.ps1)",
-          "path": "apps/windows/install-cyclorama-day.ps1"
-        },
-        {
-          "label": "Cyclorama Dawn Wallpaper 1080p",
-          "path": "apps/windows/wallpapers/cyclorama-dawn-1080p.png"
-        },
-        {
-          "label": "Cyclorama Dawn Wallpaper 4K",
-          "path": "apps/windows/wallpapers/cyclorama-dawn-4k.png"
-        },
-        {
-          "label": "Cyclorama Steel Wallpaper 1080p",
-          "path": "apps/windows/wallpapers/cyclorama-steel-1080p.png"
-        },
-        {
-          "label": "Cyclorama Steel Wallpaper 4K",
-          "path": "apps/windows/wallpapers/cyclorama-steel-4k.png"
-        },
-        {
-          "label": "Cyclorama Day Wallpaper 1080p",
-          "path": "apps/windows/wallpapers/cyclorama-day-1080p.png"
-        },
-        {
-          "label": "Cyclorama Day Wallpaper 4K",
-          "path": "apps/windows/wallpapers/cyclorama-day-4k.png"
-        }
-      ],
-      "variants": [
-        {
-          "id": "cyclorama-dawn",
-          "name": "Cyclorama Dawn",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Beacon Orange",
-          "tagline": "Matte #050507 Windows 11 dark stage with Oklab Steel-to-Beacon floor wash, Beacon Orange (#F06E2B) DWM accent, and 8-slot Explorer AccentPalette.",
-          "preview": "assets/previews/windows/cyclorama-dawn.svg",
-          "file": "apps/windows/Cyclorama Dawn.theme",
-          "copyLang": "ini",
-          "copyLabel": "Copy Cyclorama Dawn Windows 11 .theme",
-          "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Dawn\nThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-dawn-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4F06E2B\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
-          "swatches": [
-            {
-              "label": "Background",
-              "hex": "#050507"
-            },
-            {
-              "label": "Surface",
-              "hex": "#0C0C10"
-            },
-            {
-              "label": "Accent",
-              "hex": "#FF9254"
-            },
-            {
-              "label": "Colorize",
-              "hex": "#F06E2B"
-            },
-            {
-              "label": "Dark1",
-              "hex": "#CC5016"
-            },
-            {
-              "label": "Secondary",
-              "hex": "#74B8E8"
-            }
-          ]
-        },
-        {
-          "id": "cyclorama-steel",
-          "name": "Cyclorama Steel",
-          "lx": "LX 263",
-          "mode": "dark",
-          "accentRole": "Steel Blue",
-          "tagline": "Deep Glacial Steel Windows 11 dark desktop with Oklab Steel wash, #1F547A DWM colorization, and luminous #74B8E8 accent highlights.",
-          "preview": "assets/previews/windows/cyclorama-steel.svg",
-          "file": "apps/windows/Cyclorama Steel.theme",
-          "copyLang": "ini",
-          "copyLabel": "Copy Cyclorama Steel Windows 11 .theme",
-          "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Steel\nThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-steel-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC41F547A\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
-          "swatches": [
-            {
-              "label": "Background",
-              "hex": "#050507"
-            },
-            {
-              "label": "Surface",
-              "hex": "#0C0C10"
-            },
-            {
-              "label": "Accent",
-              "hex": "#74B8E8"
-            },
-            {
-              "label": "Colorize",
-              "hex": "#1F547A"
-            },
-            {
-              "label": "Dark1",
-              "hex": "#18496B"
-            },
-            {
-              "label": "Secondary",
-              "hex": "#FF9254"
-            }
-          ]
-        },
-        {
-          "id": "cyclorama-day",
-          "name": "Cyclorama Day",
-          "lx": "LX 512",
-          "mode": "light",
-          "accentRole": "Alabaster Day",
-          "tagline": "Crisp #F5F7F9 Alabaster Day Windows 11 light desktop with subtle frost Steel-to-Dawn floor wash and burnt Beacon (#AD3D0A) accents.",
-          "preview": "assets/previews/windows/cyclorama-day.svg",
-          "file": "apps/windows/Cyclorama Day.theme",
-          "copyLang": "ini",
-          "copyLabel": "Copy Cyclorama Day Windows 11 .theme",
-          "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Day\nThemeId={3D9B7F12-161C-5234-9FC0-7951A0F89626}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-day-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=245 247 249\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4AD3D0A\nVisualStyleVersion=10\nSystemMode=Light\nAppMode=Light\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
-          "swatches": [
-            {
-              "label": "Background",
-              "hex": "#F5F7F9"
-            },
-            {
-              "label": "Surface",
-              "hex": "#FFFFFF"
-            },
-            {
-              "label": "Accent",
-              "hex": "#AD3D0A"
-            },
-            {
-              "label": "Colorize",
-              "hex": "#AD3D0A"
-            },
-            {
-              "label": "Dark1",
-              "hex": "#8B2F06"
             },
             {
               "label": "Secondary",
