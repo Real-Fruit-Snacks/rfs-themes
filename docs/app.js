@@ -507,7 +507,7 @@
   };
 
   // =========================================================================
-  // 5. 28-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
+  // 5. 29-App Gallery State, Directory Grid, and Dynamic Inspector Hydration
   // =========================================================================
   const state = {
     catalog: null,

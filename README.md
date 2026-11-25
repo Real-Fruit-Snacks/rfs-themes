@@ -3,7 +3,7 @@
   <img alt="rfs-themes: Cyclorama Dawn themes and ports for everyday apps" src="docs/assets/cover-light.svg" width="100%">
 </picture>
 
-**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **28 everyday apps** (**84 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
+**Cyclorama Dawn (`LX 263 Dark` / `LX 512 Light`)** themes and application ports for **29 everyday apps** (**87 verified variants** across `Cyclorama Dawn`, `Cyclorama Steel`, and `Cyclorama Day`), compiled from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.1.0`).
 
 Browse live previews, filter by category, copy snippets, and download configs at **[real-fruit-snacks.github.io/rfs-themes](https://real-fruit-snacks.github.io/rfs-themes/)**.
 
@@ -15,9 +15,9 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | **Cyclorama Steel** | `LX 263` | Dark (`#050507`) | Steel Blue (`#74B8E8`) primary focus, Beacon Orange (`#FF9254`) secondary |
 | **Cyclorama Day** | `LX 512` | Light (`#F5F7F9`) | Alabaster Day light workspace, burnt Beacon (`#AD3D0A`) & Steel (`#164669`) |
 
-## Application Ports (28 Apps · 84 Variants)
+## Application Ports (29 Apps · 87 Variants)
 
-### Editors & IDEs (7)
+### Editors & IDEs (8)
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
@@ -28,6 +28,7 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | [**Notepad++**](https://notepad-plus-plus.org/) | Notepad++ XML + Dark Mode `.ps1` | Run `apply-cyclorama-dawn.ps1` (copies XMLs + sets Custom Dark Mode) or copy `*.xml` to `%APPDATA%\Notepad++\themes\` | [`apps/notepad-plus-plus/`](apps/notepad-plus-plus/) |
 | [**Python IDLE**](https://docs.python.org/3/library/idle.html) | IDLE `config-highlight.cfg` | Append `apps/python-idle/config-highlight.cfg` to `~/.idlerc/config-highlight.cfg` and pick in Options → Configure IDLE → Highlights | [`apps/python-idle/`](apps/python-idle/) |
 | [**Windows PowerShell ISE**](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise) | `.StorableColorTheme.ps1xml` | Run `install-cyclorama-dawn.ps1` in Windows PowerShell 5.1 or import `.StorableColorTheme.ps1xml` via Tools → Options → Manage Themes | [`apps/powershell-ise/`](apps/powershell-ise/) |
+| [**T3 Code**](https://github.com/pingdotgg/t3code) | T3 Code Theme JSON + CSS (v1) | Run `t3 theme set apps/t3code/cyclorama-dawn.json` or Settings → Themes → Import theme | [`apps/t3code/`](apps/t3code/) |
 
 ### Terminals (8)
 
@@ -75,10 +76,10 @@ Browse live previews, filter by category, copy snippets, and download configs at
 | Path | What it holds |
 |---|---|
 | `apps/<slug>/` | Self-contained theme port for each application (`themes.json`, native configs/codes, `previews/`, `README.md`) |
-| `apps/manifest.json` | Machine-readable registry of all 28 supported apps and 84 variants |
+| `apps/manifest.json` | Machine-readable registry of all 29 supported apps and 87 variants |
 | `brand/rfs.tokens.json` | Canonical Cyclorama Dawn tokens synced from `rfs-brand` `v2.1.0` |
 | `tools/` | Zero-dependency Python palette engine, SVG preview renderers, master orchestrator, and CI validator |
-| `docs/` | Interactive Cyclorama Dawn 28-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
+| `docs/` | Interactive Cyclorama Dawn 29-app theme gallery published via GitHub Pages (`docs/assets/catalog.json`) |
 
 ## Build & Verify Locally
 

@@ -277,6 +277,45 @@
       "data": "apps/powershell-ise/themes.json"
     },
     {
+      "slug": "t3code",
+      "name": "T3 Code",
+      "category": "Editors & IDEs",
+      "homepage": "https://github.com/pingdotgg/t3code",
+      "format": "T3 Code Theme JSON + CSS (v1)",
+      "install": "Run `t3 theme set apps/t3code/cyclorama-dawn.json` or Settings -> Themes -> Import theme",
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "summary": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "apps/t3code/previews/cyclorama-dawn.svg"
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "summary": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "apps/t3code/previews/cyclorama-steel.svg"
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "summary": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "apps/t3code/previews/cyclorama-day.svg"
+        }
+      ],
+      "path": "apps/t3code",
+      "data": "apps/t3code/themes.json"
+    },
+    {
       "slug": "windows-terminal",
       "name": "Windows Terminal",
       "category": "Terminals",

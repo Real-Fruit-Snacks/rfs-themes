@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" width="660" height="390" role="img" aria-label="T3 Code Cyclorama Dawn (LX 263 DARK) theme preview">
+  <defs>
+    <linearGradient id="hbeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#74B8E8"/>
+      <stop offset="100%" stop-color="#F06E2B"/>
+    </linearGradient>
+    <clipPath id="frame-clip"><rect x="1" y="1" width="658" height="388" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame-clip)">
+    <rect width="660" height="390" fill="#050507"/>
+    <rect width="660" height="3" fill="url(#hbeam)"/>
+
+    <!-- Top chrome bar -->
+    <rect x="0" y="3" width="660" height="33" fill="#0C0C10"/>
+    <line x1="0" y1="36" x2="660" y2="36" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="14" y="10" width="84" height="19" rx="4" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="23" y="23" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="700">[t3code]</text>
+    <text x="110" y="23" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="700">Cyclorama Dawn</text>
+    <text x="646" y="23" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="9.5" font-weight="600">LX 263 · DARK · V1 · 61 ROLES</text>
+
+    
+    <!-- Left sidebar (x=0..176, y=36..346) -->
+    <rect x="0" y="36" width="176" height="310" fill="#070709"/>
+    <line x1="176" y1="36" x2="176" y2="346" stroke="#2A2C35" stroke-width="1"/>
+
+    <!-- Project monogram header -->
+    <rect x="12" y="48" width="24" height="24" rx="5" fill="#BD4811"/>
+    <text x="24" y="63.5" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">RFS</text>
+    <text x="44" y="58.5" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">rfs-themes</text>
+    <text x="44" y="70.5" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8">main · 29 apps</text>
+
+    <!-- New thread sidebar control -->
+    <rect x="12" y="82" width="152" height="22" rx="4" fill="#0C0C10" stroke="#2A2C35" stroke-width="1"/>
+    <text x="22" y="96.5" fill="#F4F5F8" font-family="ui-monospace,Consolas,monospace" font-size="8.8" font-weight="600">+ New thread</text>
+    <text x="156" y="96.5" text-anchor="end" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8">Ctrl+N</text>
+
+    <!-- Thread list -->
+    <text x="14" y="121" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700" letter-spacing="0.8">THREADS</text>
+
+    <!-- Selected thread row (left accent stripe inset inside rx=5 corners) -->
+    <rect x="10" y="128" width="156" height="36" rx="5" fill="#342017"/>
+    <rect x="10" y="133" width="2.5" height="26" rx="1" fill="#F06E2B"/>
+    <text x="21" y="143.5" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" font-weight="700">Add T3 Code v1 port</text>
+    <text x="21" y="156.5" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8">now · 61 roles · AA</text>
+
+    <!-- Hovered secondary thread -->
+    <rect x="10" y="170" width="156" height="26" rx="5" fill="#201511"/>
+    <text x="21" y="186.5" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="9.2">Verify WCAG AA pairs</text>
+
+    <!-- Muted secondary threads -->
+    <text x="21" y="213" fill="#B3B5C0" font-family="system-ui,-apple-system,sans-serif" font-size="9.2">Sync rfs.tokens.json</text>
+    <text x="21" y="235" fill="#B3B5C0" font-family="system-ui,-apple-system,sans-serif" font-size="9.2">Build SVG previews</text>
+    <text x="21" y="257" fill="#B3B5C0" font-family="system-ui,-apple-system,sans-serif" font-size="9.2">Update docs gallery</text>
+
+    <!-- Sidebar footer CLI indicator -->
+    <rect x="12" y="310" width="152" height="24" rx="4" fill="#0C0C10" stroke="#2A2C35" stroke-width="1"/>
+    <text x="21" y="325.5" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="8.2" font-weight="700">[ok] t3 theme active</text>
+
+    <!-- Main conversation canvas (x=176..660, y=36..346) -->
+    <rect x="176" y="36" width="484" height="310" fill="#050507"/>
+
+    <!-- Conversation header with 2px Steel->Beacon horizon bottom border -->
+    <rect x="176" y="36" width="484" height="30" fill="#0C0C10"/>
+    <rect x="176" y="66" width="484" height="2" fill="url(#hbeam)"/>
+    <text x="192" y="55" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">Add T3 Code v1 port</text>
+    <rect x="536" y="42" width="110" height="18" rx="4" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <text x="591" y="54" text-anchor="middle" fill="#F4F5F8" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">t3 theme set</text>
+
+    <!-- User message bubble (left stripe inset strictly inside rx=6 corners) -->
+    <rect x="192" y="79" width="452" height="40" rx="6" fill="#14141A" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="192" y="85" width="2.5" height="28" rx="1" fill="#F06E2B"/>
+    <text x="204" y="95" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">YOU</text>
+    <text x="204" y="110" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="9.8">Generate Cyclorama Dawn v1 themes for T3 Code with all 61 roles &amp; AA checks.</text>
+
+    <!-- Assistant response header + status badge -->
+    <text x="192" y="139" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.2" font-weight="700">ASSISTANT · T3 CODE</text>
+    <rect x="524" y="127" width="120" height="17" rx="4" fill="#0D231B" stroke="#3DDC97" stroke-width="0.9"/>
+    <text x="584" y="138.5" text-anchor="middle" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="700">[ok] tests passing</text>
+
+    <text x="192" y="157" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="9.8">Generated 3 verified theme JSON files and CSS hooks from <tspan fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="9">rfs_palette.py</tspan>:</text>
+
+    <!-- Syntax-colored code snippet card -->
+    <rect x="192" y="167" width="452" height="86" rx="6" fill="#08080B" stroke="#2A2C35" stroke-width="1"/>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="9.3">
+      <text x="204" y="185"><tspan fill="#B3B5C0">&#123; </tspan><tspan fill="#99CDF2">"version"</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#3DDC97" font-weight="700">1</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#99CDF2">"id"</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#FFC247">"cyclorama-dawn"</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#99CDF2">"appearance"</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#FFC247">"dark"</tspan><tspan fill="#B3B5C0">,</tspan></text>
+      <text x="204" y="203"><tspan fill="#99CDF2">  "canvas"</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#FFC247">"#050507"</tspan><tspan fill="#B3B5C0">, </tspan><tspan fill="#99CDF2">"accent"</tspan><tspan fill="#B3B5C0">: </tspan><tspan fill="#FF9254">"#F06E2B"</tspan><tspan fill="#B3B5C0">,</tspan></text>
+      <text x="204" y="221"><tspan fill="#99CDF2">  "colors"</tspan><tspan fill="#B3B5C0">: &#123; </tspan><tspan fill="#74B8E8">/* 61 T3 Code v1 roles calibrated */</tspan><tspan fill="#B3B5C0"> &#125; &#125;</tspan></text>
+      <text x="204" y="239" fill="#8C8F9D">// [ok] 53/53 WCAG AA pairs &gt;= 4.5:1 · CSS hooks verified</text>
+    </g>
+
+    <!-- Bottom composer card with accent focus ring + messageAction Send button -->
+    <rect x="192" y="264" width="452" height="70" rx="7" fill="#14141A" stroke="#FF9254" stroke-width="1.3"/>
+    <text x="206" y="285" fill="#F4F5F8" font-family="system-ui,-apple-system,sans-serif" font-size="9.8">Run python tools/build_all.py and confirm zero-byte drift</text>
+    <rect x="468" y="274" width="1.8" height="13" fill="#F06E2B"/>
+
+    <rect x="206" y="303" width="102" height="20" rx="4" fill="#0C0C10" stroke="#2A2C35" stroke-width="1"/>
+    <text x="257" y="316" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.2">Cyclorama v2.1.0</text>
+    <rect x="316" y="303" width="84" height="20" rx="4" fill="#2B160D"/>
+    <text x="358" y="316" text-anchor="middle" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="8.2" font-weight="700">61 roles · AA</text>
+
+    <rect x="564" y="302" width="68" height="22" rx="5" fill="#BD4811"/>
+    <text x="598" y="316.5" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace,Consolas,monospace" font-size="8.8" font-weight="700">Send</text>
+    
+
+    <!-- Bottom palette telemetry ribbon -->
+    <rect x="0" y="346" width="660" height="44" fill="#0C0C10"/>
+    <line x1="0" y1="346" x2="660" y2="346" stroke="#2A2C35" stroke-width="1"/>
+    <rect x="18.0" y="357" width="56" height="10" rx="2.5" fill="#050507" stroke="#2A2C35" stroke-width="0.8"/><text x="46.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">BG</text><rect x="80.4" y="357" width="56" height="10" rx="2.5" fill="#0C0C10" stroke="#2A2C35" stroke-width="0.8"/><text x="108.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">SURF</text><rect x="142.8" y="357" width="56" height="10" rx="2.5" fill="#14141A" stroke="#2A2C35" stroke-width="0.8"/><text x="170.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">RAISED</text><rect x="205.2" y="357" width="56" height="10" rx="2.5" fill="#FF9254" stroke="#2A2C35" stroke-width="0.8"/><text x="233.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ACCENT</text><rect x="267.6" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#2A2C35" stroke-width="0.8"/><text x="295.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STEEL</text><rect x="330.0" y="357" width="56" height="10" rx="2.5" fill="#74B8E8" stroke="#2A2C35" stroke-width="0.8"/><text x="358.0" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">KW</text><rect x="392.4" y="357" width="56" height="10" rx="2.5" fill="#FF9254" stroke="#2A2C35" stroke-width="0.8"/><text x="420.4" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">FN</text><rect x="454.8" y="357" width="56" height="10" rx="2.5" fill="#FFC247" stroke="#2A2C35" stroke-width="0.8"/><text x="482.8" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">STR</text><rect x="517.2" y="357" width="56" height="10" rx="2.5" fill="#3DDC97" stroke="#2A2C35" stroke-width="0.8"/><text x="545.2" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">OK</text><rect x="579.6" y="357" width="56" height="10" rx="2.5" fill="#FF5C6C" stroke="#2A2C35" stroke-width="0.8"/><text x="607.6" y="378" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8" font-weight="600">ERR</text>
+  </g>
+  <rect x="0.5" y="0.5" width="659" height="389" rx="11.5" fill="none" stroke="#2A2C35" stroke-width="1"/>
+</svg>

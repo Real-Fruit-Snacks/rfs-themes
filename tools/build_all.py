@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Master orchestrator for Real-Fruit-Snacks/rfs-themes.
 
-Runs all 8 zero-dependency theme port builders in deterministic order, then
+Runs all 9 zero-dependency theme port builders in deterministic order, then
 compiles:
-  - apps/manifest.json        (repo-root machine-readable registry of all 28 apps)
+  - apps/manifest.json        (repo-root machine-readable registry of all 29 apps)
   - docs/assets/catalog.json  (normalized gallery catalog for docs/index.html)
 
 Zero external dependencies (Python 3.11+ standard library only).
@@ -29,9 +29,9 @@ MANIFEST_PATH = os.path.join(ROOT, "apps", "manifest.json")
 CATALOG_PATH = os.path.join(ROOT, "docs", "assets", "catalog.json")
 BRAND_SOURCE = "https://github.com/Real-Fruit-Snacks/rfs-brand"
 
-# Ordered categories and app slugs (28 apps across 5 categories)
+# Ordered categories and app slugs (29 apps across 5 categories)
 CATEGORY_SPEC: list[tuple[str, str, list[str]]] = [
-    ("Editors & IDEs", "editors-ides", ["vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise"]),
+    ("Editors & IDEs", "editors-ides", ["vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise", "t3code"]),
     ("Terminals", "terminals", ["windows-terminal", "wezterm", "alacritty", "ghostty", "kitty", "git-bash", "qterminal", "windows-console"]),
     ("CLI & TUI", "cli-tui", ["starship", "oh-my-posh", "bat", "delta", "fzf"]),
     ("Notes & Writing", "notes-writing", ["privacynotes", "obsidian"]),
@@ -207,7 +207,7 @@ def _normalize_standard_app(raw: dict, expected_category: str) -> tuple[dict, di
 
 
 def run_builders() -> int:
-    """Execute all 8 theme builders in deterministic order."""
+    """Execute all 9 theme builders in deterministic order."""
     print("==> Running build-privacynotes.py")
     build_pn = _load_module("build_privacynotes", "build-privacynotes.py")
     rc = build_pn.main()
@@ -218,6 +218,7 @@ def run_builders() -> int:
     for mod_name, filename in (
         ("build_editors", "build_editors.py"),
         ("build_extras_editors", "build_extras_editors.py"),
+        ("build_t3code", "build_t3code.py"),
         ("build_terminals", "build_terminals.py"),
         ("build_extras_shells", "build_extras_shells.py"),
         ("build_cli", "build_cli.py"),
@@ -232,7 +233,7 @@ def run_builders() -> int:
 
 
 def compile_registries() -> tuple[dict, dict]:
-    """Read all 28 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
+    """Read all 29 apps/<slug>/themes.json files and emit manifest.json + catalog.json."""
     brand_tokens = pal.load_brand_tokens()
     brand_version = brand_tokens["meta"]["version"]
 

@@ -3,15 +3,15 @@
   "version": "2.1.0",
   "source": "https://github.com/Real-Fruit-Snacks/rfs-brand",
   "stats": {
-    "apps": 28,
-    "variants": 84,
+    "apps": 29,
+    "variants": 87,
     "categories": 5
   },
   "categories": [
     {
       "name": "Editors & IDEs",
       "slug": "editors-ides",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Terminals",
@@ -1138,6 +1138,162 @@
             {
               "label": "Secondary",
               "hex": "#164669"
+            },
+            {
+              "label": "Signal",
+              "hex": "#127247"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "t3code",
+      "name": "T3 Code",
+      "category": "Editors & IDEs",
+      "homepage": "https://github.com/pingdotgg/t3code",
+      "format": "T3 Code Theme JSON + CSS (v1)",
+      "install": "Run `t3 theme set apps/t3code/cyclorama-dawn.json` or Settings -> Themes -> Import theme",
+      "installSteps": [
+        "**CLI one-liner:** Run `t3 theme set apps/t3code/cyclorama-dawn.json` (inspect with `t3 theme show`, reset with `t3 theme clear`).",
+        "**Desktop UI:** Open T3 Code -> **Settings** -> **Themes** -> **Import theme** and paste the complete JSON snippet below.",
+        "**Manual folder:** Copy `cyclorama-*.json` into `~/.t3/userdata/themes/` and choose **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**."
+      ],
+      "path": "apps/t3code",
+      "primaryFile": "apps/t3code/cyclorama-dawn.json",
+      "files": [
+        {
+          "label": "Cyclorama Dawn (cyclorama-dawn.json)",
+          "path": "apps/t3code/cyclorama-dawn.json"
+        },
+        {
+          "label": "Cyclorama Steel (cyclorama-steel.json)",
+          "path": "apps/t3code/cyclorama-steel.json"
+        },
+        {
+          "label": "Cyclorama Day (cyclorama-day.json)",
+          "path": "apps/t3code/cyclorama-day.json"
+        },
+        {
+          "label": "Theme Metadata (themes.json)",
+          "path": "apps/t3code/themes.json"
+        },
+        {
+          "label": "Install Guide (README.md)",
+          "path": "apps/t3code/README.md"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cyclorama-dawn",
+          "name": "Cyclorama Dawn",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Beacon Orange",
+          "tagline": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.",
+          "preview": "assets/previews/t3code/cyclorama-dawn.svg",
+          "file": "apps/t3code/cyclorama-dawn.json",
+          "copyLang": "json",
+          "copyLabel": "Copy T3 Code JSON",
+          "copySnippet": "{\n  \"version\": 1,\n  \"id\": \"cyclorama-dawn\",\n  \"name\": \"Cyclorama Dawn\",\n  \"appearance\": \"dark\",\n  \"author\": \"Real-Fruit-Snacks\",\n  \"description\": \"LX 263 (Beacon Orange) — Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents.\",\n  \"canvas\": \"#050507\",\n  \"accent\": \"#F06E2B\",\n  \"colors\": {\n    \"canvas\": \"#050507\",\n    \"chrome\": \"#070709\",\n    \"toolbar\": \"#0C0C10\",\n    \"toolbarForeground\": \"#F4F5F8\",\n    \"toolbarBorder\": \"#2A2C35\",\n    \"toolbarControl\": \"#14141A\",\n    \"toolbarControlForeground\": \"#F4F5F8\",\n    \"toolbarControlHover\": \"#1C1D26\",\n    \"surface\": \"#0C0C10\",\n    \"surfaceRaised\": \"#14141A\",\n    \"surfaceOverlay\": \"#1C1D26\",\n    \"text\": \"#F4F5F8\",\n    \"textMuted\": \"#B3B5C0\",\n    \"border\": \"#2A2C35\",\n    \"input\": \"#08080B\",\n    \"focus\": \"#FF9254\",\n    \"accent\": \"#F06E2B\",\n    \"accentForeground\": \"#050507\",\n    \"secondary\": \"#14141A\",\n    \"secondaryForeground\": \"#F4F5F8\",\n    \"muted\": \"#0F1016\",\n    \"mutedForeground\": \"#B3B5C0\",\n    \"placeholder\": \"#8C8F9D\",\n    \"secondaryLabel\": \"#B3B5C0\",\n    \"iconMuted\": \"#8C8F9D\",\n    \"error\": \"#FF5C6C\",\n    \"errorForeground\": \"#FF5C6C\",\n    \"errorSurface\": \"#281115\",\n    \"warning\": \"#FFC247\",\n    \"warningForeground\": \"#FFC247\",\n    \"warningSurface\": \"#281F10\",\n    \"update\": \"#3DDC97\",\n    \"updateForeground\": \"#3DDC97\",\n    \"updateSurface\": \"#0D231B\",\n    \"accentSurface\": \"#2B160D\",\n    \"accentSurfaceForeground\": \"#FF9254\",\n    \"messageSurface\": \"#14141A\",\n    \"messageForeground\": \"#F4F5F8\",\n    \"messageAction\": \"#BD4811\",\n    \"messageActionForeground\": \"#FFFFFF\",\n    \"messageActionHover\": \"#9E3B0C\",\n    \"codeBackground\": \"#08080B\",\n    \"codeForeground\": \"#F4F5F8\",\n    \"searchMatchBackground\": \"#4A3619\",\n    \"searchMatchForeground\": \"#F4F5F8\",\n    \"searchMatchActiveBackground\": \"#F06E2B\",\n    \"searchMatchActiveForeground\": \"#050507\",\n    \"sidebar\": \"#070709\",\n    \"sidebarForeground\": \"#F4F5F8\",\n    \"sidebarMutedForeground\": \"#B3B5C0\",\n    \"sidebarControlSurface\": \"#0C0C10\",\n    \"sidebarRowHover\": \"#201511\",\n    \"sidebarRowActive\": \"#162028\",\n    \"sidebarRowSelected\": \"#342017\",\n    \"sidebarBorder\": \"#2A2C35\",\n    \"terminalBackground\": \"#08080B\",\n    \"terminalForeground\": \"#F4F5F8\",\n    \"terminalCursor\": \"#F06E2B\",\n    \"terminalSelection\": \"#3D2B24\",\n    \"terminalScrollbar\": \"#62646D66\",\n    \"terminalScrollbarHover\": \"#62646DAA\"\n  },\n  \"css\": \".dark svg.lucide {\\n  stroke-width: 1.75;\\n  stroke-linecap: square;\\n  stroke-linejoin: miter;\\n}\\n.dark [data-chat-header] {\\n  background-image: linear-gradient(90deg, #74B8E8, #F06E2B);\\n  background-size: 100% 2px;\\n  background-position: 0 100%;\\n  background-repeat: no-repeat;\\n}\\n.dark [data-slot='composer-host']:focus-within {\\n  border-color: #FF9254;\\n  box-shadow: 0 0 0 1px #FF9254;\\n}\\n.dark [data-slot='scroll-area-thumb'] {\\n  background-color: #62646D66;\\n  border-radius: 2px;\\n}\\n.dark [data-slot='scroll-area-thumb']:hover {\\n  background-color: #62646DAA;\\n}\\n.dark ::selection {\\n  background-color: #3D2B24;\\n  color: #F4F5F8;\\n}\\n.dark input,\\n.dark textarea,\\n.dark .composer-tiptap {\\n  caret-color: #F06E2B;\\n}\\n.dark [data-thread-item][data-active='true'],\\n.dark [data-thread-item][aria-current='page'] {\\n  box-shadow: inset 2px 0 0 0 #F06E2B;\\n}\"\n}",
+          "swatches": [
+            {
+              "label": "Canvas",
+              "hex": "#050507"
+            },
+            {
+              "label": "Sidebar",
+              "hex": "#070709"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#F06E2B"
+            },
+            {
+              "label": "Action",
+              "hex": "#BD4811"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-steel",
+          "name": "Cyclorama Steel",
+          "lx": "LX 263",
+          "mode": "dark",
+          "accentRole": "Steel Blue",
+          "tagline": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.",
+          "preview": "assets/previews/t3code/cyclorama-steel.svg",
+          "file": "apps/t3code/cyclorama-steel.json",
+          "copyLang": "json",
+          "copyLabel": "Copy T3 Code JSON",
+          "copySnippet": "{\n  \"version\": 1,\n  \"id\": \"cyclorama-steel\",\n  \"name\": \"Cyclorama Steel\",\n  \"appearance\": \"dark\",\n  \"author\": \"Real-Fruit-Snacks\",\n  \"description\": \"LX 263 (Steel Blue) — Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights.\",\n  \"canvas\": \"#050507\",\n  \"accent\": \"#74B8E8\",\n  \"colors\": {\n    \"canvas\": \"#050507\",\n    \"chrome\": \"#07080B\",\n    \"toolbar\": \"#0C0C10\",\n    \"toolbarForeground\": \"#F4F5F8\",\n    \"toolbarBorder\": \"#27313D\",\n    \"toolbarControl\": \"#131820\",\n    \"toolbarControlForeground\": \"#F4F5F8\",\n    \"toolbarControlHover\": \"#1A222E\",\n    \"surface\": \"#0C0C10\",\n    \"surfaceRaised\": \"#131820\",\n    \"surfaceOverlay\": \"#1A222E\",\n    \"text\": \"#F4F5F8\",\n    \"textMuted\": \"#B3B5C0\",\n    \"border\": \"#27313D\",\n    \"input\": \"#080A0E\",\n    \"focus\": \"#74B8E8\",\n    \"accent\": \"#74B8E8\",\n    \"accentForeground\": \"#050507\",\n    \"secondary\": \"#131820\",\n    \"secondaryForeground\": \"#F4F5F8\",\n    \"muted\": \"#0E1117\",\n    \"mutedForeground\": \"#B3B5C0\",\n    \"placeholder\": \"#8C96A6\",\n    \"secondaryLabel\": \"#B3B5C0\",\n    \"iconMuted\": \"#8C96A6\",\n    \"error\": \"#FF5C6C\",\n    \"errorForeground\": \"#FF5C6C\",\n    \"errorSurface\": \"#281115\",\n    \"warning\": \"#FFC247\",\n    \"warningForeground\": \"#FFC247\",\n    \"warningSurface\": \"#281F10\",\n    \"update\": \"#3DDC97\",\n    \"updateForeground\": \"#3DDC97\",\n    \"updateSurface\": \"#0D231B\",\n    \"accentSurface\": \"#17222B\",\n    \"accentSurfaceForeground\": \"#74B8E8\",\n    \"messageSurface\": \"#131820\",\n    \"messageForeground\": \"#F4F5F8\",\n    \"messageAction\": \"#18496B\",\n    \"messageActionForeground\": \"#FFFFFF\",\n    \"messageActionHover\": \"#123955\",\n    \"codeBackground\": \"#080A0E\",\n    \"codeForeground\": \"#F4F5F8\",\n    \"searchMatchBackground\": \"#3B3117\",\n    \"searchMatchForeground\": \"#F4F5F8\",\n    \"searchMatchActiveBackground\": \"#74B8E8\",\n    \"searchMatchActiveForeground\": \"#050507\",\n    \"sidebar\": \"#07080B\",\n    \"sidebarForeground\": \"#F4F5F8\",\n    \"sidebarMutedForeground\": \"#B3B5C0\",\n    \"sidebarControlSurface\": \"#0C0C10\",\n    \"sidebarRowHover\": \"#121A21\",\n    \"sidebarRowActive\": \"#2A1B15\",\n    \"sidebarRowSelected\": \"#1B2833\",\n    \"sidebarBorder\": \"#27313D\",\n    \"terminalBackground\": \"#080A0E\",\n    \"terminalForeground\": \"#F4F5F8\",\n    \"terminalCursor\": \"#74B8E8\",\n    \"terminalSelection\": \"#1D3B57\",\n    \"terminalScrollbar\": \"#63728466\",\n    \"terminalScrollbarHover\": \"#637284AA\"\n  },\n  \"css\": \".dark svg.lucide {\\n  stroke-width: 1.75;\\n  stroke-linecap: square;\\n  stroke-linejoin: miter;\\n}\\n.dark [data-chat-header] {\\n  background-image: linear-gradient(90deg, #74B8E8, #F06E2B);\\n  background-size: 100% 2px;\\n  background-position: 0 100%;\\n  background-repeat: no-repeat;\\n}\\n.dark [data-slot='composer-host']:focus-within {\\n  border-color: #74B8E8;\\n  box-shadow: 0 0 0 1px #74B8E8;\\n}\\n.dark [data-slot='scroll-area-thumb'] {\\n  background-color: #63728466;\\n  border-radius: 2px;\\n}\\n.dark [data-slot='scroll-area-thumb']:hover {\\n  background-color: #637284AA;\\n}\\n.dark ::selection {\\n  background-color: #1D3B57;\\n  color: #F4F5F8;\\n}\\n.dark input,\\n.dark textarea,\\n.dark .composer-tiptap {\\n  caret-color: #74B8E8;\\n}\\n.dark [data-thread-item][data-active='true'],\\n.dark [data-thread-item][aria-current='page'] {\\n  box-shadow: inset 2px 0 0 0 #74B8E8;\\n}\"\n}",
+          "swatches": [
+            {
+              "label": "Canvas",
+              "hex": "#050507"
+            },
+            {
+              "label": "Sidebar",
+              "hex": "#07080B"
+            },
+            {
+              "label": "Surface",
+              "hex": "#0C0C10"
+            },
+            {
+              "label": "Accent",
+              "hex": "#74B8E8"
+            },
+            {
+              "label": "Action",
+              "hex": "#18496B"
+            },
+            {
+              "label": "Signal",
+              "hex": "#3DDC97"
+            }
+          ]
+        },
+        {
+          "id": "cyclorama-day",
+          "name": "Cyclorama Day",
+          "lx": "LX 512",
+          "mode": "light",
+          "accentRole": "Alabaster Day",
+          "tagline": "Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.",
+          "preview": "assets/previews/t3code/cyclorama-day.svg",
+          "file": "apps/t3code/cyclorama-day.json",
+          "copyLang": "json",
+          "copyLabel": "Copy T3 Code JSON",
+          "copySnippet": "{\n  \"version\": 1,\n  \"id\": \"cyclorama-day\",\n  \"name\": \"Cyclorama Day\",\n  \"appearance\": \"light\",\n  \"author\": \"Real-Fruit-Snacks\",\n  \"description\": \"LX 512 (Alabaster Day) — Crisp #F5F7F9 Alabaster Day light workspace with white panels, burnt Beacon links, and Steel buttons.\",\n  \"canvas\": \"#F5F7F9\",\n  \"accent\": \"#AD3D0A\",\n  \"colors\": {\n    \"canvas\": \"#F5F7F9\",\n    \"chrome\": \"#EAEEF2\",\n    \"toolbar\": \"#FFFFFF\",\n    \"toolbarForeground\": \"#0D1016\",\n    \"toolbarBorder\": \"#C8D0DA\",\n    \"toolbarControl\": \"#E3E8EE\",\n    \"toolbarControlForeground\": \"#0D1016\",\n    \"toolbarControlHover\": \"#D7DFE8\",\n    \"surface\": \"#FFFFFF\",\n    \"surfaceRaised\": \"#E3E8EE\",\n    \"surfaceOverlay\": \"#D7DFE8\",\n    \"text\": \"#0D1016\",\n    \"textMuted\": \"#474D59\",\n    \"border\": \"#C8D0DA\",\n    \"input\": \"#EEF2F5\",\n    \"focus\": \"#AD3D0A\",\n    \"accent\": \"#AD3D0A\",\n    \"accentForeground\": \"#FFFFFF\",\n    \"secondary\": \"#E3E8EE\",\n    \"secondaryForeground\": \"#0D1016\",\n    \"muted\": \"#F0F3F7\",\n    \"mutedForeground\": \"#474D59\",\n    \"placeholder\": \"#58606E\",\n    \"secondaryLabel\": \"#474D59\",\n    \"iconMuted\": \"#58606E\",\n    \"error\": \"#B91C2E\",\n    \"errorForeground\": \"#B91C2E\",\n    \"errorSurface\": \"#EFE1E5\",\n    \"warning\": \"#885800\",\n    \"warningForeground\": \"#885800\",\n    \"warningSurface\": \"#EAE7E0\",\n    \"update\": \"#127247\",\n    \"updateForeground\": \"#127247\",\n    \"updateSurface\": \"#DEEAE7\",\n    \"accentSurface\": \"#EFE6E3\",\n    \"accentSurfaceForeground\": \"#AD3D0A\",\n    \"messageSurface\": \"#FFFFFF\",\n    \"messageForeground\": \"#0D1016\",\n    \"messageAction\": \"#18496B\",\n    \"messageActionForeground\": \"#FFFFFF\",\n    \"messageActionHover\": \"#113752\",\n    \"codeBackground\": \"#EEF2F5\",\n    \"codeForeground\": \"#0D1016\",\n    \"searchMatchBackground\": \"#F5DFB0\",\n    \"searchMatchForeground\": \"#0D1016\",\n    \"searchMatchActiveBackground\": \"#AD3D0A\",\n    \"searchMatchActiveForeground\": \"#FFFFFF\",\n    \"sidebar\": \"#EAEEF2\",\n    \"sidebarForeground\": \"#0D1016\",\n    \"sidebarMutedForeground\": \"#474D59\",\n    \"sidebarControlSurface\": \"#FFFFFF\",\n    \"sidebarRowHover\": \"#E5E0DF\",\n    \"sidebarRowActive\": \"#D5DDE4\",\n    \"sidebarRowSelected\": \"#E3D9D6\",\n    \"sidebarBorder\": \"#C8D0DA\",\n    \"terminalBackground\": \"#EEF2F5\",\n    \"terminalForeground\": \"#0D1016\",\n    \"terminalCursor\": \"#AD3D0A\",\n    \"terminalSelection\": \"#C6DAEB\",\n    \"terminalScrollbar\": \"#6E768266\",\n    \"terminalScrollbarHover\": \"#6E7682AA\"\n  },\n  \"css\": \":root:not(.dark) svg.lucide {\\n  stroke-width: 1.75;\\n  stroke-linecap: square;\\n  stroke-linejoin: miter;\\n}\\n:root:not(.dark) [data-chat-header] {\\n  background-image: linear-gradient(90deg, #18496B, #AD3D0A);\\n  background-size: 100% 2px;\\n  background-position: 0 100%;\\n  background-repeat: no-repeat;\\n}\\n:root:not(.dark) [data-slot='composer-host']:focus-within {\\n  border-color: #AD3D0A;\\n  box-shadow: 0 0 0 1px #AD3D0A;\\n}\\n:root:not(.dark) [data-slot='scroll-area-thumb'] {\\n  background-color: #6E768266;\\n  border-radius: 2px;\\n}\\n:root:not(.dark) [data-slot='scroll-area-thumb']:hover {\\n  background-color: #6E7682AA;\\n}\\n:root:not(.dark) ::selection {\\n  background-color: #C6DAEB;\\n  color: #0D1016;\\n}\\n:root:not(.dark) input,\\n:root:not(.dark) textarea,\\n:root:not(.dark) .composer-tiptap {\\n  caret-color: #AD3D0A;\\n}\\n:root:not(.dark) [data-thread-item][data-active='true'],\\n:root:not(.dark) [data-thread-item][aria-current='page'] {\\n  box-shadow: inset 2px 0 0 0 #AD3D0A;\\n}\"\n}",
+          "swatches": [
+            {
+              "label": "Canvas",
+              "hex": "#F5F7F9"
+            },
+            {
+              "label": "Sidebar",
+              "hex": "#EAEEF2"
+            },
+            {
+              "label": "Surface",
+              "hex": "#FFFFFF"
+            },
+            {
+              "label": "Accent",
+              "hex": "#AD3D0A"
+            },
+            {
+              "label": "Action",
+              "hex": "#18496B"
             },
             {
               "label": "Signal",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify rfs-themes integrity across all 28 apps (84 variants), WCAG AA contrast,
+"""Verify rfs-themes integrity across all 29 apps (87 variants), WCAG AA contrast,
 native format schemas, relative links, SVG previews, Oklab PNG wallpapers, and
 Cyclorama Dawn invariants.
 
@@ -54,13 +54,75 @@ LUA_RESERVED = {
 
 EXPECTED_VARIANTS = ("cyclorama-dawn", "cyclorama-steel", "cyclorama-day")
 EXPECTED_APP_ORDER = (
-    "vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise",
+    "vscode", "neovim", "zed", "jetbrains", "notepad-plus-plus", "python-idle", "powershell-ise", "t3code",
     "windows-terminal", "wezterm", "alacritty", "ghostty", "kitty", "git-bash", "qterminal", "windows-console",
     "starship", "oh-my-posh", "bat", "delta", "fzf",
     "privacynotes", "obsidian",
     "windows", "chromium", "discord", "proton-mail", "qbittorrent", "flow-launcher",
 )
 EXPECTED_APPS = set(EXPECTED_APP_ORDER)
+
+T3CODE_ID_RE = re.compile(r"^(?!(?:system|light|dark)$)[a-z0-9](?:[a-z0-9-]{0,47})$")
+T3CODE_RESERVED_IDS = {"t3-chat", "grove", "ocean", "ember", "iris", "t3-code"}
+T3CODE_COLOR_ROLES = (
+    "canvas", "chrome", "toolbar", "toolbarForeground", "toolbarBorder",
+    "toolbarControl", "toolbarControlForeground", "toolbarControlHover",
+    "surface", "surfaceRaised", "surfaceOverlay", "text", "textMuted",
+    "border", "input", "focus", "accent", "accentForeground",
+    "secondary", "secondaryForeground", "muted", "mutedForeground",
+    "placeholder", "secondaryLabel", "iconMuted",
+    "error", "errorForeground", "errorSurface",
+    "warning", "warningForeground", "warningSurface",
+    "update", "updateForeground", "updateSurface",
+    "accentSurface", "accentSurfaceForeground",
+    "messageSurface", "messageForeground",
+    "messageAction", "messageActionForeground", "messageActionHover",
+    "codeBackground", "codeForeground",
+    "searchMatchBackground", "searchMatchForeground",
+    "searchMatchActiveBackground", "searchMatchActiveForeground",
+    "sidebar", "sidebarForeground", "sidebarMutedForeground",
+    "sidebarControlSurface", "sidebarRowHover", "sidebarRowActive",
+    "sidebarRowSelected", "sidebarBorder",
+    "terminalBackground", "terminalForeground", "terminalCursor",
+    "terminalSelection", "terminalScrollbar", "terminalScrollbarHover",
+)
+T3CODE_CONTRAST_PAIRS = (
+    ("text", "canvas"), ("text", "surface"), ("text", "surfaceRaised"),
+    ("text", "surfaceOverlay"), ("text", "input"), ("text", "muted"),
+    ("textMuted", "canvas"), ("textMuted", "surface"), ("textMuted", "surfaceRaised"),
+    ("textMuted", "surfaceOverlay"), ("textMuted", "muted"),
+    ("mutedForeground", "canvas"), ("mutedForeground", "surface"),
+    ("mutedForeground", "surfaceRaised"), ("mutedForeground", "muted"),
+    ("placeholder", "canvas"), ("placeholder", "surface"),
+    ("placeholder", "surfaceRaised"), ("placeholder", "muted"), ("placeholder", "input"),
+    ("secondaryLabel", "canvas"), ("secondaryLabel", "surface"),
+    ("secondaryLabel", "surfaceRaised"), ("secondaryLabel", "muted"),
+    ("iconMuted", "canvas"), ("iconMuted", "surface"),
+    ("iconMuted", "surfaceRaised"), ("iconMuted", "muted"),
+    ("toolbarForeground", "toolbar"), ("toolbarForeground", "toolbarControl"),
+    ("toolbarForeground", "toolbarControlHover"),
+    ("toolbarControlForeground", "toolbar"), ("toolbarControlForeground", "toolbarControl"),
+    ("toolbarControlForeground", "toolbarControlHover"),
+    ("accentForeground", "accent"),
+    ("secondaryForeground", "secondary"),
+    ("errorForeground", "errorSurface"), ("errorForeground", "canvas"), ("errorForeground", "surface"),
+    ("warningForeground", "warningSurface"), ("warningForeground", "canvas"), ("warningForeground", "surface"),
+    ("updateForeground", "updateSurface"), ("updateForeground", "canvas"), ("updateForeground", "surface"),
+    ("accentSurfaceForeground", "accentSurface"), ("accentSurfaceForeground", "canvas"),
+    ("accentSurfaceForeground", "surface"),
+    ("messageForeground", "messageSurface"),
+    ("messageActionForeground", "messageAction"), ("messageActionForeground", "messageActionHover"),
+    ("codeForeground", "codeBackground"),
+    ("searchMatchForeground", "searchMatchBackground"),
+    ("searchMatchActiveForeground", "searchMatchActiveBackground"),
+    ("sidebarForeground", "sidebar"), ("sidebarForeground", "sidebarControlSurface"),
+    ("sidebarForeground", "sidebarRowHover"), ("sidebarForeground", "sidebarRowActive"),
+    ("sidebarForeground", "sidebarRowSelected"),
+    ("sidebarMutedForeground", "sidebar"), ("sidebarMutedForeground", "sidebarControlSurface"),
+    ("sidebarMutedForeground", "sidebarRowHover"), ("sidebarMutedForeground", "sidebarRowActive"),
+    ("sidebarMutedForeground", "sidebarRowSelected"),
+    ("terminalForeground", "terminalBackground"), ("terminalForeground", "terminalSelection"),
+)
 
 NPP_EXPECTED_LEXERS = {
     "c", "cpp", "cs", "rust", "python", "powershell", "bash",
@@ -253,6 +315,21 @@ def parse_ini_strict(text: str) -> configparser.RawConfigParser:
     return cp
 
 
+def composite_hex_over(fg_hex: str, bg_hex: str) -> str:
+    """Composite #RRGGBB or #RRGGBBAA onto an opaque #RRGGBB surface."""
+    h = fg_hex.lstrip("#")
+    if len(h) == 6:
+        return f"#{h.upper()}"
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    alpha = int(h[6:8], 16) / 255.0
+    br, bg, bb = pal.hex_to_rgb(bg_hex)
+    return pal.rgb_to_hex((
+        br * (1.0 - alpha) + r * alpha,
+        bg * (1.0 - alpha) + g * alpha,
+        bb * (1.0 - alpha) + b * alpha,
+    ))
+
+
 def verify_png_file(path: str, expected_size: tuple[int, int], expected_top_rgb: tuple[int, int, int]) -> list[str]:
     errs: list[str] = []
     rel = os.path.relpath(path, ROOT)
@@ -360,15 +437,15 @@ def main() -> int:
         ok(f"rfs_palette WCAG AA contrast verified ({len(pal_checks)}/{len(pal_checks)} checks >= 4.5:1)")
 
     # ------------------------------------------------------------------
-    # 3. apps/manifest.json validation (28 apps x 3 variants = 84)
+    # 3. apps/manifest.json validation (29 apps x 3 variants = 87)
     # ------------------------------------------------------------------
     e0 = len(errors)
     manifest_path = os.path.join(ROOT, "apps", "manifest.json")
     manifest = json.loads(read_utf8(manifest_path))
     m_apps = manifest.get("apps", [])
     m_slugs = [a.get("slug") for a in m_apps]
-    if len(m_apps) != 28 or tuple(m_slugs) != EXPECTED_APP_ORDER:
-        fail(f"apps/manifest.json expected 28 canonical apps in category order, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
+    if len(m_apps) != 29 or tuple(m_slugs) != EXPECTED_APP_ORDER:
+        fail(f"apps/manifest.json expected 29 canonical apps in category order, got {len(m_apps)} ({set(m_slugs) ^ EXPECTED_APPS})")
     for app in m_apps:
         slug = app["slug"]
         for rel in (app["path"], app["data"]):
@@ -384,7 +461,7 @@ def main() -> int:
         ok(f"apps/manifest.json valid ({len(m_apps)} apps, {sum(len(a['variants']) for a in m_apps)} variants)")
 
     # ------------------------------------------------------------------
-    # 4. docs/assets/catalog.json validation (28 apps x 3 variants = 84)
+    # 4. docs/assets/catalog.json validation (29 apps x 3 variants = 87)
     # ------------------------------------------------------------------
     e0 = len(errors)
     catalog_path = os.path.join(ROOT, "docs", "assets", "catalog.json")
@@ -396,8 +473,18 @@ def main() -> int:
         c_apps = catalog.get("apps", [])
         if [a.get("slug") for a in c_apps] != m_slugs:
             fail("docs/assets/catalog.json app order/slugs do not match apps/manifest.json")
-        if catalog.get("stats", {}).get("apps") != 28 or catalog.get("stats", {}).get("variants") != 84 or catalog.get("stats", {}).get("categories") != 5:
-            fail(f"catalog.json stats invalid (expected 28 apps, 84 variants, 5 categories): {catalog.get('stats')}")
+        if catalog.get("stats", {}).get("apps") != 29 or catalog.get("stats", {}).get("variants") != 87 or catalog.get("stats", {}).get("categories") != 5:
+            fail(f"catalog.json stats invalid (expected 29 apps, 87 variants, 5 categories): {catalog.get('stats')}")
+        cat_counts = {c.get("name"): c.get("count") for c in catalog.get("categories", [])}
+        expected_cat_counts = {
+            "Editors & IDEs": 8,
+            "Terminals": 8,
+            "CLI & TUI": 5,
+            "Notes & Writing": 2,
+            "Browsers & Desktop": 6,
+        }
+        if cat_counts != expected_cat_counts:
+            fail(f"catalog.json category counts mismatch (expected {expected_cat_counts}, got {cat_counts})")
         for app in c_apps:
             slug = app["slug"]
             steps = app.get("installSteps", [])
@@ -454,10 +541,10 @@ def main() -> int:
                     if not sw.get("label") or not HEX6_RE.match(sw.get("hex", "")):
                         fail(f"catalog {slug}/{vid}: invalid swatch {sw}")
         if len(errors) == e0:
-            ok("docs/assets/catalog.json valid (28 apps, 84 variants, snippets & swatches verified)")
+            ok("docs/assets/catalog.json valid (29 apps, 87 variants, snippets & swatches verified)")
 
     # ------------------------------------------------------------------
-    # 5. All 84 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
+    # 5. All 87 SVG preview pairs (SHA-256 sync + XML parse + swatch check)
     # ------------------------------------------------------------------
     e0 = len(errors)
     svg_count = 0
@@ -511,12 +598,30 @@ def main() -> int:
                 )
                 if unclipped_bleed and not has_card_clip:
                     fail(f"proton-mail/{vid}.svg encrypted message card left bar (y=146, height=114) bleeds outside rx=6 rounded corners")
+            if slug == "t3code":
+                # Ensure rounded cards (rx >= 4) with left accent stripes inset their stripes inside rx corners
+                all_rects = list(svg_root.iter("{http://www.w3.org/2000/svg}rect"))
+                rounded_cards = [
+                    (float(r.attrib["x"]), float(r.attrib["y"]), float(r.attrib["height"]), float(r.attrib["rx"]))
+                    for r in all_rects
+                    if "rx" in r.attrib and float(r.attrib.get("rx", "0")) >= 4 and float(r.attrib.get("width", "0")) >= 80
+                ]
+                for r in all_rects:
+                    rw = float(r.attrib.get("width", "999"))
+                    if rw <= 4:
+                        rx_pos = float(r.attrib.get("x", "-999"))
+                        ry_pos = float(r.attrib.get("y", "-999"))
+                        rh_val = float(r.attrib.get("height", "0"))
+                        for cx, cy, ch, crx in rounded_cards:
+                            if abs(rx_pos - cx) < 1.0 and ry_pos >= cy - 1.0 and (ry_pos + rh_val) <= (cy + ch + 1.0):
+                                if ry_pos < cy + crx - 0.5 or (ry_pos + rh_val) > (cy + ch - crx + 0.5):
+                                    fail(f"t3code/{vid}.svg left stripe at ({rx_pos},{ry_pos},h={rh_val}) bleeds over rx={crx} card corners")
             svg_count += 1
-    if len(errors) == e0 and svg_count == 84:
-        ok("all 84 SVG preview pairs synced, XML-valid, and swatch-accurate")
+    if len(errors) == e0 and svg_count == 87:
+        ok("all 87 SVG preview pairs synced, XML-valid, and swatch-accurate")
 
     # ------------------------------------------------------------------
-    # 6. Native format schema & syntax verification for ALL 28 apps
+    # 6. Native format schema & syntax verification for ALL 29 apps
     # ------------------------------------------------------------------
 
     # 6.1 PrivacyNotes
@@ -1494,6 +1599,127 @@ def main() -> int:
     if len(errors) == e0:
         ok("proton-mail: 3 Proton Design System Custom Theme .css files & contrast pairs verified")
 
+    # 6.26 T3 Code (3 v1 Theme JSON + CSS files, 61 THEME_COLOR_ROLES, CSS security, WCAG AA w/ RGBA compositing)
+    e0 = len(errors)
+    t3_dir = os.path.join(ROOT, "apps", "t3code")
+    t3_themes_meta = json.loads(read_utf8(os.path.join(t3_dir, "themes.json")))
+    t3_snip_by_id = {th.get("id"): th.get("copySnippet", "") for th in t3_themes_meta.get("themes", [])}
+    t3_allowed_top_keys = {
+        "version", "id", "name", "appearance", "author",
+        "description", "canvas", "accent", "colors", "css",
+    }
+    if len(T3CODE_COLOR_ROLES) != 61 or len(set(T3CODE_COLOR_ROLES)) != 61:
+        fail(f"internal check: T3CODE_COLOR_ROLES must have 61 unique roles, got {len(T3CODE_COLOR_ROLES)}")
+
+    for vid in EXPECTED_VARIANTS:
+        v = pal.VARIANTS[vid]
+        t3_path = os.path.join(t3_dir, f"{vid}.json")
+        if not os.path.isfile(t3_path):
+            fail(f"t3code missing {vid}.json")
+            continue
+        try:
+            t3 = json.loads(read_utf8(t3_path))
+        except Exception as exc:
+            fail(f"t3code/{vid}.json invalid JSON: {exc}")
+            continue
+        if not isinstance(t3, dict):
+            fail(f"t3code/{vid}.json root must be a JSON object")
+            continue
+        extra_top = set(t3.keys()) - t3_allowed_top_keys
+        if extra_top:
+            fail(f"t3code/{vid}.json unknown top-level keys: {sorted(extra_top)}")
+        if type(t3.get("version")) is not int or t3.get("version") != 1:
+            fail(f"t3code/{vid}.json version must be integer 1, got {t3.get('version')!r}")
+        tid = t3.get("id", "")
+        if (
+            not isinstance(tid, str)
+            or tid != vid
+            or not T3CODE_ID_RE.match(tid)
+            or tid in T3CODE_RESERVED_IDS
+            or tid.startswith("t3-")
+        ):
+            fail(f"t3code/{vid}.json invalid or reserved id={tid!r}")
+        tname = t3.get("name", "")
+        if not isinstance(tname, str) or not tname.strip() or len(tname) > 48:
+            fail(f"t3code/{vid}.json invalid name={tname!r} (must be non-empty <= 48 chars)")
+        if t3.get("appearance") != v["mode"]:
+            fail(f"t3code/{vid}.json appearance={t3.get('appearance')!r} != {v['mode']!r}")
+        if t3.get("author") != "Real-Fruit-Snacks":
+            fail(f"t3code/{vid}.json author={t3.get('author')!r} != 'Real-Fruit-Snacks'")
+        tdesc = t3.get("description", "")
+        if not isinstance(tdesc, str) or not tdesc.strip() or len(tdesc) > 200:
+            fail(f"t3code/{vid}.json invalid description (must be non-empty <= 200 chars)")
+        tcanvas = t3.get("canvas", "")
+        taccent = t3.get("accent", "")
+        if not isinstance(tcanvas, str) or not HEX6_RE.match(tcanvas):
+            fail(f"t3code/{vid}.json canvas={tcanvas!r} must match #RRGGBB")
+        if not isinstance(taccent, str) or not HEX6_RE.match(taccent):
+            fail(f"t3code/{vid}.json accent={taccent!r} must match #RRGGBB")
+
+        tcolors = t3.get("colors")
+        if not isinstance(tcolors, dict):
+            fail(f"t3code/{vid}.json missing colors object")
+            continue
+        missing_roles = set(T3CODE_COLOR_ROLES) - set(tcolors.keys())
+        unknown_roles = set(tcolors.keys()) - set(T3CODE_COLOR_ROLES)
+        if missing_roles or unknown_roles:
+            fail(
+                f"t3code/{vid}.json colors role mismatch "
+                f"(missing={sorted(missing_roles)}, unknown={sorted(unknown_roles)})"
+            )
+            continue
+        for rk, rv in tcolors.items():
+            if not isinstance(rv, str) or not HEX6_8_RE.match(rv):
+                fail(f"t3code/{vid}.json invalid hex colors[{rk}]={rv!r}")
+        if tcanvas.upper() != tcolors["canvas"].upper() or taccent.upper() != tcolors["accent"].upper():
+            fail(f"t3code/{vid}.json top-level canvas/accent out of sync with colors.canvas/colors.accent")
+
+        if "css" in t3 and t3["css"] is not None:
+            tcss = t3["css"]
+            if not isinstance(tcss, str) or len(tcss) > 20000:
+                fail(f"t3code/{vid}.json css must be a string <= 20000 chars")
+            else:
+                if not check_balanced_braces_css(tcss):
+                    fail(f"t3code/{vid}.json css has unbalanced braces")
+                if "\\" in tcss:
+                    fail(f"t3code/{vid}.json css contains forbidden backslash `\\`")
+                if re.search(r"@import\b", tcss, re.I):
+                    fail(f"t3code/{vid}.json css contains forbidden `@import`")
+                if re.search(r"image-set\s*\(", tcss, re.I):
+                    fail(f"t3code/{vid}.json css contains forbidden `image-set(`")
+                if re.search(r"(?:^|[^a-zA-Z0-9_-])src\s*\(", tcss, re.I):
+                    fail(f"t3code/{vid}.json css contains forbidden `src(`")
+                if re.search(r"url\s*\(\s*(?!['\"]?#)", tcss, re.I):
+                    fail(f"t3code/{vid}.json css contains forbidden non-local `url(`")
+                if re.search(r"\bin\s+oklch\b", tcss, re.I):
+                    fail(f"t3code/{vid}.json css contains forbidden `in oklch`")
+
+        # Verify copySnippet in apps/t3code/themes.json is complete ready-to-import theme JSON
+        if vid not in t3_snip_by_id or json.loads(t3_snip_by_id[vid]) != t3:
+            fail(f"t3code/{vid}.json out of sync with apps/t3code/themes.json copySnippet")
+
+        # WCAG AA (>= 4.5:1) across all fg/bg role pairs with #RRGGBBAA alpha compositing
+        base_surface = composite_hex_over(tcolors["canvas"], v["ui"]["bg"])
+        for fg_role, bg_role in T3CODE_CONTRAST_PAIRS:
+            fg_raw = tcolors[fg_role]
+            bg_raw = tcolors[bg_role]
+            if not (HEX6_8_RE.match(fg_raw) and HEX6_8_RE.match(bg_raw)):
+                continue
+            bg_eff = composite_hex_over(bg_raw, base_surface)
+            fg_eff = composite_hex_over(fg_raw, bg_eff)
+            cr = pal.contrast(fg_eff, bg_eff)
+            if cr < 4.5:
+                fail(
+                    f"t3code/{vid}.json WCAG AA fail: {fg_role} ({fg_raw}) on "
+                    f"{bg_role} ({bg_raw}) = {cr:.2f}:1 (< 4.5:1)"
+                )
+
+    if len(errors) == e0:
+        ok(
+            f"t3code: 3 v1 JSON+CSS themes (61/61 roles, CSS security, "
+            f"{len(T3CODE_CONTRAST_PAIRS) * 3}/{len(T3CODE_CONTRAST_PAIRS) * 3} AA checks) verified"
+        )
+
     # Optional native PowerShell AST Parser check across ALL .ps1 scripts when running on Windows
     ps_exe = shutil.which("powershell.exe") or shutil.which("pwsh")
     if ps_exe and ps1_files_to_parse:
@@ -1512,7 +1738,7 @@ def main() -> int:
             ok(f"powershell AST: all {len(ps1_files_to_parse)} .ps1 scripts parsed with 0 syntax errors")
 
     # ------------------------------------------------------------------
-    # 7. Relative Markdown & HTML link integrity + 28-app/84-variant telemetry
+    # 7. Relative Markdown & HTML link integrity + 29-app/87-variant telemetry
     # ------------------------------------------------------------------
     e0 = len(errors)
     md_files = [
@@ -1520,6 +1746,8 @@ def main() -> int:
         os.path.join(ROOT, "AGENTS.md"),
         *(os.path.join(ROOT, "apps", slug, "README.md") for slug in sorted(EXPECTED_APPS)),
     ]
+    if len(md_files) != 31:
+        fail(f"expected 31 Markdown files (README.md, AGENTS.md, + 29 app READMEs), got {len(md_files)}")
     md_link_rx = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
     bad_space_link_rx = re.compile(r"!?\[[^\]]*\]\((?!<)[^)\n]+\s+[^)\n]*\)")
     html_attr_rx = re.compile(r'(?:href|src|srcset)="([^"]+)"')
@@ -1554,11 +1782,23 @@ def main() -> int:
 
     docs_html_path = os.path.join(ROOT, "docs", "index.html")
     docs_html = read_utf8(docs_html_path)
-    for req_html_copy in ("28 · Across 5 categories", "84 · Dawn, Steel, Day", "Showing 28 of 28 apps"):
+    for req_html_copy in (
+        "29 · Across 5 categories",
+        "87 · Dawn, Steel, Day",
+        "Showing 29 of 29 apps",
+        '<span>All</span> <span class="chip-count">(29)</span>',
+        '<span>Editors &amp; IDEs</span> <span class="chip-count">(8)</span>',
+    ):
         if req_html_copy not in docs_html:
-            fail(f"docs/index.html missing updated 28-app/84-variant copy: {req_html_copy!r}")
-    if re.search(r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20|21\s+everyday|63\s+verified|21\s+ports|Showing\s+21|21\s*·\s*Across|63\s*·\s*Dawn)\b", docs_html, re.I):
-        fail("docs/index.html contains stale 20/21-app or 60/63-variant telemetry copy")
+            fail(f"docs/index.html missing updated 29-app/87-variant copy: {req_html_copy!r}")
+    if re.search(
+        r"\b(?:20\s+everyday|60\s+verified|20\s+ports|Showing\s+20|"
+        r"21\s+everyday|63\s+verified|21\s+ports|Showing\s+21|21\s*·\s*Across|63\s*·\s*Dawn|"
+        r"28\s+everyday|84\s+verified|28\s+ports|Showing\s+28|28\s*·\s*Across|84\s*·\s*Dawn)\b",
+        docs_html,
+        re.I,
+    ):
+        fail("docs/index.html contains stale 20/21/28-app or 60/63/84-variant telemetry copy")
 
     doc_ids = set(re.findall(r'\bid="([^"]+)"', docs_html))
     for m in html_attr_rx.finditer(docs_html):
@@ -1579,7 +1819,7 @@ def main() -> int:
                     fail(f"missing SVG symbol #{parts[1]} referenced in docs/index.html")
 
     if len(errors) == e0:
-        ok(f"all relative links & 28-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
+        ok(f"all relative links & 29-app telemetry verified across {len(md_files)} Markdown files and docs/index.html")
 
     # ------------------------------------------------------------------
     # 8. Brand & hygiene invariants (oklch, modals, innerHTML, URLs, CRLF)
@@ -1658,7 +1898,7 @@ def main() -> int:
 
     if not errors:
         ok("zero `in oklch`, native modals, `innerHTML`, private-repo leaks, or CRLF drift")
-        ok("all rfs-themes checks passed (28 apps · 84 variants)")
+        ok("all rfs-themes checks passed (29 apps · 87 variants)")
         return 0
 
     print(f"[x]  verification failed with {len(errors)} error(s)")
