@@ -1664,10 +1664,11 @@ def main() -> int:
     md_files = [
         os.path.join(ROOT, "README.md"),
         os.path.join(ROOT, "AGENTS.md"),
+        os.path.join(ROOT, "docs", "PORTS.md"),
         *(os.path.join(ROOT, "apps", slug, "README.md") for slug in sorted(EXPECTED_APPS)),
     ]
-    if len(md_files) != 30:
-        fail(f"expected 30 Markdown files (README.md, AGENTS.md, + 28 app READMEs), got {len(md_files)}")
+    if len(md_files) != 31:
+        fail(f"expected 31 Markdown files (README.md, AGENTS.md, docs/PORTS.md, + 28 app READMEs), got {len(md_files)}")
     md_link_rx = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
     bad_space_link_rx = re.compile(r"!?\[[^\]]*\]\((?!<)[^)\n]+\s+[^)\n]*\)")
     html_attr_rx = re.compile(r'(?:href|src|srcset)="([^"]+)"')

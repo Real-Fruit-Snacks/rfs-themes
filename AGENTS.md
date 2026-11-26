@@ -10,6 +10,7 @@ This repository holds **Cyclorama Dawn (Steel & Beacon Orange)** theme ports for
 4. **Zero Native Popups / Zero External CDNs:** Never call `alert()`, `confirm()`, or `prompt()`. Keep all fonts and assets self-hosted under `docs/assets/`.
 5. **Deterministic Builds (`newline="\n"`):** All generated files must use UTF-8 with LF line endings so Windows and Linux CI produce byte-identical output.
 6. **Public Scope Only:** Never reference private repositories or private hostnames.
+7. **README & Docs (`BRAND.md` §14):** Keep `README.md` ultra-minimal (40–60 lines); put the full 28-app install directory and layout in `docs/PORTS.md` (and per-app details in `apps/<slug>/README.md`). Never use GitHub Wiki.
 
 ## Tooling Architecture (`tools/`)
 
