@@ -1,4 +1,4 @@
-/* rfs-themes — Cyclorama Dawn 20-App Theme Gallery (LX 263 Dark default, LX 512 Light toggle) */
+/* rfs-themes — Cyclorama Dawn 28-App Theme Gallery (LX 263 Dark default, LX 512 Light toggle) */
 
 @font-face {
   font-family: "Big Shoulders Stencil";
@@ -435,7 +435,7 @@ main {
   padding: 0.25rem 0.6rem;
 }
 
-/* 20-App Filter Toolbar */
+/* 28-App Filter Toolbar */
 .directory-toolbar {
   display: grid;
   gap: 0.85rem;
@@ -492,7 +492,7 @@ main {
   color: var(--rfs-mute);
 }
 
-/* 20-App Responsive Directory Grid */
+/* 28-App Responsive Directory Grid */
 .apps-grid {
   display: grid;
   gap: 1.15rem;

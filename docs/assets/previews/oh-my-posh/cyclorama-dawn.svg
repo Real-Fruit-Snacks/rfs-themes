@@ -40,7 +40,7 @@
         <!-- Prompt card 2: Error state + output -->
         <rect x="22" y="192" width="616" height="134" rx="8" fill="#08080B" stroke="#2A2C35" stroke-width="1"/>
         <g font-family="ui-monospace,Consolas,monospace" font-size="10">
-          <text x="36" y="218"><tspan fill="#3DDC97" font-weight="700">[ok]</tspan><tspan fill="#F4F5F8"> 20 app ports · 60 variants verified</tspan></text>
+          <text x="36" y="218"><tspan fill="#3DDC97" font-weight="700">[ok]</tspan><tspan fill="#F4F5F8"> 28 app ports · 84 variants verified</tspan></text>
           <text x="36" y="242"><tspan fill="#74B8E8" font-weight="700">[i] </tspan><tspan fill="#D6D8E0"> palette = "cyclorama-dawn" (LX 263)</tspan></text>
           <text x="36" y="266"><tspan fill="#FFC247" font-weight="700">[!] </tspan><tspan fill="#D6D8E0"> git dirty indicator: </tspan><tspan fill="#FFC247">+3 ~1</tspan><tspan fill="#B3B5C0"> · duration threshold 2s</tspan></text>
           <text x="36" y="294"><tspan fill="#FF5C6C" font-weight="700">[x] </tspan><tspan fill="#FF5C6C">exit 1</tspan><tspan fill="#B3B5C0"> prompt glyph turns Signal Crimson (#FF5C6C)</tspan></text>

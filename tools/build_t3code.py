@@ -400,7 +400,7 @@ def render_t3code_preview(v: dict, colors: dict[str, str]) -> str:
     <rect x="12" y="48" width="24" height="24" rx="5" fill="{c["messageAction"]}"/>
     <text x="24" y="63.5" text-anchor="middle" fill="{c["messageActionForeground"]}" font-family="ui-monospace,Consolas,monospace" font-size="8.5" font-weight="700">RFS</text>
     <text x="44" y="58.5" fill="{c["sidebarForeground"]}" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="700">rfs-themes</text>
-    <text x="44" y="70.5" fill="{c["sidebarMutedForeground"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">main · 29 apps</text>
+    <text x="44" y="70.5" fill="{c["sidebarMutedForeground"]}" font-family="ui-monospace,Consolas,monospace" font-size="8">main · 28 apps</text>
 
     <!-- New thread sidebar control -->
     <rect x="12" y="82" width="152" height="22" rx="4" fill="{c["sidebarControlSurface"]}" stroke="{c["sidebarBorder"]}" stroke-width="1"/>

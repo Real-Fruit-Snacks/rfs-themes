@@ -256,7 +256,7 @@ def render_cli_preview(app_name: str, slug: str, variant: dict, kind: str) -> st
         <!-- Prompt card 2: Error state + output -->
         <rect x="22" y="192" width="616" height="134" rx="8" fill="{ui["code_bg"]}" stroke="{ui["border"]}" stroke-width="1"/>
         <g font-family="ui-monospace,Consolas,monospace" font-size="10">
-          <text x="36" y="218"><tspan fill="{ui["signal"]}" font-weight="700">[ok]</tspan><tspan fill="{ui["text"]}"> 20 app ports · 60 variants verified</tspan></text>
+          <text x="36" y="218"><tspan fill="{ui["signal"]}" font-weight="700">[ok]</tspan><tspan fill="{ui["text"]}"> 28 app ports · 84 variants verified</tspan></text>
           <text x="36" y="242"><tspan fill="{ui["secondary"]}" font-weight="700">[i] </tspan><tspan fill="{ui["text_soft"]}"> palette = "{escape(variant["id"])}" ({escape(variant["lx"])})</tspan></text>
           <text x="36" y="266"><tspan fill="{ui["warning"]}" font-weight="700">[!] </tspan><tspan fill="{ui["text_soft"]}"> git dirty indicator: </tspan><tspan fill="{ui["warning"]}">+3 ~1</tspan><tspan fill="{ui["mute"]}"> · duration threshold 2s</tspan></text>
           <text x="36" y="294"><tspan fill="{ui["fault"]}" font-weight="700">[x] </tspan><tspan fill="{ui["fault"]}">exit 1</tspan><tspan fill="{ui["mute"]}"> prompt glyph turns Signal Crimson ({ui["fault"]})</tspan></text>
@@ -293,7 +293,7 @@ def render_cli_preview(app_name: str, slug: str, variant: dict, kind: str) -> st
         <rect x="0" y="36" width="660" height="310" fill="{ui["bg"]}"/>
         <!-- Search bar -->
         <rect x="20" y="52" width="620" height="32" rx="6" fill="{ui["raised"]}" stroke="{ui["accent"]}" stroke-width="1.2"/>
-        <text x="34" y="72" font-family="ui-monospace,Consolas,monospace" font-size="11"><tspan fill="{ui["accent"]}" font-weight="700">&gt; </tspan><tspan fill="{ui["text"]}">cyclorama </tspan><tspan fill="{ui["mute"]}">20/60</tspan></text>
+        <text x="34" y="72" font-family="ui-monospace,Consolas,monospace" font-size="11"><tspan fill="{ui["accent"]}" font-weight="700">&gt; </tspan><tspan fill="{ui["text"]}">cyclorama </tspan><tspan fill="{ui["mute"]}">28/84</tspan></text>
 
         <!-- Left match list -->
         <rect x="20" y="94" width="286" height="236" rx="6" fill="{ui["surface"]}" stroke="{ui["border"]}" stroke-width="1"/>
@@ -306,7 +306,7 @@ def render_cli_preview(app_name: str, slug: str, variant: dict, kind: str) -> st
         <text x="38" y="226" fill="{ui["text_soft"]}" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/obsidian/theme.css</text>
         <text x="38" y="252" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/starship/<tspan fill="{ui["accent"]}">cyclorama</tspan>.toml</text>
         <text x="38" y="278" fill="{ui["mute"]}" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/delta/<tspan fill="{ui["accent"]}">cyclorama</tspan>.gitconfig</text>
-        <text x="38" y="308" fill="{ui["signal"]}" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">20 matches · 0.4ms</text>
+        <text x="38" y="308" fill="{ui["signal"]}" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">28 matches · 0.4ms</text>
 
         <!-- Right preview pane -->
         <rect x="316" y="94" width="324" height="236" rx="6" fill="{ui["code_bg"]}" stroke="{ui["border"]}" stroke-width="1"/>

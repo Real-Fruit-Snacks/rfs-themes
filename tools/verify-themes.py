@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify rfs-themes integrity across all 29 apps (87 variants), WCAG AA contrast,
+"""Verify rfs-themes integrity across all 28 apps (84 variants), WCAG AA contrast,
 native format schemas, relative links, SVG previews, Oklab PNG wallpapers, and
 Cyclorama Dawn invariants.
 

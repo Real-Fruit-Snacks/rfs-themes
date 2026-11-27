@@ -30,7 +30,7 @@
   syncTheme();
 
   window.addEventListener("storage", (e) => {
-    if (e.key !== "color-scheme" || !meta) return;
+    if ((e.key !== "rfs-theme" && e.key !== "color-scheme") || !meta) return;
     meta.content = e.newValue === "light" ? "light" : "dark";
     syncTheme();
   });
@@ -40,8 +40,13 @@
       const target = currentMode() === "dark" ? "light" : "dark";
       const apply = () => {
         try {
-          if (target === "dark") localStorage.removeItem("color-scheme");
-          else localStorage.setItem("color-scheme", "light");
+          if (target === "dark") {
+            localStorage.removeItem("rfs-theme");
+            localStorage.removeItem("color-scheme");
+          } else {
+            localStorage.setItem("rfs-theme", "light");
+            localStorage.setItem("color-scheme", "light");
+          }
         } catch {}
         meta.content = target;
         syncTheme();

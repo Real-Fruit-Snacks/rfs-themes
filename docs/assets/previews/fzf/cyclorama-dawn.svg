@@ -22,7 +22,7 @@
         <rect x="0" y="36" width="660" height="310" fill="#050507"/>
         <!-- Search bar -->
         <rect x="20" y="52" width="620" height="32" rx="6" fill="#14141A" stroke="#FF9254" stroke-width="1.2"/>
-        <text x="34" y="72" font-family="ui-monospace,Consolas,monospace" font-size="11"><tspan fill="#FF9254" font-weight="700">&gt; </tspan><tspan fill="#F4F5F8">cyclorama </tspan><tspan fill="#B3B5C0">20/60</tspan></text>
+        <text x="34" y="72" font-family="ui-monospace,Consolas,monospace" font-size="11"><tspan fill="#FF9254" font-weight="700">&gt; </tspan><tspan fill="#F4F5F8">cyclorama </tspan><tspan fill="#B3B5C0">28/84</tspan></text>
 
         <!-- Left match list -->
         <rect x="20" y="94" width="286" height="236" rx="6" fill="#0C0C10" stroke="#2A2C35" stroke-width="1"/>
@@ -35,7 +35,7 @@
         <text x="38" y="226" fill="#D6D8E0" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/obsidian/theme.css</text>
         <text x="38" y="252" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/starship/<tspan fill="#FF9254">cyclorama</tspan>.toml</text>
         <text x="38" y="278" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="10">  apps/delta/<tspan fill="#FF9254">cyclorama</tspan>.gitconfig</text>
-        <text x="38" y="308" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">20 matches · 0.4ms</text>
+        <text x="38" y="308" fill="#3DDC97" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="700">28 matches · 0.4ms</text>
 
         <!-- Right preview pane -->
         <rect x="316" y="94" width="324" height="236" rx="6" fill="#08080B" stroke="#2A2C35" stroke-width="1"/>
