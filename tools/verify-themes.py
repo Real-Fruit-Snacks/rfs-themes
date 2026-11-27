@@ -607,6 +607,43 @@ def main() -> int:
     if len(errors) == e0:
         ok("privacynotes: 3 pn1: codes & 51/51 contrast checks verified")
 
+    # 6.1b PrivacyNotes custom logo icons (rasterised by the app inside a detached <img>,
+    # so no text, fonts, scripts, styles or external references may be relied on)
+    e0 = len(errors)
+    svg_ns = "{http://www.w3.org/2000/svg}"
+    banned = {"text", "image", "script", "style", "foreignObject", "use"}
+    glyphs = build_pn.rfs_glyphs()
+    for t in pn_data["themes"]:
+        rel = f"apps/privacynotes/icons/{t['id']}.svg"
+        p = os.path.join(ROOT, rel)
+        if not os.path.exists(p):
+            fail(f"{rel}: missing (run tools/build-privacynotes.py)")
+            continue
+        body = read_utf8(p)
+        if body != build_pn.render_icon_svg(t):
+            fail(f"{rel}: out of sync with build-privacynotes.py render_icon_svg()")
+        if "<!DOCTYPE" in body or "<!ENTITY" in body:
+            fail(f"{rel}: DOCTYPE/ENTITY declarations are not allowed")
+            continue
+        try:
+            root_el = ET.fromstring(body)
+        except ET.ParseError as exc:
+            fail(f"{rel}: invalid XML ({exc})")
+            continue
+        vb = root_el.get("viewBox", "").split()
+        if len(vb) != 4 or vb[2] != vb[3] or root_el.get("width") != root_el.get("height"):
+            fail(f"{rel}: icon must be square (viewBox {root_el.get('viewBox')!r})")
+        for el in root_el.iter():
+            tag = el.tag.replace(svg_ns, "")
+            if tag in banned:
+                fail(f"{rel}: <{tag}> is not allowed in an uploaded icon")
+            if any(k.endswith("href") for k in el.attrib):
+                fail(f"{rel}: external/href reference on <{tag}>")
+        if f'd="{glyphs}"' not in body:
+            fail(f"{rel}: RFS glyphs differ from docs/icon.svg")
+    if len(errors) == e0:
+        ok("privacynotes: 3 logo icons synced, square, self-contained, RFS glyphs match docs/icon.svg")
+
     # 6.2 VS Code
     e0 = len(errors)
     vsc_dir = os.path.join(ROOT, "apps", "vscode")

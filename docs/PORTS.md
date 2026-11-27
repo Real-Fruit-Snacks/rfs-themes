@@ -52,7 +52,7 @@ Browse live previews, filter by category, copy snippets, and download configs at
 
 | App | Format | Install Summary | Port |
 |---|---|---|---|
-| **PrivacyNotes** | `pn1:` theme code | Settings → Design → Paste theme code (all 17/17 contrast checks passing) | [`apps/privacynotes/`](../apps/privacynotes/) |
+| **PrivacyNotes** | `pn1:` theme code + SVG logo icon | Settings → Design → Paste theme code (all 17/17 contrast checks passing); upload `icons/cyclorama-*.svg` under the theme editor's Logo panel | [`apps/privacynotes/`](../apps/privacynotes/) |
 | **Obsidian** | Obsidian Theme (`manifest.json` + `theme.css`) | Copy into `.obsidian/themes/Cyclorama Dawn/` or enable CSS snippets | [`apps/obsidian/`](../apps/obsidian/) |
 
 ## Browsers & Desktop (5)

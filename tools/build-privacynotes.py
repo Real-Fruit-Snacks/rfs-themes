@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Generate and validate PrivacyNotes pn1: theme codes and SVG workspace previews.
+"""Generate and validate PrivacyNotes pn1: theme codes, SVG workspace previews and logo icons.
 
 Implements PrivacyNotes' exact themeCode.ts resolution and 17-check WCAG contrast
 validator using only the Python standard library (zero external dependencies).
+Also writes one RFS monogram logo icon per theme for the theme editor's
+"Upload or drop a custom icon" slot (apps/privacynotes/icons/).
 
 Usage:
     python tools/build-privacynotes.py
@@ -10,15 +12,27 @@ Usage:
 from html import escape
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
+
+import rfs_palette as pal  # noqa: E402
+
 APP_DIR = os.path.join(ROOT, "apps", "privacynotes")
 THEMES_JSON = os.path.join(APP_DIR, "themes.json")
 CODES_TXT = os.path.join(APP_DIR, "codes.txt")
 PREVIEW_DIR = os.path.join(APP_DIR, "previews")
 DOCS_PREVIEW_DIR = os.path.join(ROOT, "docs", "assets", "previews", "privacynotes")
+ICON_DIR = os.path.join(APP_DIR, "icons")
+BRAND_ICON = os.path.join(ROOT, "docs", "icon.svg")  # synced copy of rfs-brand brand/web/icon.svg
+
+# Fixed values from rfs-brand tools/make-marks.py (the RFS mark masters).
+MARK_HAIRLINE = "rgba(255,255,255,0.16)"
+MARK_RULE_MID = "#3B85B8"
 
 SEED_KEYS = ("background", "sidebar", "border", "text", "muted", "accent")
 MORE_KEYS = (
@@ -376,11 +390,83 @@ def render_preview_svg(theme: dict, resolved: dict) -> str:
 '''
 
 
+def rfs_glyphs() -> str:
+    """The RFS stencil letterforms, read from the synced rfs-brand favicon (never hand-edited)."""
+    with open(BRAND_ICON, encoding="utf-8") as fh:
+        paths = re.findall(r'<path d="([^"]+)"', fh.read())
+    if not paths:
+        raise RuntimeError(f"No glyph path found in {os.path.relpath(BRAND_ICON, ROOT)}")
+    return max(paths, key=len)
+
+
+def _stops(stops) -> str:
+    return "".join(f'<stop offset="{o:g}" stop-color="{c}"/>' for o, c in stops)
+
+
+def render_icon_svg(theme: dict) -> str:
+    """RFS monogram tile for PrivacyNotes' per-theme custom logo icon.
+
+    PrivacyNotes rasterises an uploaded icon to an 80x80 WebP (<= 5 KB) and shows it
+    at 40 CSS px with 22% corners beside the wordmark, so the tile is the 64-grid RFS
+    mark (rx 14.08 = 22%). The bar takes the colour of the word "Privacy" (the theme
+    accent) and the letters the colour of "Notes" (the theme text), so the icon
+    repeats the wordmark. Dark tiles carry a centred horizon glow led by the
+    theme's accent; Day is a white tile fading to its sidebar colour.
+    """
+    ui = pal.VARIANTS[theme["id"]]["ui"]
+    seeds = theme["seeds"]
+    glyphs = rfs_glyphs()
+    head = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80" '
+        f'role="img" aria-label="RFS · {escape(theme["name"])}">'
+    )
+    bar_rect = '<rect x="8.01" y="45.79" width="47.98" height="4.40" rx="2.20" fill="url(#bar)"/>'
+    glyph = f'<path d="{glyphs}" fill="{seeds["text"]}"/>'
+
+    if theme["mode"] == "light":
+        floor = [(0, ui["surface"]), (0.5, ui["surface"]), (1, seeds["sidebar"])]
+        bar = [(0, ui["beam_start"]), (0.1, ui["secondary_vivid"]), (0.3, seeds["accent"]), (1, seeds["accent"])]
+        return (
+            f'{head}<defs>'
+            f'<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">{_stops(floor)}</linearGradient>'
+            f'<linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">{_stops(bar)}</linearGradient>'
+            '</defs>'
+            '<rect width="64" height="64" rx="14.08" fill="url(#floor)"/>'
+            f'<rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.33" fill="none" stroke="{seeds["border"]}" stroke-width="1.5"/>'
+            f'{glyph}{bar_rect}</svg>\n'
+        )
+
+    if theme["id"] == "cyclorama-steel":
+        glow = [ui["steel_wash"], ui["accent_vivid"], MARK_RULE_MID]
+        bar = [(0, seeds["accent"]), (0.72, seeds["accent"]), (0.9, ui["secondary_vivid"]), (1, ui["secondary_vivid"])]
+    else:
+        glow = [ui["steel_wash"], ui["beacon_wash"], ui["accent_vivid"]]
+        bar = [(0, ui["secondary"]), (0.1, MARK_RULE_MID), (0.28, ui["accent_vivid"]), (1, seeds["accent"])]
+    wash = [(0, glow[0]), (0.28, glow[1]), (0.5, glow[2]), (0.72, glow[1]), (1, glow[0])]
+    fade = "".join(
+        f'<stop offset="{o:g}" stop-color="#FFFFFF" stop-opacity="{a:g}"/>'
+        for o, a in ((0, 0), (0.5, 0), (0.7, 0.16), (0.87, 0.68), (1, 1))
+    )
+    return (
+        f'{head}<defs>'
+        f'<linearGradient id="wash" x1="0" y1="0" x2="1" y2="0">{_stops(wash)}</linearGradient>'
+        f'<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">{fade}</linearGradient>'
+        '<mask id="m" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#fade)"/></mask>'
+        f'<linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">{_stops(bar)}</linearGradient>'
+        '</defs>'
+        f'<rect width="64" height="64" rx="14.08" fill="{seeds["background"]}"/>'
+        '<rect width="64" height="64" rx="14.08" fill="url(#wash)" mask="url(#m)"/>'
+        f'<rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.33" fill="none" stroke="{MARK_HAIRLINE}" stroke-width="1.5"/>'
+        f'{glyph}{bar_rect}</svg>\n'
+    )
+
+
 def main() -> int:
     data = json.load(open(THEMES_JSON, encoding="utf-8"))
     author = data.get("author", "Real-Fruit-Snacks")
     os.makedirs(PREVIEW_DIR, exist_ok=True)
     os.makedirs(DOCS_PREVIEW_DIR, exist_ok=True)
+    os.makedirs(ICON_DIR, exist_ok=True)
 
     code_lines = [
         "# Real-Fruit-Snacks — Cyclorama Dawn themes for PrivacyNotes (https://privacynotes.app/)",
@@ -404,6 +490,8 @@ def main() -> int:
             p = os.path.join(out_dir, f"{t['id']}.svg")
             with open(p, "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(svg)
+        with open(os.path.join(ICON_DIR, f"{t['id']}.svg"), "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(render_icon_svg(t))
         code_lines.append(f"# {t['name']} ({t['lx']} {res['mode'].title()}) — {t['tagline']}")
         code_lines.append(canonical)
         code_lines.append("")
@@ -411,7 +499,7 @@ def main() -> int:
 
     with open(CODES_TXT, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(code_lines))
-    print(f"[ok] wrote {os.path.relpath(CODES_TXT, ROOT)} and {len(data['themes'])} SVG previews")
+    print(f"[ok] wrote {os.path.relpath(CODES_TXT, ROOT)}, {len(data['themes'])} SVG previews and {len(data['themes'])} logo icons")
     return 0
 
 

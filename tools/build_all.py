@@ -52,6 +52,9 @@ PRIVACYNOTES_META = {
         {"label": "All pn1: Theme Codes (codes.txt)", "path": "apps/privacynotes/codes.txt"},
         {"label": "Canonical Seeds & Overrides (themes.json)", "path": "apps/privacynotes/themes.json"},
         {"label": "Install & Token Guide (README.md)", "path": "apps/privacynotes/README.md"},
+        {"label": "Logo Icon · Dawn (icons/cyclorama-dawn.svg)", "path": "apps/privacynotes/icons/cyclorama-dawn.svg"},
+        {"label": "Logo Icon · Steel (icons/cyclorama-steel.svg)", "path": "apps/privacynotes/icons/cyclorama-steel.svg"},
+        {"label": "Logo Icon · Day (icons/cyclorama-day.svg)", "path": "apps/privacynotes/icons/cyclorama-day.svg"},
     ],
 }
 

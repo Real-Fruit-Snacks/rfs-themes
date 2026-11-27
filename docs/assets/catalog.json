@@ -3305,6 +3305,18 @@
         {
           "label": "Install & Token Guide (README.md)",
           "path": "apps/privacynotes/README.md"
+        },
+        {
+          "label": "Logo Icon · Dawn (icons/cyclorama-dawn.svg)",
+          "path": "apps/privacynotes/icons/cyclorama-dawn.svg"
+        },
+        {
+          "label": "Logo Icon · Steel (icons/cyclorama-steel.svg)",
+          "path": "apps/privacynotes/icons/cyclorama-steel.svg"
+        },
+        {
+          "label": "Logo Icon · Day (icons/cyclorama-day.svg)",
+          "path": "apps/privacynotes/icons/cyclorama-day.svg"
         }
       ],
       "variants": [

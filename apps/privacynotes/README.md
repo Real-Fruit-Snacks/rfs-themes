@@ -8,6 +8,21 @@ Three **Cyclorama Dawn v2.0 (Steel & Beacon Orange)** color themes for **[Privac
 2. Open **PrivacyNotes** → **Settings → Design → Paste theme code**.
 3. Switch themes anytime from the Ninja command palette (`Ctrl+K` → type `theme` or `cyclorama`).
 
+## Logo icon
+
+Each theme has a matching RFS monogram icon. PrivacyNotes shows it in the sidebar in place of its own logo.
+
+| Cyclorama Dawn | Cyclorama Steel | Cyclorama Day |
+|:---:|:---:|:---:|
+| <img src="icons/cyclorama-dawn.svg" width="80" height="80" alt="Cyclorama Dawn logo icon"> | <img src="icons/cyclorama-steel.svg" width="80" height="80" alt="Cyclorama Steel logo icon"> | <img src="icons/cyclorama-day.svg" width="80" height="80" alt="Cyclorama Day logo icon"> |
+| [`cyclorama-dawn.svg`](icons/cyclorama-dawn.svg) | [`cyclorama-steel.svg`](icons/cyclorama-steel.svg) | [`cyclorama-day.svg`](icons/cyclorama-day.svg) |
+
+1. Download the SVG for your theme from [`icons/`](icons/).
+2. In **Settings → Design**, open the Cyclorama theme in the theme editor.
+3. Under **Logo**, choose **Upload or drop a custom icon** and pick the SVG. Leave the switch on **Accent** so "Privacy" takes the same colour as the icon's bar.
+
+The bar uses the colour of "Privacy" and the letters the colour of "Notes", so the icon matches the wordmark beside it. PrivacyNotes turns the SVG into an 80×80 WebP (about 1.5 KB of its 5 KB limit) and syncs it with the theme. If the icon does not show, turn on **Settings → Design → Theme app icons**; that switch is saved per device.
+
 ---
 
 ## 1. Cyclorama Dawn (`LX 263 Dark · Beacon Accent`)
