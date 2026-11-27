@@ -10,14 +10,16 @@ Three **Cyclorama Dawn v2.0 (Steel & Beacon Orange)** color themes for **[Privac
 
 ## Logo icon
 
-The icons are unchanged copies of the RFS mark from [`rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand): the dark mark for Dawn and Steel, the light mark for Day. PrivacyNotes shows the icon at 40 px, so these are the brand's small-size variants (`rfs-mark-small-*`, used at 16–48 px). PrivacyNotes shows it in the sidebar in place of its own logo.
+PrivacyNotes can show an icon of your choice in the sidebar in place of its own logo. There are four options, all built on the RFS mark tile from [`rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand): the same ground, steel-to-beacon floor wash, border and bar, with the letters swapped for a glyph in the brand ink. Dawn and Steel use the dark tile, Day the light one. PrivacyNotes shows the icon at 40 px, so the tile is the brand's small-size variant (`rfs-mark-small-*`, used at 16–48 px).
 
-| Cyclorama Dawn | Cyclorama Steel | Cyclorama Day |
-|:---:|:---:|:---:|
-| <img src="icons/cyclorama-dawn.svg" width="80" height="80" alt="Cyclorama Dawn logo icon"> | <img src="icons/cyclorama-steel.svg" width="80" height="80" alt="Cyclorama Steel logo icon"> | <img src="icons/cyclorama-day.svg" width="80" height="80" alt="Cyclorama Day logo icon"> |
-| [`cyclorama-dawn.svg`](icons/cyclorama-dawn.svg) | [`cyclorama-steel.svg`](icons/cyclorama-steel.svg) | [`cyclorama-day.svg`](icons/cyclorama-day.svg) |
+| Option | Cyclorama Dawn | Cyclorama Steel | Cyclorama Day |
+|---|:---:|:---:|:---:|
+| [**RFS monogram**](icons/monogram/) (the brand mark) | <img src="icons/monogram/cyclorama-dawn.svg" width="64" height="64" alt="RFS monogram, Dawn"> | <img src="icons/monogram/cyclorama-steel.svg" width="64" height="64" alt="RFS monogram, Steel"> | <img src="icons/monogram/cyclorama-day.svg" width="64" height="64" alt="RFS monogram, Day"> |
+| [**Page and lock**](icons/page-lock/) | <img src="icons/page-lock/cyclorama-dawn.svg" width="64" height="64" alt="Page and lock, Dawn"> | <img src="icons/page-lock/cyclorama-steel.svg" width="64" height="64" alt="Page and lock, Steel"> | <img src="icons/page-lock/cyclorama-day.svg" width="64" height="64" alt="Page and lock, Day"> |
+| [**Spotlight**](icons/spotlight/) | <img src="icons/spotlight/cyclorama-dawn.svg" width="64" height="64" alt="Spotlight, Dawn"> | <img src="icons/spotlight/cyclorama-steel.svg" width="64" height="64" alt="Spotlight, Steel"> | <img src="icons/spotlight/cyclorama-day.svg" width="64" height="64" alt="Spotlight, Day"> |
+| [**Stencil lock**](icons/stencil-lock/) | <img src="icons/stencil-lock/cyclorama-dawn.svg" width="64" height="64" alt="Stencil lock, Dawn"> | <img src="icons/stencil-lock/cyclorama-steel.svg" width="64" height="64" alt="Stencil lock, Steel"> | <img src="icons/stencil-lock/cyclorama-day.svg" width="64" height="64" alt="Stencil lock, Day"> |
 
-1. Download the SVG for your theme from [`icons/`](icons/).
+1. Pick an option and download the SVG for your theme from its folder, for example `icons/stencil-lock/cyclorama-dawn.svg`.
 2. In **Settings → Design**, open the Cyclorama theme in the theme editor.
 3. Under **Logo**, choose **Upload or drop a custom icon** and pick the SVG.
 

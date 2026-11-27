@@ -12,6 +12,7 @@ Usage:
 from html import escape
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -385,14 +386,58 @@ def render_preview_svg(theme: dict, resolved: dict) -> str:
 '''
 
 
-def icon_svg(theme: dict) -> str:
-    """The RFS brand mark for this theme's PrivacyNotes logo slot, unchanged.
+# Logo icon options. Each is the brand tile unchanged (ground, floor wash, border,
+# Steel->Beacon bar) with the RFS letters swapped for a glyph drawn in the brand ink
+# ({INK}), on the 64-grid glyph band the letters use (y 13.8-41.6). "monogram" is the
+# brand mark itself.
+ICON_OPTIONS = {
+    "monogram": ("RFS", None),
+    "page-lock": (
+        "RFS · page and lock",
+        '<g><path fill="{INK}" fill-rule="evenodd" d="M18.8 14.1H38.4V20.9H45.2V41.3H18.8Z '
+        'M40.5 14.1L45.2 18.8H40.5Z M23.5 36.6V28H26.6V25.9Q26.6 20.9 31.6 20.9H32.4Q37.4 20.9 37.4 25.9V28H40.5V36.6Z '
+        'M29.8 28V25.9Q29.8 24.1 31.6 24.1H32.4Q34.2 24.1 34.2 25.9V28Z M30.9 30.15H33.1V34.45H30.9Z"/></g>',
+    ),
+    "spotlight": (
+        "RFS · spotlight",
+        '<g><defs><linearGradient id="pn-beam" gradientUnits="userSpaceOnUse" x1="0" y1="1.5" x2="0" y2="45.79">'
+        '<stop offset="0" stop-color="{INK}" stop-opacity="0.19"/>'
+        '<stop offset="0.55" stop-color="{INK}" stop-opacity="0.1"/>'
+        '<stop offset="1" stop-color="{INK}" stop-opacity="0.045"/></linearGradient></defs>'
+        '<path d="M26 1.5H38L53.8 45.79H10.2Z" fill="url(#pn-beam)"/>'
+        '<path d="M24.3 27.8V17.9Q24.3 15.2 27 15.2H37Q39.7 15.2 39.7 17.9V27.8H35V20.8Q35 20 34.2 20H29.8Q29 20 29 20.8V27.8Z" fill="{INK}"/>'
+        '<path fill-rule="evenodd" d="M21.7 26.8H42.3Q43.5 26.8 43.5 28V40.1Q43.5 41.3 42.3 41.3H21.7Q20.5 41.3 20.5 40.1V28Q20.5 26.8 21.7 26.8Z '
+        'M29.8 30.3H34.2V34.3H33.25V37.9H30.75V34.3H29.8Z" fill="{INK}"/></g>',
+    ),
+    "stencil-lock": (
+        "RFS · stencil lock",
+        '<g fill="{INK}"><path d="M22.75 26V19.1Q22.75 14.1 27.75 14.1H30.93V18.3H28.95Q27.45 18.3 27.45 19.8V26Z '
+        'M41.25 26V19.1Q41.25 14.1 36.25 14.1H33.07V18.3H35.05Q36.55 18.3 36.55 19.8V26Z"/>'
+        '<path fill-rule="evenodd" d="M19 25H45V41.3H19Z M23.45 29.45H40.55V31.55H23.45Z M23.45 34.75H35.2V36.85H23.45Z"/></g>',
+    ),
+}
+BRAND_GLYPH_RE = re.compile(r'<path d="M[^"]+" fill="(#[0-9A-F]{6})"/>')
+
+
+def icon_svg(theme: dict, option: str = "monogram") -> str:
+    """One logo icon option for this theme's PrivacyNotes logo slot.
 
     The brand has two colourways: the dark mark for dark themes (Dawn, Steel) and
-    the light mark for light themes (Day).
+    the light mark for light themes (Day). Options other than "monogram" keep that
+    tile byte for byte and replace only the RFS letter path with their glyph, inked
+    in the letters' own colour.
     """
     with open(BRAND_MARKS[theme["mode"]], encoding="utf-8") as fh:
-        return fh.read()
+        tile = fh.read()
+    label, glyph = ICON_OPTIONS[option]
+    if glyph is None:
+        return tile
+    found = BRAND_GLYPH_RE.findall(tile)
+    if len(found) != 1:
+        raise RuntimeError(f"RFS letter path not found once in {BRAND_MARKS[theme['mode']]}")
+    body = glyph.replace("{INK}", found[0])
+    out = BRAND_GLYPH_RE.sub(lambda _m: body, tile)
+    return out.replace('aria-label="RFS"', f'aria-label="{label}"', 1)
 
 
 def main() -> int:
@@ -424,8 +469,10 @@ def main() -> int:
             p = os.path.join(out_dir, f"{t['id']}.svg")
             with open(p, "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(svg)
-        with open(os.path.join(ICON_DIR, f"{t['id']}.svg"), "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(icon_svg(t))
+        for option in ICON_OPTIONS:
+            os.makedirs(os.path.join(ICON_DIR, option), exist_ok=True)
+            with open(os.path.join(ICON_DIR, option, f"{t['id']}.svg"), "w", encoding="utf-8", newline="\n") as fh:
+                fh.write(icon_svg(t, option))
         code_lines.append(f"# {t['name']} ({t['lx']} {res['mode'].title()}) — {t['tagline']}")
         code_lines.append(canonical)
         code_lines.append("")
@@ -433,7 +480,7 @@ def main() -> int:
 
     with open(CODES_TXT, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(code_lines))
-    print(f"[ok] wrote {os.path.relpath(CODES_TXT, ROOT)}, {len(data['themes'])} SVG previews and {len(data['themes'])} logo icons")
+    print(f"[ok] wrote {os.path.relpath(CODES_TXT, ROOT)}, {len(data['themes'])} SVG previews and {len(data['themes']) * len(ICON_OPTIONS)} logo icons")
     return 0
 
 

@@ -614,15 +614,24 @@ def main() -> int:
     banned = {"text", "image", "script", "style", "foreignObject", "use"}
     if read_utf8(build_pn.BRAND_MARKS["dark"]) != read_utf8(os.path.join(ROOT, "docs", "icon.svg")):
         fail("brand/rfs-mark-small-dark.svg != docs/icon.svg (both are rfs-brand's small dark mark)")
-    for t in pn_data["themes"]:
-        rel = f"apps/privacynotes/icons/{t['id']}.svg"
+    expected = {
+        f"{option}/{t['id']}.svg" for option in build_pn.ICON_OPTIONS for t in pn_data["themes"]
+    }
+    on_disk = {
+        os.path.relpath(os.path.join(d, f), build_pn.ICON_DIR).replace(os.sep, "/")
+        for d, _, files in os.walk(build_pn.ICON_DIR) for f in files
+    }
+    for stray in sorted(on_disk - expected):
+        fail(f"apps/privacynotes/icons/{stray}: not produced by build-privacynotes.py")
+    for option, t in ((o, t) for o in build_pn.ICON_OPTIONS for t in pn_data["themes"]):
+        rel = f"apps/privacynotes/icons/{option}/{t['id']}.svg"
         p = os.path.join(ROOT, rel)
         if not os.path.exists(p):
             fail(f"{rel}: missing (run tools/build-privacynotes.py)")
             continue
         body = read_utf8(p)
-        if body != build_pn.icon_svg(t):
-            fail(f"{rel}: not a byte-exact copy of brand/{os.path.basename(build_pn.BRAND_MARKS[t['mode']])}")
+        if body != build_pn.icon_svg(t, option):
+            fail(f"{rel}: out of sync with build-privacynotes.py (brand tile + {option} glyph)")
         if "<!DOCTYPE" in body or "<!ENTITY" in body:
             fail(f"{rel}: DOCTYPE/ENTITY declarations are not allowed")
             continue
@@ -641,7 +650,7 @@ def main() -> int:
             if any(k.endswith("href") for k in el.attrib):
                 fail(f"{rel}: external/href reference on <{tag}>")
     if len(errors) == e0:
-        ok("privacynotes: 3 logo icons are byte-exact rfs-brand small marks (dark: Dawn, Steel; light: Day)")
+        ok(f"privacynotes: {len(expected)} logo icons ({len(build_pn.ICON_OPTIONS)} options) built on the rfs-brand small mark tiles, self-contained")
 
     # 6.2 VS Code
     e0 = len(errors)

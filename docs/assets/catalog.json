@@ -3307,16 +3307,20 @@
           "path": "apps/privacynotes/README.md"
         },
         {
-          "label": "Logo Icon · Dawn (icons/cyclorama-dawn.svg)",
-          "path": "apps/privacynotes/icons/cyclorama-dawn.svg"
+          "label": "Logo Icons · RFS monogram (icons/monogram/)",
+          "path": "apps/privacynotes/icons/monogram"
         },
         {
-          "label": "Logo Icon · Steel (icons/cyclorama-steel.svg)",
-          "path": "apps/privacynotes/icons/cyclorama-steel.svg"
+          "label": "Logo Icons · Page and lock (icons/page-lock/)",
+          "path": "apps/privacynotes/icons/page-lock"
         },
         {
-          "label": "Logo Icon · Day (icons/cyclorama-day.svg)",
-          "path": "apps/privacynotes/icons/cyclorama-day.svg"
+          "label": "Logo Icons · Spotlight (icons/spotlight/)",
+          "path": "apps/privacynotes/icons/spotlight"
+        },
+        {
+          "label": "Logo Icons · Stencil lock (icons/stencil-lock/)",
+          "path": "apps/privacynotes/icons/stencil-lock"
         }
       ],
       "variants": [
