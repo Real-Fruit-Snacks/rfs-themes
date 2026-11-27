@@ -10,7 +10,7 @@ Three **Cyclorama Dawn v2.0 (Steel & Beacon Orange)** color themes for **[Privac
 
 ## Logo icon
 
-Each theme has a matching RFS monogram icon. PrivacyNotes shows it in the sidebar in place of its own logo.
+The icons are unchanged copies of the RFS mark from [`rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand): the dark mark for Dawn and Steel, the light mark for Day. PrivacyNotes shows the icon at 40 px, so these are the brand's small-size variants (`rfs-mark-small-*`, used at 16–48 px). PrivacyNotes shows it in the sidebar in place of its own logo.
 
 | Cyclorama Dawn | Cyclorama Steel | Cyclorama Day |
 |:---:|:---:|:---:|
@@ -19,9 +19,9 @@ Each theme has a matching RFS monogram icon. PrivacyNotes shows it in the sideba
 
 1. Download the SVG for your theme from [`icons/`](icons/).
 2. In **Settings → Design**, open the Cyclorama theme in the theme editor.
-3. Under **Logo**, choose **Upload or drop a custom icon** and pick the SVG. Leave the switch on **Accent** so "Privacy" takes the same colour as the icon's bar.
+3. Under **Logo**, choose **Upload or drop a custom icon** and pick the SVG.
 
-The bar uses the colour of "Privacy" and the letters the colour of "Notes", so the icon matches the wordmark beside it. PrivacyNotes turns the SVG into an 80×80 WebP (about 1.5 KB of its 5 KB limit) and syncs it with the theme. If the icon does not show, turn on **Settings → Design → Theme app icons**; that switch is saved per device.
+PrivacyNotes turns the SVG into an 80×80 WebP (about 1.5 KB of its 5 KB limit) and syncs it with the theme. If the icon does not show, turn on **Settings → Design → Theme app icons**; that switch is saved per device.
 
 ---
 

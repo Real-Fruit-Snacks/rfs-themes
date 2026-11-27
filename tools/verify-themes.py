@@ -612,7 +612,8 @@ def main() -> int:
     e0 = len(errors)
     svg_ns = "{http://www.w3.org/2000/svg}"
     banned = {"text", "image", "script", "style", "foreignObject", "use"}
-    glyphs = build_pn.rfs_glyphs()
+    if read_utf8(build_pn.BRAND_MARKS["dark"]) != read_utf8(os.path.join(ROOT, "docs", "icon.svg")):
+        fail("brand/rfs-mark-small-dark.svg != docs/icon.svg (both are rfs-brand's small dark mark)")
     for t in pn_data["themes"]:
         rel = f"apps/privacynotes/icons/{t['id']}.svg"
         p = os.path.join(ROOT, rel)
@@ -620,8 +621,8 @@ def main() -> int:
             fail(f"{rel}: missing (run tools/build-privacynotes.py)")
             continue
         body = read_utf8(p)
-        if body != build_pn.render_icon_svg(t):
-            fail(f"{rel}: out of sync with build-privacynotes.py render_icon_svg()")
+        if body != build_pn.icon_svg(t):
+            fail(f"{rel}: not a byte-exact copy of brand/{os.path.basename(build_pn.BRAND_MARKS[t['mode']])}")
         if "<!DOCTYPE" in body or "<!ENTITY" in body:
             fail(f"{rel}: DOCTYPE/ENTITY declarations are not allowed")
             continue
@@ -639,10 +640,8 @@ def main() -> int:
                 fail(f"{rel}: <{tag}> is not allowed in an uploaded icon")
             if any(k.endswith("href") for k in el.attrib):
                 fail(f"{rel}: external/href reference on <{tag}>")
-        if f'd="{glyphs}"' not in body:
-            fail(f"{rel}: RFS glyphs differ from docs/icon.svg")
     if len(errors) == e0:
-        ok("privacynotes: 3 logo icons synced, square, self-contained, RFS glyphs match docs/icon.svg")
+        ok("privacynotes: 3 logo icons are byte-exact rfs-brand small marks (dark: Dawn, Steel; light: Day)")
 
     # 6.2 VS Code
     e0 = len(errors)
