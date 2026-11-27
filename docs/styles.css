@@ -59,8 +59,8 @@
 
 :root:has(> head > meta[name="color-scheme"][content="light"]) {
   --stage-grid: rgba(22, 70, 105, 0.06);
-  --wash-steel: rgba(31, 84, 122, 0.09);
-  --wash-beacon: rgba(240, 110, 43, 0.10);
+  --wash-steel: rgba(31, 84, 122, 0.34);
+  --wash-beacon: rgba(240, 110, 43, 0.32);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
