@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Cyclorama Dawn (LX 263)",
-  "version": "2.1.0",
-  "description": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)",
+  "version": "2.3.2",
+  "description": "Matte #050507 dark stage with Beacon Orange focus and Steel Blue secondary accents. (Cyclorama Dawn v2.3.2 by Real-Fruit-Snacks)",
   "theme": {
     "colors": {
       "frame": [

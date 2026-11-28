@@ -3,7 +3,7 @@
 .SYNOPSIS
     Installs Cyclorama Steel (LX 263 Dark · Steel Blue) on Windows 11.
 .DESCRIPTION
-    Backup-first installer for Cyclorama Dawn v2.1.0 (Real-Fruit-Snacks).
+    Backup-first installer for Cyclorama Dawn v2.3.2 (Real-Fruit-Snacks).
     Copies Oklab-calibrated 1080p & 4K wallpapers and native .theme files into
     %LOCALAPPDATA%\rfs-themes\windows and %LOCALAPPDATA%\Microsoft\Windows\Themes,
     exports a one-time registry backup (backup-pre-rfs.reg), configures Personalize,

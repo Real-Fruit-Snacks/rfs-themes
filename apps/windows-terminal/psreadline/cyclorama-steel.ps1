@@ -1,5 +1,5 @@
 # Cyclorama Steel (LX 263 Dark · Steel Blue) — PowerShell PSReadLine Theme
-# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0
+# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2
 # Source: https://github.com/Real-Fruit-Snacks/rfs-themes
 # Compatible with Windows PowerShell 5.1 (PSReadLine 2.0+) and PowerShell 7+ (PSReadLine 2.2+).
 

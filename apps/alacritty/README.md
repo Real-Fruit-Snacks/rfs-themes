@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Alacritty
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** TOML themes for **[Alacritty](https://alacritty.org/)** (v0.13+), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** TOML themes for **[Alacritty](https://alacritty.org/)** (v0.13+), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

@@ -11,7 +11,7 @@
     "Open a new shell session and run `fzf` to confirm the Cyclorama Dawn palette."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/fzf/cyclorama-dawn.sh",
   "files": [
     {

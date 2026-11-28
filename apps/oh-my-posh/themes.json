@@ -11,7 +11,7 @@
     "Reload your shell profile to activate the prompt."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/oh-my-posh/cyclorama-dawn.omp.json",
   "files": [
     {

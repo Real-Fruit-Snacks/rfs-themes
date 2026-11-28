@@ -11,7 +11,7 @@
     "Alternatively, click **Import...** inside **Manage Themes** and choose any `.StorableColorTheme.ps1xml` file directly."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/powershell-ise/Cyclorama Dawn.StorableColorTheme.ps1xml",
   "files": [
     {

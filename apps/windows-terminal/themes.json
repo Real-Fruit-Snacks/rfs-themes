@@ -11,7 +11,7 @@
     "Optional: dot-source psreadline/cyclorama-dawn.ps1 in your PowerShell $PROFILE (PSReadLine 2.2+) for matching command-line syntax highlighting."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/windows-terminal/schemes.json",
   "files": [
     {

@@ -11,7 +11,7 @@
     "Select your variant with `bat --theme=\"Cyclorama Dawn\"` (or add `--theme=\"Cyclorama Dawn\"` to `$(bat --config-file)`)."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/bat/Cyclorama Dawn.tmTheme",
   "files": [
     {

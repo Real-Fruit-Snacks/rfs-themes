@@ -94,7 +94,7 @@
     <rect x="468" y="274" width="1.8" height="13" fill="#F06E2B"/>
 
     <rect x="206" y="303" width="102" height="20" rx="4" fill="#0C0C10" stroke="#2A2C35" stroke-width="1"/>
-    <text x="257" y="316" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.2">Cyclorama v2.1.0</text>
+    <text x="257" y="316" text-anchor="middle" fill="#B3B5C0" font-family="ui-monospace,Consolas,monospace" font-size="8.2">Cyclorama v2.3.2</text>
     <rect x="316" y="303" width="84" height="20" rx="4" fill="#2B160D"/>
     <text x="358" y="316" text-anchor="middle" fill="#FF9254" font-family="ui-monospace,Consolas,monospace" font-size="8.2" font-weight="700">61 roles · AA</text>
 

@@ -8,7 +8,7 @@ M["cyclorama-dawn"] = {
     name = "Cyclorama Dawn",
     lx = "LX 263",
     mode = "dark",
-    version = "2.1.0",
+    version = "2.3.2",
   },
   ui = {
     bg = "#050507",
@@ -102,7 +102,7 @@ M["cyclorama-steel"] = {
     name = "Cyclorama Steel",
     lx = "LX 263",
     mode = "dark",
-    version = "2.1.0",
+    version = "2.3.2",
   },
   ui = {
     bg = "#050507",
@@ -196,7 +196,7 @@ M["cyclorama-day"] = {
     name = "Cyclorama Day",
     lx = "LX 512",
     mode = "light",
-    version = "2.1.0",
+    version = "2.3.2",
   },
   ui = {
     bg = "#F5F7F9",

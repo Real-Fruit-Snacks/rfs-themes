@@ -11,7 +11,7 @@
     "**qBittorrent 4.x legacy:** Bundle `stylesheet.qss` and `config.json` into a `.qbtheme` resource file with Qt `rcc`, select it under Behavior -> Use custom UI theme, and restart qBittorrent."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/qbittorrent/cyclorama-dawn/stylesheet.qss",
   "files": [
     {

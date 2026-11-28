@@ -11,7 +11,7 @@
     "Optional: set `theme.dark` and `theme.light` in `~/.config/zed/settings.json` to follow your OS dark/light mode."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/zed/themes/cyclorama.json",
   "files": [
     {

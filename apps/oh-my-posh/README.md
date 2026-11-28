@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Oh My Posh
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[Oh My Posh](https://ohmyposh.dev/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Every `.omp.json` uses the Oh My Posh v3 schema and `p:<key>` palette lookups for path, git, Python, Rust, Node.js, execution time, status, and prompt glyph blocks.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[Oh My Posh](https://ohmyposh.dev/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Every `.omp.json` uses the Oh My Posh v3 schema and `p:<key>` palette lookups for path, git, Python, Rust, Node.js, execution time, status, and prompt glyph blocks.
 
 ## Install
 

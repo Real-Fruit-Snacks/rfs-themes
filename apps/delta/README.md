@@ -1,6 +1,6 @@
 # Cyclorama Dawn for git-delta
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[git-delta](https://dandavison.github.io/delta/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Pair with [`apps/bat/`](../bat/README.md) so `syntax-theme` uses the matching Cyclorama Dawn TextMate grammar.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[git-delta](https://dandavison.github.io/delta/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Pair with [`apps/bat/`](../bat/README.md) so `syntax-theme` uses the matching Cyclorama Dawn TextMate grammar.
 
 ## Install
 

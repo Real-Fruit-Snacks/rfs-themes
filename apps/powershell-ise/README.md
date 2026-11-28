@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Windows PowerShell ISE
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[Windows PowerShell ISE](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and editor chrome.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[Windows PowerShell ISE](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and editor chrome.
 
 - **Category:** Editors & IDEs
 - **Format:** `.StorableColorTheme.ps1xml`

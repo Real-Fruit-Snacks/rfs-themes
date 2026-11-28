@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Flow Launcher
 
-Three native WPF `ResourceDictionary` `.xaml` themes ready to drop into `%APPDATA%\FlowLauncher\Themes\`. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[Flow Launcher](https://www.flowlauncher.com/)** (`WPF XAML Theme`).
+Three native WPF `ResourceDictionary` `.xaml` themes ready to drop into `%APPDATA%\FlowLauncher\Themes\`. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[Flow Launcher](https://www.flowlauncher.com/)** (`WPF XAML Theme`).
 
 ## Install
 

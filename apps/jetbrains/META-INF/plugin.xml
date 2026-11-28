@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>dev.realfruitsnacks.themes.cyclorama-dawn</id>
   <name>Cyclorama Dawn Theme</name>
-  <version>2.1.0</version>
+  <version>2.3.2</version>
   <vendor url="https://github.com/Real-Fruit-Snacks/rfs-themes">Real-Fruit-Snacks</vendor>
   <description><![CDATA[
     Cyclorama Dawn (Steel &amp; Beacon Orange) WCAG AA color themes for JetBrains IDEs:

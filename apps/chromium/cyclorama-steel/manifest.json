@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Cyclorama Steel (LX 263)",
-  "version": "2.1.0",
-  "description": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (Cyclorama Dawn v2.1.0 by Real-Fruit-Snacks)",
+  "version": "2.3.2",
+  "description": "Cool steel-charcoal dark stage with Steel Blue controls and Beacon Orange highlights. (Cyclorama Dawn v2.3.2 by Real-Fruit-Snacks)",
   "theme": {
     "colors": {
       "frame": [

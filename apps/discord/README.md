@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Discord (Vencord / BetterDiscord)
 
-Three drop-in `.theme.css` files compatible with Vencord and BetterDiscord. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[Discord (Vencord / BetterDiscord)](https://vencord.dev/)** (`Vencord / BetterDiscord .theme.css`).
+Three drop-in `.theme.css` files compatible with Vencord and BetterDiscord. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[Discord (Vencord / BetterDiscord)](https://vencord.dev/)** (`Vencord / BetterDiscord .theme.css`).
 
 ## Install
 

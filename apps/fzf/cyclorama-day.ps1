@@ -1,4 +1,4 @@
-# Cyclorama Dawn v2.1.0 — fzf Color Palette (PowerShell / pwsh)
+# Cyclorama Dawn v2.3.2 — fzf Color Palette (PowerShell / pwsh)
 # Variant: Cyclorama Day (LX 512 · Light · Alabaster Day)
 # Author:  Real-Fruit-Snacks
 # Source:  https://github.com/Real-Fruit-Snacks/rfs-themes

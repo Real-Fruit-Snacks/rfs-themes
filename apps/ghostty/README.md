@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Ghostty
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** native theme files for **[Ghostty](https://ghostty.org/)**, calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** native theme files for **[Ghostty](https://ghostty.org/)**, calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

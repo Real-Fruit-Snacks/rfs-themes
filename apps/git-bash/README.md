@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Git Bash (Mintty) & Git CLI
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[Git Bash / Mintty](https://gitforwindows.org/)** (official decimal `R,G,B` `.minttyrc` format) paired with native truecolor **Git CLI** `.gitconfig` color profiles (`diff`, `status`, `branch`, `grep`), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[Git Bash / Mintty](https://gitforwindows.org/)** (official decimal `R,G,B` `.minttyrc` format) paired with native truecolor **Git CLI** `.gitconfig` color profiles (`diff`, `status`, `branch`, `grep`), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

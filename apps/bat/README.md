@@ -1,6 +1,6 @@
 # Cyclorama Dawn for bat
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[bat](https://github.com/sharkdp/bat)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). These `.tmTheme` files also power `syntax-theme` in [`git-delta`](../delta/README.md) once installed in bat's cache.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[bat](https://github.com/sharkdp/bat)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). These `.tmTheme` files also power `syntax-theme` in [`git-delta`](../delta/README.md) once installed in bat's cache.
 
 ## Install
 

@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Obsidian
 
-Full community theme (`manifest.json` + `theme.css`) with built-in Style Settings support and three standalone CSS snippets. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[Obsidian](https://obsidian.md/)** (`Obsidian Theme (manifest.json + theme.css)`).
+Full community theme (`manifest.json` + `theme.css`) with built-in Style Settings support and three standalone CSS snippets. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[Obsidian](https://obsidian.md/)** (`Obsidian Theme (manifest.json + theme.css)`).
 
 ## Install
 

@@ -11,7 +11,7 @@
     "Optional: pass `theme = require(\"cyclorama.lualine\")` to `lualine.nvim` for a matched statusline."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/neovim/lua/cyclorama/init.lua",
   "files": [
     {

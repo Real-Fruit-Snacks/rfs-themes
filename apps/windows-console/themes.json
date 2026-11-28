@@ -11,7 +11,7 @@
     "Revert to official Windows 10/11 Campbell defaults anytime in one click by importing `restore-defaults.reg`."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/windows-console/cyclorama-dawn.reg",
   "files": [
     {
@@ -43,7 +43,7 @@
       "file": "apps/windows-console/cyclorama-dawn.reg",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Dawn HKCU\\Console Registry Values",
-      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:009d8f8c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:009d8f8c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
       "swatches": [
         {
           "label": "BG",
@@ -82,7 +82,7 @@
       "file": "apps/windows-console/cyclorama-steel.reg",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Steel HKCU\\Console Registry Values",
-      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:00a6968c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
+      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00070505\n\"ColorTable01\"=dword:00e8b874\n\"ColorTable02\"=dword:0097dc3d\n\"ColorTable03\"=dword:00e0d456\n\"ColorTable04\"=dword:006c5cff\n\"ColorTable05\"=dword:00f596c9\n\"ColorTable06\"=dword:0047c2ff\n\"ColorTable07\"=dword:00f8f5f4\n\"ColorTable08\"=dword:00a6968c\n\"ColorTable09\"=dword:00f2cd99\n\"ColorTable10\"=dword:00b2e86c\n\"ColorTable11\"=dword:00ece385\n\"ColorTable12\"=dword:005492ff\n\"ColorTable13\"=dword:00fab8dc\n\"ColorTable14\"=dword:0075d4ff\n\"ColorTable15\"=dword:00f8f5f4\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:000000f0",
       "swatches": [
         {
           "label": "BG",
@@ -121,7 +121,7 @@
       "file": "apps/windows-console/cyclorama-day.reg",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Day HKCU\\Console Registry Values",
-      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00f9f7f5\n\"ColorTable01\"=dword:00694616\n\"ColorTable02\"=dword:00477212\n\"ColorTable03\"=dword:0074660e\n\"ColorTable04\"=dword:002e1cb9\n\"ColorTable05\"=dword:00b8386b\n\"ColorTable06\"=dword:00005888\n\"ColorTable07\"=dword:0016100d\n\"ColorTable08\"=dword:006e6058\n\"ColorTable09\"=dword:007a541f\n\"ColorTable10\"=dword:00375a0d\n\"ColorTable11\"=dword:005e520a\n\"ColorTable12\"=dword:000a3dad\n\"ColorTable13\"=dword:009e2a57\n\"ColorTable14\"=dword:00004770\n\"ColorTable15\"=dword:00ffffff\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:0000007f",
+      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows Console Host (HKCU\\Console)\n; Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n; Revert anytime by importing restore-defaults.reg (Windows 10/11 Campbell defaults).\n\n[HKEY_CURRENT_USER\\Console]\n\"ColorTable00\"=dword:00f9f7f5\n\"ColorTable01\"=dword:00694616\n\"ColorTable02\"=dword:00477212\n\"ColorTable03\"=dword:0074660e\n\"ColorTable04\"=dword:002e1cb9\n\"ColorTable05\"=dword:00b8386b\n\"ColorTable06\"=dword:00005888\n\"ColorTable07\"=dword:0016100d\n\"ColorTable08\"=dword:006e6058\n\"ColorTable09\"=dword:007a541f\n\"ColorTable10\"=dword:00375a0d\n\"ColorTable11\"=dword:005e520a\n\"ColorTable12\"=dword:000a3dad\n\"ColorTable13\"=dword:009e2a57\n\"ColorTable14\"=dword:00004770\n\"ColorTable15\"=dword:00ffffff\n\"ScreenColors\"=dword:00000007\n\"PopupColors\"=dword:0000007f",
       "swatches": [
         {
           "label": "BG",

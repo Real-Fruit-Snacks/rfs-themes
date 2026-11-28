@@ -1,4 +1,4 @@
-# Cyclorama Dawn v2.1.0 — fzf Color Palette (POSIX sh / bash / zsh)
+# Cyclorama Dawn v2.3.2 — fzf Color Palette (POSIX sh / bash / zsh)
 # Variant: Cyclorama Steel (LX 263 · Dark · Steel Blue)
 # Author:  Real-Fruit-Snacks
 # Source:  https://github.com/Real-Fruit-Snacks/rfs-themes

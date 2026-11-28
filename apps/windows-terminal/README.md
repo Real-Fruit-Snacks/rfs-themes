@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Windows Terminal & PowerShell
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** color schemes for **[Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/)** plus matching **PowerShell PSReadLine** syntax highlighting scripts, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** color schemes for **[Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/)** plus matching **PowerShell PSReadLine** syntax highlighting scripts, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

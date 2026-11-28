@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Zed
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[Zed](https://zed.dev/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[Zed](https://zed.dev/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
 
 - **Category:** Editors & IDEs
 - **Format:** `Zed JSON Theme (v0.2.0)`

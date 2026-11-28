@@ -11,7 +11,7 @@
     "Enable the theme in Settings -> Themes (match Discord Appearance to Dark for Dawn/Steel, Light for Day)."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/discord/cyclorama-dawn.theme.css",
   "files": [
     {

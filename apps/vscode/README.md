@@ -1,6 +1,6 @@
 # Cyclorama Dawn for VS Code
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[VS Code](https://code.visualstudio.com/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[VS Code](https://code.visualstudio.com/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
 
 - **Category:** Editors & IDEs
 - **Format:** `VS Code JSON Theme Extension`

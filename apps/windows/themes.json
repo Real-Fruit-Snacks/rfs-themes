@@ -11,7 +11,7 @@
     "Switch between **Cyclorama Dawn**, **Cyclorama Steel**, and **Cyclorama Day** anytime from **Settings -> Personalization -> Themes**, or double-click `backup-pre-rfs.reg` to revert."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/windows/Cyclorama Dawn.theme",
   "files": [
     {
@@ -75,7 +75,7 @@
       "file": "apps/windows/Cyclorama Dawn.theme",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Dawn Windows 11 .theme",
-      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Dawn\nThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-dawn-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4F06E2B\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "copySnippet": "; Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.3.2 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Dawn\nThemeId={9DDFDA6F-AEE0-50E4-B435-D5E07DF06759}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-dawn-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4F06E2B\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
       "swatches": [
         {
           "label": "Background",
@@ -114,7 +114,7 @@
       "file": "apps/windows/Cyclorama Steel.theme",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Steel Windows 11 .theme",
-      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Steel\nThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-steel-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC41F547A\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "copySnippet": "; Cyclorama Steel (LX 263 Dark · Steel Blue) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.3.2 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Steel\nThemeId={3761E5D4-ED79-5CE8-911B-3DCE6E8C8A7A}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-steel-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=5 5 7\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC41F547A\nVisualStyleVersion=10\nSystemMode=Dark\nAppMode=Dark\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
       "swatches": [
         {
           "label": "Background",
@@ -153,7 +153,7 @@
       "file": "apps/windows/Cyclorama Day.theme",
       "copyLang": "ini",
       "copyLabel": "Copy Cyclorama Day Windows 11 .theme",
-      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.1.0 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Day\nThemeId={3D9B7F12-161C-5234-9FC0-7951A0F89626}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-day-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=245 247 249\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4AD3D0A\nVisualStyleVersion=10\nSystemMode=Light\nAppMode=Light\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
+      "copySnippet": "; Cyclorama Day (LX 512 Light · Alabaster Day) — Windows 11 Theme\n; Brand: Cyclorama Dawn v2.3.2 | Author: Real-Fruit-Snacks\n; Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\n[Theme]\nDisplayName=Cyclorama Day\nThemeId={3D9B7F12-161C-5234-9FC0-7951A0F89626}\n\n[Control Panel\\Desktop]\nWallpaper=%LOCALAPPDATA%\\rfs-themes\\windows\\wallpapers\\cyclorama-day-1080p.png\nPattern=\nMultimonBackgrounds=0\nPicturePosition=4\n\n[Control Panel\\Colors]\nBackground=245 247 249\n\n[VisualStyles]\nPath=%SystemRoot%\\resources\\themes\\Aero\\Aero.msstyles\nColorStyle=NormalColor\nSize=NormalSize\nAutoColorization=0\nColorizationColor=0xC4AD3D0A\nVisualStyleVersion=10\nSystemMode=Light\nAppMode=Light\n\n[MasterThemeSelector]\nMTSM=RJSPBS\n\n[boot]\nSCRNSAVE.EXE=",
       "swatches": [
         {
           "label": "Background",

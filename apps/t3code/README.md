@@ -1,6 +1,6 @@
 # Cyclorama Dawn for T3 Code
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[T3 Code](https://github.com/pingdotgg/t3code)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) using T3 Code's v1 theme schema (all **61** official `THEME_COLOR_ROLES` + scoped `THEME_CSS_HOOKS` finishing touches) with every foreground/background contrast pair verified at **>= 4.5:1 WCAG AA**.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[T3 Code](https://github.com/pingdotgg/t3code)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) using T3 Code's v1 theme schema (all **61** official `THEME_COLOR_ROLES` + scoped `THEME_CSS_HOOKS` finishing touches) with every foreground/background contrast pair verified at **>= 4.5:1 WCAG AA**.
 
 - **Category:** Editors & IDEs
 - **Format:** `T3 Code Theme JSON + CSS (v1)`

@@ -1,6 +1,6 @@
 # Cyclorama Dawn for qBittorrent
 
-Three Qt QSS stylesheets paired with qBittorrent `config.json` transfer-list and log color palettes. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[qBittorrent](https://www.qbittorrent.org/)** (`Qt QSS Stylesheet + config.json`).
+Three Qt QSS stylesheets paired with qBittorrent `config.json` transfer-list and log color palettes. Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[qBittorrent](https://www.qbittorrent.org/)** (`Qt QSS Stylesheet + config.json`).
 
 ## Install
 

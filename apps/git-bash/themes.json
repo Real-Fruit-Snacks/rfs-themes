@@ -11,7 +11,7 @@
     "Enable matching truecolor `git diff`, `git status`, `git branch`, and `git grep` output by adding `[include]` -> `path = ~/rfs-themes/apps/git-bash/git-colors-dawn.gitconfig` to `~/.gitconfig`."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/git-bash/cyclorama-dawn.minttyrc",
   "files": [
     {
@@ -51,7 +51,7 @@
       "file": "apps/git-bash/cyclorama-dawn.minttyrc",
       "copyLang": "conf",
       "copyLabel": "Copy Cyclorama Dawn Mintty .minttyrc",
-      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=240,110,43\nBlack=12,12,16\nBoldBlack=140,143,157\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+      "copySnippet": "# Cyclorama Dawn (LX 263 Dark · Beacon Orange) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=240,110,43\nBlack=12,12,16\nBoldBlack=140,143,157\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
       "swatches": [
         {
           "label": "BG",
@@ -90,7 +90,7 @@
       "file": "apps/git-bash/cyclorama-steel.minttyrc",
       "copyLang": "conf",
       "copyLabel": "Copy Cyclorama Steel Mintty .minttyrc",
-      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=116,184,232\nBlack=12,12,16\nBoldBlack=140,150,166\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
+      "copySnippet": "# Cyclorama Steel (LX 263 Dark · Steel Blue) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=244,245,248\nBackgroundColour=5,5,7\nCursorColour=116,184,232\nBlack=12,12,16\nBoldBlack=140,150,166\nRed=255,92,108\nBoldRed=255,146,84\nGreen=61,220,151\nBoldGreen=108,232,178\nYellow=255,194,71\nBoldYellow=255,212,117\nBlue=116,184,232\nBoldBlue=153,205,242\nMagenta=201,150,245\nBoldMagenta=220,184,250\nCyan=86,212,224\nBoldCyan=133,227,236\nWhite=214,216,224\nBoldWhite=244,245,248",
       "swatches": [
         {
           "label": "BG",
@@ -129,7 +129,7 @@
       "file": "apps/git-bash/cyclorama-day.minttyrc",
       "copyLang": "conf",
       "copyLabel": "Copy Cyclorama Day Mintty .minttyrc",
-      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.1.0\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=13,16,22\nBackgroundColour=245,247,249\nCursorColour=173,61,10\nBlack=13,16,22\nBoldBlack=88,96,110\nRed=185,28,46\nBoldRed=173,61,10\nGreen=18,114,71\nBoldGreen=13,90,55\nYellow=136,88,0\nBoldYellow=112,71,0\nBlue=22,70,105\nBoldBlue=31,84,122\nMagenta=107,56,184\nBoldMagenta=87,42,158\nCyan=14,102,116\nBoldCyan=10,82,94\nWhite=227,232,238\nBoldWhite=255,255,255",
+      "copySnippet": "# Cyclorama Day (LX 512 Light · Alabaster Day) — Git Bash (Mintty) Theme\n# Author: Real-Fruit-Snacks | Brand: Cyclorama Dawn v2.3.2\n# Source: https://github.com/Real-Fruit-Snacks/rfs-themes\n\nForegroundColour=13,16,22\nBackgroundColour=245,247,249\nCursorColour=173,61,10\nBlack=13,16,22\nBoldBlack=88,96,110\nRed=185,28,46\nBoldRed=173,61,10\nGreen=18,114,71\nBoldGreen=13,90,55\nYellow=136,88,0\nBoldYellow=112,71,0\nBlue=22,70,105\nBoldBlue=31,84,122\nMagenta=107,56,184\nBoldMagenta=87,42,158\nCyan=14,102,116\nBoldCyan=10,82,94\nWhite=227,232,238\nBoldWhite=255,255,255",
       "swatches": [
         {
           "label": "BG",

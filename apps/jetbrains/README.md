@@ -1,6 +1,6 @@
 # Cyclorama Dawn for JetBrains IDEs
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[JetBrains IDEs](https://www.jetbrains.com/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[JetBrains IDEs](https://www.jetbrains.com/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) with WCAG AA calibrated surfaces, syntax tokens, and ANSI 0-15 terminal colors.
 
 - **Category:** Editors & IDEs
 - **Format:** `IntelliJ .icls + .theme.json`

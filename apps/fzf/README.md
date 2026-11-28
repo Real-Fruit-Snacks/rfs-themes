@@ -1,6 +1,6 @@
 # Cyclorama Dawn for fzf
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[fzf](https://github.com/junegunn/fzf)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Includes both POSIX shell (`.sh`) and PowerShell (`.ps1`) scripts defining all 16 fzf color slots.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[fzf](https://github.com/junegunn/fzf)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Includes both POSIX shell (`.sh`) and PowerShell (`.ps1`) scripts defining all 16 fzf color slots.
 
 ## Install
 

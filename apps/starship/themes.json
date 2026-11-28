@@ -11,7 +11,7 @@
     "Start a new shell session to load the updated Starship prompt."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/starship/cyclorama-dawn.toml",
   "files": [
     {

@@ -11,7 +11,7 @@
     "Open **Preferences: Color Theme** (`Ctrl+K Ctrl+T`) and select **Cyclorama Dawn**, **Cyclorama Steel**, or **Cyclorama Day**."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/vscode/themes/cyclorama-dawn.json",
   "files": [
     {

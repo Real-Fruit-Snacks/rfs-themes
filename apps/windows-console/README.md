@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Windows Console Host (`cmd.exe` / `conhost`)
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** Windows Registry (`.reg`) themes targeting `HKEY_CURRENT_USER\Console` for **[Windows Console Host](https://learn.microsoft.com/en-us/windows/console/)** (`cmd.exe` / `conhost.exe`), plus a 1-click [`restore-defaults.reg`](restore-defaults.reg) revert file (official Windows 10/11 Campbell defaults), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** Windows Registry (`.reg`) themes targeting `HKEY_CURRENT_USER\Console` for **[Windows Console Host](https://learn.microsoft.com/en-us/windows/console/)** (`cmd.exe` / `conhost.exe`), plus a 1-click [`restore-defaults.reg`](restore-defaults.reg) revert file (official Windows 10/11 Campbell defaults), calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

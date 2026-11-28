@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Kitty
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** configuration themes for **[Kitty](https://sw.kovidgoyal.net/kitty/)**, calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** configuration themes for **[Kitty](https://sw.kovidgoyal.net/kitty/)**, calibrated from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand).
 
 ## Variants
 

@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Brave / Chrome / Edge
 
-Three unpacked Manifest V3 browser themes for Chromium-based browsers (Brave, Chrome, Edge, Vivaldi). Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[Brave / Chrome / Edge](https://brave.com/)** (`Chromium MV3 Browser Theme`).
+Three unpacked Manifest V3 browser themes for Chromium-based browsers (Brave, Chrome, Edge, Vivaldi). Calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[Brave / Chrome / Edge](https://brave.com/)** (`Chromium MV3 Browser Theme`).
 
 ## Install
 

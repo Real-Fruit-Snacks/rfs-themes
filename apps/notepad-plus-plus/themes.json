@@ -11,7 +11,7 @@
     "Alternatively, copy `Cyclorama Dawn.xml`, `Cyclorama Steel.xml`, and `Cyclorama Day.xml` into `%APPDATA%\\Notepad++\\themes\\` and select the theme in **Settings -> Style Configurator**."
   ],
   "author": "Real-Fruit-Snacks",
-  "brandVersion": "2.1.0",
+  "brandVersion": "2.3.2",
   "primaryFile": "apps/notepad-plus-plus/Cyclorama Dawn.xml",
   "files": [
     {

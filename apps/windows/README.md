@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Windows 11
 
-Native Windows 11 `.theme` packs, pure-Oklab 1080p & 4K wallpapers (zero 8-bit banding via 4×4 Bayer dithering), and backup-first PowerShell installers calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.1.0**) for **[Windows 11](https://www.microsoft.com/windows/)** (`Windows 11 .theme + Wallpapers + .ps1`).
+Native Windows 11 `.theme` packs, pure-Oklab 1080p & 4K wallpapers (zero 8-bit banding via 4×4 Bayer dithering), and backup-first PowerShell installers calibrated from [`brand/rfs.tokens.json`](../../brand/rfs.tokens.json) (**Cyclorama Dawn v2.3.2**) for **[Windows 11](https://www.microsoft.com/windows/)** (`Windows 11 .theme + Wallpapers + .ps1`).
 
 ## Install
 

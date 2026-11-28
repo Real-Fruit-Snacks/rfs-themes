@@ -1,6 +1,6 @@
 # Cyclorama Dawn for Starship
 
-Three **Cyclorama Dawn v2.1.0 (Steel & Beacon Orange)** themes for **[Starship](https://starship.rs/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Each drop-in file configures directory, git, Rust, Python, Node.js, duration, and prompt character segments using named `[palettes.cyclorama_*]` tables.
+Three **Cyclorama Dawn v2.3.2 (Steel & Beacon Orange)** themes for **[Starship](https://starship.rs/)**, built from [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) tokens in [`Real-Fruit-Snacks/rfs-themes`](https://github.com/Real-Fruit-Snacks/rfs-themes). Each drop-in file configures directory, git, Rust, Python, Node.js, duration, and prompt character segments using named `[palettes.cyclorama_*]` tables.
 
 ## Install
 
