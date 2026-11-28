@@ -5,7 +5,7 @@
     "palette": "Steel & Beacon Orange",
     "tagline": "Built local-first.",
     "world": "stagecraft-theater-lighting-cyclorama-dawn",
-    "version": "2.1.0"
+    "version": "2.3.2"
   },
   "color": {
     "dark": {
@@ -170,8 +170,12 @@
     "ease-in-out": "cubic-bezier(0.65, 0, 0.35, 1)",
     "ease-exit": "cubic-bezier(0.7, 0, 0.84, 0)",
     "ease-linear": "linear",
+    "ease-detent-fallback": "cubic-bezier(0.22, 1.18, 0.36, 1)",
+    "ease-detent": "linear(0, 0.21 8%, 0.64 19%, 0.94 31%, 1.035 44%, 1.02 58%, 0.996 74%, 1)",
     "dur-fast": "150ms",
     "dur-base": "250ms",
+    "dur-detent": "340ms",
+    "dur-jump": "360ms",
     "dur-slow": "520ms",
     "type-rate": "45ms"
   },
@@ -190,6 +194,20 @@
     "comment": "mute",
     "diff-add": "signal",
     "diff-del": "fault"
+  },
+  "dataviz": {
+    "categorical": [
+      { "series": 1, "name": "Glacial Steel", "token": "steel-ink", "dark": "#74B8E8", "light": "#164669" },
+      { "series": 2, "name": "Maritime Beacon", "token": "beacon-ink", "dark": "#FF9254", "light": "#AD3D0A" },
+      { "series": 3, "name": "Mint Signal", "token": "signal", "dark": "#3DDC97", "light": "#127247" },
+      { "series": 4, "name": "Amber", "token": "accent", "dark": "#FFC247", "light": "#885800" },
+      { "series": 5, "name": "Signal Crimson", "token": "fault", "dark": "#FF5C6C", "light": "#B91C2E" },
+      { "series": 6, "name": "Stage Slate", "token": "mute", "dark": "#B3B5C0", "light": "#474D59" }
+    ],
+    "sequential-steel": ["#070A0E", "#133954", "#1F547A", "#4F88B5", "#74B8E8"],
+    "diverging-oklab": ["#164669", "#74B8E8", "#B3B5C0", "#FF9254", "#AD3D0A"],
+    "gridline-dark": "rgba(255, 255, 255, 0.10)",
+    "gridline-light": "rgba(13, 16, 22, 0.12)"
   },
   "icon": {
     "count": 60,

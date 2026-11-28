@@ -1,6 +1,8 @@
 # rfs-themes — Agent & Contributor Contract
 
-This repository holds **Cyclorama Dawn (Steel & Beacon Orange)** theme ports for 28 everyday applications (**84 verified variants**), built deterministically from the canonical tokens in [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`brand/rfs.tokens.json`).
+This repository holds **Cyclorama Dawn (Steel & Beacon Orange)** theme ports for 28 everyday applications (**84 verified variants**), built deterministically from the canonical tokens in [`Real-Fruit-Snacks/rfs-brand`](https://github.com/Real-Fruit-Snacks/rfs-brand) (`v2.3.2`, `brand/rfs.tokens.json`).
+
+**Brand Skill & Index:** `npx skills add Real-Fruit-Snacks/rfs-brand` (`skills/rfs-brand/SKILL.md`) · https://real-fruit-snacks.github.io/rfs-brand/llms.txt · Audit with `python tools/verify-themes.py` and `verify-brand.py --repo .`.
 
 ## Core Invariants
 
